@@ -2,7 +2,13 @@ cff-version: 1.2.0
 message: "If you refer to this software, please cite it as below."
 type: software
 title: "AMR Console: an office assistant for an autonomous mobile robot, in simulation"
-version: 1.0.0
+abstract: >-
+  A browser console for an autonomous mobile robot, tested in simulation. It maps an office and
+  explores it on its own, navigates with Nav2, and takes plain-English office requests, which it
+  reads back and waits to have confirmed before the robot moves. It runs on ROS 2 Jazzy with
+  Gazebo Harmonic and a TurtleBot3 Waffle, with a local language model.
+version: 1.0.1
+date-released: 2026-11-20
 authors:
   - family-names: Manoharan
     given-names: Bharathwaj
@@ -12,6 +18,7 @@ keywords:
   - autonomous mobile robot
   - ROS 2
   - Nav2
+  - frontier exploration
   - human-robot interaction
   - language model
   - simulation

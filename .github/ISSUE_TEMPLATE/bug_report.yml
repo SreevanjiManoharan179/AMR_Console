@@ -1,0 +1,57 @@
+name: Bug report
+description: Something in the console, the language module, the setup scripts or the documents does not work as described.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. Please check [docs/INSTALL.md](https://github.com/SreevanjiManoharan179/AMR_Console/blob/main/docs/INSTALL.md) first.
+        Security problems go through [private reporting](https://github.com/SreevanjiManoharan179/AMR_Console/security/advisories/new), not a public issue.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you saw, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. bash setup/run_console.sh
+        2. ...
+  - type: dropdown
+    id: part
+    attributes:
+      label: Which part
+      options:
+        - Console (mapping, exploration, navigation)
+        - Office tasks
+        - Language module
+        - Speech Lab
+        - Install or setup scripts
+        - Documents
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where it ran
+      options:
+        - Simulation (Gazebo)
+        - Real robot
+        - No robot (offline tests or documents)
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: System
+      placeholder: Ubuntu 24.04, ROS 2 Jazzy, Gazebo Harmonic, commit
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: The relevant part of the console log or the test output. Remove anything private first, such as paths with your user name or tokens.
+      render: text
