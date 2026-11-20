@@ -2,8 +2,9 @@
 
 ## 1.0.1 (20 Nov 2026)
 
-- README: four screenshots of the system at work (office tasks, navigation, a clarifying
-  question, the demo office), in `docs/images/`.
+- README: an animated demo of one office task from request to return (4.5× speed), four
+  screenshots of the system at work (office tasks, navigation, a clarifying question, the demo
+  office) and the office map with its people and places, in `docs/images/`.
 - CI runs for pushes to `main` and for pull requests, not twice for every pull-request branch.
 - Dependabot proposes new versions of the GitHub Actions only. The Python test requirements are
   broad ranges on purpose; its first pull requests raised their lower bounds (pytest to 9.2, for

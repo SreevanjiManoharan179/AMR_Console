@@ -10,6 +10,14 @@ and records every run against the simulator's ground truth.
 > Telugu and Tanglish only in the Speech Lab test bench. A real-robot connection is planned, not
 > built.
 
+![An office task end to end: request, read-back, the drive to the conference hall, the question there, and the return to the dock](docs/images/demo-office-task.gif)
+
+*An office task end to end, at 4.5× speed. Priya asks the robot to check whether the conference
+hall is free and, if it is not, to go on to the open office and the cafeteria. The robot reads
+the request back and waits for her yes, drives to the conference hall (RViz, bottom right) and
+asks there. Nobody answers within 20 s, so it does not guess: it reports that the step could not
+be done and returns to the dock. Recorded 10 Nov 2026, in simulation.*
+
 ## In action
 
 Screenshots from 10 Nov 2026, in simulation. The people in the office list are fictional.
@@ -20,6 +28,12 @@ Screenshots from 10 Nov 2026, in simulation. The people in the office list are f
 | **Office tasks.** Priya asks for a file to go to Divya, or to come back to her if Divya is away. The robot reads the request back and waits for a yes before it moves. | **Navigation.** "Go to the conference hall": Gazebo (top left), RViz with the saved map, LiDAR and the planned path (bottom left), and the console (right). |
 | [![The Commands tab asking which room is meant](docs/images/commands-clarifying-question.png)](docs/images/commands-clarifying-question.png) | [![The demo office in Gazebo with the TurtleBot3 Waffle](docs/images/gazebo-demo-office.png)](docs/images/gazebo-demo-office.png) |
 | **Asking instead of guessing.** "Go to the room" is ambiguous, so the console asks "Did you mean the conference hall?" and does not move. | **The demo office.** The 18 × 12 m office world in Gazebo Harmonic, with the TurtleBot3 Waffle. |
+
+[![The office the robot knows: people, named places and objects on the saved map](docs/images/office-people-and-places.png)](docs/images/office-people-and-places.png)
+
+*What the robot knows about the office, drawn on its saved map: where each person is served
+(orange), the named places (blue) and objects it can approach (green), with a route from the
+dock to a seat in the open office. Positions are approximate.*
 
 ## Two projects, one product
 
