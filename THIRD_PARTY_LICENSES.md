@@ -39,7 +39,11 @@ The one exception is the three Nav2 parameter files listed in [NOTICE](NOTICE), 
 The exact versions and hashes are pinned in `amr-console-dev/config/speech_models.json`,
 `amr-console-dev/config/speech_requirements_*.lock` and `amr-language/data/`.
 
-## Python packages for the tests
+## Python packages (the ROS package and the tests)
+
+The ROS package declares NumPy, SciPy, Pillow, PyYAML, pandas and Matplotlib in its
+`package.xml`; the offline tests use pytest, PyYAML, NumPy, SciPy, Matplotlib, Pillow and
+packaging.
 
 | Package | Licence |
 |---|---|

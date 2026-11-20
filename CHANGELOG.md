@@ -15,8 +15,11 @@
   paper is under review (citation to follow), and thanks to the open-source projects it builds on.
 - CITATION.cff: version 1.0.1, the release date and a short abstract, so GitHub's "Cite this
   repository" gives a year.
-- Issue forms for bug reports and for questions, a link to private security reporting, and a
-  pull-request template that asks for an issue first, as CONTRIBUTING.md says.
+- Issue forms for bug reports and for questions, and a pull-request template that asks for an
+  issue first, as CONTRIBUTING.md says. GitHub itself lists "Report a security vulnerability"
+  among the issue choices, because private vulnerability reporting is on.
+- THIRD_PARTY_LICENSES.md: the Python packages are listed as declared by the ROS package and used
+  by the tests (pandas is declared by the ROS package, not used by the tests).
 - CI runs for pushes to `main` and for pull requests, not twice for every pull-request branch.
 - Dependabot proposes new versions of the GitHub Actions only. The Python test requirements are
   broad ranges on purpose; its first pull requests raised their lower bounds (pytest to 9.2, for
