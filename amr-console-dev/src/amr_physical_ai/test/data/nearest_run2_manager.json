@@ -1,0 +1,27 @@
+{
+  "run": "data/runs/20261020_153910_map_explore_244fe461/exploration",
+  "map": "data/runs/20261020_153910_map_explore_244fe461/exploration/maps/0225.npz",
+  "stamp": 1126.6680000000001,
+  "decision": {
+    "event": "decision",
+    "t": 1126.8780000000002,
+    "index": 113,
+    "kind": "frontier",
+    "x": 12.410752485095637,
+    "y": -5.464536805364946,
+    "yaw": -1.695151321341658,
+    "path_m": 0.4207106843877324,
+    "gain_m2": 2.765000082403422,
+    "frontier_cells": 139,
+    "frontiers_left": 50,
+    "phase": "explore",
+    "reason": "frontier of 139 cells",
+    "compute_s": 0.15524672100036696,
+    "pose": [
+      12.44634654188639,
+      -5.056276390558819,
+      0.5346766503772518
+    ]
+  },
+  "map_sha256": "12005a1fe897bfd169f39b9410ab6d622b2b4c1119c6c0f8cbe4a00c7ddcbcfb"
+}

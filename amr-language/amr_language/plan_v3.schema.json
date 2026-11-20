@@ -1,0 +1,338 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Office plan v3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "steps",
+    "issue"
+  ],
+  "properties": {
+    "steps": {
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "$ref": "#/$defs/step"
+      }
+    },
+    "issue": {
+      "enum": [
+        null,
+        "out_of_scope",
+        "unsupported_condition",
+        "negation",
+        "too_many_steps"
+      ]
+    }
+  },
+  "$defs": {
+    "branch": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "n",
+            "action",
+            "if_not_there",
+            "to",
+            "message"
+          ],
+          "properties": {
+            "n": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6
+            },
+            "action": {
+              "const": "tell"
+            },
+            "if_not_there": {
+              "type": "string",
+              "pattern": "^(bring_back|ask_anyone|skip|leave_with:.+|try_later:[1-9][0-9]{0,3})$"
+            },
+            "to": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 600
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "n",
+            "action",
+            "if_not_there",
+            "item",
+            "to"
+          ],
+          "properties": {
+            "n": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6
+            },
+            "action": {
+              "const": "deliver"
+            },
+            "if_not_there": {
+              "type": "string",
+              "pattern": "^(bring_back|ask_anyone|skip|leave_with:.+|try_later:[1-9][0-9]{0,3})$"
+            },
+            "item": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "to": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "item_hint": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          }
+        }
+      ]
+    },
+    "step": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "n",
+            "action",
+            "if_not_there",
+            "item",
+            "to"
+          ],
+          "properties": {
+            "n": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6
+            },
+            "action": {
+              "const": "deliver"
+            },
+            "if_not_there": {
+              "type": "string",
+              "pattern": "^(bring_back|ask_anyone|skip|leave_with:.+|try_later:[1-9][0-9]{0,3})$"
+            },
+            "item": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "to": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "item_hint": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "n",
+            "action",
+            "if_not_there",
+            "item",
+            "from",
+            "to"
+          ],
+          "properties": {
+            "n": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6
+            },
+            "action": {
+              "const": "retrieve"
+            },
+            "if_not_there": {
+              "type": "string",
+              "pattern": "^(bring_back|ask_anyone|skip|leave_with:.+|try_later:[1-9][0-9]{0,3})$"
+            },
+            "item": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "from": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "to": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 200
+            },
+            "item_hint": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "item_location": {
+              "enum": [
+                "known",
+                "guess"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "n",
+            "action",
+            "if_not_there",
+            "at",
+            "question",
+            "on_answer"
+          ],
+          "properties": {
+            "n": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6
+            },
+            "action": {
+              "const": "check"
+            },
+            "if_not_there": {
+              "type": "string",
+              "pattern": "^(bring_back|ask_anyone|skip|leave_with:.+|try_later:[1-9][0-9]{0,3})$"
+            },
+            "at": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "question": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 600
+            },
+            "on_answer": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "yes",
+                    "no"
+                  ],
+                  "properties": {
+                    "yes": {
+                      "type": "array",
+                      "maxItems": 5,
+                      "items": {
+                        "$ref": "#/$defs/branch"
+                      }
+                    },
+                    "no": {
+                      "type": "array",
+                      "maxItems": 5,
+                      "items": {
+                        "$ref": "#/$defs/branch"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "n",
+            "action",
+            "if_not_there",
+            "to",
+            "message"
+          ],
+          "properties": {
+            "n": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6
+            },
+            "action": {
+              "const": "tell"
+            },
+            "if_not_there": {
+              "type": "string",
+              "pattern": "^(bring_back|ask_anyone|skip|leave_with:.+|try_later:[1-9][0-9]{0,3})$"
+            },
+            "to": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 600
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "n",
+            "action",
+            "if_not_there",
+            "to"
+          ],
+          "properties": {
+            "n": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6
+            },
+            "action": {
+              "const": "go"
+            },
+            "if_not_there": {
+              "type": "string",
+              "pattern": "^(bring_back|ask_anyone|skip|leave_with:.+|try_later:[1-9][0-9]{0,3})$"
+            },
+            "to": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          }
+        }
+      ]
+    }
+  }
+}

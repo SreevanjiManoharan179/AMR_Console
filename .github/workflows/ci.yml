@@ -1,0 +1,73 @@
+name: Offline checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  console:
+    name: Console (five offline suites, with the language module beside it)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: amr-console-dev/requirements-dev.txt
+      - name: Install test dependencies on the disposable CI runner
+        run: python -m pip install -r amr-console-dev/requirements-dev.txt
+      - name: Offline tests (ROS package, task layer, calibration, Speech Lab, console)
+        run: bash amr-console-dev/scripts/check.sh
+
+  language:
+    name: Language module
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: amr-language
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: amr-language/requirements-dev.txt
+      - name: Install test dependencies on the disposable CI runner
+        run: python -m pip install -r requirements-dev.txt
+      - name: Tests (records checks are skipped here)
+        run: python -m pytest -q -p no:cacheprovider -ra tests
+
+  repository:
+    name: Release checks and lint
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: No private paths, keys, e-mail addresses or oversized files
+        run: python release/sync.py --check-only
+      - name: Tests of the release tool
+        run: |
+          python -m pip install 'pytest>=7,<9'
+          python -m pytest -q -p no:cacheprovider release/tests
+      - name: Python errors (syntax, undefined names)
+        run: |
+          python -m pip install 'ruff==0.14.14'
+          ruff check --no-cache --select E9,F63,F7,F82 --output-format github .
+      - name: Shell scripts parse
+        run: for script in amr-console-dev/scripts/*.sh amr-console-dev/setup/*.sh; do bash -n "$script"; done

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=AMR Speech Lab
+GenericName=Speech and language test bench
+Comment=Test speech recognition and request understanding without the robot (English, Tamil, Tanglish, Malayalam, Telugu)
+Keywords=speech;microphone;voice;language;test;AMR;
+Exec=@LAUNCHER@
+Terminal=true
+Icon=@ICON@
+Categories=Development;Science;

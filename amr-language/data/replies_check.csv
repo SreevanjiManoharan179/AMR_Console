@@ -1,0 +1,100 @@
+id,speaker,language,text,expect,expected_kind
+STARTER-en-01,STARTER,en,taken,taken,taken
+STARTER-en-02,STARTER,en,got it,taken,taken
+STARTER-en-03,STARTER,en,i have it,taken,taken
+STARTER-en-04,STARTER,en,done,done,done
+STARTER-en-05,STARTER,en,finished,done,done
+STARTER-en-06,STARTER,en,placed it,done,done
+STARTER-en-07,STARTER,en,not here,not_here,not_here
+STARTER-en-08,STARTER,en,away,not_here,not_here
+STARTER-en-09,STARTER,en,not available,not_here,not_here
+STARTER-en-10,STARTER,en,yes,yes,yes
+STARTER-en-11,STARTER,en,yeah,yes,yes
+STARTER-en-12,STARTER,en,yep,yes,yes
+STARTER-en-13,STARTER,en,no,no,no
+STARTER-en-14,STARTER,en,nope,no,no
+STARTER-en-15,STARTER,en,later,later,later
+STARTER-en-16,STARTER,en,come later,later,later
+STARTER-en-17,STARTER,en,come back later,later,later
+STARTER-en-18,STARTER,en,stop,stop,stop
+STARTER-en-19,STARTER,en,stop now,stop,stop
+STARTER-en-20,STARTER,en,cancel,stop,stop
+STARTER-en-21,STARTER,en,done,done,done
+STARTER-en-22,STARTER,en,ok,taken,taken
+STARTER-en-23,STARTER,en,stop,answer,stop
+STARTER-en-24,STARTER,en,hmm,taken|not_here|later,unclear
+STARTER-ta-01,STARTER,ta,எடுத்துக்கிட்டேன்,taken,taken
+STARTER-ta-02,STARTER,ta,எடுத்துட்டேன்,taken,taken
+STARTER-ta-03,STARTER,ta,வாங்கிக்கிட்டேன்,taken,taken
+STARTER-ta-04,STARTER,ta,முடிந்தது,done,done
+STARTER-ta-05,STARTER,ta,முடிஞ்சது,done,done
+STARTER-ta-06,STARTER,ta,வச்சுட்டேன்,done,done
+STARTER-ta-07,STARTER,ta,இங்க இல்லை,not_here,not_here
+STARTER-ta-08,STARTER,ta,இல்ல,not_here,not_here
+STARTER-ta-09,STARTER,ta,அவங்க இல்லை,not_here,not_here
+STARTER-ta-10,STARTER,ta,ஆம்,yes,yes
+STARTER-ta-11,STARTER,ta,ஆமா,yes,yes
+STARTER-ta-12,STARTER,ta,சரி,yes,yes
+STARTER-ta-13,STARTER,ta,இல்லை,no,no
+STARTER-ta-14,STARTER,ta,இல்ல,no,no
+STARTER-ta-15,STARTER,ta,வேண்டாம்,no,no
+STARTER-ta-16,STARTER,ta,அப்புறம் வா,later,later
+STARTER-ta-17,STARTER,ta,பிறகு வாங்க,later,later
+STARTER-ta-18,STARTER,ta,கொஞ்சம் கழிச்சு வாங்க,later,later
+STARTER-ta-19,STARTER,ta,நிறுத்து,stop,stop
+STARTER-ta-20,STARTER,ta,நிறுத்துங்க,stop,stop
+STARTER-ta-21,STARTER,ta,நிறுத்துங்கள்,stop,stop
+STARTER-ta-22,STARTER,ta,done,done,done
+STARTER-ta-23,STARTER,ta,ok,taken,taken
+STARTER-ta-24,STARTER,ta,stop,answer,stop
+STARTER-ta-25,STARTER,ta,hmm,taken|not_here|later,unclear
+STARTER-ml-01,STARTER,ml,എടുത്തു,taken,taken
+STARTER-ml-02,STARTER,ml,എടുത്തിട്ടുണ്ട്,taken,taken
+STARTER-ml-03,STARTER,ml,കിട്ടി,taken,taken
+STARTER-ml-04,STARTER,ml,കഴിഞ്ഞു,done,done
+STARTER-ml-05,STARTER,ml,വച്ചു,done,done
+STARTER-ml-06,STARTER,ml,പൂർത്തിയായി,done,done
+STARTER-ml-07,STARTER,ml,ഇവിടെ ഇല്ല,not_here,not_here
+STARTER-ml-08,STARTER,ml,ഇല്ല,not_here,not_here
+STARTER-ml-09,STARTER,ml,അവിടെ ഇല്ല,not_here,not_here
+STARTER-ml-10,STARTER,ml,അതെ,yes,yes
+STARTER-ml-11,STARTER,ml,ശരി,yes,yes
+STARTER-ml-12,STARTER,ml,ഉവ്വ്,yes,yes
+STARTER-ml-13,STARTER,ml,അല്ല,no,no
+STARTER-ml-14,STARTER,ml,ഇല്ല,no,no
+STARTER-ml-15,STARTER,ml,വേണ്ട,no,no
+STARTER-ml-16,STARTER,ml,പിന്നെ വരൂ,later,later
+STARTER-ml-17,STARTER,ml,പിന്നീട് വരൂ,later,later
+STARTER-ml-18,STARTER,ml,കുറച്ച് കഴിഞ്ഞ് വരൂ,later,later
+STARTER-ml-19,STARTER,ml,നിർത്തൂ,stop,stop
+STARTER-ml-20,STARTER,ml,നിർത്തുക,stop,stop
+STARTER-ml-21,STARTER,ml,നിർത്തണം,stop,stop
+STARTER-ml-22,STARTER,ml,done,done,done
+STARTER-ml-23,STARTER,ml,ok,taken,taken
+STARTER-ml-24,STARTER,ml,stop,answer,stop
+STARTER-ml-25,STARTER,ml,hmm,taken|not_here|later,unclear
+STARTER-te-01,STARTER,te,తీసుకున్నాను,taken,taken
+STARTER-te-02,STARTER,te,అందుకుంది,taken,taken
+STARTER-te-03,STARTER,te,వచ్చింది,taken,taken
+STARTER-te-04,STARTER,te,అయిపోయింది,done,done
+STARTER-te-05,STARTER,te,పెట్టాను,done,done
+STARTER-te-06,STARTER,te,పూర్తయింది,done,done
+STARTER-te-07,STARTER,te,ఇక్కడ లేరు,not_here,not_here
+STARTER-te-08,STARTER,te,ఇక్కడ లేదు,not_here,not_here
+STARTER-te-09,STARTER,te,లేరు,not_here,not_here
+STARTER-te-10,STARTER,te,అవును,yes,yes
+STARTER-te-11,STARTER,te,సరే,yes,yes
+STARTER-te-12,STARTER,te,అలాగే,yes,yes
+STARTER-te-13,STARTER,te,కాదు,no,no
+STARTER-te-14,STARTER,te,లేదు,no,no
+STARTER-te-15,STARTER,te,వద్దు,no,no
+STARTER-te-16,STARTER,te,తర్వాత రండి,later,later
+STARTER-te-17,STARTER,te,తరువాత రా,later,later
+STARTER-te-18,STARTER,te,కాసేపటి తర్వాత రండి,later,later
+STARTER-te-19,STARTER,te,ఆపు,stop,stop
+STARTER-te-20,STARTER,te,ఆపండి,stop,stop
+STARTER-te-21,STARTER,te,నిలిపివేయండి,stop,stop
+STARTER-te-22,STARTER,te,done,done,done
+STARTER-te-23,STARTER,te,ok,taken,taken
+STARTER-te-24,STARTER,te,stop,answer,stop
+STARTER-te-25,STARTER,te,hmm,taken|not_here|later,unclear

@@ -1,0 +1,94 @@
+{
+  "status": "DRAFT_GENERAL_OFFICE_GLOSSARY_NEEDS_NATIVE_REVIEW",
+  "provenance": "Owner task4 examples and task3 authored starter failures; not owner real-command calibration",
+  "languages": {
+    "en": [
+      {
+        "word": "file",
+        "meaning": "a carried document; distinguish from a drinking cup"
+      },
+      {
+        "word": "reception",
+        "meaning": "the office front desk"
+      },
+      {
+        "word": "free (room)",
+        "meaning": "vacant or available, not cancelled"
+      },
+      {
+        "word": "at a stated time",
+        "meaning": "a clock time; preserve the stated time, never convert it to a duration"
+      },
+      {
+        "word": "get an item",
+        "meaning": "collect or retrieve; do not infer buying"
+      }
+    ],
+    "ta": [
+      {
+        "word": "கோப்பு / கோப்பை",
+        "meaning": "file, a carried document, in the office context"
+      },
+      {
+        "word": "வரவேற்பு / வரவேற்பில்",
+        "meaning": "reception, the office front desk"
+      },
+      {
+        "word": "காலி",
+        "meaning": "free or vacant when describing a room"
+      },
+      {
+        "word": "மணிக்கு",
+        "meaning": "at a clock time, not every/for/in a number of hours"
+      },
+      {
+        "word": "வாங்கி / vaangi",
+        "meaning": "get or collect an item; do not infer buying"
+      }
+    ],
+    "ml": [
+      {
+        "word": "റിസപ്ഷൻ / സ്വീകരണം",
+        "meaning": "reception, the office front desk"
+      },
+      {
+        "word": "ഫയൽ",
+        "meaning": "file, a carried document"
+      },
+      {
+        "word": "ഒഴിവ് / കാലി",
+        "meaning": "free or vacant when describing a room, not cancelled"
+      },
+      {
+        "word": "മണിക്ക്",
+        "meaning": "at a clock time, not a duration"
+      },
+      {
+        "word": "വാങ്ങി",
+        "meaning": "get or collect an item; do not infer buying"
+      }
+    ],
+    "te": [
+      {
+        "word": "ఫైల్",
+        "meaning": "file, a carried document"
+      },
+      {
+        "word": "రిసెప్షన్",
+        "meaning": "reception, the office front desk"
+      },
+      {
+        "word": "ఖాళీ",
+        "meaning": "free or vacant when describing a room"
+      },
+      {
+        "word": "గంటలకు",
+        "meaning": "at a clock time, not every/for/in a number of hours"
+      },
+      {
+        "word": "తీసుకుని",
+        "meaning": "get or collect an item; do not infer buying"
+      }
+    ]
+  }
+}

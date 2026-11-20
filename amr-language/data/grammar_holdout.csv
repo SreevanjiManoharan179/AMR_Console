@@ -1,0 +1,37 @@
+id,source,text,expected_actions,expected_items,expected_targets,expected_notes
+GRAMMAR-HOLDOUT-01,AUTHORED_HELD_OUT,Could you drop this file off with Divya?,deliver,file,Divya,
+GRAMMAR-HOLDOUT-02,AUTHORED_HELD_OUT,Grab the charger from Ravi for me.,retrieve,charger,Ravi,
+GRAMMAR-HOLDOUT-03,AUTHORED_HELD_OUT,Swing by reception and ask whether any guests arrived.,check,,reception,whether any guests arrived
+GRAMMAR-HOLDOUT-04,AUTHORED_HELD_OUT,Get this message to Priya: the review starts at 3 pm.,tell,,Priya,the review starts at 3 pm
+GRAMMAR-HOLDOUT-05,AUTHORED_HELD_OUT,"Head over to the cafeteria, please.",go,,cafeteria,
+GRAMMAR-HOLDOUT-06,AUTHORED_HELD_OUT,Return to the dock when you are done.,go,,dock,
+GRAMMAR-HOLDOUT-07,AUTHORED_HELD_OUT,"Take the parcel to Meera. If she is away, leave it with Neha.",deliver,parcel,Meera,leave_with:Neha
+GRAMMAR-HOLDOUT-08,AUTHORED_HELD_OUT,"Deliver the folder to Arun; if he is unavailable, try again in 12 minutes.",deliver,folder,Arun,try_later:12
+GRAMMAR-HOLDOUT-09,AUTHORED_HELD_OUT,Hand the document to Priya; otherwise bring it back.,deliver,document,Priya,bring_back
+GRAMMAR-HOLDOUT-10,AUTHORED_HELD_OUT,"Give the letter to Ravi. If he is not around, ask anyone there.",deliver,letter,Ravi,ask_anyone
+GRAMMAR-HOLDOUT-11,AUTHORED_HELD_OUT,"Bring the file to Divya. If she is absent, skip this delivery.",deliver,file,Divya,skip
+GRAMMAR-HOLDOUT-12,AUTHORED_HELD_OUT,"Check at reception whether a visitor is waiting; if yes, tell Arun: a visitor is waiting; if no, tell Priya: no visitor is waiting.",check,,reception,branches yes/no tell
+GRAMMAR-HOLDOUT-13,AUTHORED_HELD_OUT,"Find out at the conference hall whether the room is vacant. If it is, tell Ravi: the room is vacant. If it is not, deliver the file to Divya.",check,,conference hall,branches yes tell/no deliver
+GRAMMAR-HOLDOUT-14,AUTHORED_HELD_OUT,"Pass the file to Meera; after that, fetch the charger from Neha for me.","deliver,retrieve","file,charger","Meera,Neha",
+GRAMMAR-HOLDOUT-15,AUTHORED_HELD_OUT,Go to reception and then carry this message to Ravi: I will arrive at 4.,"go,tell",,"reception,Ravi",I will arrive at 4
+GRAMMAR-HOLDOUT-16,AUTHORED_HELD_OUT,"Give the folder to Priya, then come back to me.","deliver,go",folder,"Priya,requester",
+GRAMMAR-HOLDOUT-17,AUTHORED_HELD_OUT,Collect the parcel from Divya and bring it to me.,retrieve,parcel,Divya,
+GRAMMAR-HOLDOUT-18,AUTHORED_HELD_OUT,Pick up the charger from Arun and bring it back to me.,retrieve,charger,Arun,
+GRAMMAR-HOLDOUT-19,AUTHORED_HELD_OUT,Ask whether anyone is available at reception.,check,,reception,whether anyone is available
+GRAMMAR-HOLDOUT-20,AUTHORED_HELD_OUT,"Tell Meera that the appointment is at 3, not in three hours.",tell,,Meera,"the appointment is at 3, not in three hours"
+GRAMMAR-HOLDOUT-21,AUTHORED_HELD_OUT,"Tell Ravi: ""first review; then lunch at 3 pm"".",tell,,Ravi,first review; then lunch at 3 pm
+GRAMMAR-HOLDOUT-22,AUTHORED_HELD_OUT,Drop the parcel off at the loading bay.,deliver,parcel,loading bay,unknown: grounding must ask
+GRAMMAR-HOLDOUT-23,AUTHORED_HELD_OUT,Fetch the folder from Lakshmi for me.,retrieve,folder,Lakshmi,unknown: grounding must ask
+GRAMMAR-HOLDOUT-24,AUTHORED_HELD_OUT,Take the file to Divya or Priya.,deliver,file,Divya or Priya,ambiguous: ask
+GRAMMAR-HOLDOUT-25,AUTHORED_HELD_OUT,Please brew some tea for Ravi.,out_of_scope,,Ravi,
+GRAMMAR-HOLDOUT-26,AUTHORED_HELD_OUT,Deliver the document to Arun only if it is raining.,unsupported_condition,document,Arun,
+GRAMMAR-HOLDOUT-27,AUTHORED_HELD_OUT,Do not head to the cafeteria.,negation,,cafeteria,
+GRAMMAR-HOLDOUT-28,AUTHORED_HELD_OUT,Visit reception; visit storage; visit cafeteria; visit demo area; visit open office; visit team office; visit manager cabin.,too_many_steps,,,
+GRAMMAR-HOLDOUT-29,AUTHORED_HELD_OUT,Tell Divya: the call is at 3 pm; then tell Ravi: the pickup is at 4 pm.,"tell,tell",,"Divya,Ravi",at 3 pm / at 4 pm
+GRAMMAR-HOLDOUT-30,AUTHORED_HELD_OUT,Leave this parcel at reception.,deliver,parcel,reception,
+GRAMMAR-HOLDOUT-31,AUTHORED_HELD_OUT,Fetch the charger from Neha and take it to Priya.,retrieve,charger,"Neha,Priya",
+GRAMMAR-HOLDOUT-32,AUTHORED_HELD_OUT,"At reception, ask: ""Did the courier come?""",check,,reception,Did the courier come?
+GRAMMAR-HOLDOUT-33,AUTHORED_HELD_OUT,"Bring me the charger from Arun, then go home.","retrieve,go",charger,"Arun,dock",
+GRAMMAR-HOLDOUT-34,AUTHORED_HELD_OUT,Inform Priya that the meeting is at three oclock.,tell,,Priya,the meeting is at three oclock
+GRAMMAR-HOLDOUT-35,AUTHORED_HELD_OUT,Please pass Divya this file.,deliver,file,Divya,
+GRAMMAR-HOLDOUT-36,AUTHORED_HELD_OUT,"Check whether conference hall is free; if yes tell Ravi that it is free, otherwise give this file to Priya.",check,,conference hall,yes tell/no deliver

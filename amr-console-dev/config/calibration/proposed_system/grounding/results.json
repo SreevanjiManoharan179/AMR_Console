@@ -1,0 +1,498 @@
+{
+  "meta": {
+    "created_utc": "2026-10-27T01:00:39+00:00",
+    "label": "proposed_system places",
+    "registry_path": "src/amr_physical_ai/config/named_locations_proposed_system.yaml",
+    "python": "3.13.16",
+    "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39",
+    "alpha": 0.1,
+    "temperature": 0.1,
+    "cal_fraction": 0.6,
+    "seed": 20261015,
+    "repeats": 1000,
+    "scorer": "token match v2 (rule-based; \"right away\" phrase fix)",
+    "dataset_fingerprint": "447e2b424142",
+    "labels": [
+      "home",
+      "reception",
+      "conference hall",
+      "demo area",
+      "cafeteria",
+      "open office",
+      "team office",
+      "manager cabin",
+      "storage",
+      "<none>"
+    ]
+  },
+  "registry": [
+    {
+      "key": "home",
+      "name": "home",
+      "aliases": [
+        "base",
+        "home base",
+        "dock",
+        "charging dock"
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "key": "reception",
+      "name": "reception",
+      "aliases": [
+        "front desk",
+        "lobby"
+      ],
+      "x": -0.6,
+      "y": 2.8
+    },
+    {
+      "key": "conference_hall",
+      "name": "conference hall",
+      "aliases": [
+        "conference room",
+        "meeting room",
+        "boardroom"
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "key": "demo_area",
+      "name": "demo area",
+      "aliases": [
+        "showroom",
+        "demo zone",
+        "display area"
+      ],
+      "x": 8.6,
+      "y": 2.6
+    },
+    {
+      "key": "cafeteria",
+      "name": "cafeteria",
+      "aliases": [
+        "canteen",
+        "kitchen",
+        "pantry",
+        "cafe"
+      ],
+      "x": 12.5,
+      "y": 2.5
+    },
+    {
+      "key": "open_office",
+      "name": "open office",
+      "aliases": [
+        "open plan office",
+        "workstations"
+      ],
+      "x": 4.2,
+      "y": -1.8
+    },
+    {
+      "key": "team_office",
+      "name": "team office",
+      "aliases": [
+        "team space",
+        "engineering office"
+      ],
+      "x": 10.0,
+      "y": -3.0
+    },
+    {
+      "key": "manager_cabin",
+      "name": "manager cabin",
+      "aliases": [
+        "manager",
+        "director cabin"
+      ],
+      "x": 13.4,
+      "y": -2.6
+    },
+    {
+      "key": "storage",
+      "name": "storage",
+      "aliases": [
+        "storeroom",
+        "supply closet"
+      ],
+      "x": -1.2,
+      "y": -4.6
+    }
+  ],
+  "counts": {
+    "all": {
+      "ambiguous": 12,
+      "unknown": 18,
+      "valid_exact": 36,
+      "valid_extra": 12,
+      "valid_partial": 12,
+      "valid_typo": 12
+    },
+    "calibration": {
+      "ambiguous": 6,
+      "unknown": 8,
+      "valid_exact": 21,
+      "valid_extra": 8,
+      "valid_partial": 9,
+      "valid_typo": 9
+    },
+    "test": {
+      "ambiguous": 6,
+      "unknown": 10,
+      "valid_exact": 15,
+      "valid_extra": 4,
+      "valid_partial": 3,
+      "valid_typo": 3
+    }
+  },
+  "headline": {
+    "q_hat": 0.5131222265306762,
+    "tau": 0.3281738250409036,
+    "summary": {
+      "greedy": {
+        "n": 41,
+        "success": 0.8536585365853658,
+        "help_rate": 0.0,
+        "wrong_move": 0.14634146341463414,
+        "coverage": 0.8536585365853658,
+        "mean_set_size": 1,
+        "per_class": {
+          "ambiguous": {
+            "n": 6,
+            "success": 0.5,
+            "help_rate": 0.0,
+            "wrong_move": 0.5,
+            "coverage": 0.5
+          },
+          "unknown": {
+            "n": 10,
+            "success": 0.7,
+            "help_rate": 0.0,
+            "wrong_move": 0.3,
+            "coverage": 0.7
+          },
+          "valid_exact": {
+            "n": 15,
+            "success": 1.0,
+            "help_rate": 0.0,
+            "wrong_move": 0.0,
+            "coverage": 1.0
+          },
+          "valid_extra": {
+            "n": 4,
+            "success": 1.0,
+            "help_rate": 0.0,
+            "wrong_move": 0.0,
+            "coverage": 1.0
+          },
+          "valid_partial": {
+            "n": 3,
+            "success": 1.0,
+            "help_rate": 0.0,
+            "wrong_move": 0.0,
+            "coverage": 1.0
+          },
+          "valid_typo": {
+            "n": 3,
+            "success": 1.0,
+            "help_rate": 0.0,
+            "wrong_move": 0.0,
+            "coverage": 1.0
+          }
+        }
+      },
+      "fixed threshold": {
+        "n": 41,
+        "success": 0.8536585365853658,
+        "help_rate": 0.0,
+        "wrong_move": 0.14634146341463414,
+        "coverage": 0.8536585365853658,
+        "mean_set_size": 1,
+        "per_class": {
+          "ambiguous": {
+            "n": 6,
+            "success": 0.5,
+            "help_rate": 0.0,
+            "wrong_move": 0.5,
+            "coverage": 0.5
+          },
+          "unknown": {
+            "n": 10,
+            "success": 0.7,
+            "help_rate": 0.0,
+            "wrong_move": 0.3,
+            "coverage": 0.7
+          },
+          "valid_exact": {
+            "n": 15,
+            "success": 1.0,
+            "help_rate": 0.0,
+            "wrong_move": 0.0,
+            "coverage": 1.0
+          },
+          "valid_extra": {
+            "n": 4,
+            "success": 1.0,
+            "help_rate": 0.0,
+            "wrong_move": 0.0,
+            "coverage": 1.0
+          },
+          "valid_partial": {
+            "n": 3,
+            "success": 1.0,
+            "help_rate": 0.0,
+            "wrong_move": 0.0,
+            "coverage": 1.0
+          },
+          "valid_typo": {
+            "n": 3,
+            "success": 1.0,
+            "help_rate": 0.0,
+            "wrong_move": 0.0,
+            "coverage": 1.0
+          }
+        }
+      },
+      "conformal + ask": {
+        "n": 41,
+        "success": 1.0,
+        "help_rate": 0.21951219512195122,
+        "wrong_move": 0.0,
+        "coverage": 0.926829268292683,
+        "mean_set_size": 1.0731707317073171,
+        "per_class": {
+          "ambiguous": {
+            "n": 6,
+            "success": 1.0,
+            "help_rate": 1.0,
+            "wrong_move": 0.0,
+            "coverage": 1.0
+          },
+          "unknown": {
+            "n": 10,
+            "success": 1.0,
+            "help_rate": 0.3,
+            "wrong_move": 0.0,
+            "coverage": 0.7
+          },
+          "valid_exact": {
+            "n": 15,
+            "success": 1.0,
+            "help_rate": 0.0,
+            "wrong_move": 0.0,
+            "coverage": 1.0
+          },
+          "valid_extra": {
+            "n": 4,
+            "success": 1.0,
+            "help_rate": 0.0,
+            "wrong_move": 0.0,
+            "coverage": 1.0
+          },
+          "valid_partial": {
+            "n": 3,
+            "success": 1.0,
+            "help_rate": 0.0,
+            "wrong_move": 0.0,
+            "coverage": 1.0
+          },
+          "valid_typo": {
+            "n": 3,
+            "success": 1.0,
+            "help_rate": 0.0,
+            "wrong_move": 0.0,
+            "coverage": 1.0
+          }
+        }
+      }
+    }
+  },
+  "repeated_splits": {
+    "q_hat": {
+      "mean": 0.5094746437698386,
+      "sd": 0.040617762612528675,
+      "p05": 0.5131222265306762,
+      "p50": 0.5131222265306762,
+      "p95": 0.5131222265306762,
+      "min": 0.05717438142598508,
+      "max": 0.5131222265306762,
+      "runs": 1000
+    },
+    "tau": {
+      "mean": 0.3934011478449843,
+      "sd": 0.07808476185681171,
+      "p05": 0.3281738250409036,
+      "p50": 0.3281738250409036,
+      "p95": 0.4868777734693238,
+      "min": 0.3281738250409036,
+      "max": 0.4868777734693238,
+      "runs": 1000
+    },
+    "policies": {
+      "greedy": {
+        "success": {
+          "mean": 0.9027073170731708,
+          "sd": 0.034603894379770066,
+          "p05": 0.8536585365853658,
+          "p50": 0.9024390243902439,
+          "p95": 0.9512195121951219,
+          "min": 0.8048780487804879,
+          "max": 1.0,
+          "runs": 1000
+        },
+        "help_rate": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "runs": 1000
+        },
+        "wrong_move": {
+          "mean": 0.09729268292682927,
+          "sd": 0.03460389437977006,
+          "p05": 0.04878048780487805,
+          "p50": 0.0975609756097561,
+          "p95": 0.14634146341463414,
+          "min": 0.0,
+          "max": 0.1951219512195122,
+          "runs": 1000
+        },
+        "coverage": {
+          "mean": 0.9027073170731708,
+          "sd": 0.034603894379770066,
+          "p05": 0.8536585365853658,
+          "p50": 0.9024390243902439,
+          "p95": 0.9512195121951219,
+          "min": 0.8048780487804879,
+          "max": 1.0,
+          "runs": 1000
+        },
+        "mean_set_size": {
+          "mean": 1,
+          "sd": 0.0,
+          "p05": 1,
+          "p50": 1,
+          "p95": 1,
+          "min": 1,
+          "max": 1,
+          "runs": 1000
+        }
+      },
+      "fixed threshold": {
+        "success": {
+          "mean": 0.914829268292683,
+          "sd": 0.04485375800729032,
+          "p05": 0.8536585365853658,
+          "p50": 0.9024390243902439,
+          "p95": 0.975609756097561,
+          "min": 0.8048780487804879,
+          "max": 1.0,
+          "runs": 1000
+        },
+        "help_rate": {
+          "mean": 0.012121951219512195,
+          "sd": 0.022273928707336035,
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.04878048780487805,
+          "min": 0.0,
+          "max": 0.0975609756097561,
+          "runs": 1000
+        },
+        "wrong_move": {
+          "mean": 0.08517073170731708,
+          "sd": 0.04485375800729033,
+          "p05": 0.024390243902439025,
+          "p50": 0.0975609756097561,
+          "p95": 0.14634146341463414,
+          "min": 0.0,
+          "max": 0.1951219512195122,
+          "runs": 1000
+        },
+        "coverage": {
+          "mean": 0.914829268292683,
+          "sd": 0.04485375800729032,
+          "p05": 0.8536585365853658,
+          "p50": 0.9024390243902439,
+          "p95": 0.975609756097561,
+          "min": 0.8048780487804879,
+          "max": 1.0,
+          "runs": 1000
+        },
+        "mean_set_size": {
+          "mean": 0.9878780487804878,
+          "sd": 0.022273928707336042,
+          "p05": 0.9512195121951219,
+          "p50": 1,
+          "p95": 1,
+          "min": 0.9024390243902439,
+          "max": 1,
+          "runs": 1000
+        }
+      },
+      "conformal + ask": {
+        "success": {
+          "mean": 0.9983414634146341,
+          "sd": 0.018565061567507764,
+          "p05": 1.0,
+          "p50": 1.0,
+          "p95": 1.0,
+          "min": 0.7560975609756098,
+          "max": 1.0,
+          "runs": 1000
+        },
+        "help_rate": {
+          "mean": 0.1566829268292683,
+          "sd": 0.04323492540225975,
+          "p05": 0.0975609756097561,
+          "p50": 0.14634146341463414,
+          "p95": 0.21951219512195122,
+          "min": 0.024390243902439025,
+          "max": 0.2682926829268293,
+          "runs": 1000
+        },
+        "wrong_move": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "runs": 1000
+        },
+        "coverage": {
+          "mean": 0.9591463414634146,
+          "sd": 0.03128589550555922,
+          "p05": 0.926829268292683,
+          "p50": 0.9512195121951219,
+          "p95": 1.0,
+          "min": 0.7317073170731707,
+          "max": 1.0,
+          "runs": 1000
+        },
+        "mean_set_size": {
+          "mean": 1.0749756097560976,
+          "sd": 0.05619569359465346,
+          "p05": 1,
+          "p50": 1.0731707317073171,
+          "p95": 1.146341463414634,
+          "min": 0.7317073170731707,
+          "max": 1.2195121951219512,
+          "runs": 1000
+        }
+      }
+    }
+  },
+  "expected_coverage_bounds": [
+    0.9,
+    0.9161290322580645
+  ]
+}

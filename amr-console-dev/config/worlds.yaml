@@ -1,0 +1,33 @@
+# Simulated worlds the console offers. Paths are relative to the repository root.
+#
+# Every world has a saved map. The map frame's (0, 0) is the robot's spawn point (the dock),
+# so world = map + spawn (x, y). The console's RViz grid and the Gazebo grid are both laid
+# over the saved map from this rule, so each world gets a grid that fits it.
+#
+# To add a world: add its Gazebo world file (or null for the TurtleBot3 reference world),
+# its saved map pair (.yaml + .pgm) and an entry here. Delivery commands also need a
+# named-places file, a grounding calibration file and an approval key.
+
+default: proposed_system
+
+worlds:
+  proposed_system:
+    label: Demo office (18 × 12 m)
+    world: src/amr_physical_ai/worlds/proposed_system.sdf.xacro
+    layout: src/amr_physical_ai/worlds/proposed_system_layout.yaml
+    map: src/amr_physical_ai/maps/proposed_system.yaml
+    spawn: [-2.0, -0.5, 0.0]
+    view_scale: 30            # RViz pixels per metre, so the whole map fits the window
+    explore: true             # the exact map exists, so automatic exploration can be scored
+    places: src/amr_physical_ai/config/named_locations_proposed_system.yaml
+    tags: config/tags_proposed_system.yaml
+    grounding: config/calibration/proposed_system/grounding/results.json
+    approval: proposed_system_places
+
+  tb3_sandbox:
+    label: TurtleBot3 sandbox
+    world: null               # nav2_minimal_tb3_sim's tb3_sandbox world
+    map: src/amr_physical_ai/maps/tb3_sandbox.yaml
+    spawn: [-2.0, -0.5, 0.0]
+    view_scale: 80
+    explore: false            # SLAM-built map, not exact: exploration cannot be scored here

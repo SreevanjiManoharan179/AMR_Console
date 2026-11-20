@@ -1,0 +1,6 @@
+# Store every file byte for byte and never convert line endings: some data files are pinned by
+# their hash, and the CSV files end their lines with CRLF.
+* -text
+*.png binary
+*.pgm binary
+*.npz binary

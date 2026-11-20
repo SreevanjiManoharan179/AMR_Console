@@ -1,0 +1,83 @@
+{
+  "repo_id": "ai4bharat/indictrans2-indic-en-dist-200M",
+  "revision": "d66a2122ad6d28184f3dc3797b652bd80ae3f65f",
+  "files": [
+    {
+      "rfilename": "LICENSE",
+      "blobId": "03070285be3aab2c5603737115bb71df3f7bbdf5",
+      "size": 1128
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "7ea224e5f729e98363f3f415945984920120aea2",
+      "size": 5045
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "35405f014dd62747bf5e6e6bb073df7d28b2e1a0",
+      "size": 1370
+    },
+    {
+      "rfilename": "configuration_indictrans.py",
+      "blobId": "110d923f8fffda96398f05c30e00f94e341670ec",
+      "size": 14155
+    },
+    {
+      "rfilename": "dict.SRC.json",
+      "blobId": "417a049588f7d60df9b64b6735f79aa92fbe2e50",
+      "size": 3391208
+    },
+    {
+      "rfilename": "dict.TGT.json",
+      "blobId": "c02436a9fc89002a6aa0a9756d8fb7d74dc1c66c",
+      "size": 644755
+    },
+    {
+      "rfilename": "generation_config.json",
+      "blobId": "542cc0f13b067a9bd56e0334c422a1e51de28e19",
+      "size": 163
+    },
+    {
+      "rfilename": "model.SRC",
+      "blobId": "e3cfbb624421efbf88f1c816d99b386d29329e61",
+      "size": 3256903,
+      "lfs": {
+        "sha256": "ac9257c8e76b8b607705b959cc3d075656ea33032f7a974e467b8941df6e98d4",
+        "size": 3256903,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "model.TGT",
+      "blobId": "4841e2bc6e5116de279437e88fe9bcaa7656f813",
+      "size": 759425
+    },
+    {
+      "rfilename": "model.safetensors",
+      "blobId": "0dccf3b0239ee394d0fc9968cf1978592899c008",
+      "size": 913353672,
+      "lfs": {
+        "sha256": "a9bff20ae94712db41c8dc99d2e381eb456ddccbcd48cb2c7cf077ccc5bc58d8",
+        "size": 913353672,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "modeling_indictrans.py",
+      "blobId": "efbe438f6f1e8f57bd0652e9458f2755adb87900",
+      "size": 79785
+    },
+    {
+      "rfilename": "tokenization_indictrans.py",
+      "blobId": "53c9be07a1dda3273ed8c2af4f30b635edff4b31",
+      "size": 8044
+    },
+    {
+      "rfilename": "tokenizer_config.json",
+      "blobId": "4d12aafc2cf58013deeffe761d6930af826949cb",
+      "size": 1105
+    }
+  ],
+  "total_bytes": 921516758,
+  "status": "WAITING_FOR_APPROVED_C"
+}

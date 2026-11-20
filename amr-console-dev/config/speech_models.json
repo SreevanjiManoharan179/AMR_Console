@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "comment": "Speech-to-text models for office tasks. Each is pinned to one published revision and downloaded only after the owner writes 'approved speech' (see docs/OFFICE_TASKS.md). Models run on this computer, offline, on the processor by default.",
+  "models": {
+    "whisper_base_en": {
+      "engine": "faster_whisper",
+      "repo": "Systran/faster-whisper-base.en",
+      "revision": "3d3d5dee26484f91867d81cb899cfcf72b96be6c",
+      "licence": "MIT",
+      "gated": false,
+      "published_bytes": 145216508,
+      "languages": ["en"],
+      "device": "cpu",
+      "compute_type": "int8"
+    },
+    "whisper_small_en": {
+      "engine": "faster_whisper",
+      "repo": "Systran/faster-whisper-small.en",
+      "revision": "d1d751a5f8271d482d14ca55d9e2deeebbae577f",
+      "licence": "MIT",
+      "gated": false,
+      "published_bytes": 483545366,
+      "languages": ["en"],
+      "device": "cpu",
+      "compute_type": "int8"
+    },
+    "indic_conformer": {
+      "engine": "indic_conformer",
+      "repo": "ai4bharat/indic-conformer-600m-multilingual",
+      "revision": "e9b71b369c048e2c6b634d4c131061c34e441179",
+      "licence": "MIT",
+      "gated": true,
+      "published_bytes": 2553503826,
+      "languages": ["ta", "ml", "te"],
+      "decoding": "rnnt",
+      "remote_code": "model_onnx.py",
+      "reviewed_code_sha256": "700f1897493f68fc522ce73dd7f91aa39b28fc20285d3d635e92de241b3910ae"
+    }
+  }
+}

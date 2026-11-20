@@ -1,0 +1,805 @@
+{
+ "about": "Office request check: typed test requests with the result each should give. English is the console's working language; the Tamil, Tanglish, Malayalam and Telugu groups and the spoken clips are kept for the Speech Lab work and are not expected to pass in the English-only console.",
+ "requester": "Bharathwaj",
+ "cases": [
+  {
+   "id": "en_deliver",
+   "group": "en",
+   "text": "Give the file to Divya.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ]
+    ],
+    "language": "en"
+   }
+  },
+  {
+   "id": "en_fallback",
+   "group": "en",
+   "text": "Give the file to Divya. If she is not there, leave it with Priya.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "en_try_later",
+   "group": "en",
+   "text": "Give the file to Divya. If she is not there, try again in 10 minutes.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "en_collect",
+   "group": "en",
+   "text": "Get the charger from Arun.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "retrieve",
+      "Arun"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "en_ask",
+   "group": "en",
+   "text": "Ask Arun whether the encoder is ready.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "check",
+      "Arun"
+     ]
+    ]
+   },
+   "answer": "It is ready."
+  },
+  {
+   "id": "en_ask_place",
+   "group": "en",
+   "text": "Ask at reception: did any visitors come today?",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "check",
+      "reception"
+     ]
+    ]
+   },
+   "answer": "It is ready."
+  },
+  {
+   "id": "en_tell",
+   "group": "en",
+   "text": "Tell Meera the meeting moved to 3 pm.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "tell",
+      "Meera"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "en_go",
+   "group": "en",
+   "text": "Go to the cafeteria.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "go",
+      "cafeteria"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "en_come_back",
+   "group": "en",
+   "text": "Take this file to Divya, then ask Arun whether the encoder is ready, and come back.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ],
+     [
+      "check",
+      "Arun"
+     ],
+     [
+      "go",
+      "me"
+     ]
+    ]
+   },
+   "answer": "It is ready."
+  },
+  {
+   "id": "en_three_jobs",
+   "group": "en",
+   "text": "Give the file to Priya, then get the charger from Arun, then tell Ravi I am ready.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Priya"
+     ],
+     [
+      "retrieve",
+      "Arun"
+     ],
+     [
+      "tell",
+      "Ravi"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "en_branch",
+   "group": "en",
+   "text": "Check at the conference hall: is the room free? If yes, tell Ravi the room is free. If no, deliver the file to Priya.",
+   "expect": {
+    "decision": "act"
+   }
+  },
+  {
+   "id": "en_unknown_place",
+   "group": "en",
+   "text": "Go to the server room.",
+   "expect": {
+    "decision": "ask",
+    "ask": "unknown_place"
+   }
+  },
+  {
+   "id": "en_ambiguous_place",
+   "group": "en",
+   "text": "Give the file to the office.",
+   "expect": {
+    "decision": "ask"
+   }
+  },
+  {
+   "id": "en_new_person",
+   "group": "en",
+   "text": "Give the charger to Karthik.",
+   "expect": {
+    "decision": "ask"
+   }
+  },
+  {
+   "id": "en_too_many",
+   "group": "en",
+   "text": "Go to reception, then the cafeteria, then the demo area, then storage, then the conference hall, then the team office, then the open office.",
+   "expect": {
+    "decision": "ask",
+    "ask": "split_job"
+   }
+  },
+  {
+   "id": "en_hot_tea",
+   "group": "en",
+   "text": "Bring hot tea to Divya.",
+   "expect": {
+    "decision": "refuse"
+   }
+  },
+  {
+   "id": "en_scissors",
+   "group": "en",
+   "text": "Take the scissors to Ravi.",
+   "expect": {
+    "decision": "refuse"
+   }
+  },
+  {
+   "id": "en_negation",
+   "group": "en",
+   "text": "Don't go to reception.",
+   "expect": {
+    "decision": "refuse"
+   }
+  },
+  {
+   "id": "en_unsupported_condition",
+   "group": "en",
+   "text": "Give the file to Divya. If she is not there, wait until she is back.",
+   "expect": {
+    "decision": "refuse",
+    "refuse": "unsupported_condition"
+   }
+  },
+  {
+   "id": "en_lift",
+   "group": "en",
+   "text": "Take the lift to the second floor.",
+   "expect": {
+    "decision": "refuse"
+   }
+  },
+  {
+   "id": "en_chain_four_items",
+   "group": "en",
+   "text": "Give the file to Divya, then the charger to Ravi, then the folder to Meera, then the letter to Arun.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ],
+     [
+      "deliver",
+      "Ravi"
+     ],
+     [
+      "deliver",
+      "Meera"
+     ],
+     [
+      "deliver",
+      "Arun"
+     ]
+    ],
+    "language": "en"
+   }
+  },
+  {
+   "id": "en_chain_mixed",
+   "group": "en",
+   "text": "Give the file to Divya, then ask Arun whether the encoder is ready, then call Meera, then come back.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ],
+     [
+      "check",
+      "Arun"
+     ],
+     [
+      "tell",
+      "Meera"
+     ],
+     [
+      "go",
+      "me"
+     ]
+    ],
+    "language": "en"
+   }
+  },
+  {
+   "id": "en_chain_and",
+   "group": "en",
+   "text": "Give the file to Divya and tell Ravi the meeting moved to 3.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ],
+     [
+      "tell",
+      "Ravi"
+     ]
+    ],
+    "language": "en"
+   }
+  },
+  {
+   "id": "en_stack_one_person",
+   "group": "en",
+   "text": "Give the file, the charger and the folder to Divya.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ]
+    ],
+    "language": "en"
+   }
+  },
+  {
+   "id": "en_stack_too_many",
+   "group": "en",
+   "text": "Give the file, the charger, the folder, the letter and the parcel to Divya.",
+   "expect": {
+    "decision": "refuse",
+    "refuse": "too_many_items",
+    "language": "en"
+   }
+  },
+  {
+   "id": "en_call",
+   "group": "en",
+   "text": "Call Ravi to the conference hall.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "tell",
+      "Ravi"
+     ]
+    ],
+    "language": "en"
+   }
+  },
+  {
+   "id": "en_ask_to_come",
+   "group": "en",
+   "text": "Ask Ravi to come here.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "tell",
+      "Ravi"
+     ]
+    ],
+    "language": "en"
+   }
+  },
+  {
+   "id": "en_otherwise_steps",
+   "group": "en",
+   "text": "Give the file to Divya. If she is not there, go to Priya and ask her where she is now.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ]
+    ],
+    "language": "en"
+   }
+  },
+  {
+   "id": "en_then_leave_with",
+   "group": "en",
+   "text": "Give the file to Divya. If she is not there, then give it to Priya.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ]
+    ],
+    "language": "en"
+   }
+  },
+  {
+   "id": "en_branch_go_call",
+   "group": "en",
+   "text": "Ask Arun whether the encoder is ready. If yes, go to Divya and tell her the encoder is ready. If no, call Ravi.",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "check",
+      "Arun"
+     ]
+    ],
+    "language": "en"
+   }
+  },
+  {
+   "id": "ta_deliver",
+   "group": "ta",
+   "text": "இந்த கோப்பை திவ்யாவிடம் கொடுங்க",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ]
+    ],
+    "language": "ta"
+   }
+  },
+  {
+   "id": "ta_ask",
+   "group": "ta",
+   "text": "அருணிடம் என்கோடர் தயாரா என்று கேளுங்க",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "check",
+      "Arun"
+     ]
+    ],
+    "language": "ta"
+   },
+   "answer": "It is ready."
+  },
+  {
+   "id": "ta_tell",
+   "group": "ta",
+   "text": "மீராவிடம் கூட்டம் மூன்று மணிக்கு மாறியது என்று சொல்லுங்க",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "tell",
+      "Meera"
+     ]
+    ],
+    "language": "ta"
+   }
+  },
+  {
+   "id": "ta_collect",
+   "group": "ta",
+   "text": "ரவியிடம் இருந்து சார்ஜரை வாங்கி வாருங்கள்",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "retrieve",
+      "Ravi"
+     ]
+    ],
+    "language": "ta"
+   }
+  },
+  {
+   "id": "ta_go",
+   "group": "ta",
+   "text": "வரவேற்புக்கு போ",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "go",
+      "reception"
+     ]
+    ],
+    "language": "ta"
+   }
+  },
+  {
+   "id": "ta_negation",
+   "group": "ta",
+   "text": "வரவேற்புக்கு போகாதே",
+   "expect": {
+    "decision": "refuse"
+   }
+  },
+  {
+   "id": "tanglish_deliver",
+   "group": "tanglish",
+   "text": "file-ஐ Divya-கிட்ட கொடுங்க",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ]
+    ],
+    "language": "ta"
+   }
+  },
+  {
+   "id": "tanglish_ask",
+   "group": "tanglish",
+   "text": "Arun-கிட்ட encoder ready-ஆ-ன்னு கேளுங்க",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "check",
+      "Arun"
+     ]
+    ],
+    "language": "ta"
+   },
+   "answer": "It is ready."
+  },
+  {
+   "id": "tanglish_tell",
+   "group": "tanglish",
+   "text": "Meera-கிட்ட meeting three o'clock-க்கு மாறிடுச்சுன்னு சொல்லுங்க",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "tell",
+      "Meera"
+     ]
+    ],
+    "language": "ta"
+   }
+  },
+  {
+   "id": "tanglish_collect",
+   "group": "tanglish",
+   "text": "Ravi-கிட்ட இருந்து charger எடுத்துட்டு வாங்க",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "retrieve",
+      "Ravi"
+     ]
+    ],
+    "language": "ta"
+   }
+  },
+  {
+   "id": "tanglish_cabin",
+   "group": "tanglish",
+   "text": "manager cabin-ku கோப்பு kudunga",
+   "expect": {
+    "decision": "act"
+   }
+  },
+  {
+   "id": "tanglish_latin_deliver",
+   "group": "tanglish_latin",
+   "text": "file-a Divya kitta kudunga",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "tanglish_latin_ask",
+   "group": "tanglish_latin",
+   "text": "Arun kitta encoder ready-aa nu kelunga",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "check",
+      "Arun"
+     ]
+    ]
+   },
+   "answer": "It is ready."
+  },
+  {
+   "id": "ml_deliver",
+   "group": "ml",
+   "text": "ഈ ഫയൽ ദിവ്യയ്ക്ക് കൊടുക്കൂ",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ]
+    ],
+    "language": "ml"
+   }
+  },
+  {
+   "id": "ml_go",
+   "group": "ml",
+   "text": "റിസപ്ഷനിലേക്ക് പോകൂ",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "go",
+      "reception"
+     ]
+    ],
+    "language": "ml"
+   }
+  },
+  {
+   "id": "ml_ask",
+   "group": "ml",
+   "text": "എൻകോഡർ തയ്യാറാണോ എന്ന് അരുണിനോട് ചോദിക്കൂ",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "check",
+      "Arun"
+     ]
+    ],
+    "language": "ml"
+   },
+   "answer": "It is ready."
+  },
+  {
+   "id": "ml_negation",
+   "group": "ml",
+   "text": "റിസപ്ഷനിലേക്ക് പോകരുത്",
+   "expect": {
+    "decision": "refuse"
+   }
+  },
+  {
+   "id": "te_deliver",
+   "group": "te",
+   "text": "ఈ ఫైల్ దివ్యకు ఇవ్వండి",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ]
+    ],
+    "language": "te"
+   }
+  },
+  {
+   "id": "te_go",
+   "group": "te",
+   "text": "రిసెప్షన్‌కు వెళ్ళండి",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "go",
+      "reception"
+     ]
+    ],
+    "language": "te"
+   }
+  },
+  {
+   "id": "te_ask",
+   "group": "te",
+   "text": "ఎన్‌కోడర్ సిద్ధంగా ఉందా అని అరుణ్‌ను అడగండి",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "check",
+      "Arun"
+     ]
+    ],
+    "language": "te"
+   },
+   "answer": "It is ready."
+  },
+  {
+   "id": "te_negation",
+   "group": "te",
+   "text": "రిసెప్షన్‌కు వెళ్లవద్దు",
+   "expect": {
+    "decision": "refuse"
+   }
+  },
+  {
+   "id": "spoken_en_01",
+   "group": "spoken_en",
+   "audio": "data/evaluation/speech_owner/clip_en_01.wav",
+   "language": "en",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "spoken_en_02",
+   "group": "spoken_en",
+   "audio": "data/evaluation/speech_owner/clip_en_02.wav",
+   "language": "en",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "check",
+      "Arun"
+     ]
+    ]
+   },
+   "answer": "It is ready."
+  },
+  {
+   "id": "spoken_ta_01",
+   "group": "spoken_ta",
+   "audio": "data/evaluation/speech_owner/clip_ta_01.wav",
+   "language": "ta",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "spoken_ta_02",
+   "group": "spoken_ta",
+   "audio": "data/evaluation/speech_owner/clip_ta_02.wav",
+   "language": "ta",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "check",
+      "Arun"
+     ]
+    ]
+   },
+   "answer": "It is ready."
+  },
+  {
+   "id": "spoken_tanglish_01",
+   "group": "spoken_tanglish",
+   "audio": "data/evaluation/speech_owner/clip_tanglish_01.wav",
+   "language": "ta",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "deliver",
+      "Divya"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "spoken_tanglish_02",
+   "group": "spoken_tanglish",
+   "audio": "data/evaluation/speech_owner/clip_tanglish_02.wav",
+   "language": "ta",
+   "expect": {
+    "decision": "act",
+    "steps": [
+     [
+      "check",
+      "Arun"
+     ]
+    ]
+   },
+   "answer": "It is ready."
+  }
+ ]
+}

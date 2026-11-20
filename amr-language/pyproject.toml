@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amr-language"
+version = "0.8.1"
+description = "Offline task-form extraction and approved-name grounding for AMR Console in simulation"
+requires-python = ">=3.12"
+dependencies = ["PyYAML>=6.0"]
+license = {text = "Proprietary; see LICENSE"}
+
+[tool.setuptools.packages.find]
+include = ["amr_language*"]
+
+[tool.setuptools.package-data]
+amr_language = ["task_form.schema.json", "plan_v3.schema.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

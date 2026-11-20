@@ -1,0 +1,13 @@
+# Use after the places are confirmed and after the Nav2 controller comparison finishes.
+# TurtleBot3 Waffle simulation.
+commands:
+  - text: Go to north_station.
+    expected: SUCCEEDED
+  - text: Could you head over to the right station please?
+    expected: SUCCEEDED
+  - text: Return to base.
+    expected: SUCCEEDED
+  - text: Go to a station.
+    expected: CLARIFICATION
+  - text: Take me to the kitchen.
+    expected: CLARIFICATION

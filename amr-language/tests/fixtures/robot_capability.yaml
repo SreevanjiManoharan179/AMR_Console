@@ -1,0 +1,22 @@
+# SCRIPTED TEST VALUES ONLY. Not measured robot capabilities.
+schema_version: 1
+approval_status: confirmed
+tray_inner_cm: {length: 30, width: 20, height: 10}
+maximum_payload_kg: 3
+maximum_steps_per_job: 6
+maximum_wait_at_stop_s: 30
+reachable_areas: from_map_facts
+item_classes:
+  documents: {rule: ok, terms: [file, folder, document, letter]}
+  small_electronics: {rule: ok, terms: [charger]}
+  lab_electronics: {rule: ok, terms: [encoder, motor driver, servo, sensor, lidar, camera, IMU, Raspberry Pi, Arduino, ESP32, dev board, USB cable, jumper wires, multimeter, screwdriver set, 3D-printed part]}
+  laptops: {rule: ask_at_pickup, fragile: true, terms: [laptop]}
+  battery_packs: {rule: ask_at_pickup, fragile: true, requires_bag: true, terms: [battery pack]}
+  motors: {rule: ask_at_pickup, by_weight_class: true, terms: [motor, heavy actuator]}
+  hot_tools: {rule: not_allowed, terms: [soldering iron, hot tool]}
+  packaging: {rule: ask_at_pickup, terms: [parcel, box, cup]}
+  open_hot_drinks: {rule: not_allowed, terms: [open hot drink, open hot tea, open hot coffee]}
+  liquids_without_lid: {rule: not_allowed, terms: [liquid without a lid, unsealed liquid]}
+  cash: {rule: not_allowed, terms: [cash, banknotes]}
+  sharp: {rule: not_allowed, terms: [knife, sharp item]}
+  oversized: {rule: not_allowed, terms: [oversized item]}

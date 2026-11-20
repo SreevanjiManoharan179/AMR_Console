@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AMR Language task form v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "language",
+    "steps",
+    "out_of_scope",
+    "reason"
+  ],
+  "properties": {
+    "language": {
+      "type": "string",
+      "enum": [
+        "en",
+        "ta",
+        "ml",
+        "te",
+        "mixed"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "action",
+          "place",
+          "person",
+          "object",
+          "item"
+        ],
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "go",
+              "check",
+              "deliver",
+              "wait_ack",
+              "retry",
+              "return"
+            ]
+          },
+          "place": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 300
+          },
+          "person": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 300
+          },
+          "object": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 300
+          },
+          "item": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 300
+          }
+        }
+      }
+    },
+    "out_of_scope": {
+      "type": "boolean"
+    },
+    "reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 300
+    }
+  }
+}

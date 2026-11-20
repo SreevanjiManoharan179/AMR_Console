@@ -1,0 +1,60 @@
+# Robot tray and weight limits for office tasks: SIMULATION ONLY.
+# These are proposed values for the simulated TurtleBot3 Waffle in the demo office, not measured
+# limits of a real robot. Replace them with the real robot's tray size and payload before any
+# physical use.
+#
+# Owner approval: review every value, then change the next line to   approval_status: confirmed
+# Until then the robot does not drive for office tasks. "Try without the robot" still works.
+schema_version: 1
+approval_status: confirmed
+tray_inner_cm: {length: 30, width: 20, height: 10}
+maximum_payload_kg: 2
+maximum_steps_per_job: 6
+maximum_wait_at_stop_s: 60
+reachable_areas: from_map_facts
+item_classes:
+  documents:
+    rule: ok
+    terms: [file, files, folder, document, documents, letter, papers, report]
+  small_electronics:
+    rule: ok
+    terms: [charger, laptop charger, phone charger, encoder, motor driver, servo, sensor, lidar,
+            camera, IMU, multimeter, power bank]
+  cables_and_boards:
+    rule: ok
+    terms: [Raspberry Pi, Arduino, ESP32, dev board, USB cable, cable, jumper wires, adapter,
+            3D-printed part, screwdriver set, keys, pen drive]
+  laptops:
+    rule: ask_at_pickup
+    fragile: true
+    terms: [laptop]
+  battery_packs:
+    rule: ask_at_pickup
+    requires_bag: true
+    fragile: true
+    terms: [battery pack, battery, LiPo battery]
+  motors_and_actuators:
+    rule: ask_at_pickup
+    by_weight_class: true
+    terms: [motor, heavy actuator, gearbox]
+  parcels:
+    rule: ask_at_pickup
+    terms: [parcel, box, package, cup, bottle, lunch box]
+  hot_tools:
+    rule: not_allowed
+    terms: [soldering iron, hot tool, heat gun, glue gun]
+  open_hot_drinks:
+    rule: not_allowed
+    terms: [open hot drink, open hot tea, open hot coffee, hot tea, hot coffee]
+  liquids_without_lid:
+    rule: not_allowed
+    terms: [liquid without a lid, unsealed liquid, open liquid]
+  cash:
+    rule: not_allowed
+    terms: [cash, banknotes, money]
+  sharp:
+    rule: not_allowed
+    terms: [knife, sharp item, exposed blade, blade, scissors]
+  oversized:
+    rule: not_allowed
+    terms: [oversized item, item that does not fit, chair, monitor, printer]

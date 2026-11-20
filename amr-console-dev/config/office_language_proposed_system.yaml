@@ -1,0 +1,201 @@
+# Office tasks: how people and places are named in each language on the proposed_system map.
+# Fictional demo profiles. Each person's language is the language the robot speaks to them.
+# Every Tamil, Malayalam and Telugu entry needs a native-speaker check before real use.
+# Coordinates and the roster itself come only from config/tags_proposed_system.yaml.
+schema_version: 1
+map_id: proposed_system
+review_status: 'draft: fictional office profiles; every Tamil, Malayalam and Telugu name needs a native-speaker
+  check'
+rooms:
+  home:
+    aliases_by_language:
+      ta:
+      - தளம்
+      - முகப்பு
+      - dock
+      ml:
+      - ഡോക്ക്
+      te:
+      - డాక్
+  reception:
+    aliases_by_language:
+      ta:
+      - வரவேற்பு
+      - வரவேற்பிடம்
+      - reception
+      ml:
+      - റിസപ്ഷൻ
+      te:
+      - రిసెప్షన్
+  conference_hall:
+    aliases_by_language:
+      ta:
+      - கூட்ட அறை
+      - மாநாட்டு அறை
+      - meeting room
+      ml:
+      - യോഗമുറി
+      te:
+      - సమావేశ గది
+  demo_area:
+    aliases_by_language:
+      ta:
+      - காட்சி பகுதி
+      - demo area
+      ml:
+      - പ്രദർശന സ്ഥലം
+      te:
+      - ప్రదర్శన ప్రాంతం
+  cafeteria:
+    aliases_by_language:
+      ta:
+      - உணவகம்
+      - கேன்டீன்
+      - canteen
+      ml:
+      - കാന്റീൻ
+      te:
+      - క్యాంటీన్
+  open_office:
+    aliases_by_language:
+      ta:
+      - திறந்த அலுவலகம்
+      - open office
+      - அலுவலகம்
+      ml:
+      - തുറന്ന ഓഫീസ്
+      - ഓഫീസ്
+      te:
+      - ఓపెన్ ఆఫీస్
+      - ఆఫీస్
+  team_office:
+    aliases_by_language:
+      ta:
+      - குழு அலுவலகம்
+      - team office
+      - அலுவலகம்
+      ml:
+      - ടീം ഓഫീസ്
+      - ഓഫീസ്
+      te:
+      - టీమ్ ఆఫీస్
+      - ఆఫీస్
+  manager_cabin:
+    aliases_by_language:
+      ta:
+      - மேனேஜர் கேபின்
+      - மேலாளர் அறை
+      - manager cabin
+      ml:
+      - മാനേജർ കാബിൻ
+      te:
+      - మేనేజర్ క్యాబిన్
+  storage:
+    aliases_by_language:
+      ta:
+      - சேமிப்பு அறை
+      - storage
+      ml:
+      - സംഭരണ മുറി
+      te:
+      - నిల్వ గది
+objects:
+  printer:
+    aliases_by_language:
+      ta:
+      - அச்சுப்பொறி
+      - printer
+      ml:
+      - പ്രിന്റർ
+      te:
+      - ప్రింటర్
+  fridge:
+    aliases_by_language:
+      ta:
+      - குளிர்சாதன பெட்டி
+      - fridge
+      ml:
+      - ഫ്രിഡ്ജ്
+      te:
+      - ఫ్రిజ్
+  reception_desk:
+    aliases_by_language:
+      ta:
+      - வரவேற்பு மேசை
+      ml:
+      - റിസപ്ഷൻ മേശ
+      te:
+      - రిసెప్షన్ డెస్క్
+people:
+  Priya:
+    language: ta
+    aliases_by_language:
+      ta:
+      - பிரியா
+      ml:
+      - പ്രിയ
+      te:
+      - ప్రియ
+  Neha:
+    language: ml
+    aliases_by_language:
+      ta:
+      - நேஹா
+      ml:
+      - നേഹ
+      te:
+      - నేహా
+  Arun:
+    language: te
+    aliases_by_language:
+      ta:
+      - அருண்
+      ml:
+      - അരുൺ
+      te:
+      - అరుణ్
+  Meera:
+    language: en
+    aliases_by_language:
+      ta:
+      - மீரா
+      ml:
+      - മീര
+      te:
+      - మీరా
+  Ravi:
+    language: ta
+    aliases_by_language:
+      ta:
+      - ரவி
+      ml:
+      - രവി
+      te:
+      - రవి
+  Asha:
+    language: ml
+    aliases_by_language:
+      ta:
+      - ஆஷா
+      ml:
+      - ആശ
+      te:
+      - ఆశ
+  Rani:
+    language: te
+    aliases_by_language:
+      ta:
+      - ராணி
+      ml:
+      - റാണി
+      te:
+      - రాణి
+  Divya:
+    language: en
+    aliases_by_language:
+      ta:
+      - திவ்யா
+      ml:
+      - ദിവ്യ
+      te:
+      - దివ్య

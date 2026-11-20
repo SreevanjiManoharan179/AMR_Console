@@ -1,0 +1,1280 @@
+{
+  "status": "UNCONFIRMED STARTER LABELS",
+  "requester": "Bharathwaj",
+  "rows": [
+    {
+      "id": "STARTER-en-01",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Give the file to Divya; if she is not there, leave it with Priya.",
+      "expected_steps": [
+        {
+          "action": "deliver",
+          "if_not_there": "leave_with:Priya",
+          "item": "file",
+          "to": "Divya",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": false
+    },
+    {
+      "id": "STARTER-en-02",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Get the charger from Arun and bring it to me.",
+      "expected_steps": [
+        {
+          "action": "retrieve",
+          "if_not_there": "bring_back",
+          "item": "charger",
+          "from": "Arun",
+          "to": "Bharathwaj",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": false
+    },
+    {
+      "id": "STARTER-en-03",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Ask at reception: Did any visitors come today?",
+      "expected_steps": [
+        {
+          "action": "check",
+          "if_not_there": "bring_back",
+          "at": "reception",
+          "question": "Did any visitors come today?",
+          "on_answer": null,
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": false
+    },
+    {
+      "id": "STARTER-en-04",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Tell Ravi: the meeting is at 3.",
+      "expected_steps": [
+        {
+          "action": "tell",
+          "if_not_there": "bring_back",
+          "to": "Ravi",
+          "message": "the meeting is at 3",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": false
+    },
+    {
+      "id": "STARTER-en-05",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Go home to the dock.",
+      "expected_steps": [
+        {
+          "action": "go",
+          "if_not_there": "bring_back",
+          "to": "home",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": false
+    },
+    {
+      "id": "STARTER-en-06",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Check at the conference hall: Is the room free? If yes, tell Ravi: the room is free. If no, deliver the file to Priya.",
+      "expected_steps": [
+        {
+          "action": "check",
+          "if_not_there": "bring_back",
+          "at": "conference_hall",
+          "question": "Is the room free?",
+          "on_answer": {
+            "yes": [
+              {
+                "action": "tell",
+                "if_not_there": "bring_back",
+                "to": "Ravi",
+                "message": "the room is free",
+                "n": 2
+              }
+            ],
+            "no": [
+              {
+                "action": "deliver",
+                "if_not_there": "bring_back",
+                "to": "Priya",
+                "item": "file",
+                "n": 3
+              }
+            ]
+          },
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": false
+    },
+    {
+      "id": "STARTER-en-07",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Give the file to Priya, get the charger from Arun for me, then tell Ravi: I am ready.",
+      "expected_steps": [
+        {
+          "action": "deliver",
+          "if_not_there": "bring_back",
+          "to": "Priya",
+          "item": "file",
+          "n": 1
+        },
+        {
+          "action": "retrieve",
+          "if_not_there": "bring_back",
+          "item": "charger",
+          "from": "Arun",
+          "to": "Bharathwaj",
+          "n": 2
+        },
+        {
+          "action": "tell",
+          "if_not_there": "bring_back",
+          "to": "Ravi",
+          "message": "I am ready",
+          "n": 3
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": false
+    },
+    {
+      "id": "STARTER-en-08",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Go to the server room.",
+      "expected_steps": [],
+      "expected_issue": "unknown_name",
+      "needs_native_speaker_check": false
+    },
+    {
+      "id": "STARTER-en-09",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Make tea.",
+      "expected_steps": [],
+      "expected_issue": "out_of_scope",
+      "needs_native_speaker_check": false
+    },
+    {
+      "id": "STARTER-en-10",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Go to reception; go to storage; go to cafeteria; go to demo area; go to open office; go to team office; go to manager cabin.",
+      "expected_steps": [],
+      "expected_issue": "too_many_steps",
+      "needs_native_speaker_check": false
+    },
+    {
+      "id": "STARTER-ta-01",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Give the file to Divya; if she is not there, leave it with Priya.",
+      "expected_steps": [
+        {
+          "action": "deliver",
+          "if_not_there": "leave_with:Priya",
+          "item": "file",
+          "to": "Divya",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ta-02",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Get the charger from Arun and bring it to me.",
+      "expected_steps": [
+        {
+          "action": "retrieve",
+          "if_not_there": "bring_back",
+          "item": "charger",
+          "from": "Arun",
+          "to": "Bharathwaj",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ta-03",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Ask at reception: Did any visitors come today?",
+      "expected_steps": [
+        {
+          "action": "check",
+          "if_not_there": "bring_back",
+          "at": "reception",
+          "question": "Did any visitors come today?",
+          "on_answer": null,
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ta-04",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Tell Ravi: the meeting is at 3.",
+      "expected_steps": [
+        {
+          "action": "tell",
+          "if_not_there": "bring_back",
+          "to": "Ravi",
+          "message": "the meeting is at 3",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ta-05",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Go home to the dock.",
+      "expected_steps": [
+        {
+          "action": "go",
+          "if_not_there": "bring_back",
+          "to": "home",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ta-06",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Check at the conference hall: Is the room free? If yes, tell Ravi: the room is free. If no, deliver the file to Priya.",
+      "expected_steps": [
+        {
+          "action": "check",
+          "if_not_there": "bring_back",
+          "at": "conference_hall",
+          "question": "Is the room free?",
+          "on_answer": {
+            "yes": [
+              {
+                "action": "tell",
+                "if_not_there": "bring_back",
+                "to": "Ravi",
+                "message": "the room is free",
+                "n": 2
+              }
+            ],
+            "no": [
+              {
+                "action": "deliver",
+                "if_not_there": "bring_back",
+                "to": "Priya",
+                "item": "file",
+                "n": 3
+              }
+            ]
+          },
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ta-07",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Give the file to Priya, get the charger from Arun for me, then tell Ravi: I am ready.",
+      "expected_steps": [
+        {
+          "action": "deliver",
+          "if_not_there": "bring_back",
+          "to": "Priya",
+          "item": "file",
+          "n": 1
+        },
+        {
+          "action": "retrieve",
+          "if_not_there": "bring_back",
+          "item": "charger",
+          "from": "Arun",
+          "to": "Bharathwaj",
+          "n": 2
+        },
+        {
+          "action": "tell",
+          "if_not_there": "bring_back",
+          "to": "Ravi",
+          "message": "I am ready",
+          "n": 3
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ta-08",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Go to the server room.",
+      "expected_steps": [],
+      "expected_issue": "unknown_name",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ta-09",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Make tea.",
+      "expected_steps": [],
+      "expected_issue": "out_of_scope",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ta-10",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Go to reception; go to storage; go to cafeteria; go to demo area; go to open office; go to team office; go to manager cabin.",
+      "expected_steps": [],
+      "expected_issue": "too_many_steps",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ml-01",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Give the file to Divya; if she is not there, leave it with Priya.",
+      "expected_steps": [
+        {
+          "action": "deliver",
+          "if_not_there": "leave_with:Priya",
+          "item": "file",
+          "to": "Divya",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ml-02",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Get the charger from Arun and bring it to me.",
+      "expected_steps": [
+        {
+          "action": "retrieve",
+          "if_not_there": "bring_back",
+          "item": "charger",
+          "from": "Arun",
+          "to": "Bharathwaj",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ml-03",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Ask at reception: Did any visitors come today?",
+      "expected_steps": [
+        {
+          "action": "check",
+          "if_not_there": "bring_back",
+          "at": "reception",
+          "question": "Did any visitors come today?",
+          "on_answer": null,
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ml-04",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Tell Ravi: the meeting is at 3.",
+      "expected_steps": [
+        {
+          "action": "tell",
+          "if_not_there": "bring_back",
+          "to": "Ravi",
+          "message": "the meeting is at 3",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ml-05",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Go home to the dock.",
+      "expected_steps": [
+        {
+          "action": "go",
+          "if_not_there": "bring_back",
+          "to": "home",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ml-06",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Check at the conference hall: Is the room free? If yes, tell Ravi: the room is free. If no, deliver the file to Priya.",
+      "expected_steps": [
+        {
+          "action": "check",
+          "if_not_there": "bring_back",
+          "at": "conference_hall",
+          "question": "Is the room free?",
+          "on_answer": {
+            "yes": [
+              {
+                "action": "tell",
+                "if_not_there": "bring_back",
+                "to": "Ravi",
+                "message": "the room is free",
+                "n": 2
+              }
+            ],
+            "no": [
+              {
+                "action": "deliver",
+                "if_not_there": "bring_back",
+                "to": "Priya",
+                "item": "file",
+                "n": 3
+              }
+            ]
+          },
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ml-07",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Give the file to Priya, get the charger from Arun for me, then tell Ravi: I am ready.",
+      "expected_steps": [
+        {
+          "action": "deliver",
+          "if_not_there": "bring_back",
+          "to": "Priya",
+          "item": "file",
+          "n": 1
+        },
+        {
+          "action": "retrieve",
+          "if_not_there": "bring_back",
+          "item": "charger",
+          "from": "Arun",
+          "to": "Bharathwaj",
+          "n": 2
+        },
+        {
+          "action": "tell",
+          "if_not_there": "bring_back",
+          "to": "Ravi",
+          "message": "I am ready",
+          "n": 3
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ml-08",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Go to the server room.",
+      "expected_steps": [],
+      "expected_issue": "unknown_name",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ml-09",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Make tea.",
+      "expected_steps": [],
+      "expected_issue": "out_of_scope",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-ml-10",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Go to reception; go to storage; go to cafeteria; go to demo area; go to open office; go to team office; go to manager cabin.",
+      "expected_steps": [],
+      "expected_issue": "too_many_steps",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-te-01",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Give the file to Divya; if she is not there, leave it with Priya.",
+      "expected_steps": [
+        {
+          "action": "deliver",
+          "if_not_there": "leave_with:Priya",
+          "item": "file",
+          "to": "Divya",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-te-02",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Get the charger from Arun and bring it to me.",
+      "expected_steps": [
+        {
+          "action": "retrieve",
+          "if_not_there": "bring_back",
+          "item": "charger",
+          "from": "Arun",
+          "to": "Bharathwaj",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-te-03",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Ask at reception: Did any visitors come today?",
+      "expected_steps": [
+        {
+          "action": "check",
+          "if_not_there": "bring_back",
+          "at": "reception",
+          "question": "Did any visitors come today?",
+          "on_answer": null,
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-te-04",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Tell Ravi: the meeting is at 3.",
+      "expected_steps": [
+        {
+          "action": "tell",
+          "if_not_there": "bring_back",
+          "to": "Ravi",
+          "message": "the meeting is at 3",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-te-05",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Go home to the dock.",
+      "expected_steps": [
+        {
+          "action": "go",
+          "if_not_there": "bring_back",
+          "to": "home",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-te-06",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Check at the conference hall: Is the room free? If yes, tell Ravi: the room is free. If no, deliver the file to Priya.",
+      "expected_steps": [
+        {
+          "action": "check",
+          "if_not_there": "bring_back",
+          "at": "conference_hall",
+          "question": "Is the room free?",
+          "on_answer": {
+            "yes": [
+              {
+                "action": "tell",
+                "if_not_there": "bring_back",
+                "to": "Ravi",
+                "message": "the room is free",
+                "n": 2
+              }
+            ],
+            "no": [
+              {
+                "action": "deliver",
+                "if_not_there": "bring_back",
+                "to": "Priya",
+                "item": "file",
+                "n": 3
+              }
+            ]
+          },
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-te-07",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Give the file to Priya, get the charger from Arun for me, then tell Ravi: I am ready.",
+      "expected_steps": [
+        {
+          "action": "deliver",
+          "if_not_there": "bring_back",
+          "to": "Priya",
+          "item": "file",
+          "n": 1
+        },
+        {
+          "action": "retrieve",
+          "if_not_there": "bring_back",
+          "item": "charger",
+          "from": "Arun",
+          "to": "Bharathwaj",
+          "n": 2
+        },
+        {
+          "action": "tell",
+          "if_not_there": "bring_back",
+          "to": "Ravi",
+          "message": "I am ready",
+          "n": 3
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-te-08",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Go to the server room.",
+      "expected_steps": [],
+      "expected_issue": "unknown_name",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-te-09",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Make tea.",
+      "expected_steps": [],
+      "expected_issue": "out_of_scope",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-te-10",
+      "source": "STARTER",
+      "confirmed_by_owner": false,
+      "expected_english": "Go to reception; go to storage; go to cafeteria; go to demo area; go to open office; go to team office; go to manager cabin.",
+      "expected_steps": [],
+      "expected_issue": "too_many_steps",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ta-01",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Give the file to Divya; if she is not there, leave it with Priya.",
+      "expected_steps": [
+        {
+          "action": "deliver",
+          "if_not_there": "leave_with:Priya",
+          "item": "file",
+          "to": "Divya",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ta-02",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Get the charger from Arun and bring it to me.",
+      "expected_steps": [
+        {
+          "action": "retrieve",
+          "if_not_there": "bring_back",
+          "item": "charger",
+          "from": "Arun",
+          "to": "Bharathwaj",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ta-03",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Ask at reception: Did any visitors come today?",
+      "expected_steps": [
+        {
+          "action": "check",
+          "if_not_there": "bring_back",
+          "at": "reception",
+          "question": "Did any visitors come today?",
+          "on_answer": null,
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ta-04",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Tell Ravi: the meeting is at 3.",
+      "expected_steps": [
+        {
+          "action": "tell",
+          "if_not_there": "bring_back",
+          "to": "Ravi",
+          "message": "the meeting is at 3",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ta-05",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Go home to the dock.",
+      "expected_steps": [
+        {
+          "action": "go",
+          "if_not_there": "bring_back",
+          "to": "home",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ta-06",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Check at the conference hall: Is the room free? If yes, tell Ravi: the room is free. If no, deliver the file to Priya.",
+      "expected_steps": [
+        {
+          "action": "check",
+          "if_not_there": "bring_back",
+          "at": "conference_hall",
+          "question": "Is the room free?",
+          "on_answer": {
+            "yes": [
+              {
+                "action": "tell",
+                "if_not_there": "bring_back",
+                "to": "Ravi",
+                "message": "the room is free",
+                "n": 2
+              }
+            ],
+            "no": [
+              {
+                "action": "deliver",
+                "if_not_there": "bring_back",
+                "to": "Priya",
+                "item": "file",
+                "n": 3
+              }
+            ]
+          },
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ta-07",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Give the file to Priya, get the charger from Arun for me, then tell Ravi: I am ready.",
+      "expected_steps": [
+        {
+          "action": "deliver",
+          "if_not_there": "bring_back",
+          "to": "Priya",
+          "item": "file",
+          "n": 1
+        },
+        {
+          "action": "retrieve",
+          "if_not_there": "bring_back",
+          "item": "charger",
+          "from": "Arun",
+          "to": "Bharathwaj",
+          "n": 2
+        },
+        {
+          "action": "tell",
+          "if_not_there": "bring_back",
+          "to": "Ravi",
+          "message": "I am ready",
+          "n": 3
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ta-08",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Go to the server room.",
+      "expected_steps": [],
+      "expected_issue": "unknown_name",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ta-09",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Make tea.",
+      "expected_steps": [],
+      "expected_issue": "out_of_scope",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ta-10",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Go to reception; go to storage; go to cafeteria; go to demo area; go to open office; go to team office; go to manager cabin.",
+      "expected_steps": [],
+      "expected_issue": "too_many_steps",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ml-01",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Give the file to Divya; if she is not there, leave it with Priya.",
+      "expected_steps": [
+        {
+          "action": "deliver",
+          "if_not_there": "leave_with:Priya",
+          "item": "file",
+          "to": "Divya",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ml-02",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Get the charger from Arun and bring it to me.",
+      "expected_steps": [
+        {
+          "action": "retrieve",
+          "if_not_there": "bring_back",
+          "item": "charger",
+          "from": "Arun",
+          "to": "Bharathwaj",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ml-03",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Ask at reception: Did any visitors come today?",
+      "expected_steps": [
+        {
+          "action": "check",
+          "if_not_there": "bring_back",
+          "at": "reception",
+          "question": "Did any visitors come today?",
+          "on_answer": null,
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ml-04",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Tell Ravi: the meeting is at 3.",
+      "expected_steps": [
+        {
+          "action": "tell",
+          "if_not_there": "bring_back",
+          "to": "Ravi",
+          "message": "the meeting is at 3",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ml-05",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Go home to the dock.",
+      "expected_steps": [
+        {
+          "action": "go",
+          "if_not_there": "bring_back",
+          "to": "home",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ml-06",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Check at the conference hall: Is the room free? If yes, tell Ravi: the room is free. If no, deliver the file to Priya.",
+      "expected_steps": [
+        {
+          "action": "check",
+          "if_not_there": "bring_back",
+          "at": "conference_hall",
+          "question": "Is the room free?",
+          "on_answer": {
+            "yes": [
+              {
+                "action": "tell",
+                "if_not_there": "bring_back",
+                "to": "Ravi",
+                "message": "the room is free",
+                "n": 2
+              }
+            ],
+            "no": [
+              {
+                "action": "deliver",
+                "if_not_there": "bring_back",
+                "to": "Priya",
+                "item": "file",
+                "n": 3
+              }
+            ]
+          },
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ml-07",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Give the file to Priya, get the charger from Arun for me, then tell Ravi: I am ready.",
+      "expected_steps": [
+        {
+          "action": "deliver",
+          "if_not_there": "bring_back",
+          "to": "Priya",
+          "item": "file",
+          "n": 1
+        },
+        {
+          "action": "retrieve",
+          "if_not_there": "bring_back",
+          "item": "charger",
+          "from": "Arun",
+          "to": "Bharathwaj",
+          "n": 2
+        },
+        {
+          "action": "tell",
+          "if_not_there": "bring_back",
+          "to": "Ravi",
+          "message": "I am ready",
+          "n": 3
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ml-08",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Go to the server room.",
+      "expected_steps": [],
+      "expected_issue": "unknown_name",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ml-09",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Make tea.",
+      "expected_steps": [],
+      "expected_issue": "out_of_scope",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-ml-10",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Go to reception; go to storage; go to cafeteria; go to demo area; go to open office; go to team office; go to manager cabin.",
+      "expected_steps": [],
+      "expected_issue": "too_many_steps",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-te-01",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Give the file to Divya; if she is not there, leave it with Priya.",
+      "expected_steps": [
+        {
+          "action": "deliver",
+          "if_not_there": "leave_with:Priya",
+          "item": "file",
+          "to": "Divya",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-te-02",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Get the charger from Arun and bring it to me.",
+      "expected_steps": [
+        {
+          "action": "retrieve",
+          "if_not_there": "bring_back",
+          "item": "charger",
+          "from": "Arun",
+          "to": "Bharathwaj",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-te-03",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Ask at reception: Did any visitors come today?",
+      "expected_steps": [
+        {
+          "action": "check",
+          "if_not_there": "bring_back",
+          "at": "reception",
+          "question": "Did any visitors come today?",
+          "on_answer": null,
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-te-04",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Tell Ravi: the meeting is at 3.",
+      "expected_steps": [
+        {
+          "action": "tell",
+          "if_not_there": "bring_back",
+          "to": "Ravi",
+          "message": "the meeting is at 3",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-te-05",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Go home to the dock.",
+      "expected_steps": [
+        {
+          "action": "go",
+          "if_not_there": "bring_back",
+          "to": "home",
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-te-06",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Check at the conference hall: Is the room free? If yes, tell Ravi: the room is free. If no, deliver the file to Priya.",
+      "expected_steps": [
+        {
+          "action": "check",
+          "if_not_there": "bring_back",
+          "at": "conference_hall",
+          "question": "Is the room free?",
+          "on_answer": {
+            "yes": [
+              {
+                "action": "tell",
+                "if_not_there": "bring_back",
+                "to": "Ravi",
+                "message": "the room is free",
+                "n": 2
+              }
+            ],
+            "no": [
+              {
+                "action": "deliver",
+                "if_not_there": "bring_back",
+                "to": "Priya",
+                "item": "file",
+                "n": 3
+              }
+            ]
+          },
+          "n": 1
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-te-07",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Give the file to Priya, get the charger from Arun for me, then tell Ravi: I am ready.",
+      "expected_steps": [
+        {
+          "action": "deliver",
+          "if_not_there": "bring_back",
+          "to": "Priya",
+          "item": "file",
+          "n": 1
+        },
+        {
+          "action": "retrieve",
+          "if_not_there": "bring_back",
+          "item": "charger",
+          "from": "Arun",
+          "to": "Bharathwaj",
+          "n": 2
+        },
+        {
+          "action": "tell",
+          "if_not_there": "bring_back",
+          "to": "Ravi",
+          "message": "I am ready",
+          "n": 3
+        }
+      ],
+      "expected_issue": null,
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-te-08",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Go to the server room.",
+      "expected_steps": [],
+      "expected_issue": "unknown_name",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-te-09",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Make tea.",
+      "expected_steps": [],
+      "expected_issue": "out_of_scope",
+      "needs_native_speaker_check": true
+    },
+    {
+      "id": "STARTER-MIXED-te-10",
+      "source": "STARTER-MIXED",
+      "confirmed_by_owner": false,
+      "expected_english": "Go to reception; go to storage; go to cafeteria; go to demo area; go to open office; go to team office; go to manager cabin.",
+      "expected_steps": [],
+      "expected_issue": "too_many_steps",
+      "needs_native_speaker_check": true
+    }
+  ]
+}

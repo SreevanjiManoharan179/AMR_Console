@@ -1,0 +1,58 @@
+schema_version: robot_capability_v1
+approval_status: owner_to_set
+tray_inner_cm:
+  length: owner_to_set
+  width: owner_to_set
+  height: owner_to_set
+maximum_payload_kg: owner_to_set
+maximum_steps_per_job: owner_to_set
+maximum_wait_at_stop_s: owner_to_set
+reachable_areas: from_map_facts
+item_classes:
+  small_electronics:
+    status: owner_to_review
+    rule: ok
+    terms: [charger, laptop charger, encoder, motor driver, servo, sensor, lidar, camera, IMU, multimeter]
+  cables_and_boards:
+    status: owner_to_review
+    rule: ok
+    terms: [Raspberry Pi, Arduino, ESP32, dev board, USB cable, jumper wires]
+  laptops:
+    status: owner_to_review
+    rule: ask_at_pickup
+    fragile: true
+    terms: [laptop]
+  battery_packs:
+    status: owner_to_review
+    rule: ask_at_pickup
+    requires_bag: true
+    fragile: true
+    terms: [battery pack]
+  hot_tools:
+    status: owner_to_review
+    rule: not_allowed
+    terms: [soldering iron, hot tool]
+  motors_and_actuators:
+    status: owner_to_review
+    rule: ask_at_pickup
+    by_weight_class: true
+    terms: [motor, heavy actuator]
+  documents:
+    rule: owner_to_set
+    terms: [file, folder, document, letter]
+  open_hot_drinks:
+    rule: not_allowed
+    terms: [open hot drink, open hot tea, open hot coffee]
+  liquids_without_lid:
+    rule: not_allowed
+    terms: [liquid without a lid, unsealed liquid, open liquid]
+  cash:
+    rule: not_allowed
+    terms: [cash, banknotes]
+  sharp:
+    rule: not_allowed
+    terms: [knife, sharp item, exposed blade]
+  oversized:
+    rule: not_allowed
+    terms: [oversized item, item that does not fit]
+notes: Owner must fill and confirm all numeric fields. Maximum steps must not exceed the module hard limit of six. Rules are ok, ask_at_pickup, not_allowed. No measured robot values are supplied.

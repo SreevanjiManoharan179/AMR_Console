@@ -1,0 +1,896 @@
+[
+  {
+    "id": "valid_exact-000",
+    "text": "navigate to storeroom",
+    "cls": "valid_exact",
+    "intent": "storage",
+    "acceptable": [
+      "storage"
+    ]
+  },
+  {
+    "id": "valid_exact-001",
+    "text": "please go to the conference room",
+    "cls": "valid_exact",
+    "intent": "conference hall",
+    "acceptable": [
+      "conference hall"
+    ]
+  },
+  {
+    "id": "valid_exact-002",
+    "text": "get to workstations",
+    "cls": "valid_exact",
+    "intent": "open office",
+    "acceptable": [
+      "open office"
+    ]
+  },
+  {
+    "id": "valid_exact-003",
+    "text": "go to the manager",
+    "cls": "valid_exact",
+    "intent": "manager cabin",
+    "acceptable": [
+      "manager cabin"
+    ]
+  },
+  {
+    "id": "valid_exact-004",
+    "text": "move to demo area",
+    "cls": "valid_exact",
+    "intent": "demo area",
+    "acceptable": [
+      "demo area"
+    ]
+  },
+  {
+    "id": "valid_exact-005",
+    "text": "head to engineering office",
+    "cls": "valid_exact",
+    "intent": "team office",
+    "acceptable": [
+      "team office"
+    ]
+  },
+  {
+    "id": "valid_exact-006",
+    "text": "head to storage",
+    "cls": "valid_exact",
+    "intent": "storage",
+    "acceptable": [
+      "storage"
+    ]
+  },
+  {
+    "id": "valid_exact-007",
+    "text": "take me to meeting room",
+    "cls": "valid_exact",
+    "intent": "conference hall",
+    "acceptable": [
+      "conference hall"
+    ]
+  },
+  {
+    "id": "valid_exact-008",
+    "text": "please go to the engineering office",
+    "cls": "valid_exact",
+    "intent": "team office",
+    "acceptable": [
+      "team office"
+    ]
+  },
+  {
+    "id": "valid_exact-009",
+    "text": "please go to dock",
+    "cls": "valid_exact",
+    "intent": "home",
+    "acceptable": [
+      "home"
+    ]
+  },
+  {
+    "id": "valid_exact-010",
+    "text": "head to the home base",
+    "cls": "valid_exact",
+    "intent": "home",
+    "acceptable": [
+      "home"
+    ]
+  },
+  {
+    "id": "valid_exact-011",
+    "text": "go over to the home",
+    "cls": "valid_exact",
+    "intent": "home",
+    "acceptable": [
+      "home"
+    ]
+  },
+  {
+    "id": "valid_exact-012",
+    "text": "can you go to the supply closet",
+    "cls": "valid_exact",
+    "intent": "storage",
+    "acceptable": [
+      "storage"
+    ]
+  },
+  {
+    "id": "valid_exact-013",
+    "text": "please go to conference hall",
+    "cls": "valid_exact",
+    "intent": "conference hall",
+    "acceptable": [
+      "conference hall"
+    ]
+  },
+  {
+    "id": "valid_exact-014",
+    "text": "take me to the conference room",
+    "cls": "valid_exact",
+    "intent": "conference hall",
+    "acceptable": [
+      "conference hall"
+    ]
+  },
+  {
+    "id": "valid_exact-015",
+    "text": "get to charging dock",
+    "cls": "valid_exact",
+    "intent": "home",
+    "acceptable": [
+      "home"
+    ]
+  },
+  {
+    "id": "valid_exact-016",
+    "text": "head to team space",
+    "cls": "valid_exact",
+    "intent": "team office",
+    "acceptable": [
+      "team office"
+    ]
+  },
+  {
+    "id": "valid_exact-017",
+    "text": "go to home base",
+    "cls": "valid_exact",
+    "intent": "home",
+    "acceptable": [
+      "home"
+    ]
+  },
+  {
+    "id": "valid_exact-018",
+    "text": "go to storage",
+    "cls": "valid_exact",
+    "intent": "storage",
+    "acceptable": [
+      "storage"
+    ]
+  },
+  {
+    "id": "valid_exact-019",
+    "text": "drive to boardroom",
+    "cls": "valid_exact",
+    "intent": "conference hall",
+    "acceptable": [
+      "conference hall"
+    ]
+  },
+  {
+    "id": "valid_exact-020",
+    "text": "go over to the engineering office",
+    "cls": "valid_exact",
+    "intent": "team office",
+    "acceptable": [
+      "team office"
+    ]
+  },
+  {
+    "id": "valid_exact-021",
+    "text": "go over to home",
+    "cls": "valid_exact",
+    "intent": "home",
+    "acceptable": [
+      "home"
+    ]
+  },
+  {
+    "id": "valid_exact-022",
+    "text": "go over to front desk",
+    "cls": "valid_exact",
+    "intent": "reception",
+    "acceptable": [
+      "reception"
+    ]
+  },
+  {
+    "id": "valid_exact-023",
+    "text": "please go to manager cabin",
+    "cls": "valid_exact",
+    "intent": "manager cabin",
+    "acceptable": [
+      "manager cabin"
+    ]
+  },
+  {
+    "id": "valid_exact-024",
+    "text": "navigate to the team space",
+    "cls": "valid_exact",
+    "intent": "team office",
+    "acceptable": [
+      "team office"
+    ]
+  },
+  {
+    "id": "valid_exact-025",
+    "text": "take me to storeroom",
+    "cls": "valid_exact",
+    "intent": "storage",
+    "acceptable": [
+      "storage"
+    ]
+  },
+  {
+    "id": "valid_exact-026",
+    "text": "go to team office",
+    "cls": "valid_exact",
+    "intent": "team office",
+    "acceptable": [
+      "team office"
+    ]
+  },
+  {
+    "id": "valid_exact-027",
+    "text": "move to the demo area",
+    "cls": "valid_exact",
+    "intent": "demo area",
+    "acceptable": [
+      "demo area"
+    ]
+  },
+  {
+    "id": "valid_exact-028",
+    "text": "navigate to open plan office",
+    "cls": "valid_exact",
+    "intent": "open office",
+    "acceptable": [
+      "open office"
+    ]
+  },
+  {
+    "id": "valid_exact-029",
+    "text": "head to the engineering office",
+    "cls": "valid_exact",
+    "intent": "team office",
+    "acceptable": [
+      "team office"
+    ]
+  },
+  {
+    "id": "valid_exact-030",
+    "text": "can you go to conference hall",
+    "cls": "valid_exact",
+    "intent": "conference hall",
+    "acceptable": [
+      "conference hall"
+    ]
+  },
+  {
+    "id": "valid_exact-031",
+    "text": "please go to kitchen",
+    "cls": "valid_exact",
+    "intent": "cafeteria",
+    "acceptable": [
+      "cafeteria"
+    ]
+  },
+  {
+    "id": "valid_exact-032",
+    "text": "can you go to lobby",
+    "cls": "valid_exact",
+    "intent": "reception",
+    "acceptable": [
+      "reception"
+    ]
+  },
+  {
+    "id": "valid_exact-033",
+    "text": "get to the workstations",
+    "cls": "valid_exact",
+    "intent": "open office",
+    "acceptable": [
+      "open office"
+    ]
+  },
+  {
+    "id": "valid_exact-034",
+    "text": "get to team office",
+    "cls": "valid_exact",
+    "intent": "team office",
+    "acceptable": [
+      "team office"
+    ]
+  },
+  {
+    "id": "valid_exact-035",
+    "text": "navigate to the demo zone",
+    "cls": "valid_exact",
+    "intent": "demo area",
+    "acceptable": [
+      "demo area"
+    ]
+  },
+  {
+    "id": "valid_typo-000",
+    "text": "go over to the engineering offie",
+    "cls": "valid_typo",
+    "intent": "team office",
+    "acceptable": [
+      "team office"
+    ]
+  },
+  {
+    "id": "valid_typo-001",
+    "text": "get to the dispay area",
+    "cls": "valid_typo",
+    "intent": "demo area",
+    "acceptable": [
+      "demo area"
+    ]
+  },
+  {
+    "id": "valid_typo-002",
+    "text": "take me to the cafetera",
+    "cls": "valid_typo",
+    "intent": "cafeteria",
+    "acceptable": [
+      "cafeteria"
+    ]
+  },
+  {
+    "id": "valid_typo-003",
+    "text": "go over to the open ofice",
+    "cls": "valid_typo",
+    "intent": "open office",
+    "acceptable": [
+      "open office"
+    ]
+  },
+  {
+    "id": "valid_typo-004",
+    "text": "please go to the team sace",
+    "cls": "valid_typo",
+    "intent": "team office",
+    "acceptable": [
+      "team office"
+    ]
+  },
+  {
+    "id": "valid_typo-005",
+    "text": "can you go to the maager cabin",
+    "cls": "valid_typo",
+    "intent": "manager cabin",
+    "acceptable": [
+      "manager cabin"
+    ]
+  },
+  {
+    "id": "valid_typo-006",
+    "text": "can you go to the boarroom",
+    "cls": "valid_typo",
+    "intent": "conference hall",
+    "acceptable": [
+      "conference hall"
+    ]
+  },
+  {
+    "id": "valid_typo-007",
+    "text": "take me to the manager cabn",
+    "cls": "valid_typo",
+    "intent": "manager cabin",
+    "acceptable": [
+      "manager cabin"
+    ]
+  },
+  {
+    "id": "valid_typo-008",
+    "text": "please go to the storerom",
+    "cls": "valid_typo",
+    "intent": "storage",
+    "acceptable": [
+      "storage"
+    ]
+  },
+  {
+    "id": "valid_typo-009",
+    "text": "go over to the recepton",
+    "cls": "valid_typo",
+    "intent": "reception",
+    "acceptable": [
+      "reception"
+    ]
+  },
+  {
+    "id": "valid_typo-010",
+    "text": "head to the open plan ofice",
+    "cls": "valid_typo",
+    "intent": "open office",
+    "acceptable": [
+      "open office"
+    ]
+  },
+  {
+    "id": "valid_typo-011",
+    "text": "can you go to the manager cain",
+    "cls": "valid_typo",
+    "intent": "manager cabin",
+    "acceptable": [
+      "manager cabin"
+    ]
+  },
+  {
+    "id": "valid_partial-000",
+    "text": "go to demo",
+    "cls": "valid_partial",
+    "intent": "demo area",
+    "acceptable": [
+      "demo area"
+    ]
+  },
+  {
+    "id": "valid_partial-001",
+    "text": "go over to manager",
+    "cls": "valid_partial",
+    "intent": "manager cabin",
+    "acceptable": [
+      "manager cabin"
+    ]
+  },
+  {
+    "id": "valid_partial-002",
+    "text": "go to open",
+    "cls": "valid_partial",
+    "intent": "open office",
+    "acceptable": [
+      "open office"
+    ]
+  },
+  {
+    "id": "valid_partial-003",
+    "text": "drive to hall",
+    "cls": "valid_partial",
+    "intent": "conference hall",
+    "acceptable": [
+      "conference hall"
+    ]
+  },
+  {
+    "id": "valid_partial-004",
+    "text": "drive to team",
+    "cls": "valid_partial",
+    "intent": "team office",
+    "acceptable": [
+      "team office"
+    ]
+  },
+  {
+    "id": "valid_partial-005",
+    "text": "go over to open",
+    "cls": "valid_partial",
+    "intent": "open office",
+    "acceptable": [
+      "open office"
+    ]
+  },
+  {
+    "id": "valid_partial-006",
+    "text": "can you go to team",
+    "cls": "valid_partial",
+    "intent": "team office",
+    "acceptable": [
+      "team office"
+    ]
+  },
+  {
+    "id": "valid_partial-007",
+    "text": "head to conference",
+    "cls": "valid_partial",
+    "intent": "conference hall",
+    "acceptable": [
+      "conference hall"
+    ]
+  },
+  {
+    "id": "valid_partial-008",
+    "text": "get to team",
+    "cls": "valid_partial",
+    "intent": "team office",
+    "acceptable": [
+      "team office"
+    ]
+  },
+  {
+    "id": "valid_partial-009",
+    "text": "get to hall",
+    "cls": "valid_partial",
+    "intent": "conference hall",
+    "acceptable": [
+      "conference hall"
+    ]
+  },
+  {
+    "id": "valid_partial-010",
+    "text": "can you go to cabin",
+    "cls": "valid_partial",
+    "intent": "manager cabin",
+    "acceptable": [
+      "manager cabin"
+    ]
+  },
+  {
+    "id": "valid_partial-011",
+    "text": "head to demo",
+    "cls": "valid_partial",
+    "intent": "demo area",
+    "acceptable": [
+      "demo area"
+    ]
+  },
+  {
+    "id": "valid_extra-000",
+    "text": "please drive to home now",
+    "cls": "valid_extra",
+    "intent": "home",
+    "acceptable": [
+      "home"
+    ]
+  },
+  {
+    "id": "valid_extra-001",
+    "text": "I need you at the kitchen now",
+    "cls": "valid_extra",
+    "intent": "cafeteria",
+    "acceptable": [
+      "cafeteria"
+    ]
+  },
+  {
+    "id": "valid_extra-002",
+    "text": "please drive to the meeting room now",
+    "cls": "valid_extra",
+    "intent": "conference hall",
+    "acceptable": [
+      "conference hall"
+    ]
+  },
+  {
+    "id": "valid_extra-003",
+    "text": "robot, go to the front desk",
+    "cls": "valid_extra",
+    "intent": "reception",
+    "acceptable": [
+      "reception"
+    ]
+  },
+  {
+    "id": "valid_extra-004",
+    "text": "robot, go to the manager cabin",
+    "cls": "valid_extra",
+    "intent": "manager cabin",
+    "acceptable": [
+      "manager cabin"
+    ]
+  },
+  {
+    "id": "valid_extra-005",
+    "text": "I need you at manager now",
+    "cls": "valid_extra",
+    "intent": "manager cabin",
+    "acceptable": [
+      "manager cabin"
+    ]
+  },
+  {
+    "id": "valid_extra-006",
+    "text": "please drive to the team office now",
+    "cls": "valid_extra",
+    "intent": "team office",
+    "acceptable": [
+      "team office"
+    ]
+  },
+  {
+    "id": "valid_extra-007",
+    "text": "could you please head over to the pantry",
+    "cls": "valid_extra",
+    "intent": "cafeteria",
+    "acceptable": [
+      "cafeteria"
+    ]
+  },
+  {
+    "id": "valid_extra-008",
+    "text": "go to the cafeteria right away",
+    "cls": "valid_extra",
+    "intent": "cafeteria",
+    "acceptable": [
+      "cafeteria"
+    ]
+  },
+  {
+    "id": "valid_extra-009",
+    "text": "okay, take me to the meeting room",
+    "cls": "valid_extra",
+    "intent": "conference hall",
+    "acceptable": [
+      "conference hall"
+    ]
+  },
+  {
+    "id": "valid_extra-010",
+    "text": "okay, take me to open plan office",
+    "cls": "valid_extra",
+    "intent": "open office",
+    "acceptable": [
+      "open office"
+    ]
+  },
+  {
+    "id": "valid_extra-011",
+    "text": "okay, take me to the dock",
+    "cls": "valid_extra",
+    "intent": "home",
+    "acceptable": [
+      "home"
+    ]
+  },
+  {
+    "id": "ambiguous-000",
+    "text": "go to the office",
+    "cls": "ambiguous",
+    "intent": "team office",
+    "acceptable": [
+      "open office",
+      "team office"
+    ]
+  },
+  {
+    "id": "ambiguous-001",
+    "text": "please drive to a office",
+    "cls": "ambiguous",
+    "intent": "team office",
+    "acceptable": [
+      "open office",
+      "team office"
+    ]
+  },
+  {
+    "id": "ambiguous-002",
+    "text": "take me to the nearest office",
+    "cls": "ambiguous",
+    "intent": "open office",
+    "acceptable": [
+      "open office",
+      "team office"
+    ]
+  },
+  {
+    "id": "ambiguous-003",
+    "text": "go to the office",
+    "cls": "ambiguous",
+    "intent": "open office",
+    "acceptable": [
+      "open office",
+      "team office"
+    ]
+  },
+  {
+    "id": "ambiguous-004",
+    "text": "please drive to a office",
+    "cls": "ambiguous",
+    "intent": "open office",
+    "acceptable": [
+      "open office",
+      "team office"
+    ]
+  },
+  {
+    "id": "ambiguous-005",
+    "text": "take me to the nearest office",
+    "cls": "ambiguous",
+    "intent": "team office",
+    "acceptable": [
+      "open office",
+      "team office"
+    ]
+  },
+  {
+    "id": "ambiguous-006",
+    "text": "head to any office",
+    "cls": "ambiguous",
+    "intent": "open office",
+    "acceptable": [
+      "open office",
+      "team office"
+    ]
+  },
+  {
+    "id": "ambiguous-007",
+    "text": "go to a office",
+    "cls": "ambiguous",
+    "intent": "team office",
+    "acceptable": [
+      "open office",
+      "team office"
+    ]
+  },
+  {
+    "id": "ambiguous-008",
+    "text": "go to one of the offices",
+    "cls": "ambiguous",
+    "intent": "open office",
+    "acceptable": [
+      "open office",
+      "team office"
+    ]
+  },
+  {
+    "id": "ambiguous-009",
+    "text": "go to one of the offices",
+    "cls": "ambiguous",
+    "intent": "team office",
+    "acceptable": [
+      "open office",
+      "team office"
+    ]
+  },
+  {
+    "id": "ambiguous-010",
+    "text": "go to a office",
+    "cls": "ambiguous",
+    "intent": "open office",
+    "acceptable": [
+      "open office",
+      "team office"
+    ]
+  },
+  {
+    "id": "ambiguous-011",
+    "text": "head to any office",
+    "cls": "ambiguous",
+    "intent": "team office",
+    "acceptable": [
+      "open office",
+      "team office"
+    ]
+  },
+  {
+    "id": "unknown-000",
+    "text": "go to the main office",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-001",
+    "text": "go to the old office",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-002",
+    "text": "go to the west office",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-003",
+    "text": "go to the upper office",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-004",
+    "text": "head to the elevator",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-005",
+    "text": "move to the parking lot",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-006",
+    "text": "take me to the elevator",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-007",
+    "text": "head to the lab",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-008",
+    "text": "take me to the workshop",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-009",
+    "text": "go to the workshop",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-010",
+    "text": "go to the parking lot",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-011",
+    "text": "take me to the lab",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-012",
+    "text": "head to the workshop",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-013",
+    "text": "go to the library",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-014",
+    "text": "head to the library",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-015",
+    "text": "take me to the library",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-016",
+    "text": "go to the lab",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  },
+  {
+    "id": "unknown-017",
+    "text": "move to the elevator",
+    "cls": "unknown",
+    "intent": "<none>",
+    "acceptable": []
+  }
+]

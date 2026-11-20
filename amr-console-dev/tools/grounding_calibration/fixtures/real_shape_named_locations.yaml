@@ -1,0 +1,31 @@
+# TEST FIXTURE: a copy of src/amr_physical_ai/config/named_locations.yaml as read on 18 Oct 2026
+# (SHA256 34a04a1c6ced...), kept here so the tests see the real schema and aliases.
+# The pilot's real runs read the project file itself, never this copy.
+# Proposed virtual demo waypoints, not detected semantic rooms.
+# Owner confirmation is required before typed commands use these places.
+approval_status: confirmed
+robot: TurtleBot3 Waffle simulation
+frame_id: map
+map_yaml: ../maps/traversal_20260930_121704.yaml
+minimum_clearance_m: 0.28
+locations:
+  - name: home
+    x: 0.0
+    y: 0.0
+    yaw: 0.0
+    aliases: [start, base, home base]
+  - name: east_station
+    x: 0.8
+    y: 0.0
+    yaw: 0.0
+    aliases: [east, right station, east stop]
+  - name: north_station
+    x: 0.4
+    y: 0.6
+    yaw: 1.5708
+    aliases: [north, upper station, north stop]
+  - name: south_station
+    x: 0.4
+    y: -0.5
+    yaw: -1.5708
+    aliases: [south, lower station, south stop]

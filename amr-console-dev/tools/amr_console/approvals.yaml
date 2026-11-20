@@ -1,0 +1,3 @@
+# Human-maintained approvals. The backend never edits this file.
+# One key per world with delivery places (see config/worlds.yaml); absent means false.
+proposed_system_places: true

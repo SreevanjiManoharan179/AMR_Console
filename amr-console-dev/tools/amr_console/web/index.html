@@ -1,0 +1,2834 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<title>AMR Console</title>
+<style>
+* {
+  box-sizing:border-box}
+html {
+  color-scheme:light}
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font:14px/1.5 var(--font);
+  min-width:320px}
+button,input,select {
+  font:inherit;
+  color:inherit}
+button,select,summary {
+  cursor:pointer}
+button,a,input,select,summary {
+  touch-action:manipulation}
+button {
+  min-height:44px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  border-radius:8px;
+  padding:9px 14px;
+  font-weight:650}
+button:hover:not(:disabled) {
+  filter:brightness(.94)}
+button:disabled {
+  cursor:not-allowed;
+  color:var(--muted);
+  background:var(--soft)}
+button.primary {
+  background:var(--accent);
+  color:var(--onaccent);
+  border-color:var(--accent)}
+button.primary:disabled {
+  background:var(--soft);
+  color:var(--muted);
+  border-color:var(--line)}
+:focus-visible {
+  outline:3px solid var(--focus);
+  outline-offset:3px}
+h1,h2,h3,p {
+  margin:0}
+h1 {
+  font-size:30px;
+  line-height:1.2;
+  letter-spacing:-1px}
+h2 {
+  font-size:16px;
+  line-height:1.35}
+h3 {
+  font-size:14px}
+.muted,.hint {
+  color:var(--muted)}
+.hint {
+  font-size:12px;
+  line-height:1.5}
+.eyebrow {
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  font-size:10px;
+  font-weight:750}
+.tag {
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  border:1px solid var(--line);
+  border-radius:5px;
+  padding:3px 8px;
+  font-size:11px;
+  font-weight:650;
+  white-space:nowrap}
+.good {
+  color:var(--green)}
+.dot {
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:currentColor;
+  display:inline-block;
+  flex:none}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:18px;
+  font-weight:750;
+  letter-spacing:-.5px}
+.brand svg {
+  width:32px;
+  height:32px;
+  color:var(--accent)}
+.stop {
+  background:var(--red);
+  border:1px solid var(--red);
+  color:#fff;
+  min-width:128px;
+  min-height:52px;
+  border-radius:8px;
+  font-size:18px;
+  letter-spacing:1px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px}
+.stop:before {
+  content:'';
+  width:13px;
+  height:13px;
+  background:#fff;
+  border-radius:2px}
+.card {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden}
+.cardhead {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:12px}
+.card p {
+  margin-top:5px}
+label {
+  display:grid;
+  gap:5px;
+  font-size:12px;
+  font-weight:650}
+input,select {
+  min-height:44px;
+  width:100%;
+  background:var(--panel);
+  border:1px solid var(--inputline);
+  border-radius:7px;
+  padding:8px 11px;
+  min-width:0}
+.field {
+  margin-top:12px}
+.locked {
+  font-size:11px;
+  color:var(--muted);
+  margin-top:10px;
+  line-height:1.5}
+.locktitle {
+  font-weight:700}
+.split {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px}
+.methods {
+  margin:9px 0 0;
+  padding:0;
+  list-style:none;
+  font-size:11px;
+  color:var(--muted)}
+.methods b {
+  color:var(--ink);
+  font-weight:650}
+.card .action {
+  width:100%;
+  margin-top:12px}
+.mapview {
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color:var(--mapbg);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;
+  min-height:250px;
+  text-align:center;
+  overflow:hidden}
+.mapview .placeholder {
+  padding:28px;
+  position:relative}
+.placeholder svg {
+  width:64px;
+  height:64px;
+  color:var(--mapink);
+  margin-bottom:12px}
+.placeholder h2 {
+  font-size:17px}
+.placeholder p {
+  font-size:12px;
+  max-width:290px;
+  margin:7px auto 0;
+  color:var(--muted)}
+.mapcorner {
+  position:absolute;
+  top:16px;
+  left:18px;
+  text-align:left}
+.mapfoot {
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  border-top:1px solid var(--line);
+  padding:11px 16px;
+  font-size:11px;
+  color:var(--muted);
+  background:var(--panel)}
+.pad {
+  display:grid;
+  grid-template-columns:repeat(3,52px);
+  grid-template-rows:repeat(3,48px);
+  gap:6px;
+  justify-content:center;
+  margin:16px auto}
+.pad button {
+  font-size:23px;
+  padding:0;
+  background:var(--soft);
+  border-color:var(--inputline);
+  border-radius:9px}
+.pad .zero {
+  font-size:11px;
+  color:var(--red);
+  border-color:var(--red);
+  background:var(--panel)}
+kbd {
+  font:11px var(--font);
+  padding:2px 5px;
+  border:1px solid var(--line);
+  border-radius:4px;
+  background:var(--soft)}
+.speed {
+  display:flex;
+  justify-content:space-between;
+  border-top:1px solid var(--line);
+  padding-top:10px;
+  font-size:12px}
+.speed b {
+  font-variant-numeric:tabular-nums}
+.target small {
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:400}
+.statusbar {
+  display:flex;
+  align-items:center;
+  gap:24px;
+  font-size:12px}
+.statusbar b {
+  font-weight:650}
+.system {
+  font-size:12px;
+  color:var(--muted)}
+.system summary {
+  min-height:44px;
+  display:list-item;
+  padding:12px 0;
+  font-weight:600;
+  color:var(--ink)}
+.system dl {
+  display:grid;
+  grid-template-columns:160px 1fr;
+  gap:6px 12px;
+  margin:8px 0 18px}
+.system dt,.system dd {
+  margin:0;
+  overflow-wrap:anywhere}
+.system dd {
+  font-family:ui-monospace,monospace}
+.samplebar {
+  font-size:11px;
+  color:var(--muted)}
+.notice {
+  position:fixed;
+  bottom:22px;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--ink);
+  color:var(--panel);
+  padding:14px 20px;
+  border-radius:9px;
+  box-shadow:0 5px 30px #0003;
+  z-index:10;
+  max-width:calc(100% - 30px);
+  font-size:13px}
+.notice:empty {
+  display:none}
+.skip {
+  position:fixed;
+  top:-100px;
+  left:20px;
+  background:var(--panel);
+  padding:12px;
+  z-index:20;
+  color:var(--ink)}
+.skip:focus {
+  top:10px}
+nav button[aria-current=page] {
+  color:var(--accent);
+  background:var(--selected)}
+nav button {
+  border:0;
+  text-align:left;
+  background:transparent;
+  color:var(--muted);
+  font-weight:550}
+.theme {
+  font-size:12px;
+  white-space:nowrap}
+.connection {
+  display:flex;
+  gap:7px;
+  align-items:center;
+  color:var(--green)}
+.flex {
+  display:flex;
+  align-items:center;
+  gap:12px}
+.wide {
+  width:100%}
+footer {
+  padding:0 0 16px}
+.manualnote {
+  font-size:11px;
+  text-align:center;
+  color:var(--muted)}
+@media(prefers-reduced-motion:reduce) {
+  * {
+  scroll-behavior:auto!important}
+}
+@media(max-width:700px) {
+  .split {
+  grid-template-columns:1fr}
+.statusbar {
+  flex-wrap:wrap;
+  gap:8px 16px}
+.target {
+  display:none}
+}
+
+
+:root {
+  --bg:#f3f6f9;
+  --panel:#fff;
+  --soft:#f1f4f8;
+  --ink:#152b3e;
+  --muted:#526474;
+  --line:#dce3e9;
+  --inputline:#aab9c6;
+  --accent:#076a68;
+  --onaccent:#fff;
+  --green:#096b50;
+  --red:#bd2937;
+  --focus:#146be0;
+  --selected:#e5f2ef;
+  --mapbg:#f6f9fa;
+  --grid:#e7eef0;
+  --mapink:#6d8b96;
+  --font:system-ui,-apple-system,'Segoe UI',sans-serif}
+
+html[data-theme=dark] {
+  color-scheme:dark;
+  --bg:#101b25;
+  --panel:#182733;
+  --soft:#20313d;
+  --ink:#e5edf5;
+  --muted:#afbdca;
+  --line:#344755;
+  --inputline:#617887;
+  --accent:#8bddd0;
+  --onaccent:#092925;
+  --green:#8bddd0;
+  --red:#bc293b;
+  --focus:#80baff;
+  --selected:#233f40;
+  --mapbg:#14232c;
+  --grid:#22333c;
+  --mapink:#8cabb8}
+
+.shell {
+  display:grid;
+  grid-template-columns:174px 1fr;
+  min-height:100vh}
+.sidebar {
+  background:var(--panel);
+  border-right:1px solid var(--line);
+  padding:25px 15px;
+  display:flex;
+  flex-direction:column;
+  gap:38px}
+.sidebar .brand {
+  font-size:15px;
+  gap:7px}
+.sidebar .brand svg {
+  width:28px}
+.sidebar nav {
+  display:grid;
+  gap:5px}
+.sidebar nav button {
+  display:flex;
+  gap:12px;
+  align-items:center;
+  font-size:13px;
+  min-height:46px;
+  padding:10px 12px}
+.sidebar nav span {
+  font-size:10px;
+  color:var(--muted);
+  font-variant-numeric:tabular-nums}
+.sidebar .bottom {
+  margin-top:auto}
+.sidebar .bottom p {
+  font-size:11px;
+  margin-top:10px}
+.app {
+  min-width:0}
+.topbar {
+  position:sticky;
+  top:0;
+  z-index:5;
+  padding:14px 28px;
+  min-height:81px;
+  background:var(--panel);
+  border-bottom:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  align-items:center}
+.target {
+  font-size:14px;
+  font-weight:650}
+.toptools {
+  display:flex;
+  align-items:center;
+  gap:20px}
+.statusbar {
+  position:sticky;
+  top:81px;
+  z-index:4;
+  padding:11px 28px;
+  border-bottom:1px solid var(--line);
+  background:var(--panel)}
+.statusbar .world {
+  margin-left:auto;
+  color:var(--muted)}
+main {
+  padding:22px 28px 10px}
+.title {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px}
+.title p {
+  color:var(--muted);
+  font-size:12px;
+  margin-top:5px}
+.board {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 294px;
+  gap:18px;
+  align-items:start}
+.mapcolumn {
+  display:grid;
+  gap:16px}
+.launchrow {
+  display:grid;
+  grid-template-columns:.88fr 1.12fr;
+  gap:14px}
+.launchrow .card {
+  padding:16px}
+.launchrow h2 {
+  font-size:14px}
+.launchrow .split {
+  grid-template-columns:1fr}
+.launchrow .field {
+  margin-top:9px}
+.launchrow .split .field+label {
+  margin-top:7px}
+.launchrow .methods {
+  font-size:10px}
+.launchrow .tag {
+  font-size:10px}
+.launchrow button {
+  font-size:12px}
+.rail {
+  display:grid;
+  gap:16px}
+.rail .card {
+  padding:18px}
+.mapview {
+  min-height:268px}
+.rail .hint {
+  margin-top:6px}
+.rail .speed {
+  margin-top:14px;
+  font-size:11px}
+.rail .pad {
+  grid-template-rows:repeat(3,44px);
+  margin:12px auto}
+.rail .manualnote {
+  font-size:10px}
+.rail .cardhead {
+  margin-bottom:8px}
+.rail .cardhead .tag {
+  font-size:10px}
+footer {
+  padding:0 28px 10px}
+.samplebar {
+  border-top:1px solid var(--line);
+  padding-top:8px;
+  display:flex;
+  justify-content:space-between}
+@media(max-width:1150px) {
+  .shell {
+  grid-template-columns:145px 1fr}
+.sidebar {
+  padding:25px 10px}
+.sidebar .brand {
+  font-size:13px}
+.topbar,main {
+  padding-left:20px;
+  padding-right:20px}
+.board {
+  grid-template-columns:minmax(0,1fr) 268px;
+  gap:14px}
+.launchrow {
+  grid-template-columns:1fr}
+.launchrow .split {
+  grid-template-columns:1fr 1fr}
+.statusbar {
+  padding:11px 20px;
+  gap:15px}
+.statusbar .world {
+  display:none}
+.mapview {
+  min-height:290px}
+.rail .card {
+  padding:16px}
+}
+@media(max-width:760px) {
+  .shell {
+  grid-template-columns:1fr}
+.sidebar {
+  padding:10px;
+  gap:10px}
+.sidebar nav {
+  display:flex;
+  overflow:auto}
+.sidebar nav span,.sidebar .bottom {
+  display:none}
+.board {
+  grid-template-columns:1fr}
+.toptools {
+  gap:10px}
+.topbar {
+  position:sticky;
+  top:0;
+  z-index:5;
+  padding:12px}
+.connection {
+  font-size:11px}
+.launchrow {
+  grid-template-columns:1fr 1fr}
+.rail {
+  grid-template-columns:1fr 1fr}
+.title {
+  gap:12px}
+.title .tag {
+  display:none}
+}
+@media(max-width:520px) {
+  .rail,.launchrow {
+  grid-template-columns:1fr}
+}
+
+
+:root {
+  --inputline:#7a8b9a;
+  --dangertext:#bd2937}
+html[data-theme=dark] {
+  --inputline:#718797;
+  --dangertext:#ffacb5}
+button {
+  border-color:var(--inputline)}
+.state-error,.connection.lost,.logrow.error .level,.logrow.alarm .level {
+  color:var(--dangertext)}
+.pad .zero {
+  color:var(--dangertext);
+  border-color:var(--dangertext)}
+html {
+  scroll-padding-top:170px}
+.shell {
+  grid-template-columns:174px minmax(0,1fr)}
+.sidebar {
+  position:sticky;
+  top:0;
+  height:100vh;
+  gap:32px}
+.sidebar nav button {
+  width:100%}
+.sidebar .bottom {
+  display:grid;
+  gap:9px}
+.sidebar .bottom p {
+  margin:0}
+.masthead {
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:var(--panel)}
+.topbar,.statusbar {
+  position:static}
+.topbar {
+  gap:18px}
+.target {
+  min-width:0}
+.target small {
+  overflow-wrap:anywhere}
+.toptools {
+  gap:16px}
+.statusbar {
+  min-height:44px;
+  flex-wrap:wrap;
+  gap:8px 20px}
+.statusbar .world {
+  white-space:normal}
+.status-pill {
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  font-weight:650}
+.state-error,.connection.lost {
+  color:var(--dangertext)}
+.connection.reconnecting,.warning {
+  color:var(--warning)}
+:root {
+  --warning:#865500;
+  --warningbg:#fff5dc;
+  --dangerbg:#fff0f1}
+html[data-theme=dark] {
+  --warning:#f2ce89;
+  --warningbg:#3d3221;
+  --dangerbg:#382832}
+.banner {
+  padding:10px 28px;
+  border-bottom:1px solid var(--line);
+  font-size:12px;
+  background:var(--soft)}
+.banner:empty {
+  display:none}
+.banner.error {
+  background:var(--dangerbg);
+  color:var(--ink)}
+.banner .flex {
+  justify-content:space-between;
+  align-items:start}
+.banner p {
+  margin:0}
+.banner button {
+  min-height:32px;
+  padding:3px 10px;
+  font-size:12px;
+  flex:none}
+.preview-label {
+  background:var(--warningbg);
+  color:var(--ink)}
+main {
+  min-height:calc(100vh - 245px)}
+.title .tag {
+  font-size:11px}
+.card {
+  min-width:0}
+.board {
+  grid-template-columns:minmax(0,1fr) 310px}
+.launchrow {
+  grid-template-columns:1fr 1fr;
+  align-items:start}
+.launchrow .split {
+  grid-template-columns:1fr}
+.action-card {
+  padding:18px}
+.action-card .cardhead {
+  margin-bottom:8px}
+.action-card .description {
+  font-size:12px;
+  color:var(--muted)}
+.action-card .fields {
+  display:grid;
+  gap:12px;
+  margin:14px 0}
+.action-card .fields label {
+  font-size:12px}
+.action-card .split {
+  gap:10px}
+.action-card .go {
+  width:100%;
+  margin-top:13px}
+.action-card h2 {
+  font-size:15px}
+.reasons {
+  display:grid;
+  gap:6px;
+  margin-top:10px}
+.reason {
+  border-left:3px solid var(--warning);
+  padding:7px 9px;
+  background:var(--warningbg);
+  color:var(--ink);
+  font-size:12px;
+  overflow-wrap:anywhere}
+.reason p {
+  margin:0;
+  white-space:pre-wrap}
+.reason small {
+  display:block;
+  font-size:10px;
+  color:var(--muted);
+  font-weight:650;
+  margin-bottom:2px}
+.methods {
+  font-size:11px!important;
+  line-height:1.7}
+.help {
+  font-size:12px;
+  color:var(--muted);
+  margin-top:6px;
+  overflow-wrap:anywhere}
+.checkline {
+  display:flex;
+  align-items:center;
+  gap:9px;
+  min-height:44px}
+.checkline input {
+  min-height:20px;
+  width:20px;
+  height:20px;
+  accent-color:var(--accent);
+  flex:none}
+.checkset {
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:8px 12px;
+  min-width:0}
+.checkset legend {
+  font-size:12px;
+  font-weight:650}
+.pad {
+  grid-template-columns:repeat(3,56px)!important;
+  grid-template-rows:repeat(3,52px)!important;
+  gap:7px!important}
+.pad button {
+  touch-action:none;
+  user-select:none}
+.pad button.held {
+  color:var(--onaccent);
+  background:var(--accent);
+  border-color:var(--accent)}
+.pad .zero {
+  font-size:11px}
+.pad:focus-visible {
+  outline-offset:6px}
+.velocity {
+  padding:8px 10px;
+  border:1px solid var(--line);
+  background:var(--soft);
+  border-radius:6px;
+  font:12px ui-monospace,monospace;
+  margin-top:12px}
+.speeds {
+  display:grid;
+  gap:9px;
+  margin-top:14px}
+.speeds input {
+  padding:0;
+  accent-color:var(--accent);
+  min-height:32px;
+  border:0}
+.speeds label {
+  font-size:11px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap}
+.speeds label input {
+  width:100%}
+.rail .action-card {
+  padding:18px}
+.drive-disabled {
+  padding:17px;
+  background:var(--soft);
+  border-radius:8px;
+  margin-top:12px}
+.mapview {
+  min-height:280px}
+.mapview .placeholder {
+  padding:40px 28px 26px}
+.mapfoot {
+  font-size:12px;
+  flex-wrap:wrap}
+.section-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  align-items:start}
+.summary-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin-bottom:20px}
+.summary-card {
+  padding:20px}
+.summary-card h2 {
+  font-size:12px;
+  color:var(--muted);
+  font-weight:550;
+  margin-bottom:9px}
+.summary-card strong {
+  font-size:19px;
+  font-weight:650;
+  line-height:1.35;
+  display:block}
+.summary-card p {
+  font-size:12px;
+  color:var(--muted)}
+.section-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin:22px 0 12px}
+.section-heading h2 {
+  font-size:17px}
+.system {
+  border:1px solid var(--line);
+  background:var(--panel);
+  border-radius:10px;
+  padding:0 16px;
+  margin-top:16px}
+.system summary {
+  padding:13px 0}
+.system dl {
+  grid-template-columns:minmax(140px,190px) minmax(0,1fr);
+  font-size:12px}
+.system dd {
+  white-space:pre-wrap}
+.system h3 {
+  margin-top:10px;
+  color:var(--ink)}
+footer {
+  padding-top:6px}
+.samplebar {
+  margin-top:12px;
+  gap:12px;
+  flex-wrap:wrap}
+.result-grid {
+  display:grid;
+  grid-template-columns:minmax(250px,32%) minmax(0,1fr);
+  gap:18px;
+  align-items:start}
+.runlist {
+  padding:0;
+  list-style:none;
+  max-height:560px;
+  overflow:auto;
+  margin:0}
+.run {
+  padding:17px;
+  border-bottom:1px solid var(--line)}
+.run:last-child {
+  border-bottom:0}
+.run h2 {
+  font-size:14px;
+  overflow-wrap:anywhere}
+.run p {
+  font-size:11px;
+  color:var(--muted);
+  margin:4px 0 12px}
+.filebutton {
+  display:block;
+  width:100%;
+  text-align:left;
+  margin-top:6px;
+  font-size:12px;
+  overflow-wrap:anywhere}
+.filebutton[aria-pressed=true] {
+  background:var(--selected);
+  border-color:var(--accent);
+  color:var(--accent)}
+.openfolder {
+  font-size:11px;
+  width:100%;
+  margin-top:10px}
+.viewer-head {
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:16px;
+  border-bottom:1px solid var(--line);
+  align-items:center}
+.viewer-head h2 {
+  font-size:13px;
+  overflow-wrap:anywhere}
+.filetext {
+  padding:18px;
+  margin:0;
+  font:12px/1.7 ui-monospace,'DejaVu Sans Mono',monospace;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  max-height:560px;
+  overflow:auto;
+  min-height:320px}
+.empty {
+  padding:28px;
+  color:var(--muted);
+  font-size:13px}
+.logtools {
+  display:flex;
+  gap:16px;
+  align-items:center;
+  flex-wrap:wrap;
+  padding:14px 18px;
+  border-bottom:1px solid var(--line)}
+.logtools label {
+  font-size:12px}
+.logtools select {
+  min-width:160px}
+.logtools .checkline {
+  margin-left:auto}
+.logwell {
+  height:480px;
+  overflow:auto;
+  padding:8px 18px;
+  font:12px/1.65 ui-monospace,'DejaVu Sans Mono',monospace;
+  overscroll-behavior:contain}
+.logrow {
+  display:grid;
+  grid-template-columns:75px 62px minmax(0,1fr);
+  gap:9px;
+  padding:5px 0;
+  border-bottom:1px solid var(--line);
+  overflow-wrap:anywhere}
+.logrow time {
+  color:var(--muted)}
+.logrow .level {
+  text-transform:uppercase;
+  font-size:10px;
+  font-weight:700}
+.logrow.warn .level {
+  color:var(--warning)}
+.logrow.error .level,.logrow.alarm .level {
+  color:var(--dangertext)}
+.logrow.state .level {
+  color:var(--accent)}
+.logrow .text {
+  white-space:pre-wrap}
+.conversation-layout {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 265px;
+  gap:18px;
+  align-items:start}
+.conversation {
+  height:365px;
+  overflow:auto;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:14px}
+.bubble {
+  max-width:90%;
+  padding:12px 15px;
+  background:var(--soft);
+  border:1px solid var(--line);
+  border-radius:12px;
+  align-self:flex-start;
+  overflow-wrap:anywhere;
+  white-space:pre-wrap;
+  font-size:13px}
+.bubble.user {
+  background:var(--selected);
+  border-color:var(--inputline);
+  align-self:flex-end}
+.bubble small {
+  display:block;
+  font-size:10px;
+  color:var(--muted);
+  margin-bottom:5px;
+  font-weight:650}
+.composer {
+  border-top:1px solid var(--line);
+  padding:18px}
+.composer .action-card {
+  padding:0;
+  border:0;
+  border-radius:0}
+.composer .cardhead {
+  display:none}
+.composer .description {
+  display:none}
+.places-card {
+  padding:20px}
+.places-card ul {
+  padding:0;
+  list-style:none;
+  font-size:12px;
+  margin:14px 0}
+.places-card li {
+  padding:10px 0;
+  border-bottom:1px solid var(--line)}
+.places-card .hint {
+  margin-top:8px}
+.message {
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:12px 15px;
+  background:var(--soft);
+  font-size:12px;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere}
+.recent {
+  list-style:none;
+  padding:0;
+  margin:0}
+.recent li {
+  padding:12px 18px;
+  border-bottom:1px solid var(--line);
+  font-size:12px;
+  overflow-wrap:anywhere}
+.recent li:last-child {
+  border:0}
+.recent time {
+  font-size:10px;
+  color:var(--muted);
+  display:block}
+.toolbar {
+  display:flex;
+  gap:12px;
+  align-items:center}
+.preview-tools {
+  padding:0 18px}
+.preview-tools summary {
+  padding:14px 0;
+  font-weight:650;
+  cursor:pointer;
+  font-size:13px}
+.preview-tools .section-grid {
+  padding-bottom:16px}
+.preview-tools p {
+  margin:0 0 12px}
+.toast {
+  position:fixed;
+  left:50%;
+  bottom:20px;
+  transform:translateX(-50%);
+  max-width:calc(100% - 40px);
+  padding:12px 18px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  color:var(--ink);
+  background:var(--panel);
+  box-shadow:0 6px 30px #0002;
+  z-index:40;
+  font-size:13px;
+  white-space:pre-wrap}
+.toast:empty {
+  display:none}
+.sr {
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0}
+dialog {
+  color:var(--ink);
+  background:var(--panel);
+  border:1px solid var(--inputline);
+  border-radius:14px;
+  padding:0;
+  max-width:min(820px,calc(100% - 40px));
+  width:820px;
+  max-height:calc(100dvh - 40px);
+  box-shadow:0 20px 90px #0005}
+dialog::backdrop {
+  background:#081e30a8}
+.dialog-head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:20px 24px;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  background:var(--panel);
+  z-index:1}
+.dialog-head h2 {
+  font-size:20px}
+.dialog-head p {
+  font-size:12px;
+  color:var(--muted);
+  margin-top:4px}
+.dialog-head .stop {
+  min-width:110px;
+  min-height:48px;
+  font-size:15px}
+.dialog-body {
+  padding:20px 24px}
+.reviewparams {
+  display:flex;
+  gap:10px 24px;
+  flex-wrap:wrap;
+  margin:12px 0 18px;
+  font-size:12px}
+.reviewparams dt {
+  font-size:10px;
+  color:var(--muted)}
+.reviewparams dd {
+  margin:0;
+  font-weight:650;
+  overflow-wrap:anywhere}
+.exact {
+  border:1px solid var(--line);
+  border-radius:9px;
+  overflow:hidden}
+.exact .eyebrow {
+  padding:10px 14px;
+  background:var(--soft);
+  border-bottom:1px solid var(--line);
+  font-size:10px}
+.exact pre {
+  padding:16px;
+  margin:0;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  font:12px/1.65 ui-monospace,'DejaVu Sans Mono',monospace;
+  max-height:230px;
+  overflow:auto}
+.dialog-footer {
+  display:flex;
+  justify-content:flex-end;
+  gap:12px;
+  flex-wrap:wrap;
+  border-top:1px solid var(--line);
+  padding:16px 24px;
+  background:var(--panel);
+  position:sticky;
+  bottom:0}
+.dialog-footer .primary {
+  min-width:128px}
+.confirmfield {
+  margin-top:16px}
+.dialog-body>.help {
+  margin-top:14px}
+.stop:disabled {
+  background:var(--red);
+  color:#fff;
+  opacity:.7;
+  border-color:var(--red)}
+.busy-note {
+  font-size:12px;
+  color:var(--muted)}
+.state-note {
+  font-size:12px}
+.section-grid .action-card .fields {
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+.inline-badge {
+  font-size:10px;
+  background:var(--soft);
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:2px 6px;
+  color:var(--muted)}
+
+@media(max-width:1150px) {
+  .shell {
+  grid-template-columns:148px minmax(0,1fr)}
+.board {
+  grid-template-columns:minmax(0,1fr) 280px}
+.launchrow {
+  grid-template-columns:1fr}
+.statusbar .world {
+  display:block}
+.toptools {
+  gap:12px}
+.connection {
+  font-size:12px}
+.conversation-layout {
+  grid-template-columns:minmax(0,1fr) 235px}
+.topbar {
+  padding-left:20px;
+  padding-right:20px}
+.banner {
+  padding:10px 20px}
+.summary-card {
+  padding:16px}
+.summary-card strong {
+  font-size:17px}
+.target small {
+  font-size:11px}
+.theme {
+  padding-left:10px;
+  padding-right:10px}
+}
+
+@media(max-width:850px) {
+  .shell {
+  grid-template-columns:1fr}
+.sidebar {
+  height:auto;
+  position:static;
+  gap:12px;
+  padding:12px}
+.sidebar .brand {
+  font-size:16px}
+.sidebar nav {
+  display:flex;
+  overflow:auto}
+.sidebar nav button {
+  width:auto;
+  white-space:nowrap}
+.sidebar nav span,.sidebar .bottom {
+  display:none}
+.board {
+  grid-template-columns:1fr}
+.rail {
+  grid-template-columns:1fr 1fr}
+.launchrow {
+  grid-template-columns:1fr 1fr}
+.conversation-layout {
+  grid-template-columns:1fr}
+.summary-grid {
+  grid-template-columns:1fr}
+.topbar {
+  padding:12px 16px;
+  min-height:76px}
+.target {
+  display:block}
+.toptools {
+  gap:10px}
+.statusbar {
+  padding:10px 16px}
+.title .tag {
+  display:none}
+.title p {
+  max-width:55ch}
+.statusbar .world {
+  margin-left:0}
+.theme {
+  font-size:11px}
+.connection {
+  font-size:11px}
+.stop {
+  min-width:105px}
+footer {
+  padding:0 20px 12px}
+.result-grid {
+  grid-template-columns:1fr}
+}
+
+@media(max-width:600px) {
+  .topbar {
+  flex-wrap:wrap}
+.toptools {
+  flex-wrap:wrap;
+  margin-left:auto}
+.topbar .connection {
+  order:3}
+.rail,.section-grid,.launchrow {
+  grid-template-columns:1fr}
+.target small {
+  font-size:10px}
+h1 {
+  font-size:26px}
+.dialog-head {
+  padding:16px}
+.dialog-head h2 {
+  font-size:17px}
+.dialog-body {
+  padding:16px}
+.dialog-footer {
+  padding:14px 16px}
+.logrow {
+  grid-template-columns:60px 45px minmax(0,1fr);
+  gap:5px;
+  font-size:11px}
+.system dl {
+  grid-template-columns:1fr}
+.system dd {
+  margin-bottom:8px}
+.summary-grid {
+  gap:12px}
+main {
+  padding:20px 16px}
+.banner {
+  padding:10px 16px}
+}
+
+/* Office tasks */
+.office-layout {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 300px;
+  gap:18px;
+  align-items:start}
+.office-main,.office-rail {
+  display:grid;
+  gap:16px;
+  min-width:0}
+.office-layout .card {
+  padding:18px}
+.office-head {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px}
+.office-modes {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 18px;
+  margin:10px 0}
+.office-modes label {
+  display:flex;
+  gap:8px;
+  align-items:center;
+  min-height:44px;
+  font-weight:600}
+.office-modes input {
+  min-height:20px;
+  width:20px;
+  height:20px;
+  padding:0;
+  accent-color:var(--accent);
+  flex:none}
+.office-fields {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;
+  margin:12px 0}
+.office-fields label,.office-reply label {
+  display:grid;
+  gap:5px;
+  font-weight:600;
+  font-size:13px}
+.office-fields select,.office-reply input,.office-compose textarea {
+  min-height:44px;
+  border:1px solid var(--inputline);
+  border-radius:8px;
+  padding:8px 10px;
+  background:var(--panel);
+  color:var(--ink);
+  font:inherit;
+  width:100%;
+  min-width:0}
+.office-compose textarea {
+  min-height:84px;
+  resize:vertical}
+.office-buttons {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:12px}
+.office-buttons button {
+  flex:0 1 auto}
+.office-mic.recording {
+  background:var(--red);
+  color:#fff;
+  border-color:var(--red)}
+.office-reasons {
+  margin:8px 0 0;
+  padding-left:18px;
+  color:var(--warning);
+  font-size:13px}
+.sr-only {
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0}
+.office-ask {
+  border-left:4px solid var(--accent)}
+.office-request {
+  overflow-wrap:anywhere}
+.office-layout h3 {
+  font-size:13px;
+  margin:12px 0 4px}
+.office-layout .said {
+  margin:8px 0;
+  padding:10px 12px;
+  background:var(--soft);
+  border-radius:8px;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere}
+.office-reply {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:end;
+  margin-top:10px}
+.office-reply label {
+  flex:1 1 220px}
+.office-timeline {
+  max-height:420px;
+  overflow:auto;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding:4px 2px}
+.office-timeline .bubble {
+  max-width:92%}
+.bubble.robot {
+  border-color:var(--accent)}
+.office-note,.office-move,.office-alarm {
+  font-size:12px;
+  color:var(--muted);
+  overflow-wrap:anywhere;
+  white-space:pre-wrap}
+.office-move {
+  color:var(--accent);
+  font-weight:600}
+.office-alarm {
+  color:var(--dangertext);
+  font-weight:600}
+.office-chip {
+  display:inline-block;
+  font-size:11px;
+  font-weight:700;
+  padding:2px 8px;
+  border-radius:999px;
+  background:var(--soft);
+  border:1px solid var(--line)}
+.office-chip.good {
+  color:var(--green)}
+.office-chip.warn {
+  color:var(--warning)}
+.office-chip.bad {
+  color:var(--dangertext)}
+.office-steps {
+  margin:8px 0;
+  padding-left:20px;
+  font-size:13px}
+.office-jobs {
+  list-style:none;
+  padding:0;
+  margin:8px 0 0;
+  display:grid;
+  gap:8px;
+  font-size:13px}
+.office-jobs li {
+  border-bottom:1px solid var(--line);
+  padding-bottom:8px;
+  overflow-wrap:anywhere}
+@media(max-width:1150px) {
+  .office-layout {
+  grid-template-columns:minmax(0,1fr) 250px}
+}
+@media(max-width:850px) {
+  .office-layout {
+  grid-template-columns:minmax(0,1fr)}
+}
+
+/* Phones and tablets: one column that never grows wider than the screen; the six tabs wrap onto
+   a second row instead of widening the page, so every tab stays visible. */
+@media(max-width:850px) {
+  .shell {
+  grid-template-columns:minmax(0,1fr)}
+.sidebar,.sidebar nav,.app,.topbar,.toptools {
+  min-width:0;
+  max-width:100%}
+.sidebar nav {
+  flex-wrap:wrap;
+  overflow:visible;
+  gap:6px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to workspace</a>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="5" y="5" width="22" height="22" rx="7" stroke="currentColor" stroke-width="2"/><path d="M10 21l6-12 6 12m-10-4h8" stroke="currentColor" stroke-width="2"/></svg>AMR Console</div>
+    <nav id="navigation" aria-label="Console sections"></nav>
+    <div class="bottom"><span class="tag">Simulation</span><p>One robot.<br>One clear workspace.</p><span id="modeLabel" class="hint"></span></div>
+  </aside>
+  <div class="app">
+    <div class="masthead">
+      <header class="topbar">
+        <div class="target"><span id="robotName">TurtleBot3 Waffle</span><small id="computerName">Connecting to console…</small></div>
+        <div class="toptools"><span class="connection reconnecting" id="connection" role="status"><i class="dot" aria-hidden="true"></i><span id="connectionText">Connecting</span></span><button type="button" class="theme" id="theme" aria-label="Switch to dark theme">Dark theme</button><button type="button" class="stop" id="stop" aria-label="Stop the console session">STOP</button></div>
+      </header>
+      <div class="statusbar" role="status" aria-live="polite"><span id="state" class="status-pill">Connecting</span><span id="sessionKind">Waiting for status</span><span class="world" id="worldName"></span></div>
+      <div id="previewBanner" class="banner preview-label"></div>
+      <div id="connectionBanner" class="banner"></div>
+      <div id="errorBanner" class="banner error" role="alert"></div>
+    </div>
+    <main id="main" tabindex="-1" aria-label="Console workspace"></main>
+    <footer><div id="systemDetails"></div><div class="samplebar"><span>AMR CONSOLE</span><span id="footerMode">Simulation workspace</span></div></footer>
+  </div>
+</div>
+<dialog id="review" aria-labelledby="reviewTitle" aria-describedby="reviewIntro">
+  <div class="dialog-head"><div><h2 id="reviewTitle">Review action</h2><p id="reviewIntro">Review the exact backend command before running.</p></div><button type="button" class="stop" id="reviewStop" aria-label="Stop the console session">STOP</button></div>
+  <div class="dialog-body"><div id="reviewContent"></div></div>
+  <div class="dialog-footer"><button type="button" id="cancelReview">Cancel</button><button type="button" id="refreshReview">Refresh preview</button><button type="button" class="primary" id="run">Run</button></div>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><p class="message">JavaScript is required to use this console. No session has been started by this page.</p></noscript>
+<script>
+// The tab shows the app's icon (setup/icons/amr_console.svg), built here so the page loads nothing from outside.
+(()=>{const icon=document.createElement('link');icon.rel='icon';icon.type='image/svg+xml';icon.href='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs><linearGradient id="amrConsoleBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c8f8a"/><stop offset="1" stop-color="#04504e"/></linearGradient><clipPath id="amrConsoleTile"><rect x="8" y="8" width="240" height="240" rx="56"/></clipPath></defs><rect x="8" y="8" width="240" height="240" rx="56" fill="url(#amrConsoleBg)"/><path d="M186 110 C202 100 206 88 201 76" fill="none" stroke="#ffffff" stroke-opacity=".85" stroke-width="7" stroke-linecap="round" stroke-dasharray="0.1 12"/><path d="M200 26c-12.7 0-23 10-23 22.6 0 16.4 23 37.4 23 37.4s23-21 23-37.4C223 36 212.7 26 200 26z" fill="#ffffff"/><circle cx="200" cy="48.5" r="8.5" fill="#0a7a76"/><ellipse cx="128" cy="204" rx="80" ry="7" fill="#000" fill-opacity=".22"/><rect x="78" y="70" width="50" height="38" rx="5" fill="#f6b73c"/><path d="M103 70v38" stroke="#c98a12" stroke-width="5"/><rect x="134" y="94" width="44" height="7" rx="3" fill="#ffffff"/><rect x="131" y="102" width="50" height="7" rx="3" fill="#d7efec"/><rect x="62" y="108" width="132" height="10" rx="5" fill="#e3f4f1"/><rect x="68" y="118" width="120" height="62" rx="20" fill="#ffffff"/><rect x="84" y="132" width="64" height="28" rx="14" fill="#0b3b3a"/><circle cx="103" cy="146" r="5.5" fill="#8bddd0"/><circle cx="129" cy="146" r="5.5" fill="#8bddd0"/><rect x="166" y="138" width="12" height="16" rx="5" fill="#f6b73c"/><circle cx="94" cy="184" r="17" fill="#0b3b3a"/><circle cx="94" cy="184" r="6.5" fill="#8bddd0"/><circle cx="162" cy="184" r="17" fill="#0b3b3a"/><circle cx="162" cy="184" r="6.5" fill="#8bddd0"/></svg>');document.head.append(icon);})();
+'use strict';
+// All execution comes from the registry and an explicit, current backend preview.
+// file:// and explicit ?preview=1 use the in-memory simulator below.
+const TABS = [
+  ['overview','Overview','Your robot workspace','Check the session, connection and computer before you begin.'],
+  ['map','Map','Map your space','Create, explore and save a map of your building.'],
+  ['navigate','Navigate','Navigate with confidence','Choose a saved map, start navigation and send a destination.'],
+  ['commands','Commands','Tell your robot where to go','Send the robot to a named place. To deliver, collect, ask or pass on a message to a person, use Office tasks.'],
+  ['office','Office tasks','Work with people in the office','Ask the robot to deliver, collect, check or pass on a message, in English, Tamil, Malayalam or Telugu.'],
+  ['results','Results','Session records','Read saved maps, operation records and shutdown reports.'],
+  ['log','Log','Activity log','Follow live session events and filter the messages you need.']
+];
+// Fallback names; the backend's option_labels (config/worlds.yaml) replace them when actions load.
+const WORLD_LABELS = {proposed_system:'Demo office (18 × 12 m)',tb3_sandbox:'TurtleBot3 sandbox'};
+function learnWorldLabels(actions){for(const a of actions || [])for(const p of a.params || [])if(p.option_labels&&(p.name==='world'||p.name==='map'))Object.assign(WORLD_LABELS,p.option_labels);}
+const ACTION_COPY = {
+  'env.build':['Build workspace','Build the robot software on this console computer.'],
+  'env.check':['Check environment','Run the available environment checks before starting a session.'],
+  'map.start':['Start mapping','Build a map as you drive the robot.'],
+  'map.explore':['Explore automatically','Let the robot choose where to go and build a map.'],
+  'map.save':['Save map','Save a new map from the current mapping session.'],
+  'nav.start':['Start navigation','Use a saved map and the selected navigation controller.'],
+  'nav.goal':['Send a goal','Send a position and heading within the loaded map.'],
+  'commands.typed':['Your request','Describe a destination or answer the robot’s question.']
+};
+const $ = id => document.getElementById(id);
+function node(tag, attrs={}, ...children) {
+  const e=document.createElement(tag);
+  for(const [key,value] of Object.entries(attrs)) {
+    if(value===false || value===null || value===undefined) continue;
+    if(key==='class') e.className=value;
+    else if(key==='text') e.textContent=String(value);
+    else if(key.startsWith('on')) e.addEventListener(key.slice(2),value);
+    else if(key==='value') e.value=String(value);
+    else e.setAttribute(key,value===true?'':String(value));
+  }
+  for(const child of children.flat(Infinity)) if(child!==null && child!==undefined && child!==false) e.append(child.nodeType?child:document.createTextNode(String(child)));
+  return e;
+}
+const S = {
+  api:null, preview:false, status:null, actions:[], tab:'map', values:{}, logs:[], messages:[],
+  connection:'reconnecting', httpHealthy:false, streamHealthy:false, failureCount:0,
+  connectionReason:'', initialError:'', error:'', lastGood:0, streamSince:0,
+  review:null, reviewSerial:0, actionBusy:false, stopBusy:false, viewKey:'',
+  runs:[], resultsLoaded:false, resultsLoading:false, selectedFile:'', fileText:'', fileLoading:false,
+  fileSerial:0, resultSerial:0, filter:'all', follow:true, conversationRun:null,
+  conversationStarted:false, context:null, connectionTimer:null, refreshPending:false,
+  actionsPending:false, logCounter:0, noticeTimer:null, lastFocused:null, cardPreviews:{}, cardPreviewTimers:{}, cardPreviewSerials:{},
+  office:null, officeError:'', officeLoading:false, officeMode:'rehearsal', officeForm:{requester:'',place:'',language:'auto',text:''},
+  officeBusy:false, officeSpeak:false, officeHands:false, officeSpoken:0, officeRec:null, officeTranscribing:false
+};
+const motion={held:null, timer:null, epoch:0, linear:0.15, angular:0.8, pointer:null};
+function actionTitle(a){return ACTION_COPY[a.id]?.[0] || a.label || a.id;}
+function actionDescription(a){return ACTION_COPY[a.id]?.[1] || a.description || 'Review the backend operation before running.';}
+function commandReply(r){
+  if(!r || typeof r!=='object')return null;
+  if(r.error)return String(r.error);
+  if(r.grounding && r.grounding.reply)return String(r.grounding.reply);
+  if(r.validation && r.validation.question)return String(r.validation.question);
+  const status=r.nav2 && r.nav2.status;
+  if(status==='SUCCEEDED'){const place=r.validation && r.validation.location;return 'Arrived'+(place?' at the '+String(place).replace(/_/g,' '):'')+'.';}
+  if(status)return 'Navigation result: '+String(status).toLowerCase().replace(/_/g,' ')+'.';
+  return typeof r.reply==='string'?r.reply:null;
+}
+function worldLabel(value){
+  const key=String(value??'');
+  return WORLD_LABELS[key] || (key ? 'World label unavailable' : 'No world selected');
+}
+function sessionWorld(st=S.status){
+  const sess=st?.session;
+  if(!sess) return null;
+  const direct=sess.world || sess.map || sess.params?.world || sess.params?.map;
+  if(direct) return typeof direct==='object' ? direct.id || direct.value : direct;
+  const id=sess.run_id || sess.id;
+  if(id && S.context?.run_id===id) return S.context.params.world || S.context.params.map || null;
+  return null;
+}
+function sessionKey(){const s=S.status?.session;return s?.run_id || s?.id || (s ? s.action_id || s.action || s.kind : null);}
+function formatTime(value){
+  const t=typeof value==='number' && value<1e12 ? value*1000:value;
+  const d=new Date(t || Date.now());
+  return Number.isNaN(d.getTime())?'Time unavailable':d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+}
+function showNotice(text){
+  $('toast').textContent=text;
+  clearTimeout(S.noticeTimer);
+  S.noticeTimer=setTimeout(()=>{$('toast').textContent='';},6500);
+}
+function errorText(error){return error?.data?.reason || error?.message || 'The request could not be completed.';}
+function fail(error,context){
+  const text=errorText(error);
+  S.error=text; addLog(text,'error'); renderBanners();
+  if(context) showNotice(context+' '+text);
+}
+function realApi(token){
+  async function call(method,path,body){
+    let response;
+    try{response=await fetch(path,{method,headers:{'Content-Type':'application/json','X-Console-Token':token},body:body===undefined?undefined:JSON.stringify(body),cache:'no-store',credentials:'same-origin',keepalive:path==='/api/teleop' && body?.linear_x===0 && body?.angular_z===0});}
+    catch(_){throw new Error('Connection to the console computer was lost.');}
+    let data;
+    try{data=await response.json();}catch(_){throw new Error('The console returned an unreadable response.');}
+    if(!response.ok){const e=new Error(data.reason || 'The console refused this request.');e.status=response.status;e.data=data;throw e;}
+    return data;
+  }
+  return {
+    status:()=>call('GET','/api/status'),actions:()=>call('GET','/api/actions'),
+    preview:(id,params)=>call('POST','/api/preview',{action_id:id,params}),
+    run:(id,params,spec,confirm)=>call('POST','/api/run',{action_id:id,params,spec_id:spec,confirm_text:confirm||null}),
+    stop:()=>call('POST','/api/stop'),teleop:(linear_x,angular_z)=>call('POST','/api/teleop',{linear_x,angular_z}),
+    arrange:()=>call('POST','/api/windows/arrange',{layout:'gazebo-left-rviz-right'}),
+    results:()=>call('GET','/api/results'),file:path=>call('GET','/api/file?path='+encodeURIComponent(path)),
+    openPath:path=>call('POST','/api/open',{path}),
+    office:()=>call('GET','/api/office'),
+    officeService:(action,mode)=>call('POST','/api/office/service',{action,mode}),
+    officeRequest:body=>call('POST','/api/office/request',body),
+    officeReply:(input_id,text)=>call('POST','/api/office/reply',{input_id,text}),
+    officeCancel:()=>call('POST','/api/office/cancel'),
+    async officeSpeech(wav,language,hint){
+      // The recording goes only to this console computer, as a WAV body, never into a URL or the log.
+      let response;
+      try{response=await fetch('/api/office/speech?language='+encodeURIComponent(language || 'auto')+'&hint='+encodeURIComponent(hint || ''),{method:'POST',headers:{'Content-Type':'audio/wav','X-Console-Token':token},body:wav,cache:'no-store',credentials:'same-origin'});}
+      catch(_){throw new Error('Connection to the console computer was lost.');}
+      let data;
+      try{data=await response.json();}catch(_){throw new Error('The console returned an unreadable response.');}
+      if(!response.ok){const e=new Error(data.reason || 'The console refused this request.');e.status=response.status;e.data=data;throw e;}
+      return data;
+    },
+    events(onEvent,onOpen,onError){
+      const stream=new EventSource('/api/events?token='+encodeURIComponent(token));
+      stream.onopen=onOpen;
+      stream.onmessage=message=>{try{onEvent(JSON.parse(message.data));}catch(_){addLog('An event could not be read.','warn');}};
+      stream.onerror=onError;
+      return ()=>stream.close();
+    }
+  };
+}
+// Preview uses only the documented eight action IDs and the two supported worlds.
+function previewApi(){
+  const delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+  const clone=value=>JSON.parse(JSON.stringify(value));
+  const param=(name,type,label,extra={})=>({name,type,label,...extra});
+  const worldNames={proposed_system:'Demo office (18 × 12 m)',tb3_sandbox:'TurtleBot3 sandbox'};
+  const world=param('world','select','World',{options:['proposed_system','tb3_sandbox'],option_labels:worldNames,default:'proposed_system'});
+  const registry=[
+    {id:'env.build',tab:'environment',label:'Build workspace',params:[],command:'bash scripts/build.sh'},
+    {id:'env.check',tab:'environment',label:'Check environment',params:[],command:'bash scripts/check.sh'},
+    {id:'map.start',tab:'map',label:'Start mapping',params:[world],session:'mapping',teleop:true,command:'ros2 launch --noninteractive amr_physical_ai tb3_mapping.launch.py world:={world}'},
+    {id:'map.explore',tab:'map',label:'Explore automatically',params:[{...world,options:['proposed_system']},param('method','select','Method',{options:['ours','gain','nearest'],default:'ours'})],session:'mapping',teleop:false,command:'ros2 launch --noninteractive amr_physical_ai tb3_mapping.launch.py world:={world} explore:={method} ground_truth:=true'},
+    {id:'map.save',tab:'map',label:'Save map',params:[param('name','text','Map name',{default:'demo_office_01',pattern:'^[a-z0-9_]{3,40}$',hint:'3–40 characters: a–z, 0–9 and underscores. Existing maps are never overwritten.'})],kind:'operation',requires_session:'mapping',command:'Call /slam_toolbox/save_map with name data/runs/{run_id}/maps/{name}/{name}, then confirm {name}.yaml and {name}.pgm exist.'},
+    {id:'nav.start',tab:'navigate',label:'Start navigation',params:[param('map','select','Map',{options:['proposed_system','tb3_sandbox'],option_labels:worldNames,default:'proposed_system'}),param('controller','select','Controller',{options:['mppi','dwb','rpp'],default:'mppi'})],session:'navigation',command:'ros2 launch --noninteractive amr_physical_ai tb3_navigation.launch.py map:=src/amr_physical_ai/maps/{map}.yaml params_file:=src/amr_physical_ai/config/nav2_{controller}.yaml ground_truth:=true'},
+    {id:'nav.goal',tab:'navigate',label:'Send a goal',params:[param('x','number','X position (m)',{default:0.8,step:0.05,min:-10,max:10}),param('y','number','Y position (m)',{default:0,step:0.05,min:-6,max:6}),param('yaw','number','Heading (rad)',{default:0,step:0.1,min:-3.14,max:3.14})],kind:'operation',requires_session:'navigation',command:'Send NavigateToPose x={x} m, y={y} m, yaw={yaw} rad to the running session; one goal at a time; STOP cancels it.'},
+    {id:'commands.typed',tab:'commands',label:'Send request',params:[param('text','text','Request or answer',{default:'',hint:'For example: Go to the office. Then answer any question below.'})],kind:'operation',requires_session:'navigation',places:{proposed_system:['Dock','Open office','Team office','Reception'],tb3_sandbox:[]},places_ready:['proposed_system'],command:'Parse "{text}", validate the destination against approved places on the running map and send NavigateToPose only if the request is unambiguous.'}
+  ];
+  let status={state:'idle',session:null,environment:{ros_distro:'jazzy',rmw:'rmw_cyclonedds_cpp',gazebo:'8.15.0',commit:'91ce71a (sample)',session_type:'x11',arrange_supported:false,arrange_reason:'Window arranging is unavailable in preview mode.',recording_supported:false,recording_reason:'Screen recording is unavailable in preview mode.'}};
+  let listeners=[],specs=new Map(),seq=0,revision=0,runSeq=0,operationBusy=false,generation=0,question=false;
+  let approvalLocked=false,staleOnce=false,failOnce=false,connection='connected';
+  const savedNames=new Set();
+  const runs=[{id:'20261027_101500_map_explore_a1b2c3d4',label:'Office exploration · sample',note:'Demo office (18 × 12 m) · completed · sample data',path:'data/runs/20261027_101500_map_explore_a1b2c3d4',files:[{name:'summary.json',path:'data/runs/20261027_101500_map_explore_a1b2c3d4/exploration/summary.json'},{name:'cleanup.json',path:'data/runs/20261027_101500_map_explore_a1b2c3d4/cleanup.json'}]}];
+  const emit=event=>listeners.forEach(fn=>fn(clone(event)));
+  const log=(text,level='info')=>emit({type:'log',level,text,ts:Date.now()});
+  const state=patch=>{status={...status,...patch};revision++;emit({type:'state',status:clone(status)});};
+  function issue(reason,code='interlock',http=409){const e=new Error(reason);e.status=http;e.data={error:code,reason};return e;}
+  function checkConnection(){if(connection!=='connected')throw issue('Preview connection is unavailable. Restore Connected in Preview tools.','connection_lost',503);}
+  function lockedReason(a){
+    if(a.id==='commands.typed'){
+      const w=status.session?.world || status.session?.map;
+      if(approvalLocked)return 'Named places for this world have not been approved by the deployment owner.';
+      if(w && w!=='proposed_system')return 'This world has no approved named places for typed commands.';
+    }
+    return null;
+  }
+  function reason(a){
+    const lock=lockedReason(a);if(lock)return lock;
+    if(operationBusy)return 'Another operation is running. Wait for it to finish.';
+    if(a.requires_session){if(status.state!=='running' || status.session?.kind!==a.requires_session)return 'Needs a running '+a.requires_session+' session.';}
+    else if(status.state!=='idle')return 'Another session is running. Stop it first.';
+    return null;
+  }
+  function command(a,params){let text=a.command;for(const [key,value] of Object.entries({...params,run_id:status.session?.run_id || 'new_session'}))text=text.split('{'+key+'}').join(String(value));return text;}
+  function validate(a,p){
+    for(const field of a.params){
+      const value=p[field.name];
+      if(field.type==='select'&&!field.options.includes(value))throw issue('Choose an available '+field.label.toLowerCase()+'.','invalid_params',422);
+      if(field.type==='number' && (!Number.isFinite(value) || value<field.min || value>field.max))throw issue(field.label+' is outside the permitted range.','invalid_params',422);
+    }
+    if(a.id==='map.save'&&!/^[a-z0-9_]{3,40}$/.test(p.name))throw issue('Map name must contain 3–40 lowercase letters, digits or underscores.','invalid_params',422);
+    if(a.id==='commands.typed'&&!p.text.trim())throw issue('Enter a request or an answer.','invalid_params',422);
+  }
+  // Office tasks preview: a scripted conversation with sample people. Nothing is understood or driven.
+  const officePlaces=[['home','home'],['reception','reception'],['open_office','open office'],['open_office_r1c1',"Priya's desk"],['manager_cabin_r1c1',"Divya's desk"]];
+  const officePeople=[['Bharathwaj','operator','en','home'],['Priya','person','ta','open_office_r1c1'],['Divya','person','en','manager_cabin_r1c1']];
+  const officeActive=['submitted','queued','understanding','awaiting_confirmation','running'];
+  const office={service:{state:'off',detail:'The language service is off.'},mode:null,config_error:null,
+    context:{map_id:'proposed_system',places:officePlaces.map(([key,label])=>({key,label})),requesters:officePeople.map(([name,kind,language,place])=>({id:name,name,kind,language,place}))},
+    blocks:{robot:['Preview simulates only the conversation. Choose Without the robot.'],rehearsal:[]},
+    jobs:[],awaiting:null,position:'home',position_label:'home',moving:null,timeline:[],busy:false,
+    speech:{state:'not_installed',detail:'not available in preview mode.'}};
+  let officeSeq=0,officeInputs=0,officeJobs=0,officeWaiter=null,officeGeneration=0;
+  const officeEmit=()=>{office.busy=office.jobs.some(j=>officeActive.includes(j.state)) || !!office.moving;emit({type:'office',office:clone(office)});};
+  const officeNote=entry=>{office.timeline.push({...entry,seq:++officeSeq,at:new Date().toISOString()});if(office.timeline.length>60)office.timeline.shift();};
+  const officePlace=key=>officePlaces.find(p=>p[0]===key)?.[1] || key;
+  function officeAsk(job,audience,text,expect,place){
+    officeNote({kind:'robot',job_id:job.job_id,language:'en',text});
+    office.awaiting={input_id:'preview_'+(++officeInputs),job_id:job.job_id,prompt:'reply> ',expect,audience,place,place_label:officePlace(place),wait_s:120};
+    officeEmit();return new Promise(resolve=>{officeWaiter=resolve;});
+  }
+  async function officeMove(job,place,run){
+    office.moving={place,label:officePlace(place)};officeNote({kind:'move',job_id:job.job_id,text:'(no robot) moving to '+officePlace(place)});officeEmit();
+    await delay(1200);if(run!==officeGeneration)throw new Error('cancelled');
+    office.moving=null;office.position=place;office.position_label=officePlace(place);officeNote({kind:'arrived',job_id:job.job_id,text:'Arrived at '+officePlace(place)});officeEmit();
+  }
+  async function officeRun(job){
+    const run=officeGeneration;
+    try{
+      job.state='understanding';officeEmit();await delay(700);if(run!==officeGeneration)return;
+      const text=job.text.toLowerCase(),to=text.includes('priya')?'Priya':'Divya';
+      const item=['file','charger','encoder','laptop','box','document'].find(word=>text.includes(word)) || 'item';
+      const desk=officePeople.find(p=>p[0]===to)[3],from=(officePeople.find(p=>p[0]===job.requester) || officePeople[0])[3];
+      job.english='Deliver the '+item+' to '+to+'.';job.steps=[{n:1,action:'deliver',item,to,if_not_there:'bring_back'}];job.state='awaiting_confirmation';
+      const answer=await officeAsk(job,'requester','I will collect the '+item+' from you and take it to '+to+'. If '+to+' is not there, I will bring it back. Is that OK?',['yes','no'],from);
+      if(run!==officeGeneration)return;
+      if(!/^(yes|ok|sure|ஆம்|சரி|അതെ|ശരി|అవును|సరే)/i.test(answer)){job.state='cancelled';officeNote({kind:'robot',job_id:job.job_id,language:'en',text:'OK, I will not do it.'});officeEmit();return;}
+      job.state='running';officeEmit();
+      if(office.position!==from)await officeMove(job,from,run);
+      await officeAsk(job,'requester','Please place the '+item+' on my tray and reply done.',['done'],from);if(run!==officeGeneration)return;
+      await officeMove(job,desk,run);
+      const reply=await officeAsk(job,'stop','Hello '+to+'. '+job.requester+' sent you a '+item+'. Please take it from my tray and reply taken.',['taken','not_here'],desk);
+      if(run!==officeGeneration)return;
+      const taken=/taken|took|got|எடுத்|എടുത്ത|తీసు/i.test(reply);
+      job.outcomes.push({status:taken?'delivered':'not_delivered',target:to,item,reason:taken?null:'recipient_absent',returned_to_requester:!taken});
+      if(taken)officeNote({kind:'robot',job_id:job.job_id,language:'en',text:to+' took the '+item+'.'});
+      else{await officeMove(job,from,run);officeNote({kind:'robot',job_id:job.job_id,language:'en',text:to+' was not there, so I brought the '+item+' back. Please take it from my tray.'});}
+      job.state='done';officeEmit();
+      await officeMove(job,'home',run);
+    }catch(_){/* cancelled */}
+  }
+  function officeNext(){const next=office.jobs.find(j=>j.state==='queued');if(next && office.service.state==='ready')officeRun(next).then(officeNext);}
+  function officeEnd(text){
+    officeGeneration++;const waiter=officeWaiter;officeWaiter=null;office.awaiting=null;office.moving=null;
+    for(const job of office.jobs)if(officeActive.includes(job.state))job.state='cancelled';
+    if(text)officeNote({kind:'cancel',text});
+    officeEmit();if(waiter)waiter('');
+  }
+  const api={
+    async status(){checkConnection();return clone(status);},
+    async actions(){checkConnection();return {actions:registry.map(a=>({...clone(a),locked:!!lockedReason(a),lock_reason:lockedReason(a)}))};},
+    async preview(id,params){
+      checkConnection();const a=registry.find(x=>x.id===id);if(!a)throw issue('Unknown action.','unknown_action',404);validate(a,params);
+      const spec_id='preview_'+(++seq),kind=a.kind || 'command';
+      const pv={kind,spec_id,blocked_reason:reason(a),env:a.session?{ROS_DOMAIN_ID:'80',GZ_PARTITION:'amr_console_'+a.session+'_80'}:{}};
+      pv[kind==='operation'?'operation':'command']=command(a,params);
+      specs.set(spec_id,{id,params:JSON.stringify(params),revision,created:Date.now()});return pv;
+    },
+    async run(id,params,spec_id,confirm_text){
+      checkConnection();const a=registry.find(x=>x.id===id);if(!a)throw issue('Unknown action.','unknown_action',404);validate(a,params);
+      const spec=specs.get(spec_id);
+      if(staleOnce){staleOnce=false;revision++;}
+      if(!spec || spec.id!==id || spec.params!==JSON.stringify(params) || spec.revision!==revision || Date.now()-spec.created>600000)throw issue('The preview changed or expired. Review the refreshed command and confirm again.','preview_stale');
+      const blocked=reason(a);if(blocked)throw issue(blocked);
+      if(failOnce){failOnce=false;throw issue('The simulator could not complete this action. Check the session log before retrying.','operation_failed',500);}
+      specs.delete(spec_id);const currentGeneration=generation;
+      log((a.kind==='operation'?'Operation: ':'Command: ')+command(a,params));
+      if(a.requires_session){
+        operationBusy=true;state({session:{...status.session,operation_running:true}});
+        try{
+          if(a.id==='map.save' && savedNames.has(status.session.run_id+'/'+params.name))throw issue('A map with this name already exists. Choose a new map name.','map_exists',422);
+          const run_id=status.session.run_id;await delay(350);if(currentGeneration!==generation)throw issue('The operation was cancelled when the session stopped.','cancelled');
+          if(a.id==='commands.typed'){
+            const text=params.text.trim().toLowerCase();
+            if(text.includes('office')&&!text.includes('open')&&!text.includes('team')){question=true;return {run_id,grounding:{reply:'Which one: the open office or the team office?'},nav2:{status:'CLARIFICATION'}};}
+            if(question && !text.includes('open') && !text.includes('team'))return {run_id,grounding:{reply:'Please choose the open office or the team office.'},nav2:{status:'CLARIFICATION'}};
+            const place=['open office','team office','reception','dock'].find(p=>text.includes(p.split(' ')[0]));
+            if(place){question=false;await delay(1500);return {run_id,validation:{location:place.replace(' ','_')},nav2:{status:'SUCCEEDED'}};}
+            return {run_id,validation:{question:"I don't know that place. Please choose a place from the list."},nav2:{status:'CLARIFICATION'}};
+          }else if(a.id==='map.save'){
+            savedNames.add(run_id+'/'+params.name);const path='data/runs/'+run_id+'/maps/'+params.name;
+            runs.unshift({id:run_id+'_'+params.name,label:'Saved map · '+params.name+' · sample',note:worldLabel(status.session.world)+' · sample data',path,files:[{name:params.name+'.yaml',path:path+'/'+params.name+'.yaml'}]});
+            log('Map saved: '+path+'/'+params.name+'.yaml and .pgm.');
+          }else log('Navigation goal accepted.');
+          return {run_id};
+        }finally{operationBusy=false;if(status.session)state({session:{...status.session,operation_running:false}});}
+      }
+      const run_id='20261027_'+String(++runSeq).padStart(6,'0')+'_'+id.replace('.','_');
+      if(!a.session){
+        state({state:'running',session:{kind:'job',action_id:id,run_id,started_at:Date.now()}});
+        await delay(650);if(currentGeneration===generation){log(id==='env.check'?'Environment checks passed.':'Workspace build completed.');state({state:'idle',session:null});}
+        return {run_id};
+      }
+      question=false;
+      state({state:'starting',session:{kind:a.session,action_id:id,run_id,world:params.world || params.map,map:params.map || params.world,controller:params.controller,method:params.method,ros_domain_id:80,gz_partition:'amr_console_'+a.session+'_80',teleop:!!a.teleop,started_at:Date.now()}});
+      log('Session preflight passed. Starting the simulator.');
+      await delay(550);if(currentGeneration!==generation)throw issue('The session was stopped during startup.','cancelled');
+      state({state:'running'});log(a.teleop?'Mapping is ready. Manual drive is enabled.':a.id==='map.explore'?'Automatic exploration is running. Manual drive is disabled.':'Navigation is ready.');return {run_id};
+    },
+    async stop(){
+      checkConnection();generation++;operationBusy=false;question=false;
+      state({state:'stopping'});log('Stopping the processes this console started.');await delay(600);
+      state({state:'idle',session:null});log('Shutdown audit complete: no surviving processes.');return {survivors:0,forced:false,bond_abort:false,report:'data/logs/console/sample_cleanup.json'};
+    },
+    async teleop(linear_x,angular_z){
+      checkConnection();if(status.state!=='running'||!status.session?.teleop)throw issue('Manual drive requires a running session with teleop enabled.');
+      if(Math.abs(linear_x)>.26||Math.abs(angular_z)>1.82)throw issue('Drive velocity exceeds the permitted limit.','invalid_params',422);return {ok:true};
+    },
+    async arrange(){return {supported:false,reason:status.environment.arrange_reason};},
+    async results(){checkConnection();return {runs:clone(runs)};},
+    async file(path){
+      checkConnection();if(path.endsWith('cleanup.json'))return {path,text:JSON.stringify({sample_data:true,survivors:0,forced:false,bond_abort:false},null,2)};
+      if(path.endsWith('.yaml'))return {path,text:'# Sample map metadata\nimage: '+path.split('/').pop().replace(/\.yaml$/,'.pgm')+'\nresolution: 0.05\norigin: [-9.0, -6.0, 0.0]\nnegate: 0\noccupied_thresh: 0.65\nfree_thresh: 0.196\n'};
+      return {path,text:JSON.stringify({sample_data:true,world_label:'Demo office (18 × 12 m)',method:'ours',result:'completed',map_saved:true},null,2)};
+    },
+    async openPath(){checkConnection();return {ok:true,preview:true};},
+    async office(){checkConnection();return clone(office);},
+    async officeService(action,mode){
+      checkConnection();
+      if(action==='start'){
+        if(mode!=='rehearsal')throw issue('Preview simulates only the conversation. Choose Without the robot.','office_mode',409);
+        if(office.service.state!=='off')return clone(office);
+        officeGeneration++;Object.assign(office,{mode:'rehearsal',jobs:[],timeline:[],awaiting:null,moving:null,service:{state:'starting',detail:'Starting the sample language service.'}});officeSeq=0;
+        officeNote({kind:'service',text:'Language service starting (without the robot).'});officeEmit();
+        setTimeout(()=>{if(office.service.state!=='starting')return;office.service={state:'ready',model:'sample replies',version:'preview',detail:'Sample language service ready.'};officeNote({kind:'service',text:'Language service ready.'});officeEmit();},500);
+      }else{officeEnd('');office.service={state:'off',detail:'The language service is off.'};office.mode=null;officeEmit();}
+      return clone(office);
+    },
+    async officeRequest(body){
+      checkConnection();
+      if(office.service.state!=='ready')throw issue('Start the language service first.','office_off',409);
+      const text=String(body?.text || '').trim();if(!text || text.length>1000)throw issue('Type a request of 1–1000 characters.','office_text',422);
+      const job={job_id:'job_'+String(++officeJobs).padStart(12,'0'),text,requester:body.requester || 'Bharathwaj',state:'submitted',english:null,steps:null,outcomes:[],answers:[]};
+      office.jobs.push(job);if(office.jobs.length>12)office.jobs.shift();officeNote({kind:'request',job_id:job.job_id,requester:job.requester,text});
+      if(office.jobs.some(j=>j!==job && ['understanding','awaiting_confirmation','running'].includes(j.state))){job.state='queued';officeEmit();}
+      else{officeEmit();officeRun(job).then(officeNext);}
+      return {job_id:job.job_id};
+    },
+    async officeReply(input_id,text){
+      checkConnection();
+      if(!office.awaiting || office.awaiting.input_id!==input_id)throw issue('That question has already been answered or has expired.','office_reply_stale',409);
+      officeNote({kind:'reply',job_id:office.awaiting.job_id,audience:office.awaiting.audience,text:String(text)});
+      office.awaiting=null;officeEmit();const waiter=officeWaiter;officeWaiter=null;if(waiter)waiter(String(text));return {ok:true};
+    },
+    async officeCancel(){checkConnection();if(office.service.state==='off')throw issue('The language service is off.','office_off',409);officeEnd('Cancel pressed: the current task and the queue are cancelled.');return {ok:true};},
+    async officeSpeech(){checkConnection();throw issue('Speech input is not available in preview mode. Type the request instead.','office_speech',409);},
+    events(fn,onOpen){listeners.push(fn);onOpen();return ()=>{listeners=listeners.filter(x=>x!==fn);};},
+    controls:{
+      setConnection(value){connection=value;},getConnection:()=>connection,
+      setApproval(value){approvalLocked=value;revision++;},getApproval:()=>approvalLocked,
+      stale(){staleOnce=true;},fail(){failOnce=true;},
+      cleanupError(){generation++;state({state:'error'});emit({type:'alarm',text:'Shutdown audit found a surviving process. Press STOP to clean up before starting another session.',level:'alarm'});}
+    }
+  };return api;
+}
+function renderNavigation(){
+  $('navigation').replaceChildren(...TABS.map(([id,label],i)=>node('button',{type:'button',id:'tab-'+id,'aria-current':S.tab===id?'page':null,onclick:()=>switchTab(id)},node('span',{'aria-hidden':'true',text:String(i+1).padStart(2,'0')}),label)));
+}
+function switchTab(tab){
+  if(S.tab===tab)return;
+  releaseMotion();S.tab=tab;renderNavigation();renderMain(false);$('main').focus();
+  if(tab==='results')loadResults();
+  if(tab==='office')officeLoad();
+}
+function titleBlock(){const [,label,title,description]=TABS.find(t=>t[0]===S.tab);return node('div',{class:'title'},node('div',{},node('h1',{text:title}),node('p',{text:description})),node('span',{class:'tag',text:label+' workspace'}));}
+function renderBanners(){
+  $('previewBanner').textContent=S.preview?'Preview mode · sample data. This page does not control a computer or robot.':'';
+  $('modeLabel').textContent=S.preview?'Preview mode':'Console computer';
+  $('footerMode').textContent=S.preview?'Preview · simulated actions and sample data':'Simulation · connected console computer';
+  $('connectionBanner').textContent=S.connection==='connected'?'':(S.connectionReason || (S.connection==='lost'?'Connection lost. Controls are unavailable until contact is restored.':'Reconnecting to the console. Controls are paused until contact is restored.'));
+  const statusReason=S.status?.state==='error'?(S.status.reason || S.status.error_reason || 'The session is in an error state. Read the log and press STOP before starting again.'):'';
+  const texts=[S.error,statusReason,S.initialError].filter((text,i,array)=>text && array.indexOf(text)===i);
+  const errorBox=$('errorBanner');errorBox.replaceChildren();
+  if(texts.length)errorBox.append(node('div',{class:'flex'},node('div',{},...texts.map(text=>node('p',{text}))),node('button',{type:'button',text:S.status?.state==='error'?'View log':'Dismiss',onclick:()=>{if(S.status?.state==='error')switchTab('log');else{S.error='';S.initialError='';renderBanners();}}})));
+}
+function renderStrip(){
+  const st=S.status,session=st?.session;
+  $('computerName').textContent=S.preview?'Sample computer · amr-workstation':'Console computer · '+(location.host || 'identity unavailable');
+  $('robotName').textContent=S.preview?'TurtleBot3 Waffle · sample robot':'TurtleBot3 Waffle';
+  $('connection').className='connection '+S.connection;
+  $('connectionText').textContent=({connected:'Connected',reconnecting:'Reconnecting',lost:'Lost'}[S.connection] || 'Connecting')+(S.preview?' · preview':'');
+  const state=st?.state || 'connecting';
+  $('state').textContent=({idle:'Idle',starting:'Starting',running:'Running',stopping:'Stopping',error:'Error',connecting:'Connecting'}[state] || state);
+  $('state').className='status-pill '+(state==='error'?'state-error':state==='running'?'good':'');
+  const action=session && S.actions.find(a=>a.id===(session.action_id || session.action));
+  $('sessionKind').textContent=session?(action?actionTitle(action):({mapping:'Mapping session',navigation:'Navigation session',job:'Environment task'}[session.kind] || 'Active session')):(st?'No session running':'Waiting for status');
+  $('worldName').textContent=session && session.kind!=='job'?(sessionWorld()?worldLabel(sessionWorld()):'World not reported by backend'):'';
+  for(const id of ['stop','reviewStop']){
+    $(id).disabled=S.stopBusy || !S.api;
+    $(id).textContent=S.stopBusy?'STOPPING':'STOP';
+    $(id).title='Stop the session and clean up only the processes this console started.';
+  }
+  renderBanners();
+}
+function setConnection(value,reason=''){
+  const changed=S.connection!==value;
+  S.connection=value;S.connectionReason=reason;
+  if(value!=='connected'){
+    releaseMotion();
+    if(S.review&&!S.review.running)invalidateReview('The connection changed. Refresh the preview after reconnecting.');
+  }
+  renderStrip();if(changed)renderMain();else updateAvailability();
+  if(changed && value==='connected')for(const action of actionsFor(S.tab))scheduleCardPreview(action);
+  if(changed && S.status)addLog(value==='connected'?'Connected to the console.':reason || 'Connection '+value+'.',value==='connected'?'info':'warn');
+}
+function connectionGood(){
+  S.httpHealthy=true;S.failureCount=0;S.lastGood=Date.now();
+  if(S.streamHealthy)setConnection('connected');
+  else if(!S.streamSince || Date.now()-S.streamSince<15000)setConnection('reconnecting','Reconnecting to live events. Controls are paused until the event stream returns.');
+  else setConnection('lost','The live event stream is lost. Controls are paused until it reconnects.');
+}
+function connectionFailed(error){
+  S.httpHealthy=false;S.failureCount++;
+  const auth=error?.status===403;
+  setConnection(auth || S.failureCount>=2?'lost':'reconnecting',errorText(error));
+}
+function streamOpen(){S.streamHealthy=true;S.streamSince=0;clearTimeout(S.connectionTimer);S.connectionTimer=null;if(S.httpHealthy)setConnection('connected');}
+function streamError(){
+  S.streamHealthy=false;if(!S.streamSince)S.streamSince=Date.now();
+  const elapsed=Date.now()-S.streamSince,lost=elapsed>=15000 || S.failureCount>=2;
+  setConnection(lost?'lost':'reconnecting',lost?'The live event stream is lost. Controls are paused until it reconnects.':'Reconnecting to live events. Controls are paused until the event stream returns.');
+  clearTimeout(S.connectionTimer);S.connectionTimer=setTimeout(()=>{if(!S.streamHealthy)setConnection('lost','The live event stream is lost. Controls are paused until it reconnects.');},Math.max(0,15000-elapsed));
+}
+
+function systemPanel(){
+  const st=S.status || {},env=st.environment || {},sess=st.session || {};
+  const details=node('details',{class:'system',id:'systemPanel'});
+  details.append(node('summary',{text:'System details'}));
+  const entries=[
+    ['Run ID',sess.run_id || sess.id || 'No active run'],['Session kind',sess.kind || 'None'],['Action',sess.action_id || sess.action || 'None'],
+    ['ROS domain',sess.ros_domain_id ?? sess.ros_domain ?? 'Not assigned'],['Gazebo partition',sess.gz_partition || 'Not assigned'],
+    ['ROS distribution',env.ros_distro || 'Not reported'],['Middleware',env.rmw || env.middleware || 'Not reported'],
+    ['Gazebo version',env.gazebo || env.gazebo_version || 'Not reported'],['Commit',env.commit || 'Not reported'],
+    ['Desktop session',env.session_type || 'Not reported'],['Window arranging',env.arrange_supported===true?'Available':env.arrange_supported===false?'Unavailable':'Not reported'],
+    ['Window arranging reason',env.arrange_reason || 'No reason supplied'],['Recording',env.recording_supported===true?'Available':env.recording_supported===false?'Unavailable':'Not reported'],
+    ['Recording reason',env.recording_reason || 'No reason supplied'],['Started',sess.started_at?formatTime(sess.started_at):'Not started'],
+    ['Shutdown bond aborts',st.counters?.bond_aborts ?? 'Not reported']
+  ];
+  const dl=node('dl');for(const [key,value] of entries)dl.append(node('dt',{text:key}),node('dd',{text:value}));
+  details.append(dl);return details;
+}
+function renderSystem(){
+  const wasOpen=$('systemPanel')?.open || false;
+  $('systemDetails').replaceChildren(systemPanel());$('systemPanel').open=wasOpen;
+}
+function optionRecords(param){
+  const out=(param.options || []).map(option=>typeof option==='object' && option!==null?{value:option.value ?? option.id,label:option.label || option.name,disabled:!!(option.disabled || option.disabled_reason),reason:option.disabled_reason || ''}:{value:option});
+  for(const [value,reason] of Object.entries(param.locked_options || {}))if(!out.some(o=>String(o.value)===value))out.push({value,disabled:true,reason});
+  return out;
+}
+function optionLabel(param,option){
+  if(param.option_labels && param.option_labels[String(option.value)])return param.option_labels[String(option.value)];
+  if(param.name==='world'||param.name==='map')return WORLD_LABELS[String(option.value)] || option.label || 'Unnamed world';
+  return option.label || ({ours:'Ours',gain:'Gain',nearest:'Nearest',mppi:'MPPI',dwb:'DWB',rpp:'Regulated Pure Pursuit (RPP)'}[option.value]) || String(option.value);
+}
+function valuesFor(action){
+  const values=S.values[action.id] || (S.values[action.id]={});
+  for(const p of action.params || [])if(!(p.name in values))values[p.name]=p.default!==undefined?(Array.isArray(p.default)?[...p.default]:p.default):(p.type==='bool'?false:p.type==='multi'?[]:'');
+  return values;
+}
+function paramsFor(action){const v=valuesFor(action),result={};for(const p of action.params || [])result[p.name]=Array.isArray(v[p.name])?[...v[p.name]]:v[p.name];return result;}
+function setParam(action,param,value){valuesFor(action)[param.name]=value;S.cardPreviews[action.id]=null;updateAvailability();scheduleCardPreview(action);}
+function validation(action,params=paramsFor(action)){
+  for(const p of action.params || []){
+    const v=params[p.name];
+    if(p.disabled_reason)continue;
+    if(p.type==='select'&&!optionRecords(p).some(o=>String(o.value)===String(v)&&!o.disabled))return 'Choose an available '+(p.label || p.name).toLowerCase()+'.';
+    if(p.type==='multi'&&(!Array.isArray(v)||!v.length))return 'Choose at least one '+(p.label || p.name).toLowerCase()+'.';
+    if(p.type==='number'||p.type==='int'){
+      if(v==='' || !Number.isFinite(Number(v)))return 'Enter a number for '+(p.label || p.name)+'.';
+      if(p.type==='int'&&!Number.isInteger(Number(v)))return (p.label || p.name)+' must be a whole number.';
+      if((p.min!=null && Number(v)<p.min)||(p.max!=null&&Number(v)>p.max))return (p.label || p.name)+' is outside the permitted range.';
+    }
+    if(p.type==='text'){
+      if(p.pattern){try{if(!new RegExp(p.pattern).test(String(v)))return p.hint || (p.label || p.name)+' is invalid.';}catch(_){return 'The backend supplied an invalid validation rule.';}}
+      if(p.required&&!String(v).trim())return 'Enter '+(p.label || p.name).toLowerCase()+'.';
+    }
+  }
+  if(action.id==='map.save'&&!/^[a-z0-9_]{3,40}$/.test(String(params.name || '')))return 'Use 3–40 characters: a–z, 0–9 and underscores.';
+  if(action.id==='commands.typed'&&!String(params.text || '').trim())return 'Enter a request or an answer.';
+  return '';
+}
+function availability(action,{review=false}={}){
+  const reasons=[];
+  if(S.cardPreviews[action.id]?.blocked_reason)reasons.push({kind:'Backend blocked reason',text:S.cardPreviews[action.id].blocked_reason});
+  if(action.lock_reason)reasons.push({kind:'Backend lock reason',text:action.lock_reason});
+  else if(action.locked)reasons.push({kind:'Backend lock',text:'This action is locked. The backend did not supply a reason.'});
+  for(const p of action.params || [])if(p.disabled_reason)reasons.push({kind:(p.label || p.name)+' unavailable',text:p.disabled_reason,blocking:false});
+  if(S.connection!=='connected')reasons.push({kind:'Connection',text:S.connectionReason || 'Wait for the console connection to return.'});
+  if(!S.status)reasons.push({kind:'Session',text:'Waiting for the backend status.'});
+  else if(action.requires_session){
+    if(S.status.state!=='running'||S.status.session?.kind!==action.requires_session)reasons.push({kind:'Session',text:'Needs a running '+action.requires_session+' session.'});
+    else if(S.status.session?.operation_running)reasons.push({kind:'Session',text:'The robot is still working on the last request. Wait for its result, or press STOP.'});
+  }else if(S.status.state!=='idle')reasons.push({kind:'Session',text:'Another session is active. Press STOP before starting a new one.'});
+  if((S.actionBusy&&!review)||S.stopBusy)reasons.push({kind:'Availability',text:S.stopBusy?'Wait for shutdown to finish.':'An action is being submitted. Wait for its response.'});
+  const invalid=validation(action);if(invalid)reasons.push({kind:'Input',text:invalid});
+  return reasons;
+}
+function hasBlock(reasons){return reasons.some(reason=>reason.blocking!==false);}
+function paintReasons(container,reasons){
+  const unique=reasons.filter((r,i)=>reasons.findIndex(x=>x.text===r.text)===i);
+  container.replaceChildren(...unique.map(r=>node('div',{class:'reason'},node('small',{text:r.kind}),node('p',{text:r.text}))));
+}
+function parameterControl(action,param){
+  const id='param-'+action.id.replaceAll('.','-')+'-'+param.name;
+  const value=valuesFor(action)[param.name],label=param.label || param.name;
+  const helpId=id+'-help';
+  let hint=param.hint || '';
+  if(action.id==='map.save' && param.name==='name')hint='3–40 characters: a–z, 0–9 and underscores. Existing maps are never overwritten.';
+  const attrs={id,name:param.name,disabled:!!param.disabled_reason,'aria-describedby':hint?helpId:null};
+  let input;
+  if(param.type==='select'){
+    const options=optionRecords(param);
+    input=node('select',{...attrs,onchange:event=>{const selected=options.find(o=>String(o.value)===event.target.value);setParam(action,param,selected?selected.value:event.target.value);}},...options.map(o=>node('option',{value:o.value,disabled:!!o.disabled,text:optionLabel(param,o)+(o.reason?' — '+o.reason:'')})));
+    if(!options.some(o=>String(o.value)===String(value)))input.prepend(node('option',{value,text:value?'Selection no longer available':'Choose an option',disabled:true}));
+    input.value=String(value);
+  }else if(param.type==='bool'){
+    input=node('input',{...attrs,type:'checkbox',checked:!!value,onchange:event=>setParam(action,param,event.target.checked)});
+    return node('div',{},node('label',{class:'checkline',for:id},input,label),hint?node('p',{id:helpId,class:'help',text:hint}):null);
+  }else if(param.type==='multi'){
+    return node('fieldset',{class:'checkset'},node('legend',{text:label}),...optionRecords(param).map((o,i)=>node('label',{class:'checkline',for:id+'-'+i},node('input',{type:'checkbox',id:id+'-'+i,checked:Array.isArray(value)&&value.includes(o.value),disabled:!!param.disabled_reason || !!o.disabled,onchange:event=>{const next=(valuesFor(action)[param.name] || []).filter(x=>x!==o.value);if(event.target.checked)next.push(o.value);setParam(action,param,next);}}),optionLabel(param,o)+(o.reason?' — '+o.reason:''))),hint?node('p',{id:helpId,class:'help',text:hint}):null);
+  }else{
+    const numeric=param.type==='number'||param.type==='int';
+    input=node('input',{...attrs,type:numeric?'number':'text',value,min:param.min,max:param.max,step:numeric?(param.step || (param.type==='int'?1:'any')):null,pattern:param.pattern,required:!!param.required,autocomplete:'off',spellcheck:'false',oninput:event=>setParam(action,param,numeric?(event.target.value===''?'':Number(event.target.value)):event.target.value)});
+  }
+  return node('div',{},node('label',{for:id},label,input),hint?node('p',{class:'help',id:helpId,text:hint}):null);
+}
+function methodHelp(action){
+  const methods=(action.params || []).find(p=>p.name==='method');if(!methods)return null;
+  const copy={ours:'Use the configured exploration strategy.',gain:'Prioritise expected information gain.',nearest:'Visit the closest reachable frontier.'};
+  return node('ul',{class:'methods'},...optionRecords(methods).filter(o=>copy[o.value]).map(o=>node('li',{},node('b',{text:optionLabel(methods,o)}),' — '+copy[o.value])));
+}
+function actionCard(action){
+  valuesFor(action);
+  const card=node('section',{class:'card action-card','data-action':action.id,id:'action-'+action.id.replaceAll('.','-')},
+    node('div',{class:'cardhead'},node('h2',{text:actionTitle(action)}),node('span',{class:'inline-badge',text:action.locked?'Locked':action.kind==='operation'?'Operation':action.session?'Session':'Action'})),
+    node('p',{class:'description',text:actionDescription(action)}),
+    node('div',{class:'fields'},...(action.params || []).map(p=>parameterControl(action,p))),
+    action.id==='map.explore'?methodHelp(action):null,
+    node('button',{type:'button',class:'primary go','data-review':action.id,onclick:()=>openReview(action.id),text:action.id==='commands.typed'?'Review request →':'Review '+(action.kind==='operation'?'operation':'action')+' →'}),
+    node('div',{class:'reasons','data-reasons':action.id})
+  );return card;
+}
+function actionsFor(tab){return S.actions.filter(a=>tab==='overview'?a.tab==='environment'||a.tab==='overview'||!TABS.some(t=>t[0]===a.tab):a.tab===tab);}
+function unavailableActions(tab){return node('div',{class:'message',text:S.connection==='connected'?'The backend currently lists no actions for this section.':S.connectionReason || 'Waiting for the backend action list.'});}
+function mapPlaceholder(){
+  const world=sessionWorld();
+  const icon=node('div',{class:'placeholder'});
+  // Inline SVG only; no external assets or resources.
+  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 64 64');svg.setAttribute('fill','none');svg.setAttribute('aria-hidden','true');
+  const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d','M12 16l13-5 14 5 13-5v37l-13 5-14-5-13 5V16zM25 11v37m14-32v37');path.setAttribute('stroke','currentColor');path.setAttribute('stroke-width','2');svg.append(path);
+  icon.append(svg,node('h2',{text:'Live map — coming soon'}),node('p',{text:'Use the simulator’s map view while mapping. The live map will appear here when available.'}));
+  return node('section',{class:'card','aria-label':'Map placeholder'},node('div',{class:'mapview'},node('div',{class:'mapcorner'},node('span',{class:'eyebrow muted',text:'MAP WORKSPACE'})),icon),node('div',{class:'mapfoot'},node('span',{text:world?worldLabel(world):'Start a session to select a world'}),node('span',{text:'Simulation'})));
+}
+function driveAllowed(){return S.tab==='map' && S.connection==='connected' && S.status?.state==='running' && S.status.session?.kind==='mapping' && S.status.session?.teleop===true && !S.stopBusy && !S.review;}
+function driveCard(){
+  const card=node('section',{class:'card','aria-labelledby':'driveTitle'},node('div',{class:'cardhead'},node('h2',{id:'driveTitle',text:'Drive manually'}),node('span',{class:'tag good',text:'Enabled'})));
+  const allowed=S.connection==='connected'&&S.status?.state==='running'&&S.status.session?.kind==='mapping'&&S.status.session?.teleop===true;
+  if(!allowed){
+    card.querySelector('.tag').textContent='Unavailable';card.querySelector('.tag').className='tag';
+    const text=S.connection!=='connected'?'Manual drive is paused until the console reconnects.':S.status?.session?.kind==='mapping'&&S.status.session.teleop===false?'Automatic exploration controls the robot. Manual drive is unavailable for this session.':'Start a manual mapping session to enable the drive pad.';
+    card.append(node('div',{class:'drive-disabled hint',text}));return card;
+  }
+  const pad=node('div',{class:'pad',id:'drivePad',tabindex:'0',role:'group','aria-label':'Drive pad. Hold arrow keys or WASD to move; release to stop.'});
+  const button=(direction,label,glyph,cls='')=>node('button',{type:'button','data-direction':direction,'aria-label':label,class:cls,onpointerdown:event=>{
+    if(event.button!==undefined && event.button!==0)return;
+    event.preventDefault();event.currentTarget.focus();
+    try{event.currentTarget.setPointerCapture(event.pointerId);}catch(_){}
+    motion.pointer=event.pointerId;startMotion(direction,'pointer');
+  },onpointerup:releaseMotion,onpointercancel:releaseMotion,onlostpointercapture:releaseMotion,onkeydown:event=>{
+    if((event.key===' '||event.key==='Enter')&&!event.repeat){event.preventDefault();event.stopPropagation();startMotion(direction,'button');}
+  },onkeyup:event=>{if(event.key===' '||event.key==='Enter'){event.preventDefault();releaseMotion();}}},glyph);
+  pad.append(node('span'),button('forward','Hold to drive forward','↑'),node('span'),button('left','Hold to turn left','↶'),button('zero','Set drive velocity to zero','ZERO','zero'),button('right','Hold to turn right','↷'),node('span'),button('back','Hold to drive backward','↓'),node('span'));
+  pad.addEventListener('keydown',event=>{const direction=keyDirection(event.key);if(direction){event.preventDefault();if(!event.repeat)startMotion(direction,'keyboard');}});
+  pad.addEventListener('keyup',event=>{if(keyDirection(event.key)){event.preventDefault();releaseMotion();}});
+  pad.addEventListener('focusout',event=>{if(!pad.contains(event.relatedTarget))releaseMotion();});
+  const speed=(name,label,min,max,step,value,unit)=>node('label',{for:'speed-'+name},label,node('output',{id:'speed-'+name+'-out',text:value.toFixed(name==='linear'?2:1)+' '+unit}),node('input',{type:'range',id:'speed-'+name,min,max,step,value,oninput:event=>{motion[name]=Number(event.target.value);$('speed-'+name+'-out').textContent=motion[name].toFixed(name==='linear'?2:1)+' '+unit;}}));
+  card.append(pad,node('p',{class:'manualnote'},'Hold to drive · release to stop',node('br'),node('kbd',{text:'↑'}),' ',node('kbd',{text:'←'}),' ',node('kbd',{text:'↓'}),' ',node('kbd',{text:'→'}),' or W A S D'),node('div',{class:'speeds'},speed('linear','Forward speed',.05,.26,.01,motion.linear,'m/s'),speed('angular','Turn speed',.2,1.82,.01,motion.angular,'rad/s')),node('div',{class:'velocity',id:'velocity',text:'Stopped · 0.00 m/s · 0.00 rad/s'}),node('p',{class:'help',text:'Movement also stops when this window loses focus, the tab is hidden or you leave Map.'}));return card;
+}
+function mapView(){
+  const actions=actionsFor('map'),main=actions.filter(a=>a.id!=='map.save'),save=actions.filter(a=>a.id==='map.save');
+  return node('div',{class:'board'},node('div',{class:'mapcolumn'},mapPlaceholder(),main.length?node('div',{class:'launchrow'},...main.map(actionCard)):unavailableActions('map')),node('div',{class:'rail'},driveCard(),...save.map(actionCard)));
+}
+function overviewView(){
+  const st=S.status,sess=st?.session,active=S.actions.find(a=>a.id===(sess?.action_id || sess?.action));
+  const summary=(label,value,description)=>node('section',{class:'card summary-card'},node('h2',{text:label}),node('strong',{text:value}),node('p',{text:description}));
+  const content=node('div',{},node('div',{class:'summary-grid'},summary('Session',st?({idle:'Ready to begin',starting:'Starting session',running:'Running',stopping:'Stopping session',error:'Action required'}[st.state] || st.state):'Waiting for status',active?actionTitle(active):'One session runs at a time.'),summary('World',sess?(sess.kind==='job'?'Not applicable':sessionWorld()?worldLabel(sessionWorld()):'World not reported'):'No active world',sess?.kind==='job'?'Environment task':sess?'Current session':'Choose a world in Map or Navigate.'),summary('Connection',S.connection==='connected'?'Connected':S.connection==='lost'?'Lost':'Reconnecting',S.preview?'Sample computer · amr-workstation':'Console computer · '+(location.host || 'unavailable'))));
+  content.append(node('div',{class:'section-heading'},node('h2',{text:'Prepare this computer'})),node('div',{class:'section-grid'},...(actionsFor('overview').length?actionsFor('overview').map(actionCard):[unavailableActions('overview')])));
+  const env=st?.environment || {};
+  const capability=node('section',{class:'card action-card'},node('div',{class:'cardhead'},node('h2',{text:'Simulator windows'})),node('p',{class:'description',text:'Arrange Gazebo and the map view on the console computer.'}),node('button',{type:'button',id:'arrange',text:'Arrange windows',disabled:env.arrange_supported!==true || S.connection!=='connected',onclick:arrangeWindows}));
+  if(env.arrange_reason)capability.append(node('p',{class:'help',text:env.arrange_reason}));
+  if(env.recording_reason)capability.append(node('p',{class:'help',text:env.recording_reason}));
+  content.append(node('div',{class:'section-heading'},node('h2',{text:'Workspace'})),capability);
+  if(S.preview)content.append(previewTools());
+  content.append(node('div',{class:'section-heading'},node('h2',{text:'Recent activity'}),node('button',{type:'button',class:'theme',text:'View log →',onclick:()=>switchTab('log')})),node('section',{class:'card'},node('ul',{class:'recent',id:'recentActivity'})));
+  return content;
+}
+function previewTools(){
+  const controls=S.api.controls;
+  return node('details',{class:'card preview-tools',id:'previewTools'},node('summary',{text:'Preview tools · simulated scenarios'}),node('p',{class:'hint',text:'These controls change only this page’s in-memory simulator. They never call a backend.'}),node('div',{class:'section-grid'},node('label',{for:'previewConnection'},'Connection scenario',node('select',{id:'previewConnection',onchange:async event=>{controls.setConnection(event.target.value);if(event.target.value==='connected'){S.streamHealthy=true;await refreshStatus();await refreshActions();renderMain();}else{S.streamHealthy=false;setConnection(event.target.value,'Preview connection '+event.target.value+'. Restore Connected in Preview tools.');}}},...['connected','reconnecting','lost'].map(value=>node('option',{value,selected:value===controls.getConnection(),text:value[0].toUpperCase()+value.slice(1)})))),node('label',{class:'checkline',for:'previewApproval'},node('input',{type:'checkbox',id:'previewApproval',checked:controls.getApproval(),onchange:async event=>{controls.setApproval(event.target.checked);await refreshActions();invalidateReview('The backend action registry changed. Refresh the preview.');}}),'Require place approval'),node('button',{type:'button',text:'Make next Run preview stale',onclick:()=>{controls.stale();showNotice('The next reviewed action will be refused once as preview_stale.');}}),node('button',{type:'button',text:'Make next Run return an error',onclick:()=>{controls.fail();showNotice('The next action will return a simulated backend reason.');}}),node('button',{type:'button',text:'Simulate cleanup error',onclick:()=>controls.cleanupError()})));
+}
+function navigateView(){
+  const actions=actionsFor('navigate');
+  return node('div',{},node('div',{class:'section-grid'},...(actions.length?actions.map(actionCard):[unavailableActions('navigate')])),node('div',{class:'message',style:'margin-top:18px',text:'Goal coordinates use the loaded map frame. A point inside the map may still be unreachable. Session messages appear in Log.'}));
+}
+function placesView(){
+  const a=S.actions.find(x=>x.id==='commands.typed'),world=sessionWorld(),session=S.status?.session;
+  const card=node('aside',{class:'card places-card'},node('h2',{text:'Known places'}));
+  if(S.preview)card.append(node('p',{class:'hint',text:'Sample places · demonstration data'}));
+  if(!world||session?.kind!=='navigation'){card.append(node('p',{class:'hint',text:'Start navigation to see places for the running world.'}));return card;}
+  card.append(node('p',{class:'hint',text:worldLabel(world)}));
+  const places=a?.places?.[world];
+  if(!Array.isArray(places)||!places.length){card.append(node('p',{class:'hint',text:'No named places were supplied for the running world.'}));return card;}
+  card.append(node('ul',{},...places.map(place=>node('li',{text:typeof place==='string'?place:place.label || place.name || 'Unnamed place'}))));
+  if(Array.isArray(a.places_ready)&&!a.places_ready.includes(world))card.append(node('p',{class:'hint',text:'Places are awaiting deployment-owner approval.'}));
+  return card;
+}
+function commandsView(){
+  const action=S.actions.find(x=>x.id==='commands.typed');
+  return node('div',{class:'conversation-layout'},node('section',{class:'card','aria-label':'Command conversation'},node('div',{class:'conversation',id:'conversation',role:'log','aria-live':'polite','aria-relevant':'additions text','aria-label':'Robot conversation'}),node('div',{class:'composer'},action?actionCard(action):unavailableActions('commands'))),placesView());
+}
+function resultsView(){
+  const list=node('ul',{class:'runlist'});
+  if(S.resultsLoading&&!S.resultsLoaded)list.append(node('li',{class:'empty',text:'Loading session records…'}));
+  else if(!S.runs.length)list.append(node('li',{class:'empty',text:'No session records yet. Saved maps and completed sessions appear here.'}));
+  for(const run of S.runs){
+    const item=node('li',{class:'run'},node('h2',{text:run.label || 'Session record'}),node('p',{text:run.note || 'Saved session files'}));
+    const files=Array.isArray(run.files)?run.files:[];
+    for(const file of files)item.append(node('button',{type:'button',class:'filebutton','aria-pressed':S.selectedFile===file.path?'true':'false',text:file.name || file.path,onclick:()=>openFile(file.path)}));
+    if(!files.length)item.append(node('p',{text:'No readable text files listed.'}));
+    if(run.path)item.append(node('button',{type:'button',class:'openfolder',text:'Open folder on console computer ↗',disabled:S.connection!=='connected',onclick:()=>openFolder(run.path)}));
+    list.append(item);
+  }
+  return node('div',{},node('div',{class:'section-heading',style:'margin-top:0'},node('p',{class:'hint',text:'Newest sessions first. Folders open on the console computer.'}),node('button',{type:'button',text:S.resultsLoading?'Loading…':'Refresh records',disabled:S.resultsLoading || S.connection!=='connected',onclick:()=>loadResults()})),node('div',{class:'result-grid'},node('section',{class:'card','aria-label':'Session files'},list),node('section',{class:'card'},node('div',{class:'viewer-head'},node('h2',{text:S.selectedFile?S.selectedFile.split('/').pop():'Text viewer'})),node('pre',{class:'filetext',id:'fileText',tabindex:'0',text:S.fileLoading?'Loading file…':S.fileText || 'Choose a text record to read it here.'}))));
+}
+function logView(){
+  const filters=[['all','All levels'],['debug','Debug'],['info','Info'],['warn','Warnings'],['error','Errors'],['alarm','Alarms'],['state','State changes']];
+  return node('section',{class:'card'},node('div',{class:'logtools'},node('label',{for:'logFilter'},'Message level',node('select',{id:'logFilter',onchange:event=>{S.filter=event.target.value;renderLog();}},...filters.map(([value,label])=>node('option',{value,selected:S.filter===value,text:label})))),node('label',{class:'checkline',for:'follow'},node('input',{id:'follow',type:'checkbox',checked:S.follow,onchange:event=>{S.follow=event.target.checked;renderLog();}}),'Follow new messages'),node('button',{type:'button',text:'Clear view',onclick:()=>{S.logs=[];renderLog();}})),node('div',{class:'logwell',id:'logwell',role:'region','aria-label':'Live event log',tabindex:'0'}));
+}
+function renderMain(preserve=true){
+  const active=document.activeElement;
+  const focus=preserve&&active?.id&&$('main').contains(active)?{id:active.id,start:active.selectionStart,end:active.selectionEnd}:null;
+  const previewOpen=$('previewTools')?.open || false;
+  const logScroll=$('logwell')?.scrollTop;
+  releaseMotion();
+  const officeScroll=$('officeTimeline')?.scrollTop;
+  const render={overview:overviewView,map:mapView,navigate:navigateView,commands:commandsView,office:officeView,results:resultsView,log:logView}[S.tab];
+  $('main').replaceChildren(titleBlock(),render());
+  $('main').setAttribute('aria-labelledby','tab-'+S.tab);
+  if($('previewTools'))$('previewTools').open=previewOpen;
+  updateAvailability();renderLog();if(!S.follow && logScroll!==undefined && $('logwell'))$('logwell').scrollTop=logScroll;renderConversation();renderRecent();
+  renderOffice();if(officeScroll!==undefined && $('officeTimeline'))$('officeTimeline').scrollTop=officeScroll;
+  for(const action of actionsFor(S.tab))scheduleCardPreview(action);
+  if(focus&&$(focus.id)){
+    $(focus.id).focus({preventScroll:true});
+    try{if(focus.start!==null)$(focus.id).setSelectionRange(focus.start,focus.end);}catch(_){}
+  }
+}
+function updateAvailability(){
+  for(const action of S.actions){
+    const reasons=availability(action);
+    const b=document.querySelector('[data-review="'+CSS.escape(action.id)+'"]');if(b)b.disabled=hasBlock(reasons);
+    const target=document.querySelector('[data-reasons="'+CSS.escape(action.id)+'"]');if(target)paintReasons(target,reasons);
+  }
+  if($('arrange'))$('arrange').disabled=S.status?.environment?.arrange_supported!==true || S.connection!=='connected';
+  updateReviewButton();
+}
+function scheduleCardPreview(action){
+  clearTimeout(S.cardPreviewTimers[action.id]);
+  const serial=(S.cardPreviewSerials[action.id] || 0)+1;S.cardPreviewSerials[action.id]=serial;
+  if(!S.api || S.connection!=='connected' || validation(action)){
+    // No fresh check is possible: drop the old answer instead of showing it as current.
+    if(S.cardPreviews[action.id]){S.cardPreviews[action.id]=null;updateAvailability();}
+    return;
+  }
+  const params=paramsFor(action);
+  S.cardPreviewTimers[action.id]=setTimeout(async()=>{
+    try{
+      const preview=await S.api.preview(action.id,params);
+      if(S.cardPreviewSerials[action.id]!==serial || JSON.stringify(paramsFor(action))!==JSON.stringify(params))return;
+      S.cardPreviews[action.id]=preview;updateAvailability();
+    }catch(error){
+      if(S.cardPreviewSerials[action.id]!==serial)return;
+      S.cardPreviews[action.id]={blocked_reason:errorText(error)};updateAvailability();
+    }
+  },180);
+}
+async function openReview(actionId){
+  if(S.review)return;
+  const action=S.actions.find(a=>a.id===actionId);if(!action)return;
+  const reasons=availability(action);if(hasBlock(reasons)){showNotice(reasons.find(reason=>reason.blocking!==false).text);return;}
+  releaseMotion();S.lastFocused=document.activeElement;
+  S.review={actionId,params:paramsFor(action),preview:null,loading:true,running:false,invalid:false,message:'',confirm:'',request:0};
+  renderReview();$('review').showModal();await fetchReview();
+}
+function closeReview(){
+  if(S.review?.running)return;
+  S.reviewSerial++;S.review=null;
+  if($('review').open)$('review').close();
+  const target=S.lastFocused;if(target?.isConnected)target.focus({preventScroll:true});
+}
+function invalidateReview(message){
+  if(!S.review || S.review.running)return;
+  S.review.invalid=true;S.review.message=message;updateReviewButton();
+  const box=$('reviewStateMessage');if(box)box.textContent=message;
+}
+async function fetchReview(){
+  const review=S.review;if(!review || review.running)return;
+  const action=S.actions.find(a=>a.id===review.actionId);
+  if(!action){review.loading=false;review.invalid=true;review.message='The action is no longer listed by the backend.';renderReview();return;}
+  review.loading=true;review.invalid=true;review.preview=null;review.confirm='';review.message='';
+  const serial=++S.reviewSerial;review.request=serial;renderReview();
+  try{
+    const preview=await S.api.preview(review.actionId,review.params);
+    if(S.review!==review || serial!==S.reviewSerial)return;
+    const text=preview.kind==='operation'?preview.operation:preview.command;
+    if(typeof text!=='string' || !text || !preview.spec_id)throw new Error('The backend did not provide an exact command or operation and spec_id. This action cannot run.');
+    review.preview=preview;review.invalid=false;
+  }catch(error){
+    if(S.review!==review || serial!==S.reviewSerial)return;
+    review.invalid=true;review.message=errorText(error);addLog(review.message,'error');
+    if(error.status===403)connectionFailed(error);
+  }finally{if(S.review===review && serial===S.reviewSerial){review.loading=false;renderReview();}}
+}
+function reviewReasons(){
+  const review=S.review;if(!review)return [];
+  const action=S.actions.find(a=>a.id===review.actionId);
+  const reasons=action?availability(action,{review:true}).filter(reason=>reason.kind!=='Backend blocked reason'):[{kind:'Backend registry',text:'This action is no longer available.'}];
+  if(review.preview?.blocked_reason)reasons.unshift({kind:'Backend blocked reason',text:review.preview.blocked_reason});
+  if(review.message)reasons.push({kind:'Review status',text:review.message});
+  return reasons;
+}
+function renderReview(){
+  const review=S.review;if(!review)return;
+  const action=S.actions.find(a=>a.id===review.actionId),preview=review.preview;
+  $('reviewTitle').textContent='Review '+(action?actionTitle(action).toLowerCase():'action');
+  $('reviewIntro').textContent=S.preview?'Simulated backend preview · no computer or robot is controlled.':'The backend supplied the exact text below. Run submits this spec_id.';
+  const params=node('dl',{class:'reviewparams'});
+  for(const [key,value] of Object.entries(review.params)){
+    const p=action?.params?.find(x=>x.name===key) || {name:key,label:key};
+    let display=value;
+    if(key==='world'||key==='map')display=worldLabel(value);
+    else if(p.type==='select')display=optionLabel(p,optionRecords(p).find(o=>String(o.value)===String(value)) || {value});
+    else if(typeof value==='boolean')display=value?'Yes':'No';
+    else if(Array.isArray(value))display=value.join(', ');
+    params.append(node('div',{},node('dt',{text:p.label || key}),node('dd',{text:display})));
+  }
+  const command=preview?(preview.kind==='operation'?preview.operation:preview.command):(review.loading?'Getting the exact backend preview…':'No executable preview is available.');
+  const box=node('div',{},params,node('div',{class:'exact'},node('div',{class:'eyebrow',text:preview?.kind==='operation'?'EXACT BACKEND OPERATION':'EXACT BACKEND COMMAND'}),node('pre',{id:'exactCommand',text:command,tabindex:'0'})),node('div',{class:'reasons',id:'reviewReasons'}),node('p',{id:'reviewStateMessage',class:'help',role:'status',text:review.message || ''}));
+  if(preview?.env && Object.keys(preview.env).length){
+    const details=node('details',{class:'system'},node('summary',{text:'System details for this action'})),dl=node('dl');
+    for(const [key,value] of Object.entries(preview.env))if(!/token|password|secret|authorization/i.test(key))dl.append(node('dt',{text:key}),node('dd',{text:typeof value==='object'?JSON.stringify(value):value}));
+    details.append(dl);box.append(details);
+  }
+  if(action?.confirm_phrase){
+    const confirm=node('input',{id:'confirmText',type:'text',value:review.confirm,autocomplete:'off',spellcheck:'false',oninput:event=>{review.confirm=event.target.value;updateReviewButton();}});
+    box.append(node('label',{class:'confirmfield',for:'confirmText'},'Type '+action.confirm_phrase+' to confirm',confirm));
+  }
+  box.append(node('p',{class:'help',text:'Run uses this exact reviewed snapshot. Changing inputs or a stale backend specification requires a new review.'}));
+  $('reviewContent').replaceChildren(box);paintReasons($('reviewReasons'),reviewReasons());updateReviewButton();
+}
+function updateReviewButton(){
+  const review=S.review;if(!review){$('run').disabled=true;return;}
+  const action=S.actions.find(a=>a.id===review.actionId);
+  const reasons=reviewReasons();
+  $('run').disabled=review.loading || review.running || review.invalid || !review.preview?.spec_id || hasBlock(reasons) || (!!action?.confirm_phrase&&review.confirm!==action.confirm_phrase) || S.stopBusy;
+  $('run').textContent=review.running?'Running…':'Run';
+  $('cancelReview').disabled=review.running;
+  $('refreshReview').disabled=review.running || review.loading || S.connection!=='connected';
+  if($('reviewReasons'))paintReasons($('reviewReasons'),reasons);
+}
+async function runReviewed(){
+  const review=S.review;if(!review || $('run').disabled)return;
+  const action=S.actions.find(a=>a.id===review.actionId);if(!action)return;
+  if(hasBlock(reviewReasons()) || review.invalid || !review.preview?.spec_id)return;
+  review.running=true;S.actionBusy=true;updateAvailability();
+  if(action.id==='commands.typed'){
+    const key=sessionKey();if(S.conversationRun!==key){S.messages=[];S.conversationRun=key;}
+    S.conversationStarted=true;S.messages.push({who:'user',text:String(review.params.text),time:Date.now()});renderConversation();
+  }
+  let working=null;
+  try{
+    const sent=S.api.run(review.actionId,review.params,review.preview.spec_id,review.confirm);
+    if(action.id==='commands.typed'){
+      // The request is on its way: close the review and show progress in the conversation.
+      // STOP stays in the header; the backend refuses a second request until this one ends.
+      working={who:'system',text:'Working on it…',time:Date.now()};S.messages.push(working);
+      const textParam=action.params?.find(p=>p.name==='text');if(textParam)valuesFor(action)[textParam.name]='';
+      review.running=false;closeReview();renderMain();showNotice('Request sent.');
+    }
+    const response=await sent;
+    if(action.session && response.run_id)S.context={run_id:response.run_id,params:{...review.params}};
+    if(action.id==='commands.typed'){
+      // The backend returns the command record: the robot's reply is its question, refusal or outcome.
+      const reply=commandReply(response);
+      if(working){S.messages.splice(S.messages.indexOf(working),1);working=null;if($('conversation'))$('conversation')._first=null;}
+      if(reply)S.messages.push({who:'session',text:reply,time:Date.now()});
+      else if(!S.messages.some(m=>m.who==='session'&&m.time>=S.messages.filter(m=>m.who==='user').slice(-1)[0]?.time))S.messages.push({who:'system',text:'Request submitted. Waiting for session messages.',time:Date.now()});
+      const textParam=action.params?.find(p=>p.name==='text');if(textParam)valuesFor(action)[textParam.name]='';
+    }
+    if(action.id!=='commands.typed')showNotice(action.kind==='operation'?'Operation submitted. Check session messages for its result.':'Action submitted.');
+    review.running=false;closeReview();
+    if(action.id==='commands.typed')renderMain();
+    if(action.id==='map.save')S.resultsLoaded=false;
+  }catch(error){
+    review.running=false;
+    if(working){S.messages.splice(S.messages.indexOf(working),1);working=null;if($('conversation'))$('conversation')._first=null;}
+    if(action.id==='commands.typed'){S.messages.push({who:'system',text:errorText(error),time:Date.now()});renderConversation();}
+    if(error.data?.error==='preview_stale'){
+      addLog(errorText(error),'warn');
+      await fetchReview();
+      if(S.review===review){review.message='The previous specification was stale. Review the refreshed text, then press Run again. Backend reason: '+errorText(error);review.invalid=false;renderReview();
+        // The refusal is informational after refresh, not a new backend block.
+        review.message='';$('reviewStateMessage').textContent='The previous specification was stale. Review the refreshed text and press Run again. '+errorText(error);updateReviewButton();}
+    }else{
+      review.message=errorText(error);review.invalid=true;renderReview();fail(error);
+      if(error.status===403)connectionFailed(error);
+    }
+  }finally{
+    S.actionBusy=false;if(S.review===review)review.running=false;
+    await refreshStatus();await refreshActions();updateAvailability();
+  }
+}
+function keyDirection(key){return {ArrowUp:'forward',ArrowDown:'back',ArrowLeft:'left',ArrowRight:'right',w:'forward',W:'forward',s:'back',S:'back',a:'left',A:'left',d:'right',D:'right',x:'zero',X:'zero',' ':'zero'}[key];}
+function startMotion(direction,source){
+  if(direction==='zero'){releaseMotion(true);return;}
+  if(!driveAllowed())return;
+  if(motion.held?.direction===direction && motion.held.source===source)return;
+  releaseMotion();motion.held={direction,source};const epoch=++motion.epoch;
+  document.querySelectorAll('[data-direction]').forEach(button=>button.classList.toggle('held',button.getAttribute('data-direction')===direction));
+  const send=()=>{
+    if(!motion.held || epoch!==motion.epoch || !driveAllowed()){releaseMotion();return;}
+    const v=(direction==='forward'?1:direction==='back'?-1:0)*motion.linear,w=(direction==='left'?1:direction==='right'?-1:0)*motion.angular;
+    if($('velocity'))$('velocity').textContent=v.toFixed(2)+' m/s · '+w.toFixed(2)+' rad/s';
+    Promise.resolve(S.api.teleop(v,w)).catch(error=>{
+      if(epoch===motion.epoch){releaseMotion();fail(error,'Manual drive stopped.');}
+    }).finally(()=>{
+      // A release can overlap a nonzero request. Repeat zero after its response too.
+      if(epoch!==motion.epoch)sendZero();
+    });
+  };
+  send();motion.timer=setInterval(send,100);
+}
+function sendZero(){if(S.api)Promise.resolve(S.api.teleop(0,0)).catch(error=>{if(S.connection==='connected' && S.status?.state==='running' && S.status.session?.teleop)addLog(errorText(error),'warn');});}
+function releaseMotion(force=false){
+  const held=!!motion.held;
+  if(motion.timer){clearInterval(motion.timer);motion.timer=null;}
+  motion.held=null;motion.pointer=null;motion.epoch++;
+  document.querySelectorAll('.pad button.held').forEach(button=>button.classList.remove('held'));
+  if($('velocity'))$('velocity').textContent='Stopped · 0.00 m/s · 0.00 rad/s';
+  if(held || force)sendZero();
+}
+window.addEventListener('blur',()=>releaseMotion());
+document.addEventListener('visibilitychange',()=>{if(document.hidden)releaseMotion();});
+document.addEventListener('pointerup',()=>releaseMotion());
+document.addEventListener('pointercancel',()=>releaseMotion());
+window.addEventListener('pagehide',()=>releaseMotion());
+document.addEventListener('keydown',event=>{if(event.key==='Escape')releaseMotion();});
+async function stopSession(){
+  if(!S.api || S.stopBusy)return;
+  releaseMotion(true);S.stopBusy=true;renderStrip();updateAvailability();
+  if(S.review&&!S.review.running){closeReview();}
+  try{
+    const report=await S.api.stop();
+    S.error='';
+    const survivorCount=Array.isArray(report.survivors)?report.survivors.length:Number(report.survivors || 0);
+    if(report.forced || survivorCount || report.bond_abort){
+      const notes=[];
+      if(report.forced)notes.push('Shutdown required a forced stop.');
+      if(survivorCount)notes.push(String(survivorCount)+' process(es) survived shutdown.');
+      if(report.bond_abort)notes.push('A shutdown bond abort was reported.');
+      if(report.report)notes.push('Report: '+(typeof report.report==='string'?report.report:JSON.stringify(report.report)));
+      S.error=notes.join(' ');addLog(S.error,'alarm');
+    }else{addLog('STOP completed. No surviving processes were reported.');showNotice('Session stopped.');}
+  }catch(error){fail(error,'STOP failed.');}
+  finally{S.stopBusy=false;await refreshStatus();await refreshActions();renderStrip();updateAvailability();}
+}
+async function arrangeWindows(){
+  try{const result=await S.api.arrange();if(result.supported===false){if(result.reason){showNotice(result.reason);addLog(result.reason,'warn');}}else showNotice('Window arrangement requested on the console computer.');}
+  catch(error){fail(error);}
+}
+async function loadResults(){
+  if(!S.api || S.resultsLoading)return;
+  const serial=++S.resultSerial;S.resultsLoading=true;if(S.tab==='results')renderMain();
+  try{const result=await S.api.results();if(serial===S.resultSerial){S.runs=Array.isArray(result.runs)?result.runs:[];S.resultsLoaded=true;}}
+  catch(error){fail(error);}
+  finally{if(serial===S.resultSerial){S.resultsLoading=false;if(S.tab==='results')renderMain();}}
+}
+async function openFile(path){
+  if(S.connection!=='connected')return;
+  const serial=++S.fileSerial;S.selectedFile=path;S.fileLoading=true;S.fileText='';renderMain();
+  try{const file=await S.api.file(path);if(serial===S.fileSerial)S.fileText=String(file.text??'');}
+  catch(error){if(serial===S.fileSerial)S.fileText=errorText(error);fail(error);}
+  finally{if(serial===S.fileSerial){S.fileLoading=false;if(S.tab==='results')renderMain();}}
+}
+async function openFolder(path){
+  try{const result=await S.api.openPath(path);showNotice(S.preview?'Preview only: this folder would open on the console computer.':result.reason || 'Folder opening requested on the console computer.');}
+  catch(error){fail(error);}
+}
+function addLog(text,level='info',ts){
+  S.logs.push({text:String(text??''),level:level==='warning'?'warn':String(level),ts:ts || Date.now(),id:++S.logCounter});
+  if(S.logs.length>2000)S.logs.splice(0,S.logs.length-2000);
+  renderLog();renderRecent();
+}
+function renderLog(){
+  const well=$('logwell');if(!well)return;
+  const top=well.scrollTop;
+  const rows=S.logs.filter(row=>S.filter==='all'||row.level===S.filter);
+  if(!rows.length){well.replaceChildren(node('div',{class:'empty',text:S.logs.length?'No messages match this level.':'No events yet. Session activity will appear here.'}));return;}
+  well.replaceChildren(...rows.map(row=>node('div',{class:'logrow '+(['info','debug','warn','error','alarm','state'].includes(row.level)?row.level:'info')},node('time',{text:formatTime(row.ts)}),node('span',{class:'level',text:row.level}),node('span',{class:'text',text:row.text}))));
+  well.scrollTop=S.follow?well.scrollHeight:top;
+}
+function renderRecent(){
+  const list=$('recentActivity');if(!list)return;
+  list.replaceChildren(...(S.logs.length?S.logs.slice(-4).reverse().map(row=>node('li',{},node('time',{text:formatTime(row.ts)}),row.text)):[node('li',{text:'No session activity yet. Start with an environment check or choose a world.'})]));
+}
+function renderConversation(){
+  const conversation=$('conversation');if(!conversation)return;
+  if(!S.messages.length){
+    conversation.replaceChildren(node('div',{class:'empty',text:'Start navigation, then type a request. The robot’s session messages and questions will appear here. Answers use the same request field.'}));
+    conversation._count=0;conversation._first=null;return;
+  }
+  if(conversation._first!==S.messages[0] || (conversation._count || 0)>S.messages.length){conversation.replaceChildren();conversation._count=0;}
+  const shown=conversation._count || 0;
+  conversation.append(...S.messages.slice(shown).map(message=>node('div',{class:'bubble '+message.who},node('small',{text:message.who==='user'?'You':message.who==='session'?'Robot / session':'Console'}),message.text)));
+  conversation._first=S.messages[0];conversation._count=S.messages.length;conversation.scrollTop=conversation.scrollHeight;
+}
+
+// ---- Office tasks: requests in four languages, the robot's questions, replies and progress ----
+const OFFICE_LANGUAGES=[['auto','Automatic'],['en','English'],['ta','Tamil · தமிழ்'],['ml','Malayalam · മലയാളം'],['te','Telugu · తెలుగు']];
+const OFFICE_REPLY_LABELS={yes:'Yes',no:'No',taken:'Taken',done:'Placed on the robot',not_here:'Not here',later:'Later'};
+const OFFICE_REPLY_WORDS={yes:'yes',no:'no',taken:'taken',done:'done',not_here:'not here',later:'later'};
+const OFFICE_STATES={submitted:['Sent',''],queued:['Queued',''],understanding:['Understanding…',''],awaiting_confirmation:['Waiting for yes','warn'],running:['Working','good'],answered:['Answered, nothing to do',''],done:['Done','good'],cancelled:['Cancelled','warn'],stopped:['Stopped','bad'],failed:['Failed','bad']};
+const OFFICE_SERVICE={off:['Off',''],starting:['Starting…','warn'],ready:['Ready','good'],stopping:['Stopping…','warn'],error:['Needs attention','bad']};
+const OFFICE_SPEECH_LANG={en:'en-IN',ta:'ta-IN',ml:'ml-IN',te:'te-IN'};
+const OFFICE_PROMPTS={'exact answer> ':'Type their exact answer','available person> ':'Name of someone who is there (leave empty if nobody)','where is the person?> ':'Where did they say the person is?','mapped place, later, or cancel> ':'A place on the map, “later” or “cancel”','exists yes/no, or approved identity> ':'Does this person exist? “yes”, “no”, or a known name','mapped place> ':'Which place on the map?','anything else> ':'What they ask for, or “no” if nothing'};
+const OFFICE_ACTIVE=['submitted','queued','understanding','awaiting_confirmation','running'];
+// replaceChildren would print an empty slot as the word "null": drop empty slots first.
+function officeFill(element,...children){element.replaceChildren(...children.flat().filter(child=>child!==null && child!==undefined && child!==false));}
+function officeChip(map,key){const [text,tone]=map[key] || [String(key || 'Unknown'),''];return node('span',{class:'office-chip '+tone,text});}
+function officeLabel(code){return (OFFICE_LANGUAGES.find(([c])=>c===code) || [code,code])[1];}
+function officeCap(text){text=String(text || '');return text.charAt(0).toUpperCase()+text.slice(1);}
+function officeName(value){
+  const v=String(value ?? ''),place=S.office?.context?.places?.find(p=>p.key===v);
+  return place?place.label:v.replace(/_/g,' ');
+}
+async function officeLoad(){
+  if(!S.api || S.officeLoading)return;
+  S.officeLoading=true;
+  try{acceptOffice(await S.api.office());}
+  catch(error){S.officeError=errorText(error);if(S.tab==='office' && !S.office)renderMain();}
+  finally{S.officeLoading=false;}
+}
+function acceptOffice(snapshot){
+  if(!snapshot || typeof snapshot!=='object')return;
+  // A slow reply or a late event can carry an older state: keep the newest one.
+  if(S.office && snapshot.epoch===S.office.epoch && (snapshot.version || 0)<(S.office.version || 0))return;
+  const first=!S.office;S.office=snapshot;S.officeError='';
+  if(first && !['starting','ready','stopping'].includes(snapshot.service?.state))S.officeMode=S.status?.session?.kind==='navigation'?'robot':'rehearsal';
+  officeSpeakNew(snapshot.timeline || []);
+  if(S.tab!=='office')return;
+  if(first || !$('officeService'))renderMain();else renderOffice();
+}
+function officeSpeakNew(timeline){
+  const last=timeline.length?timeline[timeline.length-1].seq:0;
+  if(last<S.officeSpoken)S.officeSpoken=0; // the service restarted: its numbering starts again
+  if(S.officeSpeak && typeof speechSynthesis!=='undefined'){
+    for(const entry of timeline){
+      if(entry.seq<=S.officeSpoken || entry.kind!=='robot' || !entry.text)continue;
+      const voice=new SpeechSynthesisUtterance(entry.text);voice.lang=OFFICE_SPEECH_LANG[entry.language] || 'en-IN';speechSynthesis.speak(voice);
+    }
+  }
+  S.officeSpoken=Math.max(S.officeSpoken,last);
+}
+function officeDefaults(){
+  const f=S.officeForm,people=S.office?.context?.requesters || [];
+  if(!people.some(p=>p.id===f.requester) && people.length){f.requester=people[0].id;f.place=people[0].place;}
+  return f;
+}
+function officeView(){
+  if(!S.office){
+    if(!S.officeError)officeLoad();
+    return node('div',{class:'message'},S.officeError || 'Loading office tasks…',S.officeError?node('button',{type:'button',text:'Try again',style:'margin-left:10px',onclick:()=>{S.officeError='';renderMain();}}):null);
+  }
+  const o=S.office,f=officeDefaults(),context=o.context;
+  if(!context)return node('section',{class:'card'},node('h2',{text:'Office tasks are not set up'}),node('p',{class:'hint',text:o.config_error || 'The office configuration could not be read.'}));
+  const select=(id,label,options,value,onchange)=>node('label',{for:id},label,node('select',{id,onchange},...options.map(([v,t])=>node('option',{value:v,selected:v===value,text:t}))));
+  const people=context.requesters.map(p=>[p.id,p.kind==='operator'?p.name+' (this console)':p.name]);
+  const places=context.places.map(p=>[p.key,officeCap(p.label)]);
+  const compose=node('section',{class:'card office-compose','aria-label':'New request'},
+    node('div',{class:'office-head'},node('h2',{text:'Ask the robot'}),node('span',{class:'hint',text:'Deliver · collect · check · pass on a message · go'})),
+    node('div',{class:'office-fields'},
+      select('officeRequester','Who is asking',people,f.requester,event=>{f.requester=event.target.value;const p=context.requesters.find(r=>r.id===f.requester);if(p){f.place=p.place;if($('officePlace'))$('officePlace').value=p.place;}}),
+      select('officePlace','Where they are now',places,f.place,event=>{f.place=event.target.value;}),
+      S.office?.english_only?null:select('officeLanguage','Language',OFFICE_LANGUAGES,f.language,event=>{f.language=event.target.value;})),
+    node('label',{for:'officeText',class:'sr-only',text:'Request'}),
+    node('textarea',{id:'officeText',maxlength:'1000',rows:'3',placeholder:'For example: Give the file to Divya. If she is not there, leave it with Priya.',value:f.text,oninput:event=>{f.text=event.target.value;updateOfficeButtons();},onkeydown:event=>{if(event.key==='Enter'&&(event.ctrlKey||event.metaKey)){event.preventDefault();officeSubmit();}}}),
+    node('div',{class:'office-buttons'},
+      node('button',{type:'button',id:'officeMic',class:'office-mic',onclick:()=>officeMicToggle('request'),text:'Speak'}),
+      node('button',{type:'button',id:'officeSend',class:'primary',onclick:officeSubmit,text:'Send request'})),
+    node('p',{class:'hint',id:'officeComposeHint',text:S.office?.english_only?'Ask in English, in your own words. The robot says what it understood and waits for your yes before it moves.':'The robot reads the steps back and waits for a yes before it moves. Mixed languages are fine, for example “file-ஐ Divya-கிட்ட கொடுங்க”.'}));
+  return node('div',{class:'office-layout'},
+    node('div',{class:'office-main'},
+      node('section',{class:'card',id:'officeService','aria-label':'Language service'}),
+      compose,
+      node('section',{class:'card office-ask',id:'officeAwaiting','aria-live':'polite'}),
+      node('section',{class:'card','aria-label':'Conversation'},
+        node('div',{class:'office-head'},node('h2',{text:'Conversation'}),node('div',{class:'office-buttons'},node('label',{class:'checkline',for:'officeHands',title:'When the robot asks something, the microphone opens by itself, stops when the person stops talking, and sends what it heard.'},node('input',{type:'checkbox',id:'officeHands',checked:S.officeHands,onchange:event=>{S.officeHands=event.target.checked;if(S.officeHands&&S.office?.awaiting)officeAutoListen(S.office.awaiting.input_id);else if(S.officeRec?.auto)officeMicStop();}}),'Listen for spoken replies'),node('label',{class:'checkline',for:'officeSpeak'},node('input',{type:'checkbox',id:'officeSpeak',checked:S.officeSpeak,onchange:event=>{S.officeSpeak=event.target.checked;if(!S.officeSpeak&&typeof speechSynthesis!=='undefined')speechSynthesis.cancel();}}),'Read the robot’s lines aloud'))),
+        node('div',{class:'office-timeline',id:'officeTimeline',role:'log','aria-label':'Office task conversation',tabindex:'0'}))),
+    node('div',{class:'office-rail'},
+      node('section',{class:'card',id:'officeTask','aria-label':'Current task'}),
+      node('section',{class:'card',id:'officeQueue','aria-label':'Robot and other requests'})));
+}
+function renderOffice(){
+  if(S.tab!=='office' || !$('officeService') || !S.office)return;
+  const o=S.office,service=o.service || {state:'off'},running=['starting','ready','stopping'].includes(service.state);
+  const mode=running?(o.mode || S.officeMode):S.officeMode;
+  // Language service
+  const reasons=(o.blocks?.[mode] || []).filter(r=>!/^Start the language service first|^The language service is still starting/.test(r));
+  const detail=service.state==='ready'?['Model '+(service.model || 'not reported'),service.fully_on_gpu===true?'on the graphics card':service.fully_on_gpu===false?'partly on the processor':null,service.runner?'runner: '+service.runner:null,service.version?'language module '+service.version:null].filter(Boolean).join(' · '):(service.detail || '');
+  const radio=(value,label)=>node('label',{for:'officeMode-'+value},node('input',{type:'radio',name:'officeMode',id:'officeMode-'+value,value,checked:mode===value,disabled:running,onchange:()=>{S.officeMode=value;renderOffice();}}),label);
+  const speech=o.speech || {state:'not_installed'};
+  officeFill($('officeService'),
+    node('div',{class:'office-head'},node('h2',{text:'Language service'}),officeChip(OFFICE_SERVICE,service.state)),
+    node('div',{class:'office-modes',role:'radiogroup','aria-label':'Where the robot works'},radio('robot','With the robot (Gazebo)'),radio('rehearsal','Without the robot (conversation only)')),
+    node('p',{class:'hint',text:detail}),
+    reasons.length?node('ul',{class:'office-reasons'},...reasons.map(r=>node('li',{text:r}))):null,
+    node('p',{class:'hint',text:'Speech input: '+(speech.detail || String(speech.state).replace(/_/g,' '))}),
+    node('div',{class:'office-buttons'},running?node('button',{type:'button',id:'officeStop',text:service.state==='stopping'?'Stopping…':'Stop language service',disabled:service.state==='stopping' || S.officeBusy,onclick:()=>officeService('stop')}):node('button',{type:'button',class:'primary',id:'officeStart',text:'Start language service',disabled:S.officeBusy || S.connection!=='connected',onclick:()=>officeService('start')})));
+  // A question waiting for an answer
+  const box=$('officeAwaiting'),ask=o.awaiting;
+  // A spoken reply belongs to one question: if that question is gone, stop listening (the words are not used).
+  if(S.officeRec?.target==='reply' && S.officeRec.input_id!==ask?.input_id)officeMicStop();
+  if(!ask){
+    if(box._input!==null){box._input=null;officeFill(box,node('h2',{text:'Replies'}),node('p',{class:'hint',text:service.state==='ready'?'When the robot asks something, the question and the answer buttons appear here.':'Start the language service, then send a request.'}));}
+  }else if(box._input!==ask.input_id){
+    box._input=ask.input_id;
+    const said=[...(o.timeline || [])].reverse().find(e=>e.kind==='robot' && e.job_id===ask.job_id);
+    const job=(o.jobs || []).find(j=>j.job_id===ask.job_id);
+    const who=ask.audience==='requester'?'The robot is asking '+(job?.requester || 'the person who asked'):'The robot is asking the person at '+(ask.place_label || 'this stop');
+    const replies=(ask.expect || []).filter(k=>OFFICE_REPLY_LABELS[k]);
+    const input=node('input',{id:'officeReplyText',maxlength:'500',placeholder:OFFICE_PROMPTS[ask.prompt] || 'Type the reply',onkeydown:event=>{if(event.key==='Enter'){event.preventDefault();officeReply(event.target.value);}}});
+    officeFill(box,node('div',{class:'office-head'},node('h2',{text:who}),node('span',{class:'hint',text:'Waits up to '+Math.round(ask.wait_s || 0)+' s'})),
+      said?node('p',{class:'said',lang:said.language || 'en',text:said.text}):null,
+      replies.length?node('div',{class:'office-buttons'},...replies.map(k=>node('button',{type:'button','data-reply':k,class:['yes','taken','done'].includes(k)?'primary':null,text:OFFICE_REPLY_LABELS[k],onclick:()=>officeReply(OFFICE_REPLY_WORDS[k])}))):null,
+      node('div',{class:'office-reply'},node('label',{for:'officeReplyText'},replies.length?'Or type the reply (any language)':OFFICE_PROMPTS[ask.prompt] || 'Reply',input),
+        node('button',{type:'button',id:'officeReplyMic',class:'office-mic',text:'Speak',onclick:()=>officeMicToggle('reply')}),
+        node('button',{type:'button',id:'officeReplySend',text:'Send reply',onclick:()=>officeReply($('officeReplyText').value)})));
+    if(ask.audience!=='requester' || !replies.length)input.focus({preventScroll:true});
+    if(S.officeHands)officeAutoListen(ask.input_id);
+  }
+  // Conversation (append only)
+  const well=$('officeTimeline'),items=o.timeline || [];
+  if(!items.length){well.replaceChildren(node('div',{class:'empty',text:'No conversation yet.'}));well._last=0;}
+  else{
+    const lastShown=well._last || 0;
+    if(lastShown===0 || items[0].seq>lastShown+1 || items[items.length-1].seq<lastShown){well.replaceChildren();well._last=0;}
+    const stick=well.scrollHeight-well.scrollTop-well.clientHeight<60;
+    for(const e of items){if(e.seq<=(well._last || 0))continue;well.append(officeEntry(e));well._last=e.seq;}
+    if(stick)well.scrollTop=well.scrollHeight;
+  }
+  // Current task
+  const jobs=o.jobs || [],current=[...jobs].reverse().find(j=>OFFICE_ACTIVE.includes(j.state)) || jobs[jobs.length-1];
+  const task=$('officeTask');
+  if(!current)officeFill(task,node('h2',{text:'Current task'}),node('p',{class:'hint',text:'No task yet.'}));
+  else officeFill(task,node('div',{class:'office-head'},node('h2',{text:'Current task'}),officeChip(OFFICE_STATES,current.state)),
+    node('p',{class:'office-request'},node('strong',{text:current.requester+': '}),current.text),
+    current.english && current.english.trim()!==current.text.trim()?node('p',{class:'hint',text:'Understood as: '+current.english}):null,
+    Array.isArray(current.steps)&&current.steps.length?node('ol',{class:'office-steps'},...current.steps.map(s=>node('li',{text:officeStep(s)}))):null,
+    (current.outcomes || []).filter(Boolean).length?node('div',{},node('h3',{text:'What happened'}),node('ul',{class:'office-steps'},...current.outcomes.filter(Boolean).map(x=>node('li',{text:officeOutcome(x)})))):null,
+    (current.answers || []).length?node('div',{},node('h3',{text:'Answers (their exact words)'}),...current.answers.map(a=>node('p',{class:'said',text:a}))):null,
+    node('div',{class:'office-buttons'},node('button',{type:'button',id:'officeCancel',text:'Cancel task and queue',disabled:!o.busy || S.officeBusy,onclick:officeCancel})));
+  // Robot and other requests
+  const queue=jobs.filter(j=>j!==current).slice(-6).reverse();
+  officeFill($('officeQueue'),node('h2',{text:'Robot'}),
+    node('p',{},o.moving?node('span',{class:'office-move',text:'Driving to '+o.moving.label}):node('span',{text:o.position_label?'At '+o.position_label:'Position not known yet'})),
+    node('p',{class:'hint',text:o.mode==='rehearsal'?'Without the robot: moves are shown here, nothing drives.':'STOP at the top ends the whole session. Cancel ends only the office task.'}),
+    node('h2',{text:'Other requests',style:'margin-top:14px'}),
+    queue.length?node('ul',{class:'office-jobs'},...queue.map(j=>node('li',{},officeChip(OFFICE_STATES,j.state),' ',node('strong',{text:j.requester+': '}),j.text))):node('p',{class:'hint',text:'None.'}));
+  updateOfficeButtons();
+}
+function officePolicy(value){
+  const v=String(value || 'bring_back');
+  if(v==='bring_back')return '';
+  if(v.startsWith('leave_with:'))return 'if not there, leave it with '+officeName(v.slice(11));
+  if(v.startsWith('try_later:'))return 'if not there, try again in '+v.slice(10)+' min';
+  return {ask_anyone:'if not there, ask someone nearby',skip:'if not there, skip it'}[v] || v.replace(/_/g,' ');
+}
+function officeStep(s){
+  if(!s || typeof s!=='object')return String(s);
+  const n=officeName,text={deliver:'Deliver the '+n(s.item)+' to '+n(s.to),retrieve:'Collect the '+n(s.item)+' from '+n(s.from)+(s.to?' for '+n(s.to):''),check:'Ask at '+n(s.at)+': '+(s.question || ''),tell:'Tell '+n(s.to)+': '+(s.message || ''),go:'Go to '+n(s.to)}[s.action] || n(s.action);
+  const policy=officePolicy(s.if_not_there),branch=s.on_answer?' (then a follow-up for yes or no)':'';
+  return text+(policy?' · '+policy:'')+branch;
+}
+function officeOutcome(x){
+  const reason=x.reason?' · '+String(x.reason).replace(/_/g,' '):'',target=x.target?' · '+officeName(x.target):'';
+  return officeCap(String(x.status || 'step').replace(/_/g,' '))+target+(x.item?' · '+x.item:'')+reason+(x.returned_to_requester?' · brought back':'');
+}
+function officeEntry(e){
+  const time=e.at?formatTime(Date.parse(e.at)):'';
+  if(e.kind==='robot')return node('div',{class:'bubble robot',lang:e.language || 'en'},node('small',{text:'Robot · '+officeLabel(e.language || 'en')+(time?' · '+time:'')}),e.text || '');
+  if(e.kind==='request')return node('div',{class:'bubble user'},node('small',{text:'Request from '+(e.requester || 'someone')+(time?' · '+time:'')}),e.text || '');
+  if(e.kind==='reply')return node('div',{class:'bubble user'},node('small',{text:(e.audience==='requester'?'Reply from the person who asked':'Reply at the stop')+(time?' · '+time:'')}),e.text===''?'(no answer)':e.text);
+  if(e.kind==='move' || e.kind==='arrived')return node('div',{class:'office-move',text:(e.kind==='arrived'?'✓ ':'→ ')+(e.text || '')});
+  if(e.kind==='alarm' || e.kind==='stop' || e.level==='alarm' || e.level==='error')return node('div',{class:'office-alarm',text:'⚠ '+(e.text || '')});
+  return node('div',{class:'office-note',text:e.text || ''});
+}
+function updateOfficeButtons(){
+  const o=S.office;if(!o || !$('officeSend'))return;
+  const ready=o.service?.state==='ready',connected=S.connection==='connected',text=($('officeText')?.value || '').trim();
+  const speech=o.speech?.state==='ready';
+  $('officeSend').disabled=!ready || !text || S.officeBusy || !connected;
+  for(const [id,target] of [['officeMic','request'],['officeReplyMic','reply']]){
+    const b=$(id);if(!b)continue;
+    const mine=S.officeRec?.target===target;
+    b.disabled=!ready || !speech || !connected || S.officeTranscribing || (!!S.officeRec && !mine);
+    b.classList.toggle('recording',mine);
+    b.textContent=mine?'Stop listening':S.officeTranscribing?'Writing it down…':'Speak';
+    b.title=speech?'Speak, then check the words before sending. 15 s at most.':'Speech input: '+(o.speech?.detail || 'not installed.');
+  }
+  for(const b of document.querySelectorAll('#officeAwaiting [data-reply], #officeReplySend'))b.disabled=S.officeBusy || !connected;
+  if($('officeCancel'))$('officeCancel').disabled=!o.busy || S.officeBusy || !connected;
+}
+async function officeService(action){
+  if(S.officeBusy)return;
+  S.officeBusy=true;renderOffice();
+  try{acceptOffice(await S.api.officeService(action,S.officeMode));}
+  catch(error){fail(error,'Language service:');}
+  finally{S.officeBusy=false;renderOffice();}
+}
+async function officeSubmit(){
+  const f=S.officeForm,text=($('officeText')?.value || '').trim();if(!text || S.officeBusy || $('officeSend')?.disabled)return;
+  S.officeBusy=true;updateOfficeButtons();
+  try{await S.api.officeRequest({text,requester:f.requester,language:f.language,place:f.place});f.text='';if($('officeText'))$('officeText').value='';showNotice('Request sent. The robot will read the steps back.');}
+  catch(error){fail(error,'Request:');}
+  finally{S.officeBusy=false;updateOfficeButtons();officeLoad();}
+}
+async function officeReply(text){
+  const ask=S.office?.awaiting;if(!ask || S.officeBusy)return;
+  S.officeBusy=true;updateOfficeButtons();
+  try{await S.api.officeReply(ask.input_id,String(text ?? '').trim());}
+  catch(error){fail(error,'Reply:');}
+  finally{S.officeBusy=false;updateOfficeButtons();officeLoad();}
+}
+async function officeCancel(){
+  if(S.officeBusy)return;
+  S.officeBusy=true;updateOfficeButtons();
+  try{await S.api.officeCancel();showNotice('Cancelling the office task. The navigation session keeps running.');}
+  catch(error){fail(error,'Cancel:');}
+  finally{S.officeBusy=false;updateOfficeButtons();officeLoad();}
+}
+// Speech: 16 kHz mono WAV, sent only to this console computer, written down there, then checked by a person.
+// Hands-free replies: once the robot has finished speaking, the microphone opens for this one question.
+async function officeAutoListen(input_id){
+  const speaking=()=>typeof speechSynthesis!=='undefined' && (speechSynthesis.speaking || speechSynthesis.pending);
+  await new Promise(resolve=>setTimeout(resolve,400));
+  for(let i=0;i<120 && (speaking() || S.officeTranscribing || S.officeBusy);i++)await new Promise(resolve=>setTimeout(resolve,250));
+  if(!S.officeHands || S.officeRec || S.office?.awaiting?.input_id!==input_id || S.office?.speech?.state!=='ready')return;
+  officeMicToggle('reply',true);
+}
+async function officeMicToggle(target,auto=false){
+  if(S.officeRec){if(S.officeRec.target===target)officeMicStop();return;}
+  if(!window.isSecureContext || !navigator.mediaDevices?.getUserMedia){showNotice('The microphone works when the console is opened on this computer (127.0.0.1) or over HTTPS.');return;}
+  let stream;
+  try{
+    stream=await navigator.mediaDevices.getUserMedia({audio:{channelCount:1,echoCancellation:true,noiseSuppression:true}});
+    const context=new (window.AudioContext || window.webkitAudioContext)();
+    const source=context.createMediaStreamSource(stream),processor=context.createScriptProcessor(4096,1,1),chunks=[];
+    processor.onaudioprocess=event=>{
+      const data=event.inputBuffer.getChannelData(0);chunks.push(new Float32Array(data));
+      const r=S.officeRec;if(!r || !r.auto || r.ending)return;
+      // Stop by itself: about a second of quiet after speech, or 7 s in which nobody spoke.
+      let sum=0;for(let i=0;i<data.length;i++)sum+=data[i]*data[i];
+      const level=Math.sqrt(sum/data.length),now=performance.now();
+      if(now-r.started<400){r.floor=Math.max(r.floor,level);return;}
+      if(level>Math.max(0.02,r.floor*3)){r.spoke=true;r.quiet=null;}
+      else if(r.spoke){r.quiet=r.quiet ?? now;if(now-r.quiet>1100){r.ending=true;setTimeout(officeMicStop,0);}}
+      else if(now-r.started>7000){r.ending=true;r.nothing=true;setTimeout(officeMicStop,0);}
+    };
+    source.connect(processor);processor.connect(context.destination);
+    S.officeRec={target,stream,context,source,processor,chunks,rate:context.sampleRate,timer:setTimeout(officeMicStop,15000),input_id:target==='reply'?S.office?.awaiting?.input_id:null,auto,started:performance.now(),floor:0,spoke:false,quiet:null};
+    updateOfficeButtons();showNotice(auto?'Listening for the reply…':'Listening… press Stop listening when you finish (15 s at most).');
+  }catch(error){
+    if(stream)stream.getTracks().forEach(track=>track.stop());
+    showNotice('The microphone could not start: '+(error.message || error));
+  }
+}
+async function officeMicStop(){
+  const r=S.officeRec;if(!r)return;S.officeRec=null;clearTimeout(r.timer);
+  try{r.processor.disconnect();r.source.disconnect();}catch(_){}
+  r.stream.getTracks().forEach(track=>track.stop());try{await r.context.close();}catch(_){}
+  if(r.target==='reply' && S.office?.awaiting?.input_id!==r.input_id){updateOfficeButtons();showNotice('That question was already answered or has expired; the recording was not used.');return;}
+  if(r.auto && r.nothing){updateOfficeButtons();showNotice('I did not hear a reply. Press Speak, use a button, or type it.');return;}
+  const wav=officeWav(r.chunks,r.rate);
+  if(wav.size<44+16000){updateOfficeButtons();showNotice('That was too short. Press Speak and talk for at least a second.');return;}
+  // "Automatic" means the speaker's own language: the requester's, or the language the robot is using at the stop.
+  const ask=S.office?.awaiting,language=r.target==='request'?S.officeForm.language:'auto';
+  const said=ask?[...(S.office?.timeline || [])].reverse().find(e=>e.kind==='robot' && e.job_id===ask.job_id):null;
+  const hint=r.target==='request'?S.office?.context?.requesters?.find(p=>p.id===S.officeForm.requester)?.language:said?.language;
+  S.officeTranscribing=true;updateOfficeButtons();
+  try{
+    const result=await S.api.officeSpeech(wav,language,hint);
+    const words=String(result.text || '').trim();
+    if(r.target==='request'){
+      S.officeForm.text=words;if($('officeText')){$('officeText').value=words;$('officeText').focus();}
+      // The language box stays on the person's choice: "Automatic" reads the language from the words each time.
+    }else if($('officeReplyText') && S.office?.awaiting?.input_id===ask?.input_id){
+      $('officeReplyText').value=words;$('officeReplyText').focus();
+      // Hands-free: clear words go straight to the robot; it asks again by itself if they are not an answer.
+      if(r.auto && words && !result.distorted){showNotice('Heard: “'+words+'”');S.officeTranscribing=false;await officeReply(words);return;}
+    }
+    showNotice(words && result.distorted?`The microphone signal is overloaded (${Math.round((result.clipped || 0)*100)} % clipped), so these words may be wrong. Lower the input volume in Settings → Sound → Input, or use another microphone.`:words?'Check the words, then send.':result.silent?`The microphone sent only silence (loudest sound ${result.peak_db} dB). It may be muted: check Settings → Sound → Input, or choose another microphone from the microphone icon in the address bar.`:`No speech was recognised (loudest sound ${result.peak_db ?? '?'} dB). Speak closer to the microphone and try again.`);
+  }catch(error){fail(error,'Speech:');}
+  finally{S.officeTranscribing=false;updateOfficeButtons();}
+}
+function officeWav(chunks,rate){
+  let length=0;for(const c of chunks)length+=c.length;
+  const input=new Float32Array(length);let at=0;for(const c of chunks){input.set(c,at);at+=c.length;}
+  const ratio=rate/16000,count=Math.floor(input.length/ratio),pcm=new Int16Array(count);
+  for(let i=0;i<count;i++){
+    const start=Math.floor(i*ratio),end=Math.max(start+1,Math.min(input.length,Math.floor((i+1)*ratio)));let sum=0;
+    for(let j=start;j<end;j++)sum+=input[j];
+    const v=Math.max(-1,Math.min(1,sum/(end-start)));pcm[i]=v<0?v*32768:v*32767;
+  }
+  const buffer=new ArrayBuffer(44+pcm.length*2),view=new DataView(buffer);
+  const text=(offset,value)=>{for(let i=0;i<value.length;i++)view.setUint8(offset+i,value.charCodeAt(i));};
+  text(0,'RIFF');view.setUint32(4,36+pcm.length*2,true);text(8,'WAVE');text(12,'fmt ');view.setUint32(16,16,true);view.setUint16(20,1,true);view.setUint16(22,1,true);
+  view.setUint32(24,16000,true);view.setUint32(28,32000,true);view.setUint16(32,2,true);view.setUint16(34,16,true);text(36,'data');view.setUint32(40,pcm.length*2,true);
+  new Int16Array(buffer,44).set(pcm);return new Blob([buffer],{type:'audio/wav'});
+}
+
+function acceptStatus(status){
+  if(!status || !['idle','starting','running','stopping','error'].includes(status.state))return;
+  const before=S.status,keyBefore=sessionKey();
+  S.status=status;
+  const keyAfter=sessionKey();
+  if(keyBefore && keyAfter!==keyBefore){S.conversationStarted=false;}
+  if(before && before.state!==status.state)addLog('Session state: '+status.state,'state');
+  const key=JSON.stringify([status.state,status.session?.kind,status.session?.teleop,status.session?.run_id,status.session?.action_id,sessionWorld()]);
+  if(S.review&&!S.review.running && S.viewKey && key!==S.viewKey)invalidateReview('The session changed. Refresh the backend preview before running.');
+  const needsRender=key!==S.viewKey;if(needsRender)S.cardPreviews={};S.viewKey=key;
+  renderStrip();renderSystem();
+  if(needsRender)renderMain();else{updateAvailability();for(const action of actionsFor(S.tab))scheduleCardPreview(action);}
+  if(!driveAllowed())releaseMotion();
+  // Office requests depend on the session (robot mode needs navigation on the office map).
+  if(needsRender && S.office)officeLoad();
+}
+function onEvent(event){
+  if(event.type==='state'){
+    const status=event.status || (typeof event.state==='object'?event.state:null) || event.data || (typeof event.state==='string'?event:null);
+    acceptStatus(status);
+  }else if(event.type==='log'||event.type==='alarm'){
+    const text=event.text ?? event.reason ?? '';
+    addLog(text,event.type==='alarm'?'alarm':event.level || 'info',event.ts);
+    if(event.type==='alarm'){S.error=String(text);renderBanners();}
+    // Only alarms join the conversation; replies come from the request's own response.
+    if(event.type==='alarm' && S.conversationStarted && S.status?.session?.kind==='navigation' && S.conversationRun===sessionKey()){
+      S.messages.push({who:'session',text:String(text),time:Date.now()});if(S.messages.length>200)S.messages.splice(0,S.messages.length-200);renderConversation();
+    }
+  }else if(event.type==='office'){
+    acceptOffice(event.office);
+  }
+}
+async function refreshStatus(){
+  if(!S.api || S.refreshPending)return;
+  S.refreshPending=true;
+  try{const status=await S.api.status();connectionGood();acceptStatus(status);}
+  catch(error){connectionFailed(error);}
+  finally{S.refreshPending=false;}
+}
+async function refreshActions(){
+  if(!S.api||S.actionsPending)return;
+  S.actionsPending=true;
+  try{
+    const result=await S.api.actions(),next=Array.isArray(result.actions)?result.actions:[];
+    if(JSON.stringify(next)!==JSON.stringify(S.actions)){
+      S.actions=next;learnWorldLabels(next);S.cardPreviews={};if(S.review&&!S.review.running)invalidateReview('The backend action registry changed. Refresh the preview.');
+      renderMain();renderStrip();
+    }
+  }catch(error){if(error.status===403)connectionFailed(error);else addLog(errorText(error),'warn');}
+  finally{S.actionsPending=false;}
+}
+$('theme').addEventListener('click',()=>{
+  const dark=document.documentElement.dataset.theme!=='dark';document.documentElement.dataset.theme=dark?'dark':'light';
+  $('theme').textContent=dark?'Light theme':'Dark theme';$('theme').setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme');
+});
+$('stop').addEventListener('click',stopSession);$('reviewStop').addEventListener('click',stopSession);
+$('cancelReview').addEventListener('click',closeReview);$('refreshReview').addEventListener('click',fetchReview);$('run').addEventListener('click',runReviewed);
+$('review').addEventListener('cancel',event=>{event.preventDefault();closeReview();});
+window.addEventListener('focus',()=>{if(S.api){refreshStatus();refreshActions();}});
+async function start(){
+  // Remove the token before any request or rendering. Keep it only in the API closure.
+  const url=new URL(location.href);let token=url.searchParams.get('token');
+  if(url.searchParams.has('token')){
+    url.searchParams.delete('token');
+    try{history.replaceState(null,'',url.pathname+url.search+url.hash);}catch(_){
+      // If sanitisation fails, do not connect with the exposed credential.
+      token=null;S.initialError='The access link could not be cleared from the address bar. Reopen the console from its launcher.';
+    }
+  }
+  S.preview=location.protocol==='file:' || url.searchParams.get('preview')==='1';
+  renderNavigation();renderStrip();renderMain();renderSystem();
+  if(S.preview){S.api=previewApi();S.streamHealthy=true;}
+  else if(token){S.api=realApi(token);}
+  else{
+    S.initialError=S.initialError || 'Access token missing. Reopen the console using the link provided by its launcher. Preview is available only when explicitly requested.';
+    setConnection('lost',S.initialError);renderStrip();return;
+  }
+  token=null;
+  S.api.events(onEvent,streamOpen,streamError);
+  await refreshStatus();await refreshActions();renderMain();renderSystem();renderStrip();
+  addLog(S.preview?'Preview mode: sample data only. No computer or robot is controlled.':'Console session connected.');
+  setInterval(refreshStatus,3000);setInterval(refreshActions,15000);
+  setInterval(()=>{if(S.tab==='office' && S.connection==='connected')officeLoad();},10000);
+}
+start().catch(error=>{S.initialError=errorText(error);setConnection('lost',S.initialError);renderBanners();});
+
+</script>
+</body>
+</html>

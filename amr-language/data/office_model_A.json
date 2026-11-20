@@ -1,0 +1,15 @@
+{
+  "model": "qwen3.5:2b-q4_K_M",
+  "timeout_s": 5.0,
+  "reply_timeout_s": 1.0,
+  "num_ctx": 4096,
+  "rewrite_tokens": 384,
+  "plan_tokens": 768,
+  "seed": 1729,
+  "port": 11434,
+  "runner_version": "0.40.12",
+  "model_file": ".runtime/models/blobs/sha256-20cb277f0967ace47b0b5d5658e5e494a88937f7378b74b5a266496400938f4c",
+  "model_manifest_file": ".runtime/models/manifests/registry.ollama.ai/library/qwen3.5/2b-q4_K_M",
+  "deduplicate_plans": true,
+  "pipeline_parallel": 1
+}

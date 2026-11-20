@@ -1,0 +1,469 @@
+schema_version: 1
+approval_status: confirmed
+frame_id: map
+map_id: proposed_system
+robot: TurtleBot3 Waffle simulation
+map_yaml: ../src/amr_physical_ai/maps/proposed_system.yaml
+layout_yaml: ../src/amr_physical_ai/worlds/proposed_system_layout.yaml
+minimum_clearance_m: 0.52
+annotation_notes:
+- Fictional seats/people, not detections. All room doors face south into these offices.
+- Rows follow desk-centre depth from the north doors; columns run east to west, as
+  viewed from the door.
+- Two proposed workstation tags per front desk cluster; one per back cluster and individual
+  desk.
+- Back-row seats share one aisle x/y and face opposite desks. The 1.0 m cross aisle
+  cannot provide 0.52 m clearance.
+- open_office_r2c1 is vacant; all other seats have one fictional occupant.
+rooms:
+- name: home
+  x: 0.0
+  y: 0.0
+  yaw: 0.0
+  aliases:
+  - base
+  - home base
+  - dock
+  - charging dock
+  aliases_by_language:
+    ta:
+    - தளம்
+    - முகப்பு
+    - dock
+    ml:
+    - ഡോക്ക്
+    te:
+    - డాక్
+  on_map: true
+  reachable: true
+- name: reception
+  x: -0.6
+  y: 2.8
+  yaw: 1.5708
+  aliases:
+  - front desk
+  - lobby
+  aliases_by_language:
+    ta:
+    - வரவேற்பு
+    - வரவேற்பிடம்
+    - reception
+    ml:
+    - റിസപ്ഷൻ
+    te:
+    - రిసెప్షన్
+  on_map: true
+  reachable: true
+- name: conference_hall
+  x: 4.0
+  y: 2.0
+  yaw: 1.5708
+  aliases:
+  - conference room
+  - meeting room
+  - boardroom
+  aliases_by_language:
+    ta:
+    - கூட்ட அறை
+    - மாநாட்டு அறை
+    - meeting room
+    ml:
+    - യോഗമുറി
+    te:
+    - సమావేశ గది
+  on_map: true
+  reachable: true
+- name: demo_area
+  x: 8.6
+  y: 2.6
+  yaw: 0.0
+  aliases:
+  - showroom
+  - demo zone
+  - display area
+  aliases_by_language:
+    ta:
+    - காட்சி பகுதி
+    - demo area
+    ml:
+    - പ്രദർശന സ്ഥലം
+    te:
+    - ప్రదర్శన ప్రాంతం
+  on_map: true
+  reachable: true
+- name: cafeteria
+  x: 12.5
+  y: 2.5
+  yaw: 0.0
+  aliases:
+  - canteen
+  - kitchen
+  - pantry
+  - cafe
+  aliases_by_language:
+    ta:
+    - உணவகம்
+    - கேன்டீன்
+    - canteen
+    ml:
+    - കാന്റീൻ
+    te:
+    - క్యాంటీన్
+  on_map: true
+  reachable: true
+- name: open_office
+  x: 4.2
+  y: -1.8
+  yaw: -1.5708
+  aliases:
+  - open plan office
+  - workstations
+  aliases_by_language:
+    ta:
+    - திறந்த அலுவலகம்
+    - open office
+    - அலுவலகம்
+    ml:
+    - തുറന്ന ഓഫീസ്
+    - ഓഫീസ്
+    te:
+    - ఓపెన్ ఆఫీస్
+    - ఆఫీస్
+  on_map: true
+  reachable: true
+- name: team_office
+  x: 10.0
+  y: -3.0
+  yaw: -1.5708
+  aliases:
+  - team space
+  - engineering office
+  aliases_by_language:
+    ta:
+    - குழு அலுவலகம்
+    - team office
+    - அலுவலகம்
+    ml:
+    - ടീം ഓഫീസ്
+    - ഓഫീസ്
+    te:
+    - టీమ్ ఆఫీస్
+    - ఆఫీస్
+  on_map: true
+  reachable: true
+- name: manager_cabin
+  x: 13.4
+  y: -2.6
+  yaw: -1.5708
+  aliases:
+  - manager
+  - director cabin
+  aliases_by_language:
+    ta:
+    - மேனேஜர் கேபின்
+    - மேலாளர் அறை
+    - manager cabin
+    ml:
+    - മാനേജർ കാബിൻ
+    te:
+    - మేనేజర్ క్యాబిన్
+  on_map: true
+  reachable: true
+- name: storage
+  x: -1.2
+  y: -4.6
+  yaw: 3.1416
+  aliases:
+  - storeroom
+  - supply closet
+  aliases_by_language:
+    ta:
+    - சேமிப்பு அறை
+    - storage
+    ml:
+    - സംഭരണ മുറി
+    te:
+    - నిల్వ గది
+  on_map: true
+  reachable: true
+seats:
+- id: open_office_r1c1
+  room: open_office
+  row: 1
+  col: 1
+  desk: desks_2
+  x: 6.6
+  y: -2.0
+  yaw: -1.5707963267948966
+  target_xy:
+  - 6.6
+  - -3.2
+  aisle_edge: north
+  on_map: true
+  reachable: true
+- id: open_office_r1c2
+  room: open_office
+  row: 1
+  col: 2
+  desk: desks_2
+  x: 5.4
+  y: -2.0
+  yaw: -1.5707963267948966
+  target_xy:
+  - 5.4
+  - -3.2
+  aisle_edge: north
+  on_map: true
+  reachable: true
+- id: open_office_r1c3
+  room: open_office
+  row: 1
+  col: 3
+  desk: desks_1
+  x: 3.0
+  y: -2.0
+  yaw: -1.5707963267948966
+  target_xy:
+  - 3.0
+  - -3.2
+  aisle_edge: north
+  on_map: true
+  reachable: true
+- id: open_office_r1c4
+  room: open_office
+  row: 1
+  col: 4
+  desk: desks_1
+  x: 1.8
+  y: -2.0
+  yaw: -1.5707963267948966
+  target_xy:
+  - 1.8
+  - -3.2
+  aisle_edge: north
+  on_map: true
+  reachable: true
+- id: open_office_r2c1
+  room: open_office
+  row: 2
+  col: 1
+  desk: desks_4
+  x: 4.2
+  y: -5.4
+  yaw: 0.0
+  target_xy:
+  - 6.0
+  - -5.4
+  aisle_edge: west
+  on_map: true
+  reachable: true
+- id: open_office_r2c2
+  room: open_office
+  row: 2
+  col: 2
+  desk: desks_3
+  x: 4.2
+  y: -5.4
+  yaw: 3.141592653589793
+  target_xy:
+  - 2.4
+  - -5.4
+  aisle_edge: east
+  on_map: true
+  reachable: true
+- id: team_office_r1c1
+  room: team_office
+  row: 1
+  col: 1
+  desk: team_desk_2
+  x: 10.3
+  y: -4.7
+  yaw: -1.5707963267948966
+  target_xy:
+  - 10.3
+  - -5.65
+  aisle_edge: north
+  on_map: true
+  reachable: true
+- id: team_office_r1c2
+  room: team_office
+  row: 1
+  col: 2
+  desk: team_desk_1
+  x: 9.3
+  y: -4.7
+  yaw: -1.5707963267948966
+  target_xy:
+  - 9.3
+  - -5.65
+  aisle_edge: north
+  on_map: true
+  reachable: true
+- id: manager_cabin_r1c1
+  room: manager_cabin
+  row: 1
+  col: 1
+  desk: manager_desk
+  x: 13.4
+  y: -3.2
+  yaw: -1.5707963267948966
+  target_xy:
+  - 13.4
+  - -4.2
+  aisle_edge: north
+  on_map: true
+  reachable: true
+people:
+- name: Priya
+  seat: open_office_r1c1
+  role: staff
+  aliases_by_language:
+    ta:
+    - பிரியா
+    ml:
+    - പ്രിയ
+    te:
+    - ప్రియ
+  language: ta
+  usual_place: open_office_r1c1
+- name: Neha
+  seat: open_office_r1c2
+  role: staff
+  aliases_by_language:
+    ta:
+    - நேஹா
+    ml:
+    - നേഹ
+    te:
+    - నేహా
+  language: ml
+  usual_place: open_office_r1c2
+- name: Arun
+  seat: open_office_r1c3
+  role: staff
+  aliases_by_language:
+    ta:
+    - அருண்
+    ml:
+    - അരുൺ
+    te:
+    - అరుణ్
+  language: te
+  usual_place: open_office_r1c3
+- name: Meera
+  seat: open_office_r1c4
+  role: staff
+  aliases_by_language:
+    ta:
+    - மீரா
+    ml:
+    - മീര
+    te:
+    - మీరా
+  language: en
+  usual_place: open_office_r1c4
+- name: Ravi
+  seat: open_office_r2c2
+  role: staff
+  aliases_by_language:
+    ta:
+    - ரவி
+    ml:
+    - രവി
+    te:
+    - రవి
+  language: ta
+  usual_place: open_office_r2c2
+- name: Asha
+  seat: team_office_r1c1
+  role: staff
+  aliases_by_language:
+    ta:
+    - ஆஷா
+    ml:
+    - ആശ
+    te:
+    - ఆశ
+  language: ml
+  usual_place: team_office_r1c1
+- name: Rani
+  seat: team_office_r1c2
+  role: staff
+  aliases_by_language:
+    ta:
+    - ராணி
+    ml:
+    - റാണി
+    te:
+    - రాణి
+  language: te
+  usual_place: team_office_r1c2
+- name: Divya
+  seat: manager_cabin_r1c1
+  role: manager
+  aliases_by_language:
+    ta:
+    - திவ்யா
+    ml:
+    - ദിവ്യ
+    te:
+    - దివ్య
+  language: en
+  usual_place: manager_cabin_r1c1
+objects:
+- name: printer
+  room: open_office
+  aliases:
+  - office printer
+  x: -1.7
+  y: -2.65
+  yaw: 3.141592653589793
+  aliases_by_language:
+    ta:
+    - அச்சுப்பொறி
+    - printer
+    ml:
+    - പ്രിന്റർ
+    te:
+    - ప్రింటర్
+  on_map: true
+  reachable: true
+- name: fridge
+  room: cafeteria
+  aliases:
+  - refrigerator
+  x: 11.85
+  y: 5.3
+  yaw: 3.141592653589793
+  aliases_by_language:
+    ta:
+    - குளிர்சாதன பெட்டி
+    - fridge
+    ml:
+    - ഫ്രിഡ്ജ്
+    te:
+    - ఫ్రిజ్
+  on_map: true
+  reachable: true
+- name: reception_desk
+  room: reception
+  aliases:
+  - reception desk
+  x: -0.6
+  y: 2.8
+  yaw: 1.5707963267948966
+  aliases_by_language:
+    ta:
+    - வரவேற்பு மேசை
+    ml:
+    - റിസപ്ഷൻ മേശ
+    te:
+    - రిసెప్షన్ డెస్క్
+  on_map: true
+  reachable: true
+fixture_source: STARTER
+fixture_warning: Draft language aliases and fictional language assignments for text
+  rehearsal only; needs native-speaker check
+requester_place: home
+map_fact_provenance: SCRIPTED MOCK FACTS for task4 language checks, not verified Gazebo
+  reachability or owner-approved live location

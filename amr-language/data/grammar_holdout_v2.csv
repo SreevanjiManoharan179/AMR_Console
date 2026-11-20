@@ -1,0 +1,37 @@
+id,source,text
+GRAMMAR-HOLDOUT-V2-01,AUTHORED_HELD_OUT,Could you get the visitor pass from Meera and bring it here?
+GRAMMAR-HOLDOUT-V2-02,AUTHORED_HELD_OUT,Please collect the envelope that is with Ravi and bring it back to me.
+GRAMMAR-HOLDOUT-V2-03,AUTHORED_HELD_OUT,"Take the notebook from Neha to me, please."
+GRAMMAR-HOLDOUT-V2-04,AUTHORED_HELD_OUT,Fetch the blue folder from Divya and bring it to me.
+GRAMMAR-HOLDOUT-V2-05,AUTHORED_HELD_OUT,Could you bring me the charger that is with Arun?
+GRAMMAR-HOLDOUT-V2-06,AUTHORED_HELD_OUT,Please get the package from Priya for me.
+GRAMMAR-HOLDOUT-V2-07,AUTHORED_HELD_OUT,"Give the folder to Neha; if she's not here, leave it with Meera."
+GRAMMAR-HOLDOUT-V2-08,AUTHORED_HELD_OUT,"Deliver the badge to Ravi; if he's not there, bring it back to me."
+GRAMMAR-HOLDOUT-V2-09,AUTHORED_HELD_OUT,"Hand the parcel to Divya; if they're not here, try again in 14 minutes."
+GRAMMAR-HOLDOUT-V2-10,AUTHORED_HELD_OUT,"Bring the file to Arun; if he isn't around, ask anyone there."
+GRAMMAR-HOLDOUT-V2-11,AUTHORED_HELD_OUT,"Pass the envelope to Priya; if she isn't available, skip it."
+GRAMMAR-HOLDOUT-V2-12,AUTHORED_HELD_OUT,"Take the notebook to Meera; if they aren't there, leave it with Ravi."
+GRAMMAR-HOLDOUT-V2-13,AUTHORED_HELD_OUT,"Give Neha the file; if she's away, give it to Priya."
+GRAMMAR-HOLDOUT-V2-14,AUTHORED_HELD_OUT,Could you go back to reception?
+GRAMMAR-HOLDOUT-V2-15,AUTHORED_HELD_OUT,Please head over to the conference hall.
+GRAMMAR-HOLDOUT-V2-16,AUTHORED_HELD_OUT,"No more jobs, please go back to the dock."
+GRAMMAR-HOLDOUT-V2-17,AUTHORED_HELD_OUT,Please return to the home base.
+GRAMMAR-HOLDOUT-V2-18,AUTHORED_HELD_OUT,Could you come back to me?
+GRAMMAR-HOLDOUT-V2-19,AUTHORED_HELD_OUT,"Get the parcel that is with Divya, then go back to the cafeteria."
+GRAMMAR-HOLDOUT-V2-20,AUTHORED_HELD_OUT,"Take the charger from Ravi and bring it here; after that, go home."
+GRAMMAR-HOLDOUT-V2-21,AUTHORED_HELD_OUT,Please tell Priya: the visitor will arrive at 8 pm.
+GRAMMAR-HOLDOUT-V2-22,AUTHORED_HELD_OUT,"Could you notify Arun that the delivery is at 6, not in six hours?"
+GRAMMAR-HOLDOUT-V2-23,AUTHORED_HELD_OUT,Tell Meera: she's meeting Ravi at 3 pm.
+GRAMMAR-HOLDOUT-V2-24,AUTHORED_HELD_OUT,"Please check at reception: Are the guests here? If yes, tell Neha: the guests are here. If no, give the pass to Ravi."
+GRAMMAR-HOLDOUT-V2-25,AUTHORED_HELD_OUT,"Ask whether the conference hall is free; if so, tell Priya: the room is free; otherwise, tell Arun: the room is occupied."
+GRAMMAR-HOLDOUT-V2-26,AUTHORED_HELD_OUT,Go to reception; then collect the file that is with Divya and bring it to me.
+GRAMMAR-HOLDOUT-V2-27,AUTHORED_HELD_OUT,"Give the file to Lakshmi; if she's not here, bring it back."
+GRAMMAR-HOLDOUT-V2-28,AUTHORED_HELD_OUT,Please go back to the loading bay.
+GRAMMAR-HOLDOUT-V2-29,AUTHORED_HELD_OUT,Please collect the charger from Arun and bring it here quickly while checking the windows.
+GRAMMAR-HOLDOUT-V2-30,AUTHORED_HELD_OUT,Get the file that is with Arun and bring it here before lunch.
+GRAMMAR-HOLDOUT-V2-31,AUTHORED_HELD_OUT,Take the folder from Ravi and send an email to Priya.
+GRAMMAR-HOLDOUT-V2-32,AUTHORED_HELD_OUT,Give the file to Divya unless it's raining.
+GRAMMAR-HOLDOUT-V2-33,AUTHORED_HELD_OUT,Please don't go back to reception.
+GRAMMAR-HOLDOUT-V2-34,AUTHORED_HELD_OUT,Buy the new adapter from the electronics shop.
+GRAMMAR-HOLDOUT-V2-35,AUTHORED_HELD_OUT,Could you buy the charger from Ravi?
+GRAMMAR-HOLDOUT-V2-36,AUTHORED_HELD_OUT,Visit reception; then visit storage; then visit cafeteria; then visit demo area; then visit open office; then visit team office; then visit manager cabin.

@@ -1,0 +1,24 @@
+status: owner_to_review
+items:
+- {term: charger, status: owner_to_review}
+- {term: laptop charger, status: owner_to_review}
+- {term: encoder, status: owner_to_review}
+- {term: motor, status: owner_to_review}
+- {term: motor driver, status: owner_to_review}
+- {term: servo, status: owner_to_review}
+- {term: sensor, status: owner_to_review}
+- {term: lidar, status: owner_to_review}
+- {term: camera, status: owner_to_review}
+- {term: IMU, status: owner_to_review}
+- {term: Raspberry Pi, status: owner_to_review}
+- {term: Arduino, status: owner_to_review}
+- {term: ESP32, status: owner_to_review}
+- {term: dev board, status: owner_to_review}
+- {term: USB cable, status: owner_to_review}
+- {term: jumper wires, status: owner_to_review}
+- {term: battery pack, status: owner_to_review}
+- {term: multimeter, status: owner_to_review}
+- {term: screwdriver set, status: owner_to_review}
+- {term: 3D-printed part, status: owner_to_review}
+- {term: documents, status: owner_to_review}
+- {term: file, status: owner_to_review}

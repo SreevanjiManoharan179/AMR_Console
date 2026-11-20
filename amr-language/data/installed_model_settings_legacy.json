@@ -1,0 +1,13 @@
+{
+  "model": "qwen3.5:2b-q4_K_M",
+  "samples": 7,
+  "timeout_s": 2.0,
+  "temperature": 0.7,
+  "num_ctx": 4096,
+  "num_predict": 512,
+  "seed": 1729,
+  "port": 11434,
+  "model_file": ".runtime/models/blobs/sha256-20cb277f0967ace47b0b5d5658e5e494a88937f7378b74b5a266496400938f4c",
+  "model_manifest_file": ".runtime/models/manifests/registry.ollama.ai/library/qwen3.5/2b-q4_K_M",
+  "runner_version": "0.40.12"
+}

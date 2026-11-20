@@ -1,0 +1,13 @@
+# key	speech language	sentence	how to say it	key words (; between words, | between spellings)
+en_01	en	Give the file to Divya.	Give the file to Divya.	file;Divya
+en_02	en	Ask Arun whether the encoder is ready.	Ask Arun whether the encoder is ready.	Arun;encoder;ready
+en_03	en	Tell Meera the meeting moved to three pm.	Tell Meera the meeting moved to three pm.	Meera;meeting;three|3
+en_04	en	Get the charger from Ravi and bring it to me.	Get the charger from Ravi and bring it to me.	charger;Ravi
+ta_01	ta	இந்த கோப்பை திவ்யாவிடம் கொடுங்க	intha koppai Divyavidam kodunga	கோப்பை|கோப்பு;திவ்யா;கொடு
+ta_02	ta	அருணிடம் என்கோடர் தயாரா என்று கேளுங்க	Arunidam encoder thayaaraa endru kelunga	அருண|அருணி;என்கோடர்|encoder;கேளு
+ta_03	ta	மீராவிடம் கூட்டம் மூன்று மணிக்கு மாறியது என்று சொல்லுங்க	Meeravidam koottam moondru manikku maariyathu endru sollunga	மீரா;கூட்டம்;மூன்று;சொல்லு
+ta_04	ta	ரவியிடம் இருந்து சார்ஜரை வாங்கி வாருங்கள்	Raviyidam irunthu chargerai vaangi vaarungal	ரவி;சார்ஜர|charger;வா
+tanglish_01	ta	file-ஐ Divya-கிட்ட கொடுங்க	file-a Divya kitta kudunga	file|ஃபைல்|பைல்;Divya|திவ்யா;கொடு|குடு
+tanglish_02	ta	Arun-கிட்ட encoder ready-ஆ-ன்னு கேளுங்க	Arun kitta encoder ready-aa nu kelunga	Arun|அருண்;encoder|என்கோடர்;ready|ரெடி;கேளு
+tanglish_03	ta	Meera-கிட்ட meeting three o'clock-க்கு மாறிடுச்சுன்னு சொல்லுங்க	Meera kitta meeting three o'clock-ku maariduchu nu sollunga	Meera|மீரா;meeting|மீட்டிங்;three|த்ரீ|மூன்று;சொல்லு
+tanglish_04	ta	Ravi-கிட்ட இருந்து charger எடுத்துட்டு வாங்க	Ravi kitta irunthu charger eduthuttu vaanga	Ravi|ரவி;charger|சார்ஜர்;வா

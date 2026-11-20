@@ -1,0 +1,77 @@
+# proposed_system: a larger, more realistic office (18 Oct 2026), the single source for its
+# Gazebo world and exact map. Regenerate from ~/ros2_ws with:
+#   python3 src/amr_physical_ai/scripts/office_world.py generate
+# Metres in the map frame; every coordinate is a multiple of 0.05 m. Map (0, 0) is world
+# (-2.0, -0.5), the robot's spawn point (the dock by the lobby), as in every other world here.
+# Walls are lines with the wall centred on them (0.10 m thick); doors are gaps along a line.
+name: proposed_system
+world_name: default
+map_to_world: [-2.0, -0.5]
+resolution: 0.05
+map_margin: 0.40
+wall_thickness: 0.10
+wall_height: 1.00
+interior: {x: [-3.0, 15.0], y: [-6.0, 6.0]}            # 18 x 12 m inside the outer walls
+walls:
+  # Main corridor: 1.8 m clear between the wall faces at y = +-0.9. The lobby (x < 1.5) is open to it.
+  - {name: corridor_north, from: [1.5, 0.95], to: [15.0, 0.95], doors: [[3.4, 4.6], [7.6, 9.6], [11.9, 13.1]]}
+  - {name: corridor_south, from: [-3.0, -0.95], to: [15.0, -0.95], doors: [[0.4, 2.4], [5.0, 6.6], [9.5, 10.5], [12.5, 13.5]]}
+  # North rooms: lobby | conference hall | demo area | cafeteria
+  - {name: lobby_conference, from: [1.5, 0.95], to: [1.5, 6.0]}
+  - {name: conference_demo, from: [6.5, 0.95], to: [6.5, 6.0]}
+  - {name: demo_cafeteria, from: [10.5, 0.95], to: [10.5, 6.0]}
+  # South rooms: open office (with a storage room in its west corner) | team office | manager cabin
+  - {name: open_team, from: [8.5, -6.0], to: [8.5, -0.95]}
+  - {name: team_manager, from: [11.5, -6.0], to: [11.5, -0.95]}
+  - {name: storage_east, from: [0.0, -6.0], to: [0.0, -3.5]}
+  - {name: storage_north, from: [-3.0, -3.5], to: [0.0, -3.5], doors: [[-2.1, -1.1]]}
+corridors:   # floor colour only
+  - {label: corridor, x: [1.5, 15.0], y: [-0.9, 0.9]}
+rooms:       # labels and floor colours only; the named goals are in config/named_locations_proposed_system.yaml
+  - {label: lobby, x: [-3.0, 1.5], y: [-0.9, 6.0]}
+  - {label: conference hall, x: [1.5, 6.5], y: [0.95, 6.0]}
+  - {label: demo area, x: [6.5, 10.5], y: [0.95, 6.0]}
+  - {label: cafeteria, x: [10.5, 15.0], y: [0.95, 6.0]}
+  - {label: open office, x: [-3.0, 8.5], y: [-6.0, -0.95]}
+  - {label: team office, x: [8.5, 11.5], y: [-6.0, -0.95]}
+  - {label: manager cabin, x: [11.5, 15.0], y: [-6.0, -0.95]}
+  - {label: storage, x: [-3.0, 0.0], y: [-6.0, -3.5]}
+furniture:   # solid boxes from the floor; anything taller than ~0.17 m is seen by the LiDAR
+  # lobby
+  - {name: reception_desk, x: [-1.6, 0.4], y: [3.6, 4.2], height: 1.05, color: wood}
+  - {name: reception_return, x: [0.4, 1.0], y: [3.0, 4.2], height: 1.05, color: wood}
+  - {name: waiting_sofa, x: [-2.9, -2.2], y: [1.6, 3.4], height: 0.80, color: fabric}
+  - {name: coffee_table, x: [-2.0, -1.4], y: [2.1, 2.9], height: 0.45, color: wood}
+  - {name: lobby_plant, x: [1.0, 1.4], y: [5.5, 5.9], height: 1.20, color: green}
+  # conference hall
+  - {name: conference_table, x: [2.4, 5.6], y: [3.2, 4.4], height: 0.75, color: wood}
+  - {name: chair_n1, x: [2.7, 3.15], y: [4.6, 5.05], height: 0.90, color: fabric}
+  - {name: chair_n2, x: [3.75, 4.2], y: [4.6, 5.05], height: 0.90, color: fabric}
+  - {name: chair_n3, x: [4.8, 5.25], y: [4.6, 5.05], height: 0.90, color: fabric}
+  - {name: chair_s1, x: [2.7, 3.15], y: [2.55, 3.0], height: 0.90, color: fabric}
+  - {name: chair_s3, x: [4.8, 5.25], y: [2.55, 3.0], height: 0.90, color: fabric}
+  - {name: screen, x: [6.2, 6.45], y: [3.0, 4.6], height: 1.50, color: dark}
+  # demo area
+  - {name: display_stand_a, x: [7.0, 7.8], y: [4.6, 5.4], height: 1.10, color: white}
+  - {name: display_stand_b, x: [8.6, 9.4], y: [4.6, 5.4], height: 1.10, color: white}
+  - {name: demo_platform, x: [9.4, 10.4], y: [2.0, 3.2], height: 0.30, color: white}
+  # cafeteria
+  - {name: counter, x: [14.3, 15.0], y: [2.0, 5.4], height: 0.90, color: steel}
+  - {name: fridge, x: [10.55, 11.25], y: [5.3, 6.0], height: 1.80, color: steel}
+  - {name: cafe_table_a, x: [11.0, 11.8], y: [3.8, 4.6], height: 0.75, color: wood}
+  - {name: cafe_table_b, x: [12.6, 13.4], y: [4.8, 5.6], height: 0.75, color: wood}
+  # open office: two rows of desk clusters, a printer and a front aisle along the corridor
+  - {name: desks_1, x: [1.2, 3.6], y: [-3.8, -2.6], height: 0.75, color: wood}
+  - {name: desks_2, x: [4.8, 7.2], y: [-3.8, -2.6], height: 0.75, color: wood}
+  - {name: desks_3, x: [1.2, 3.6], y: [-6.0, -4.8], height: 0.75, color: wood}
+  - {name: desks_4, x: [4.8, 7.2], y: [-6.0, -4.8], height: 0.75, color: wood}
+  - {name: printer, x: [-2.9, -2.3], y: [-3.3, -2.6], height: 1.00, color: white}
+  # team office
+  - {name: team_desk_1, x: [8.6, 10.0], y: [-6.0, -5.3], height: 0.75, color: wood}
+  - {name: team_desk_2, x: [10.1, 11.45], y: [-6.0, -5.3], height: 0.75, color: wood}
+  - {name: bookshelf, x: [11.0, 11.45], y: [-4.5, -2.5], height: 1.80, color: wood}
+  # manager cabin
+  - {name: manager_desk, x: [12.6, 14.2], y: [-4.6, -3.8], height: 0.75, color: wood}
+  - {name: cabinet, x: [14.55, 15.0], y: [-5.8, -4.2], height: 1.20, color: wood}
+  # storage
+  - {name: storage_shelf, x: [-3.0, -2.5], y: [-6.0, -3.6], height: 1.80, color: steel}

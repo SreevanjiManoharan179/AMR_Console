@@ -1,0 +1,78 @@
+# Office tasks: spoken or typed office jobs (deliver, collect, check, tell, go), in English in this
+# console (english_only below).
+# The language module is a separate project; the console starts it as its own process.
+schema_version: 1
+
+language_module:
+  # Folder of the amr-language project, relative to this repository.
+  path: ../amr-language
+  profile: office_B
+  # Longest wait for one request to be understood. The page shows "Thinking..." meanwhile.
+  timeout_s: 20
+  # contained: the model runner starts inside the language module's bubblewrap sandbox.
+  # uncontained: the owner's explicit choice when bubblewrap cannot start on this computer
+  #   (Ubuntu 24.04 blocks it unless an AppArmor rule allows it). The runner then still listens
+  #   on 127.0.0.1 only, with cloud features off, but without the extra file-system sandbox.
+  model_runner: contained
+
+# The person using this console. Choose another requester on the page for anyone else.
+operator:
+  name: Bharathwaj
+  language: en
+  place: home
+
+# Continued operation. After the last step, the robot asks the person it is with (only someone on
+# the office list, never a visitor or an empty room) whether they need anything else before it
+# returns to the dock. Their answer becomes a new request of their own: read back, and a yes first.
+continued_operation:
+  closing_question: true
+  # How many such requests may follow one another before the robot goes home anyway.
+  follow_up_limit: 3
+
+# How the robot helps people.
+assistance:
+  # Nobody answers after three calls, or the person is away: ask there, look in the two nearest
+  # rooms, then the open office. Not found: the request's own "if not there" rule, then the dock.
+  search_for_person: true
+  # A request the model reads the same way at least twice, but not every time, is read back as
+  # "please check this" instead of asking the person to say it all again. A yes is still needed.
+  tentative_plans: true
+  # A conversation, not a form: "go to Divya" greets her and waits for what she needs; "no" at the
+  # read-back is asked what to change; an item nobody wants goes back; greetings and "what can you
+  # do?" get an answer.
+  conversational: true
+  # English only in this console. A request or reply in another language is answered with an
+  # apology and a request to say it again in English; everyone is spoken to in English.
+  # The Speech Lab keeps all four languages.
+  english_only: true
+  # When a spoken reply is not one of the known phrases, the language model reads it (yes, no,
+  # taken, done, not here, later). It never turns words that say "no" or "wait" into a yes.
+  model_reads_replies: true
+
+# Office maps. Places and people come from config/worlds.yaml (places and tags); these add
+# the names in each language and the robot's tray and weight limits.
+maps:
+  proposed_system:
+    language: config/office_language_proposed_system.yaml
+    capability: config/robot_capability_simulation.yaml
+
+# Speech input (the Speak buttons). Needs the separately approved local speech-to-text install
+# (docs/OFFICE_TASKS.md); until then the page says it is not installed and typing still works.
+# The words are written down on this computer, offline, and a person checks them before sending.
+speech:
+  enabled: true
+  # Folder that holds the speech environment and models, relative to this repository.
+  path: ../amr-speech
+  # Pinned models (repository, revision, engine, device).
+  models: config/speech_models.json
+  # Which model writes down each language. "Automatic" on the page uses the speaker's own language.
+  languages:
+    en: whisper_base_en
+    ta: indic_conformer
+    ml: indic_conformer
+    te: indic_conformer
+  maximum_seconds: 15
+  # Processor threads for speech; the robot software keeps the rest.
+  threads: 4
+  # true keeps each recording in data/logs/office/<run>/speech/ for the owner's accuracy check.
+  keep_audio: false

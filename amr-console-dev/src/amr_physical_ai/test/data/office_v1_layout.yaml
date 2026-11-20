@@ -1,0 +1,31 @@
+# office_v1: the single source for the Gazebo world and the exact map (18 Oct 2026).
+# Regenerate both from ~/ros2_ws with:
+#   python3 src/amr_physical_ai/scripts/office_world.py generate
+# Every coordinate is in metres in the map frame and a multiple of the 0.05 m map
+# resolution. Map (0, 0) is world (-2.0, -0.5), the robot's spawn point, so the
+# ground-truth offset (+2.0, +0.5) and AMCL's initial pose (0, 0, 0) stay as they are.
+name: office_v1
+world_name: default          # the ground-truth reader expects the Gazebo world "default"
+map_to_world: [-2.0, -0.5]   # world = map + this offset
+resolution: 0.05             # exact map, metres per cell
+map_margin: 0.40             # unknown band outside the outer walls, metres
+wall_thickness: 0.10
+wall_height: 1.00
+interior: {x: [-1.5, 8.5], y: [-4.0, 4.0]}    # 10 x 8 m clear floor
+corridor: {y: [-0.8, 0.8]}                    # 1.6 m clear width
+doors_x: [[0.0, 1.0], [3.0, 4.0], [6.0, 7.0]] # 1.0 m clear openings, the same on both corridor walls
+partitions_x: [2.0, 5.0]                      # room dividers (wall centre lines)
+rooms:  # labels for documents only; the named goals are in config/named_locations_office_v1.yaml
+  - {label: reception, x: [-1.5, 2.0], y: [0.8, 4.0]}
+  - {label: conference room, x: [2.0, 5.0], y: [0.8, 4.0]}
+  - {label: kitchen, x: [5.0, 8.5], y: [0.8, 4.0]}
+  - {label: lab, x: [-1.5, 2.0], y: [-4.0, -0.8]}
+  - {label: huddle room, x: [2.0, 5.0], y: [-4.0, -0.8]}
+  - {label: office (no named goal), x: [5.0, 8.5], y: [-4.0, -0.8]}
+furniture:  # solid boxes from the floor; each room differs, so the LiDAR can tell them apart
+  - {name: reception_desk, x: [0.4, 1.8], y: [2.8, 3.3], height: 0.75, color: wood}
+  - {name: conference_table, x: [2.7, 4.3], y: [2.8, 3.3], height: 0.75, color: wood}
+  - {name: kitchen_counter, x: [8.0, 8.5], y: [1.0, 3.3], height: 0.90, color: steel}
+  - {name: lab_shelf, x: [-1.5, -1.0], y: [-3.3, -1.2], height: 1.80, color: steel}
+  - {name: huddle_cabinet, x: [2.05, 2.45], y: [-3.3, -1.6], height: 1.00, color: wood}
+  - {name: office_desk, x: [6.0, 7.4], y: [-3.3, -2.8], height: 0.75, color: wood}

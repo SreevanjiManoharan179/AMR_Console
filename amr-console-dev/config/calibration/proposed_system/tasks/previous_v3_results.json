@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "seed": 20261019,
+    "alpha": 0.1,
+    "temperature": 0.1,
+    "calibration_fraction": 0.6,
+    "repeats": 1000,
+    "aggregation": "min",
+    "robot": "TurtleBot3 Waffle simulation",
+    "input": "typed input, rule-based grammar",
+    "scorer": "token match v2 (rule-based; \"right away\" phrase fix)",
+    "tag_semantics_sha256": "c7078372e9a08106236c839fd23c4ed448c99ad97a5fd48588530439db6def3a",
+    "input_fingerprints": {
+      "tags": "8ecb441ce9b4813419c3ee0567bded04d142b89c2bd4e4c9d557e16f93eda24e",
+      "map_yaml": "fc383b2d5a70ee1bbf45dd7c783ccba0b968fa39ae92ce99132b36c4a580c885",
+      "map_image": "237e02ccf292c30dc2ed2e289c863f0cfcac079d7514984b28747a000089e893",
+      "layout": "15677a9438c90d14b716de46ec3ff9a89ad2d4a74aa9a42b3ae04012c05cb758"
+    },
+    "dataset_sha256": "5f81a27bdfb12bd43d4ba9151024d99e1f231b35ada326b9fb8a4fbdde89ed2c"
+  },
+  "counts": {
+    "total": 243,
+    "unique_texts": 237,
+    "calibration": 145,
+    "test": 98,
+    "by_category": {
+      "clean_room": 36,
+      "paraphrase_template": 24,
+      "typo_room": 9,
+      "ambiguous_room": 42,
+      "clean_person": 32,
+      "typo_person": 8,
+      "person_room": 8,
+      "conflict": 8,
+      "ambiguous_person": 8,
+      "clean_seat": 18,
+      "missing_seat": 9,
+      "object": 9,
+      "role": 4,
+      "out_of_roster": 16,
+      "unknown_room": 6,
+      "unsupported": 6
+    }
+  },
+  "headline": {
+    "seed": 20261019,
+    "q_hat": 0.5131222265306762,
+    "max_score_q_hat_diagnostic": 0.5131222265306762,
+    "max_score_joint_coverage_diagnostic": 0.9897959183673469,
+    "baseline": {
+      "success": 0.8469387755102041,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.15306122448979592,
+      "joint_coverage": 0.8673469387755102
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 0.8877551020408163,
+      "clarification_rate": 0.2857142857142857,
+      "confirmation_rate": 0.8673469387755102,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 0.9897959183673469,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.153061224489796
+    }
+  },
+  "repeated_splits": {
+    "baseline": {
+      "success": {
+        "mean": 0.8297959183673469,
+        "p05": 0.7755102040816326,
+        "p50": 0.8367346938775511,
+        "p95": 0.8775510204081632,
+        "minimum": 0.7551020408163265,
+        "maximum": 0.9183673469387755
+      },
+      "question_rate": {
+        "mean": 0.0,
+        "p05": 0.0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0
+      },
+      "clarification_rate": {
+        "mean": 0.0,
+        "p05": 0.0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0
+      },
+      "confirmation_rate": {
+        "mean": 0.0,
+        "p05": 0.0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0
+      },
+      "wrong_destinations": {
+        "mean": 0.16209183673469385,
+        "p05": 0.11224489795918367,
+        "p50": 0.16326530612244897,
+        "p95": 0.21428571428571427,
+        "minimum": 0.07142857142857142,
+        "maximum": 0.24489795918367346
+      },
+      "joint_coverage": {
+        "mean": 0.8630510204081634,
+        "p05": 0.8163265306122449,
+        "p50": 0.8673469387755102,
+        "p95": 0.9081632653061225,
+        "minimum": 0.7959183673469388,
+        "maximum": 0.9489795918367347
+      }
+    },
+    "per_slot": {
+      "success": {
+        "mean": 0.9918877551020409,
+        "p05": 0.9795918367346939,
+        "p50": 0.9897959183673469,
+        "p95": 1.0,
+        "minimum": 0.9795918367346939,
+        "maximum": 1.0
+      },
+      "question_rate": {
+        "mean": 0.8771326530612246,
+        "p05": 0.8367346938775511,
+        "p50": 0.8775510204081632,
+        "p95": 0.9183673469387755,
+        "minimum": 0.7959183673469388,
+        "maximum": 0.9591836734693877
+      },
+      "clarification_rate": {
+        "mean": 0.28483673469387755,
+        "p05": 0.22448979591836735,
+        "p50": 0.2857142857142857,
+        "p95": 0.3469387755102041,
+        "minimum": 0.17346938775510204,
+        "maximum": 0.37755102040816324
+      },
+      "confirmation_rate": {
+        "mean": 0.8438775510204082,
+        "p05": 0.7959183673469388,
+        "p50": 0.8469387755102041,
+        "p95": 0.8877551020408163,
+        "minimum": 0.7448979591836735,
+        "maximum": 0.9489795918367347
+      },
+      "wrong_destinations": {
+        "mean": 0.0,
+        "p05": 0.0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0
+      },
+      "joint_coverage": {
+        "mean": 0.9758571428571428,
+        "p05": 0.9591836734693877,
+        "p50": 0.9795918367346939,
+        "p95": 1.0,
+        "minimum": 0.9387755102040817,
+        "maximum": 1.0
+      },
+      "wrong_confirmation_proposals": {
+        "mean": 0.0,
+        "p05": 0.0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0
+      },
+      "mean_questions": {
+        "mean": 1.1287142857142858,
+        "p05": 1.0510204081632653,
+        "p50": 1.1326530612244898,
+        "p95": 1.2040816326530612,
+        "minimum": 0.9387755102040817,
+        "maximum": 1.2755102040816326
+      }
+    }
+  },
+  "max_score_diagnostic": {
+    "mean": 0.9758571428571428,
+    "p05": 0.9591836734693877,
+    "p50": 0.9795918367346939,
+    "p95": 1.0,
+    "minimum": 0.9387755102040817,
+    "maximum": 1.0
+  },
+  "limitations": [
+    "Template commands are not real language; templates and scorer rules were designed together.",
+    "The requested min over slot errors does not provide simultaneous slot coverage; max-score results are a separate diagnostic only.",
+    "No statistical guarantee for real input, conditional classes, execution or physical delivery.",
+    "Question rate includes mandatory confirmations. Clarification rate excludes confirmations.",
+    "Success is offline grounding/appropriate rejection with a simulated truthful answerer, not navigation or measured human performance.",
+    "Zero post-confirmation wrong destinations assumes the human declines every wrong proposal; wrong proposals are reported separately.",
+    "Ambiguous/missing-seat texts can have multiple latent intents. Random command splits share template families; no held-out-template claim.",
+    "Repeated splits overlap; they are sensitivity summaries, not 1000 independent language datasets.",
+    "Name probabilities use softmax T=0.1 over the <=1-edit admissible names (canonical name length >=4 for fuzzy matching).",
+    "Known invalid syntax and unknown targets have an explicit <none> label; they are included in all-command coverage."
+  ]
+}

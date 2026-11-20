@@ -1,0 +1,48 @@
+# run output: maps, exploration records, command records, logs (never committed)
+/data/
+
+# colcon build artefacts
+build/
+install/
+log/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# venvs — never commit these
+venv/
+.venv/
+env/
+
+# large or machine-specific artefacts
+*.bag
+*.db3
+*.pgm
+# Small canonical map pairs are required by navigation in a fresh clone.
+!src/amr_physical_ai/maps/*.pgm
+!src/amr_physical_ai/test/data/stations/*.pgm
+*.mcap
+
+# editor
+.vscode/*.bak
+*.swp
+.DS_Store
+
+# VS Code C++ IntelliSense database, machine-specific
+.vscode/browse.vc.db*
+.vscode/ipch/
+
+# Local credentials and agent/session state
+.env
+.env.*
+!.env.example
+/.aws/
+/.codex/
+/.agents/
+coverage.xml
+.coverage
+htmlcov/

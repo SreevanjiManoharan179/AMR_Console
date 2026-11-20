@@ -1,0 +1,3356 @@
+[
+  {
+    "id": "t161",
+    "initial_kind": "confirm",
+    "question": "Manager cabin, row 1 seat 1 \u2014 Divya. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Divya": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t202",
+    "initial_kind": "confirm",
+    "question": "Open office, printer. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "object": {
+        "printer": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t191",
+    "initial_kind": "confirm",
+    "question": "Open office, row 2 seat 2 \u2014 Ravi. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.507981142022911e-05,
+        "reception": 4.507981142022911e-05,
+        "conference_hall": 4.507981142022911e-05,
+        "demo_area": 4.507981142022911e-05,
+        "cafeteria": 4.507981142022911e-05,
+        "open_office": 0.9929489242840136,
+        "team_office": 0.006690437224624612,
+        "manager_cabin": 4.507981142022911e-05,
+        "storage": 4.507981142022911e-05,
+        "<none>": 4.507981142022911e-05
+      },
+      "seat": {
+        "open_office_r2c2": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t210",
+    "initial_kind": "confirm",
+    "question": "Reception, reception desk. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "object": {
+        "reception_desk": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t048",
+    "initial_kind": "confirm",
+    "question": "Team office. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.507981142022911e-05,
+        "reception": 4.507981142022911e-05,
+        "conference_hall": 4.507981142022911e-05,
+        "demo_area": 4.507981142022911e-05,
+        "cafeteria": 4.507981142022911e-05,
+        "open_office": 0.006690437224624612,
+        "team_office": 0.9929489242840136,
+        "manager_cabin": 4.507981142022911e-05,
+        "storage": 4.507981142022911e-05,
+        "<none>": 4.507981142022911e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t076",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 0.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 1.0,
+      "joint_coverage": 0.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t128",
+    "initial_kind": "confirm",
+    "question": "Open office, row 1 seat 3 \u2014 Arun. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Arun": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t016",
+    "initial_kind": "confirm",
+    "question": "Conference hall. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 0.9995915675173918,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t133",
+    "initial_kind": "confirm",
+    "question": "Open office, row 1 seat 4 \u2014 Meera. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Meera": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t223",
+    "initial_kind": "reject",
+    "question": "I don't know anyone called Lena",
+    "probabilities": {
+      "person": {
+        "<none>": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 0.0
+    }
+  },
+  {
+    "id": "t203",
+    "initial_kind": "confirm",
+    "question": "Open office, printer. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "object": {
+        "printer": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t166",
+    "initial_kind": "ask",
+    "question": "Divya is tagged in manager cabin, but you named conference hall. Use manager cabin or cancel?",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 0.9995915675173918,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      },
+      "person": {
+        "Divya": 1.0
+      }
+    },
+    "baseline": {
+      "success": 0.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 1.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t042",
+    "initial_kind": "confirm",
+    "question": "Open office. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.507981142022911e-05,
+        "reception": 4.507981142022911e-05,
+        "conference_hall": 4.507981142022911e-05,
+        "demo_area": 4.507981142022911e-05,
+        "cafeteria": 4.507981142022911e-05,
+        "open_office": 0.9929489242840136,
+        "team_office": 0.006690437224624612,
+        "manager_cabin": 4.507981142022911e-05,
+        "storage": 4.507981142022911e-05,
+        "<none>": 4.507981142022911e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t211",
+    "initial_kind": "confirm",
+    "question": "Manager cabin, row 1 seat 1 \u2014 Divya. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Divya": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t134",
+    "initial_kind": "confirm",
+    "question": "Open office, row 1 seat 4 \u2014 Meera. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Meera": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t209",
+    "initial_kind": "confirm",
+    "question": "Reception, reception desk. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "object": {
+        "reception_desk": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t081",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t182",
+    "initial_kind": "confirm",
+    "question": "Open office, row 1 seat 3 \u2014 Arun. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.507981142022911e-05,
+        "reception": 4.507981142022911e-05,
+        "conference_hall": 4.507981142022911e-05,
+        "demo_area": 4.507981142022911e-05,
+        "cafeteria": 4.507981142022911e-05,
+        "open_office": 0.9929489242840136,
+        "team_office": 0.006690437224624612,
+        "manager_cabin": 4.507981142022911e-05,
+        "storage": 4.507981142022911e-05,
+        "<none>": 4.507981142022911e-05
+      },
+      "seat": {
+        "open_office_r1c3": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t065",
+    "initial_kind": "confirm",
+    "question": "Storage. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 0.9995915675173918,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t201",
+    "initial_kind": "ask",
+    "question": "Which seat in row 1: manager cabin row 1 seat 1?",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 0.9995915675173918,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      },
+      "seat": {
+        "manager_cabin_r1c1": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t061",
+    "initial_kind": "confirm",
+    "question": "Manager cabin. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 6.665472055093603e-05,
+        "reception": 6.665472055093603e-05,
+        "conference_hall": 6.665472055093603e-05,
+        "demo_area": 6.665472055093603e-05,
+        "cafeteria": 6.665472055093603e-05,
+        "open_office": 6.665472055093603e-05,
+        "team_office": 6.665472055093603e-05,
+        "manager_cabin": 0.9994001075150415,
+        "storage": 6.665472055093603e-05,
+        "<none>": 6.665472055093603e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t169",
+    "initial_kind": "ask",
+    "question": "Which person: Ravi, Rani?",
+    "probabilities": {
+      "person": {
+        "Ravi": 0.5,
+        "Rani": 0.5
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t010",
+    "initial_kind": "confirm",
+    "question": "Reception. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 0.9995915675173918,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t062",
+    "initial_kind": "confirm",
+    "question": "Storage. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 0.9995915675173918,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t151",
+    "initial_kind": "confirm",
+    "question": "Team office, row 1 seat 1 \u2014 Asha. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.507981142022911e-05,
+        "reception": 4.507981142022911e-05,
+        "conference_hall": 4.507981142022911e-05,
+        "demo_area": 4.507981142022911e-05,
+        "cafeteria": 4.507981142022911e-05,
+        "open_office": 0.006690437224624612,
+        "team_office": 0.9929489242840136,
+        "manager_cabin": 4.507981142022911e-05,
+        "storage": 4.507981142022911e-05,
+        "<none>": 4.507981142022911e-05
+      },
+      "person": {
+        "Asha": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t079",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t231",
+    "initial_kind": "reject",
+    "question": "I don't know the room reliably. Please give a tagged room.",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 0.9995915675173918
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 0.0
+    }
+  },
+  {
+    "id": "t012",
+    "initial_kind": "confirm",
+    "question": "Reception. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 0.9995915675173918,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t096",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 0.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 1.0,
+      "joint_coverage": 0.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t238",
+    "initial_kind": "reject",
+    "question": "Give one unconditional positive task; no goal was sent.",
+    "probabilities": {
+      "validity": {
+        "<none>": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 0.0
+    }
+  },
+  {
+    "id": "t060",
+    "initial_kind": "confirm",
+    "question": "Manager cabin. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 0.9995915675173918,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t017",
+    "initial_kind": "confirm",
+    "question": "Conference hall. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 0.9995915675173918,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t237",
+    "initial_kind": "reject",
+    "question": "I can deliver to rooms, seats, people or objects",
+    "probabilities": {
+      "validity": {
+        "<none>": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 0.0
+    }
+  },
+  {
+    "id": "t126",
+    "initial_kind": "confirm",
+    "question": "Open office, row 1 seat 3 \u2014 Arun. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Arun": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t034",
+    "initial_kind": "confirm",
+    "question": "Cafeteria. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 0.9995915675173918,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t189",
+    "initial_kind": "ask",
+    "question": "Which seat in row 2: open office row 2 seat 1, open office row 2 seat 2?",
+    "probabilities": {
+      "room": {
+        "home": 4.507981142022911e-05,
+        "reception": 4.507981142022911e-05,
+        "conference_hall": 4.507981142022911e-05,
+        "demo_area": 4.507981142022911e-05,
+        "cafeteria": 4.507981142022911e-05,
+        "open_office": 0.9929489242840136,
+        "team_office": 0.006690437224624612,
+        "manager_cabin": 4.507981142022911e-05,
+        "storage": 4.507981142022911e-05,
+        "<none>": 4.507981142022911e-05
+      },
+      "seat": {
+        "open_office_r2c1": 0.5,
+        "open_office_r2c2": 0.5
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t168",
+    "initial_kind": "ask",
+    "question": "Which person: Ravi, Rani?",
+    "probabilities": {
+      "person": {
+        "Ravi": 0.5,
+        "Rani": 0.5
+      }
+    },
+    "baseline": {
+      "success": 0.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 1.0,
+      "joint_coverage": 0.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t027",
+    "initial_kind": "confirm",
+    "question": "Demo area. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 0.9995915675173918,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t155",
+    "initial_kind": "confirm",
+    "question": "Team office, row 1 seat 2 \u2014 Rani. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Ravi": 0.07585818002124356,
+        "Rani": 0.9241418199787566
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t216",
+    "initial_kind": "reject",
+    "question": "I don't know anyone called Karthik",
+    "probabilities": {
+      "person": {
+        "<none>": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 0.0
+    }
+  },
+  {
+    "id": "t192",
+    "initial_kind": "ask",
+    "question": "Which seat in row 2: open office row 2 seat 1, open office row 2 seat 2?",
+    "probabilities": {
+      "room": {
+        "home": 4.507981142022911e-05,
+        "reception": 4.507981142022911e-05,
+        "conference_hall": 4.507981142022911e-05,
+        "demo_area": 4.507981142022911e-05,
+        "cafeteria": 4.507981142022911e-05,
+        "open_office": 0.9929489242840136,
+        "team_office": 0.006690437224624612,
+        "manager_cabin": 4.507981142022911e-05,
+        "storage": 4.507981142022911e-05,
+        "<none>": 4.507981142022911e-05
+      },
+      "seat": {
+        "open_office_r2c1": 0.5,
+        "open_office_r2c2": 0.5
+      }
+    },
+    "baseline": {
+      "success": 0.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 1.0,
+      "joint_coverage": 0.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t077",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t227",
+    "initial_kind": "reject",
+    "question": "I don't know anyone called Tara",
+    "probabilities": {
+      "person": {
+        "<none>": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 0.0
+    }
+  },
+  {
+    "id": "t205",
+    "initial_kind": "confirm",
+    "question": "Cafeteria, fridge. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "object": {
+        "fridge": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t179",
+    "initial_kind": "confirm",
+    "question": "Open office, row 1 seat 2 \u2014 Neha. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.507981142022911e-05,
+        "reception": 4.507981142022911e-05,
+        "conference_hall": 4.507981142022911e-05,
+        "demo_area": 4.507981142022911e-05,
+        "cafeteria": 4.507981142022911e-05,
+        "open_office": 0.9929489242840136,
+        "team_office": 0.006690437224624612,
+        "manager_cabin": 4.507981142022911e-05,
+        "storage": 4.507981142022911e-05,
+        "<none>": 4.507981142022911e-05
+      },
+      "seat": {
+        "open_office_r1c2": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t148",
+    "initial_kind": "confirm",
+    "question": "Team office, row 1 seat 1 \u2014 Asha. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Asha": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t125",
+    "initial_kind": "confirm",
+    "question": "Open office, row 1 seat 3 \u2014 Arun. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Arun": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t083",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t090",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 0.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 1.0,
+      "joint_coverage": 0.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t233",
+    "initial_kind": "reject",
+    "question": "I don't know the room reliably. Please give a tagged room.",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 0.9995915675173918
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 0.0
+    }
+  },
+  {
+    "id": "t000",
+    "initial_kind": "confirm",
+    "question": "Home. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 0.9995915675173918,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t099",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t149",
+    "initial_kind": "confirm",
+    "question": "Team office, row 1 seat 1 \u2014 Asha. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Asha": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t009",
+    "initial_kind": "confirm",
+    "question": "Reception. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 0.9995915675173918,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t158",
+    "initial_kind": "confirm",
+    "question": "Team office, row 1 seat 2 \u2014 Rani. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.507981142022911e-05,
+        "reception": 4.507981142022911e-05,
+        "conference_hall": 4.507981142022911e-05,
+        "demo_area": 4.507981142022911e-05,
+        "cafeteria": 4.507981142022911e-05,
+        "open_office": 0.006690437224624612,
+        "team_office": 0.9929489242840136,
+        "manager_cabin": 4.507981142022911e-05,
+        "storage": 4.507981142022911e-05,
+        "<none>": 4.507981142022911e-05
+      },
+      "person": {
+        "Ravi": 0.07585818002124356,
+        "Rani": 0.9241418199787566
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t094",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 0.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 1.0,
+      "joint_coverage": 0.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t196",
+    "initial_kind": "confirm",
+    "question": "Team office, row 1 seat 2 \u2014 Rani. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.507981142022911e-05,
+        "reception": 4.507981142022911e-05,
+        "conference_hall": 4.507981142022911e-05,
+        "demo_area": 4.507981142022911e-05,
+        "cafeteria": 4.507981142022911e-05,
+        "open_office": 0.006690437224624612,
+        "team_office": 0.9929489242840136,
+        "manager_cabin": 4.507981142022911e-05,
+        "storage": 4.507981142022911e-05,
+        "<none>": 4.507981142022911e-05
+      },
+      "seat": {
+        "team_office_r1c2": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t025",
+    "initial_kind": "confirm",
+    "question": "Demo area. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 0.9995915675173918,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t146",
+    "initial_kind": "confirm",
+    "question": "Team office, row 1 seat 1 \u2014 Asha. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Asha": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t212",
+    "initial_kind": "confirm",
+    "question": "Manager cabin, row 1 seat 1 \u2014 Divya. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Divya": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t234",
+    "initial_kind": "reject",
+    "question": "I don't know the room reliably. Please give a tagged room.",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 0.9995915675173918
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 0.0
+    }
+  },
+  {
+    "id": "t085",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t170",
+    "initial_kind": "ask",
+    "question": "Which person: Ravi, Rani?",
+    "probabilities": {
+      "person": {
+        "Ravi": 0.5,
+        "Rani": 0.5
+      }
+    },
+    "baseline": {
+      "success": 0.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 1.0,
+      "joint_coverage": 0.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t141",
+    "initial_kind": "confirm",
+    "question": "Open office, row 2 seat 2 \u2014 Ravi. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Ravi": 0.9241418199787566,
+        "Rani": 0.07585818002124356
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t005",
+    "initial_kind": "confirm",
+    "question": "Home. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 0.9929489242840136,
+        "reception": 4.507981142022911e-05,
+        "conference_hall": 4.507981142022911e-05,
+        "demo_area": 4.507981142022911e-05,
+        "cafeteria": 4.507981142022911e-05,
+        "open_office": 4.507981142022911e-05,
+        "team_office": 4.507981142022911e-05,
+        "manager_cabin": 4.507981142022911e-05,
+        "storage": 4.507981142022911e-05,
+        "<none>": 0.006690437224624612
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t086",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 0.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 1.0,
+      "joint_coverage": 0.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t103",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t047",
+    "initial_kind": "confirm",
+    "question": "Open office. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 7.10065729866967e-05,
+        "reception": 7.10065729866967e-05,
+        "conference_hall": 7.10065729866967e-05,
+        "demo_area": 7.10065729866967e-05,
+        "cafeteria": 7.10065729866967e-05,
+        "open_office": 0.9927428983830827,
+        "team_office": 0.006689049033023701,
+        "manager_cabin": 7.10065729866967e-05,
+        "storage": 7.10065729866967e-05,
+        "<none>": 7.10065729866967e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t219",
+    "initial_kind": "reject",
+    "question": "I don't know anyone called Zoe",
+    "probabilities": {
+      "person": {
+        "<none>": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 0.0
+    }
+  },
+  {
+    "id": "t115",
+    "initial_kind": "confirm",
+    "question": "Open office, row 1 seat 1 \u2014 Priya. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Priya": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t058",
+    "initial_kind": "confirm",
+    "question": "Manager cabin. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 0.9995915675173918,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t064",
+    "initial_kind": "confirm",
+    "question": "Storage. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 0.9995915675173918,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t224",
+    "initial_kind": "reject",
+    "question": "I don't know anyone called Lena",
+    "probabilities": {
+      "person": {
+        "<none>": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 0.0
+    }
+  },
+  {
+    "id": "t098",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 0.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 1.0,
+      "joint_coverage": 0.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t020",
+    "initial_kind": "confirm",
+    "question": "Conference hall. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 0.9995915675173918,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t019",
+    "initial_kind": "confirm",
+    "question": "Conference hall. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 0.9995915675173918,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t080",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 0.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 1.0,
+      "joint_coverage": 0.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t142",
+    "initial_kind": "confirm",
+    "question": "Open office, row 2 seat 2 \u2014 Ravi. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Ravi": 0.9241418199787566,
+        "Rani": 0.07585818002124356
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t069",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t164",
+    "initial_kind": "confirm",
+    "question": "Manager cabin, row 1 seat 1 \u2014 Divya. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Divya": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t112",
+    "initial_kind": "confirm",
+    "question": "Open office, row 1 seat 1 \u2014 Priya. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Priya": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t075",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t139",
+    "initial_kind": "confirm",
+    "question": "Open office, row 2 seat 2 \u2014 Ravi. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Ravi": 0.9241418199787566,
+        "Rani": 0.07585818002124356
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t240",
+    "initial_kind": "reject",
+    "question": "Give one unconditional positive task; no goal was sent.",
+    "probabilities": {
+      "validity": {
+        "<none>": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 0.0
+    }
+  },
+  {
+    "id": "t001",
+    "initial_kind": "confirm",
+    "question": "Home. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 0.9995915675173918,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t035",
+    "initial_kind": "confirm",
+    "question": "Cafeteria. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 0.9995915675173918,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t089",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t007",
+    "initial_kind": "confirm",
+    "question": "Home. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 0.9929489242840136,
+        "reception": 4.507981142022911e-05,
+        "conference_hall": 4.507981142022911e-05,
+        "demo_area": 4.507981142022911e-05,
+        "cafeteria": 4.507981142022911e-05,
+        "open_office": 4.507981142022911e-05,
+        "team_office": 4.507981142022911e-05,
+        "manager_cabin": 4.507981142022911e-05,
+        "storage": 4.507981142022911e-05,
+        "<none>": 0.006690437224624612
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t183",
+    "initial_kind": "ask",
+    "question": "Which seat in row 1: open office row 1 seat 1, open office row 1 seat 2, open office row 1 seat 3, open office row 1 seat 4?",
+    "probabilities": {
+      "room": {
+        "home": 4.507981142022911e-05,
+        "reception": 4.507981142022911e-05,
+        "conference_hall": 4.507981142022911e-05,
+        "demo_area": 4.507981142022911e-05,
+        "cafeteria": 4.507981142022911e-05,
+        "open_office": 0.9929489242840136,
+        "team_office": 0.006690437224624612,
+        "manager_cabin": 4.507981142022911e-05,
+        "storage": 4.507981142022911e-05,
+        "<none>": 4.507981142022911e-05
+      },
+      "seat": {
+        "open_office_r1c1": 0.25,
+        "open_office_r1c2": 0.25,
+        "open_office_r1c3": 0.25,
+        "open_office_r1c4": 0.25
+      }
+    },
+    "baseline": {
+      "success": 0.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 1.0,
+      "joint_coverage": 0.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 0.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t068",
+    "initial_kind": "confirm",
+    "question": "Storage. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 9.7891518865433e-05,
+        "reception": 9.7891518865433e-05,
+        "conference_hall": 9.7891518865433e-05,
+        "demo_area": 9.7891518865433e-05,
+        "cafeteria": 9.7891518865433e-05,
+        "open_office": 9.7891518865433e-05,
+        "team_office": 9.7891518865433e-05,
+        "manager_cabin": 9.7891518865433e-05,
+        "storage": 0.9991189763302112,
+        "<none>": 9.7891518865433e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t074",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 0.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 1.0,
+      "joint_coverage": 0.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t138",
+    "initial_kind": "ask",
+    "question": "Meera is tagged in open office, but you named conference hall. Use open office or cancel?",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 0.9995915675173918,
+        "demo_area": 4.5381386956461724e-05,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      },
+      "person": {
+        "Meera": 1.0
+      }
+    },
+    "baseline": {
+      "success": 0.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 1.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t120",
+    "initial_kind": "confirm",
+    "question": "Open office, row 1 seat 2 \u2014 Neha. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Neha": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t054",
+    "initial_kind": "confirm",
+    "question": "Team office. Go here? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 7.10065729866967e-05,
+        "reception": 7.10065729866967e-05,
+        "conference_hall": 7.10065729866967e-05,
+        "demo_area": 7.10065729866967e-05,
+        "cafeteria": 7.10065729866967e-05,
+        "open_office": 0.006689049033023701,
+        "team_office": 0.9927428983830827,
+        "manager_cabin": 7.10065729866967e-05,
+        "storage": 7.10065729866967e-05,
+        "<none>": 7.10065729866967e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t030",
+    "initial_kind": "confirm",
+    "question": "Demo area. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.5381386956461724e-05,
+        "reception": 4.5381386956461724e-05,
+        "conference_hall": 4.5381386956461724e-05,
+        "demo_area": 0.9995915675173918,
+        "cafeteria": 4.5381386956461724e-05,
+        "open_office": 4.5381386956461724e-05,
+        "team_office": 4.5381386956461724e-05,
+        "manager_cabin": 4.5381386956461724e-05,
+        "storage": 4.5381386956461724e-05,
+        "<none>": 4.5381386956461724e-05
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t185",
+    "initial_kind": "confirm",
+    "question": "Open office, row 1 seat 4 \u2014 Meera. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "room": {
+        "home": 4.507981142022911e-05,
+        "reception": 4.507981142022911e-05,
+        "conference_hall": 4.507981142022911e-05,
+        "demo_area": 4.507981142022911e-05,
+        "cafeteria": 4.507981142022911e-05,
+        "open_office": 0.9929489242840136,
+        "team_office": 0.006690437224624612,
+        "manager_cabin": 4.507981142022911e-05,
+        "storage": 4.507981142022911e-05,
+        "<none>": 4.507981142022911e-05
+      },
+      "seat": {
+        "open_office_r1c4": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  },
+  {
+    "id": "t082",
+    "initial_kind": "ask",
+    "question": "Which room: open office, team office?",
+    "probabilities": {
+      "room": {
+        "home": 0.0032805566326690443,
+        "reception": 0.0032805566326690443,
+        "conference_hall": 0.0032805566326690443,
+        "demo_area": 0.0032805566326690443,
+        "cafeteria": 0.0032805566326690443,
+        "open_office": 0.4868777734693238,
+        "team_office": 0.4868777734693238,
+        "manager_cabin": 0.0032805566326690443,
+        "storage": 0.0032805566326690443,
+        "<none>": 0.0032805566326690443
+      }
+    },
+    "baseline": {
+      "success": 0.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 1.0,
+      "joint_coverage": 0.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 1.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 2.0
+    }
+  },
+  {
+    "id": "t150",
+    "initial_kind": "confirm",
+    "question": "Team office, row 1 seat 1 \u2014 Asha. Deliver here, wait for acknowledgement, then return home? (yes/no)",
+    "probabilities": {
+      "person": {
+        "Asha": 1.0
+      }
+    },
+    "baseline": {
+      "success": 1.0,
+      "question_rate": 0.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 0.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0
+    },
+    "per_slot": {
+      "success": 1.0,
+      "question_rate": 1.0,
+      "clarification_rate": 0.0,
+      "confirmation_rate": 1.0,
+      "wrong_destinations": 0.0,
+      "joint_coverage": 1.0,
+      "wrong_confirmation_proposals": 0.0,
+      "mean_questions": 1.0
+    }
+  }
+]

@@ -1,0 +1,31 @@
+[checked] Task 3 update (2 November 2026): version 0.3.1 retains four rewrite draws but plans normalized duplicate rewrites only once, counts each distinct pair once, and separates liveness-gated measurement from product deadlines. Current operational rules are in TASK3_MEASUREMENT.md; the earlier four-planner description below is historical where it differs. Labels remain pending; C is not installed.
+
+# Office language v3 — decisions and interface notes
+
+[checked] Owner task: `records/office_checks/owner_task_v3.txt`. It supersedes the earlier parser/confidence design. The owner retired the 2-second target in favour of **p95 <=5 seconds from typed input to readback**, with Thinking displayed. Short word-list replies target <=1 second. The 4-GB graphics-memory target during navigation remains unmeasured. No model training is planned.
+
+[checked] Owner decision: **fixed speech; show arbitrary content on screen for now**. Questions, message bodies, English rewrites and free answers are displayed separately as data. They never enter spoken strings. Spoken readback uses fixed action/item/condition phrases and approved names. Unknown items become the fixed phrase “the item”; check/tell readback says “ask your question” / “carry your message”. This intentionally does not claim fully spoken arbitrary multilingual payloads. Non-English templates and reply lists need native-speaker check.
+
+[checked] Public v3 API is `understand(text, names, requester, language=None, settings=None)`, `say(event, language, **slots)` and `hear_reply(text, expect, language=None)`. Legacy v1 is retained under `amr_language.core.understand`; historical check scripts use that explicit import. The public export is v3, a deliberate version change.
+
+[checked] `requester` is an approved person ID or caller-supplied identity context (`id`, optional `name`, `language`). An unlisted requester string is treated as the trusted caller identity, not a new map destination invented by the model. This is needed for the owner's example, whose requester is not in the fictional roster. Returning to that ID requires the console to resolve the requester's current location. It must never infer coordinates from this module.
+
+[checked] Long typed requests accept up to 2,000 characters; longer input asks the requester to split the job. This is the explicit v3 interpretation of “long requests”, replacing v1's 300-character limit. Plans contain at most six actions including both conditional branches combined. `n` is normalized into unique spoken-order numbering after validation, including branch actions. Branches have one level and only tell/deliver. Retrieve defaults `to` to the requester; absence policy defaults to bring_back. The console owns final idle return-to-dock. Explicit return-to-requester becomes a go step to the requester ID.
+
+[checked] Internal schema v3 uses `{steps, issue}`; `issue` is null, out_of_scope, unsupported_condition, negation or too_many_steps. It is an extraction format, not the public return. Each action has only its allowed fields. The planner sees only the English rewrite, and its named/content slots must be spans of that rewrite, apart from the explicit requester default. Grounding follows validation. Fuzzy matches are suggestions only and never authorize act.
+
+[checked] Confidence is the owner's **provisional agreement rule**: one greedy rewrite plus three rewrites at temperature .7, each followed by a greedy English plan and grounding. All four must be valid, fully grounded and identical (including items, messages, questions, conditions, order and branches) for act. Slot differences/ambiguity/unknowns ask one question. Missing/invalid pairs cannot turn one surviving plan into act; a partial set asks to rephrase. No valid pair refuses. No conformal guarantee or real calibration is claimed.
+
+[checked] `act` still requires the requester's explicit yes to fixed-template readback before the text rehearsal proceeds. It is not permission for robot motion. Rehearsal performs a local conversation/queue demonstration only. The production queue, timers, STOP, movement, session records and final home return belong to the console builder. This package never imports ROS or dispatches tasks.
+
+[checked] `say()` takes `names` and `requester` context when a line includes an identity. Names must resolve to approved IDs or the caller identity. Integer/count/policy/reason slots are validated. Arbitrary `question`, `message`, `answer`, `english`, `text`, and free `reason` strings are rejected rather than interpolated. Extra fixed events for split/rephrase/reply prompts are documented alongside the required event set.
+
+[checked] `hear_reply()` uses exact normalized phrase lists and expectation filtering. Ambiguous words such as “இல்ல” are disambiguated only by the expected kinds. STOP is checked across all four languages before expectation handling, including while waiting for an answer. Known yes/no answers need no model. Free answer rewriting uses the configured default model A; an optional per-call settings argument is a proposed future extension, not silently added to the public signature. Rehearsal's internal answer helper can retain the selected job model.
+
+[checked] Optional roster additions are `people[].language` and entry-level `aliases_by_language`. No console names file is edited. A separate draft example roster demonstrates them; its translated aliases and fictional language assignments are not owner-confirmed production annotations.
+
+[checked] Starters and reply-list fixtures are authored development material, not real people’s commands. Owner/friend rows remain blank until supplied. Proposed JSON labels are shown in a review file; final SHA-256 freezing requires explicit confirmation. Pending hashes may be recorded for drift detection but must not be called a confirmed test set.
+
+[checked] The owner approved model B; the exact approved model was downloaded and verified. No speech or translation downloads are authorized. IndicTrans2 is research only. R is a manually collected **cloud reference, not the product**; prepared prompts are not completed reference measurements. The owner explicitly chose to keep proposed labels pending.
+
+[checked] This module never writes to the console's folders or the ROS workspace.

@@ -1,0 +1,62 @@
+# proposed_system named places (18 Oct 2026). The owner confirms them with approval_status below.
+# Virtual demo goals in the generated office world (worlds/proposed_system_layout.yaml), not detected
+# rooms: the dock plus one goal in every room, each in front of the room's main furniture and
+# facing it (yaw in radians, map frame).
+# Approval is two edits, both made by the owner:
+#   1. approval_status: confirmed in this file
+#   2. proposed_system_places: true in tools/amr_console/approvals.yaml
+# Only the word "office" is shared, on purpose: "go to the office" fits the open office and the
+# team office, so it gets the question "Which one: the open office or the team office?".
+# No other word is shared between places, and no spelling of one place is close to another's
+# (token scorer). open_office has no "desk" alias, because "front desk" means reception.
+approval_status: confirmed
+robot: TurtleBot3 Waffle simulation
+frame_id: map
+map_yaml: ../maps/proposed_system.yaml
+minimum_clearance_m: 0.28
+locations:
+  - name: home
+    x: 0.0
+    y: 0.0
+    yaw: 0.0
+    aliases: [base, home base, dock, charging dock]
+  - name: reception
+    x: -0.6
+    y: 2.8
+    yaw: 1.5708
+    aliases: [front desk, lobby]
+  - name: conference_hall
+    x: 4.0
+    y: 2.0
+    yaw: 1.5708
+    aliases: [conference room, meeting room, boardroom]
+  - name: demo_area
+    x: 8.6
+    y: 2.6
+    yaw: 0.0
+    aliases: [showroom, demo zone, display area]
+  - name: cafeteria
+    x: 12.5
+    y: 2.5
+    yaw: 0.0
+    aliases: [canteen, kitchen, pantry, cafe]
+  - name: open_office
+    x: 4.2
+    y: -1.8
+    yaw: -1.5708
+    aliases: [open plan office, workstations]
+  - name: team_office
+    x: 10.0
+    y: -3.0
+    yaw: -1.5708
+    aliases: [team space, engineering office]
+  - name: manager_cabin
+    x: 13.4
+    y: -2.6
+    yaw: -1.5708
+    aliases: [manager, director cabin]
+  - name: storage
+    x: -1.2
+    y: -4.6
+    yaw: 3.1416
+    aliases: [storeroom, supply closet]

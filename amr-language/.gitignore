@@ -1,0 +1,11 @@
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.runtime/
+*.egg-info/
+.coverage
+
+# Private usage feedback is reviewed locally, never auto-committed.
+records/learning_suggestions/
+records/learning_versions/
+records/rehearsals/

@@ -1,0 +1,13 @@
+{
+  "ref": "HEAD",
+  "projects": {
+    "amr-console-dev": {
+      "published": 212,
+      "published_sha256": "559a4b1c9727de5fb2e2fac47d1564998e933c47c5a72737804d49d03455b10c"
+    },
+    "amr-language": {
+      "published": 145,
+      "published_sha256": "4f2090510d502e1bc0138c352242803416b7cd3053e050de2c15ed2edddbe2a5"
+    }
+  }
+}

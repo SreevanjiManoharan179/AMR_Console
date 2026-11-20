@@ -1,0 +1,19 @@
+Copyright (c) 2026 Bharathwaj Manoharan. All rights reserved.
+
+This software and its documentation are proprietary. No licence to use, copy, modify,
+merge, publish, distribute, sublicense or sell copies of it is granted, except with the
+prior written permission of the copyright holder.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR ITS USE.
+
+Third-party software
+--------------------
+This repository does not include third-party source code. At run time it uses, without
+modification, software and models installed separately under their own licences: the Ollama
+model runner, the Qwen3.5 language model and, for the translation comparison only, IndicTrans2.
+The AMR Console that starts it uses ROS 2 Jazzy, Nav2, SLAM Toolbox, Gazebo Harmonic, ros_gz and
+the TurtleBot3 simulation models. Those licences apply to that software.

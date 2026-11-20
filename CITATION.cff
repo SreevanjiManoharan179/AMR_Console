@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you refer to this software, please cite it as below."
+type: software
+title: "AMR Console: an office assistant for an autonomous mobile robot, in simulation"
+version: 1.0.0
+authors:
+  - family-names: Manoharan
+    given-names: Bharathwaj
+repository-code: "https://github.com/SreevanjiManoharan179/AMR_Console"
+license-url: "https://github.com/SreevanjiManoharan179/AMR_Console/blob/main/LICENSE"
+keywords:
+  - autonomous mobile robot
+  - ROS 2
+  - Nav2
+  - human-robot interaction
+  - language model
+  - simulation

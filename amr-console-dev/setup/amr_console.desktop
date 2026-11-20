@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=AMR Console
+GenericName=Office robot console
+Comment=Office assistant robot in simulation: map, navigate, and carry items and messages between people
+Keywords=AMR;robot;office;delivery;navigation;Gazebo;ROS;
+Exec=@LAUNCHER@
+Terminal=true
+Icon=@ICON@
+Categories=Development;Science;

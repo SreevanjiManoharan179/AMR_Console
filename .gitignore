@@ -1,0 +1,14 @@
+# Made on each computer, never committed (each project's own .gitignore adds its rules).
+/amr-speech/
+# Records the language module writes while it is used (learning suggestions, checks, map
+# requests): they stay on this computer. The development repository keeps its own.
+/amr-language/records/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+.env
+.env.*

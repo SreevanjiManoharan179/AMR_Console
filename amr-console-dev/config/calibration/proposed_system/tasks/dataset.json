@@ -1,0 +1,2232 @@
+[
+  {
+    "id": "t000",
+    "text": "go to the home",
+    "category": "clean_room",
+    "destination": "room:home",
+    "truth": {
+      "room": "home"
+    }
+  },
+  {
+    "id": "t001",
+    "text": "please navigate to home",
+    "category": "clean_room",
+    "destination": "room:home",
+    "truth": {
+      "room": "home"
+    }
+  },
+  {
+    "id": "t002",
+    "text": "could you head to home now",
+    "category": "clean_room",
+    "destination": "room:home",
+    "truth": {
+      "room": "home"
+    }
+  },
+  {
+    "id": "t003",
+    "text": "kindly move to home for me",
+    "category": "clean_room",
+    "destination": "room:home",
+    "truth": {
+      "room": "home"
+    }
+  },
+  {
+    "id": "t004",
+    "text": "take this to the base",
+    "category": "paraphrase_template",
+    "destination": "room:home",
+    "truth": {
+      "room": "home"
+    }
+  },
+  {
+    "id": "t005",
+    "text": "take this to the home base",
+    "category": "paraphrase_template",
+    "destination": "room:home",
+    "truth": {
+      "room": "home"
+    }
+  },
+  {
+    "id": "t006",
+    "text": "take this to the dock",
+    "category": "paraphrase_template",
+    "destination": "room:home",
+    "truth": {
+      "room": "home"
+    }
+  },
+  {
+    "id": "t007",
+    "text": "take this to the charging dock",
+    "category": "paraphrase_template",
+    "destination": "room:home",
+    "truth": {
+      "room": "home"
+    }
+  },
+  {
+    "id": "t008",
+    "text": "go to the hoe",
+    "category": "typo_room",
+    "destination": "room:home",
+    "truth": {
+      "room": "home"
+    }
+  },
+  {
+    "id": "t009",
+    "text": "go to the reception",
+    "category": "clean_room",
+    "destination": "room:reception",
+    "truth": {
+      "room": "reception"
+    }
+  },
+  {
+    "id": "t010",
+    "text": "please navigate to reception",
+    "category": "clean_room",
+    "destination": "room:reception",
+    "truth": {
+      "room": "reception"
+    }
+  },
+  {
+    "id": "t011",
+    "text": "could you head to reception now",
+    "category": "clean_room",
+    "destination": "room:reception",
+    "truth": {
+      "room": "reception"
+    }
+  },
+  {
+    "id": "t012",
+    "text": "kindly move to reception for me",
+    "category": "clean_room",
+    "destination": "room:reception",
+    "truth": {
+      "room": "reception"
+    }
+  },
+  {
+    "id": "t013",
+    "text": "take this to the front desk",
+    "category": "paraphrase_template",
+    "destination": "room:reception",
+    "truth": {
+      "room": "reception"
+    }
+  },
+  {
+    "id": "t014",
+    "text": "take this to the lobby",
+    "category": "paraphrase_template",
+    "destination": "room:reception",
+    "truth": {
+      "room": "reception"
+    }
+  },
+  {
+    "id": "t015",
+    "text": "go to the recetion",
+    "category": "typo_room",
+    "destination": "room:reception",
+    "truth": {
+      "room": "reception"
+    }
+  },
+  {
+    "id": "t016",
+    "text": "go to the conference hall",
+    "category": "clean_room",
+    "destination": "room:conference_hall",
+    "truth": {
+      "room": "conference_hall"
+    }
+  },
+  {
+    "id": "t017",
+    "text": "please navigate to conference hall",
+    "category": "clean_room",
+    "destination": "room:conference_hall",
+    "truth": {
+      "room": "conference_hall"
+    }
+  },
+  {
+    "id": "t018",
+    "text": "could you head to conference hall now",
+    "category": "clean_room",
+    "destination": "room:conference_hall",
+    "truth": {
+      "room": "conference_hall"
+    }
+  },
+  {
+    "id": "t019",
+    "text": "kindly move to conference hall for me",
+    "category": "clean_room",
+    "destination": "room:conference_hall",
+    "truth": {
+      "room": "conference_hall"
+    }
+  },
+  {
+    "id": "t020",
+    "text": "take this to the conference room",
+    "category": "paraphrase_template",
+    "destination": "room:conference_hall",
+    "truth": {
+      "room": "conference_hall"
+    }
+  },
+  {
+    "id": "t021",
+    "text": "take this to the meeting room",
+    "category": "paraphrase_template",
+    "destination": "room:conference_hall",
+    "truth": {
+      "room": "conference_hall"
+    }
+  },
+  {
+    "id": "t022",
+    "text": "take this to the boardroom",
+    "category": "paraphrase_template",
+    "destination": "room:conference_hall",
+    "truth": {
+      "room": "conference_hall"
+    }
+  },
+  {
+    "id": "t023",
+    "text": "go to the conferece hall",
+    "category": "typo_room",
+    "destination": "room:conference_hall",
+    "truth": {
+      "room": "conference_hall"
+    }
+  },
+  {
+    "id": "t024",
+    "text": "go to the demo area",
+    "category": "clean_room",
+    "destination": "room:demo_area",
+    "truth": {
+      "room": "demo_area"
+    }
+  },
+  {
+    "id": "t025",
+    "text": "please navigate to demo area",
+    "category": "clean_room",
+    "destination": "room:demo_area",
+    "truth": {
+      "room": "demo_area"
+    }
+  },
+  {
+    "id": "t026",
+    "text": "could you head to demo area now",
+    "category": "clean_room",
+    "destination": "room:demo_area",
+    "truth": {
+      "room": "demo_area"
+    }
+  },
+  {
+    "id": "t027",
+    "text": "kindly move to demo area for me",
+    "category": "clean_room",
+    "destination": "room:demo_area",
+    "truth": {
+      "room": "demo_area"
+    }
+  },
+  {
+    "id": "t028",
+    "text": "take this to the showroom",
+    "category": "paraphrase_template",
+    "destination": "room:demo_area",
+    "truth": {
+      "room": "demo_area"
+    }
+  },
+  {
+    "id": "t029",
+    "text": "take this to the demo zone",
+    "category": "paraphrase_template",
+    "destination": "room:demo_area",
+    "truth": {
+      "room": "demo_area"
+    }
+  },
+  {
+    "id": "t030",
+    "text": "take this to the display area",
+    "category": "paraphrase_template",
+    "destination": "room:demo_area",
+    "truth": {
+      "room": "demo_area"
+    }
+  },
+  {
+    "id": "t031",
+    "text": "go to the demoarea",
+    "category": "typo_room",
+    "destination": "room:demo_area",
+    "truth": {
+      "room": "demo_area"
+    }
+  },
+  {
+    "id": "t032",
+    "text": "go to the cafeteria",
+    "category": "clean_room",
+    "destination": "room:cafeteria",
+    "truth": {
+      "room": "cafeteria"
+    }
+  },
+  {
+    "id": "t033",
+    "text": "please navigate to cafeteria",
+    "category": "clean_room",
+    "destination": "room:cafeteria",
+    "truth": {
+      "room": "cafeteria"
+    }
+  },
+  {
+    "id": "t034",
+    "text": "could you head to cafeteria now",
+    "category": "clean_room",
+    "destination": "room:cafeteria",
+    "truth": {
+      "room": "cafeteria"
+    }
+  },
+  {
+    "id": "t035",
+    "text": "kindly move to cafeteria for me",
+    "category": "clean_room",
+    "destination": "room:cafeteria",
+    "truth": {
+      "room": "cafeteria"
+    }
+  },
+  {
+    "id": "t036",
+    "text": "take this to the canteen",
+    "category": "paraphrase_template",
+    "destination": "room:cafeteria",
+    "truth": {
+      "room": "cafeteria"
+    }
+  },
+  {
+    "id": "t037",
+    "text": "take this to the kitchen",
+    "category": "paraphrase_template",
+    "destination": "room:cafeteria",
+    "truth": {
+      "room": "cafeteria"
+    }
+  },
+  {
+    "id": "t038",
+    "text": "take this to the pantry",
+    "category": "paraphrase_template",
+    "destination": "room:cafeteria",
+    "truth": {
+      "room": "cafeteria"
+    }
+  },
+  {
+    "id": "t039",
+    "text": "take this to the cafe",
+    "category": "paraphrase_template",
+    "destination": "room:cafeteria",
+    "truth": {
+      "room": "cafeteria"
+    }
+  },
+  {
+    "id": "t040",
+    "text": "go to the cafeeria",
+    "category": "typo_room",
+    "destination": "room:cafeteria",
+    "truth": {
+      "room": "cafeteria"
+    }
+  },
+  {
+    "id": "t041",
+    "text": "go to the open office",
+    "category": "clean_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t042",
+    "text": "please navigate to open office",
+    "category": "clean_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t043",
+    "text": "could you head to open office now",
+    "category": "clean_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t044",
+    "text": "kindly move to open office for me",
+    "category": "clean_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t045",
+    "text": "take this to the open plan office",
+    "category": "paraphrase_template",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t046",
+    "text": "take this to the workstations",
+    "category": "paraphrase_template",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t047",
+    "text": "go to the open ffice",
+    "category": "typo_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t048",
+    "text": "go to the team office",
+    "category": "clean_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t049",
+    "text": "please navigate to team office",
+    "category": "clean_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t050",
+    "text": "could you head to team office now",
+    "category": "clean_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t051",
+    "text": "kindly move to team office for me",
+    "category": "clean_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t052",
+    "text": "take this to the team space",
+    "category": "paraphrase_template",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t053",
+    "text": "take this to the engineering office",
+    "category": "paraphrase_template",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t054",
+    "text": "go to the team ffice",
+    "category": "typo_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t055",
+    "text": "go to the manager cabin",
+    "category": "clean_room",
+    "destination": "room:manager_cabin",
+    "truth": {
+      "room": "manager_cabin"
+    }
+  },
+  {
+    "id": "t056",
+    "text": "please navigate to manager cabin",
+    "category": "clean_room",
+    "destination": "room:manager_cabin",
+    "truth": {
+      "room": "manager_cabin"
+    }
+  },
+  {
+    "id": "t057",
+    "text": "could you head to manager cabin now",
+    "category": "clean_room",
+    "destination": "room:manager_cabin",
+    "truth": {
+      "room": "manager_cabin"
+    }
+  },
+  {
+    "id": "t058",
+    "text": "kindly move to manager cabin for me",
+    "category": "clean_room",
+    "destination": "room:manager_cabin",
+    "truth": {
+      "room": "manager_cabin"
+    }
+  },
+  {
+    "id": "t059",
+    "text": "go to the manager",
+    "category": "paraphrase_template",
+    "destination": "room:manager_cabin",
+    "truth": {
+      "room": "manager_cabin"
+    }
+  },
+  {
+    "id": "t060",
+    "text": "take this to the director cabin",
+    "category": "paraphrase_template",
+    "destination": "room:manager_cabin",
+    "truth": {
+      "room": "manager_cabin"
+    }
+  },
+  {
+    "id": "t061",
+    "text": "go to the manage cabin",
+    "category": "typo_room",
+    "destination": "room:manager_cabin",
+    "truth": {
+      "room": "manager_cabin"
+    }
+  },
+  {
+    "id": "t062",
+    "text": "go to the storage",
+    "category": "clean_room",
+    "destination": "room:storage",
+    "truth": {
+      "room": "storage"
+    }
+  },
+  {
+    "id": "t063",
+    "text": "please navigate to storage",
+    "category": "clean_room",
+    "destination": "room:storage",
+    "truth": {
+      "room": "storage"
+    }
+  },
+  {
+    "id": "t064",
+    "text": "could you head to storage now",
+    "category": "clean_room",
+    "destination": "room:storage",
+    "truth": {
+      "room": "storage"
+    }
+  },
+  {
+    "id": "t065",
+    "text": "kindly move to storage for me",
+    "category": "clean_room",
+    "destination": "room:storage",
+    "truth": {
+      "room": "storage"
+    }
+  },
+  {
+    "id": "t066",
+    "text": "take this to the storeroom",
+    "category": "paraphrase_template",
+    "destination": "room:storage",
+    "truth": {
+      "room": "storage"
+    }
+  },
+  {
+    "id": "t067",
+    "text": "take this to the supply closet",
+    "category": "paraphrase_template",
+    "destination": "room:storage",
+    "truth": {
+      "room": "storage"
+    }
+  },
+  {
+    "id": "t068",
+    "text": "go to the stoage",
+    "category": "typo_room",
+    "destination": "room:storage",
+    "truth": {
+      "room": "storage"
+    }
+  },
+  {
+    "id": "t069",
+    "text": "go to the office",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t070",
+    "text": "go to the office please",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t071",
+    "text": "go to the office now",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t072",
+    "text": "go to the office for me",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t073",
+    "text": "go to the office thanks",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t074",
+    "text": "go to the office thank you",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t075",
+    "text": "please go to the office",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t076",
+    "text": "please go to the office please",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t077",
+    "text": "please go to the office now",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t078",
+    "text": "please go to the office for me",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t079",
+    "text": "please go to the office thanks",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t080",
+    "text": "please go to the office thank you",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t081",
+    "text": "kindly go to the office",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t082",
+    "text": "kindly go to the office please",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t083",
+    "text": "kindly go to the office now",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t084",
+    "text": "kindly go to the office for me",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t085",
+    "text": "kindly go to the office thanks",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t086",
+    "text": "kindly go to the office thank you",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t087",
+    "text": "can you go to the office",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t088",
+    "text": "can you go to the office please",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t089",
+    "text": "can you go to the office now",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t090",
+    "text": "can you go to the office for me",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t091",
+    "text": "can you go to the office thanks",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t092",
+    "text": "can you go to the office thank you",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t093",
+    "text": "could you go to the office",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t094",
+    "text": "could you go to the office please",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t095",
+    "text": "could you go to the office now",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t096",
+    "text": "could you go to the office for me",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t097",
+    "text": "could you go to the office thanks",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t098",
+    "text": "could you go to the office thank you",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t099",
+    "text": "would you go to the office",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t100",
+    "text": "would you go to the office please",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t101",
+    "text": "would you go to the office now",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t102",
+    "text": "would you go to the office for me",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t103",
+    "text": "would you go to the office thanks",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t104",
+    "text": "would you go to the office thank you",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t105",
+    "text": "i want you to go to the office",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t106",
+    "text": "i want you to go to the office please",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t107",
+    "text": "i want you to go to the office now",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t108",
+    "text": "i want you to go to the office for me",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t109",
+    "text": "i want you to go to the office thanks",
+    "category": "ambiguous_room",
+    "destination": "room:open_office",
+    "truth": {
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t110",
+    "text": "i want you to go to the office thank you",
+    "category": "ambiguous_room",
+    "destination": "room:team_office",
+    "truth": {
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t111",
+    "text": "deliver this to Priya",
+    "category": "clean_person",
+    "destination": "seat:open_office_r1c1",
+    "truth": {
+      "person": "Priya"
+    }
+  },
+  {
+    "id": "t112",
+    "text": "take this to Priya",
+    "category": "clean_person",
+    "destination": "seat:open_office_r1c1",
+    "truth": {
+      "person": "Priya"
+    }
+  },
+  {
+    "id": "t113",
+    "text": "please bring it to Priya",
+    "category": "clean_person",
+    "destination": "seat:open_office_r1c1",
+    "truth": {
+      "person": "Priya"
+    }
+  },
+  {
+    "id": "t114",
+    "text": "could you give the parcel to Priya",
+    "category": "clean_person",
+    "destination": "seat:open_office_r1c1",
+    "truth": {
+      "person": "Priya"
+    }
+  },
+  {
+    "id": "t115",
+    "text": "bring it to Prya",
+    "category": "typo_person",
+    "destination": "seat:open_office_r1c1",
+    "truth": {
+      "person": "Priya"
+    }
+  },
+  {
+    "id": "t116",
+    "text": "deliver to Priya in the open office",
+    "category": "person_room",
+    "destination": "seat:open_office_r1c1",
+    "truth": {
+      "person": "Priya",
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t117",
+    "text": "deliver to Priya in the conference hall",
+    "category": "conflict",
+    "destination": null,
+    "truth": {
+      "person": "Priya",
+      "room": "conference_hall"
+    }
+  },
+  {
+    "id": "t118",
+    "text": "deliver this to Neha",
+    "category": "clean_person",
+    "destination": "seat:open_office_r1c2",
+    "truth": {
+      "person": "Neha"
+    }
+  },
+  {
+    "id": "t119",
+    "text": "take this to Neha",
+    "category": "clean_person",
+    "destination": "seat:open_office_r1c2",
+    "truth": {
+      "person": "Neha"
+    }
+  },
+  {
+    "id": "t120",
+    "text": "please bring it to Neha",
+    "category": "clean_person",
+    "destination": "seat:open_office_r1c2",
+    "truth": {
+      "person": "Neha"
+    }
+  },
+  {
+    "id": "t121",
+    "text": "could you give the parcel to Neha",
+    "category": "clean_person",
+    "destination": "seat:open_office_r1c2",
+    "truth": {
+      "person": "Neha"
+    }
+  },
+  {
+    "id": "t122",
+    "text": "bring it to Nea",
+    "category": "typo_person",
+    "destination": "seat:open_office_r1c2",
+    "truth": {
+      "person": "Neha"
+    }
+  },
+  {
+    "id": "t123",
+    "text": "deliver to Neha in the open office",
+    "category": "person_room",
+    "destination": "seat:open_office_r1c2",
+    "truth": {
+      "person": "Neha",
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t124",
+    "text": "deliver to Neha in the conference hall",
+    "category": "conflict",
+    "destination": null,
+    "truth": {
+      "person": "Neha",
+      "room": "conference_hall"
+    }
+  },
+  {
+    "id": "t125",
+    "text": "deliver this to Arun",
+    "category": "clean_person",
+    "destination": "seat:open_office_r1c3",
+    "truth": {
+      "person": "Arun"
+    }
+  },
+  {
+    "id": "t126",
+    "text": "take this to Arun",
+    "category": "clean_person",
+    "destination": "seat:open_office_r1c3",
+    "truth": {
+      "person": "Arun"
+    }
+  },
+  {
+    "id": "t127",
+    "text": "please bring it to Arun",
+    "category": "clean_person",
+    "destination": "seat:open_office_r1c3",
+    "truth": {
+      "person": "Arun"
+    }
+  },
+  {
+    "id": "t128",
+    "text": "could you give the parcel to Arun",
+    "category": "clean_person",
+    "destination": "seat:open_office_r1c3",
+    "truth": {
+      "person": "Arun"
+    }
+  },
+  {
+    "id": "t129",
+    "text": "bring it to Arn",
+    "category": "typo_person",
+    "destination": "seat:open_office_r1c3",
+    "truth": {
+      "person": "Arun"
+    }
+  },
+  {
+    "id": "t130",
+    "text": "deliver to Arun in the open office",
+    "category": "person_room",
+    "destination": "seat:open_office_r1c3",
+    "truth": {
+      "person": "Arun",
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t131",
+    "text": "deliver to Arun in the conference hall",
+    "category": "conflict",
+    "destination": null,
+    "truth": {
+      "person": "Arun",
+      "room": "conference_hall"
+    }
+  },
+  {
+    "id": "t132",
+    "text": "deliver this to Meera",
+    "category": "clean_person",
+    "destination": "seat:open_office_r1c4",
+    "truth": {
+      "person": "Meera"
+    }
+  },
+  {
+    "id": "t133",
+    "text": "take this to Meera",
+    "category": "clean_person",
+    "destination": "seat:open_office_r1c4",
+    "truth": {
+      "person": "Meera"
+    }
+  },
+  {
+    "id": "t134",
+    "text": "please bring it to Meera",
+    "category": "clean_person",
+    "destination": "seat:open_office_r1c4",
+    "truth": {
+      "person": "Meera"
+    }
+  },
+  {
+    "id": "t135",
+    "text": "could you give the parcel to Meera",
+    "category": "clean_person",
+    "destination": "seat:open_office_r1c4",
+    "truth": {
+      "person": "Meera"
+    }
+  },
+  {
+    "id": "t136",
+    "text": "bring it to Mera",
+    "category": "typo_person",
+    "destination": "seat:open_office_r1c4",
+    "truth": {
+      "person": "Meera"
+    }
+  },
+  {
+    "id": "t137",
+    "text": "deliver to Meera in the open office",
+    "category": "person_room",
+    "destination": "seat:open_office_r1c4",
+    "truth": {
+      "person": "Meera",
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t138",
+    "text": "deliver to Meera in the conference hall",
+    "category": "conflict",
+    "destination": null,
+    "truth": {
+      "person": "Meera",
+      "room": "conference_hall"
+    }
+  },
+  {
+    "id": "t139",
+    "text": "deliver this to Ravi",
+    "category": "clean_person",
+    "destination": "seat:open_office_r2c2",
+    "truth": {
+      "person": "Ravi"
+    }
+  },
+  {
+    "id": "t140",
+    "text": "take this to Ravi",
+    "category": "clean_person",
+    "destination": "seat:open_office_r2c2",
+    "truth": {
+      "person": "Ravi"
+    }
+  },
+  {
+    "id": "t141",
+    "text": "please bring it to Ravi",
+    "category": "clean_person",
+    "destination": "seat:open_office_r2c2",
+    "truth": {
+      "person": "Ravi"
+    }
+  },
+  {
+    "id": "t142",
+    "text": "could you give the parcel to Ravi",
+    "category": "clean_person",
+    "destination": "seat:open_office_r2c2",
+    "truth": {
+      "person": "Ravi"
+    }
+  },
+  {
+    "id": "t143",
+    "text": "bring it to Rai",
+    "category": "typo_person",
+    "destination": "seat:open_office_r2c2",
+    "truth": {
+      "person": "Ravi"
+    }
+  },
+  {
+    "id": "t144",
+    "text": "deliver to Ravi in the open office",
+    "category": "person_room",
+    "destination": "seat:open_office_r2c2",
+    "truth": {
+      "person": "Ravi",
+      "room": "open_office"
+    }
+  },
+  {
+    "id": "t145",
+    "text": "deliver to Ravi in the conference hall",
+    "category": "conflict",
+    "destination": null,
+    "truth": {
+      "person": "Ravi",
+      "room": "conference_hall"
+    }
+  },
+  {
+    "id": "t146",
+    "text": "deliver this to Asha",
+    "category": "clean_person",
+    "destination": "seat:team_office_r1c1",
+    "truth": {
+      "person": "Asha"
+    }
+  },
+  {
+    "id": "t147",
+    "text": "take this to Asha",
+    "category": "clean_person",
+    "destination": "seat:team_office_r1c1",
+    "truth": {
+      "person": "Asha"
+    }
+  },
+  {
+    "id": "t148",
+    "text": "please bring it to Asha",
+    "category": "clean_person",
+    "destination": "seat:team_office_r1c1",
+    "truth": {
+      "person": "Asha"
+    }
+  },
+  {
+    "id": "t149",
+    "text": "could you give the parcel to Asha",
+    "category": "clean_person",
+    "destination": "seat:team_office_r1c1",
+    "truth": {
+      "person": "Asha"
+    }
+  },
+  {
+    "id": "t150",
+    "text": "bring it to Asa",
+    "category": "typo_person",
+    "destination": "seat:team_office_r1c1",
+    "truth": {
+      "person": "Asha"
+    }
+  },
+  {
+    "id": "t151",
+    "text": "deliver to Asha in the team office",
+    "category": "person_room",
+    "destination": "seat:team_office_r1c1",
+    "truth": {
+      "person": "Asha",
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t152",
+    "text": "deliver to Asha in the conference hall",
+    "category": "conflict",
+    "destination": null,
+    "truth": {
+      "person": "Asha",
+      "room": "conference_hall"
+    }
+  },
+  {
+    "id": "t153",
+    "text": "deliver this to Rani",
+    "category": "clean_person",
+    "destination": "seat:team_office_r1c2",
+    "truth": {
+      "person": "Rani"
+    }
+  },
+  {
+    "id": "t154",
+    "text": "take this to Rani",
+    "category": "clean_person",
+    "destination": "seat:team_office_r1c2",
+    "truth": {
+      "person": "Rani"
+    }
+  },
+  {
+    "id": "t155",
+    "text": "please bring it to Rani",
+    "category": "clean_person",
+    "destination": "seat:team_office_r1c2",
+    "truth": {
+      "person": "Rani"
+    }
+  },
+  {
+    "id": "t156",
+    "text": "could you give the parcel to Rani",
+    "category": "clean_person",
+    "destination": "seat:team_office_r1c2",
+    "truth": {
+      "person": "Rani"
+    }
+  },
+  {
+    "id": "t157",
+    "text": "bring it to Rai",
+    "category": "typo_person",
+    "destination": "seat:team_office_r1c2",
+    "truth": {
+      "person": "Rani"
+    }
+  },
+  {
+    "id": "t158",
+    "text": "deliver to Rani in the team office",
+    "category": "person_room",
+    "destination": "seat:team_office_r1c2",
+    "truth": {
+      "person": "Rani",
+      "room": "team_office"
+    }
+  },
+  {
+    "id": "t159",
+    "text": "deliver to Rani in the conference hall",
+    "category": "conflict",
+    "destination": null,
+    "truth": {
+      "person": "Rani",
+      "room": "conference_hall"
+    }
+  },
+  {
+    "id": "t160",
+    "text": "deliver this to Divya",
+    "category": "clean_person",
+    "destination": "seat:manager_cabin_r1c1",
+    "truth": {
+      "person": "Divya"
+    }
+  },
+  {
+    "id": "t161",
+    "text": "take this to Divya",
+    "category": "clean_person",
+    "destination": "seat:manager_cabin_r1c1",
+    "truth": {
+      "person": "Divya"
+    }
+  },
+  {
+    "id": "t162",
+    "text": "please bring it to Divya",
+    "category": "clean_person",
+    "destination": "seat:manager_cabin_r1c1",
+    "truth": {
+      "person": "Divya"
+    }
+  },
+  {
+    "id": "t163",
+    "text": "could you give the parcel to Divya",
+    "category": "clean_person",
+    "destination": "seat:manager_cabin_r1c1",
+    "truth": {
+      "person": "Divya"
+    }
+  },
+  {
+    "id": "t164",
+    "text": "bring it to Diya",
+    "category": "typo_person",
+    "destination": "seat:manager_cabin_r1c1",
+    "truth": {
+      "person": "Divya"
+    }
+  },
+  {
+    "id": "t165",
+    "text": "deliver to Divya in the manager cabin",
+    "category": "person_room",
+    "destination": "seat:manager_cabin_r1c1",
+    "truth": {
+      "person": "Divya",
+      "room": "manager_cabin"
+    }
+  },
+  {
+    "id": "t166",
+    "text": "deliver to Divya in the conference hall",
+    "category": "conflict",
+    "destination": null,
+    "truth": {
+      "person": "Divya",
+      "room": "conference_hall"
+    }
+  },
+  {
+    "id": "t167",
+    "text": "deliver to Rai",
+    "category": "ambiguous_person",
+    "destination": "seat:open_office_r2c2",
+    "truth": {
+      "person": "Ravi"
+    }
+  },
+  {
+    "id": "t168",
+    "text": "please deliver to Rai",
+    "category": "ambiguous_person",
+    "destination": "seat:team_office_r1c2",
+    "truth": {
+      "person": "Rani"
+    }
+  },
+  {
+    "id": "t169",
+    "text": "kindly deliver to Rai",
+    "category": "ambiguous_person",
+    "destination": "seat:open_office_r2c2",
+    "truth": {
+      "person": "Ravi"
+    }
+  },
+  {
+    "id": "t170",
+    "text": "can you deliver to Rai",
+    "category": "ambiguous_person",
+    "destination": "seat:team_office_r1c2",
+    "truth": {
+      "person": "Rani"
+    }
+  },
+  {
+    "id": "t171",
+    "text": "could you deliver to Rai",
+    "category": "ambiguous_person",
+    "destination": "seat:open_office_r2c2",
+    "truth": {
+      "person": "Ravi"
+    }
+  },
+  {
+    "id": "t172",
+    "text": "would you deliver to Rai",
+    "category": "ambiguous_person",
+    "destination": "seat:team_office_r1c2",
+    "truth": {
+      "person": "Rani"
+    }
+  },
+  {
+    "id": "t173",
+    "text": "i want you to deliver to Rai",
+    "category": "ambiguous_person",
+    "destination": "seat:open_office_r2c2",
+    "truth": {
+      "person": "Ravi"
+    }
+  },
+  {
+    "id": "t174",
+    "text": "deliver to Rai please",
+    "category": "ambiguous_person",
+    "destination": "seat:team_office_r1c2",
+    "truth": {
+      "person": "Rani"
+    }
+  },
+  {
+    "id": "t175",
+    "text": "deliver to row 1 seat 1 in the open office",
+    "category": "clean_seat",
+    "destination": "seat:open_office_r1c1",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r1c1"
+    }
+  },
+  {
+    "id": "t176",
+    "text": "go to the open office, give to row 1 person 1",
+    "category": "clean_seat",
+    "destination": "seat:open_office_r1c1",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r1c1"
+    }
+  },
+  {
+    "id": "t177",
+    "text": "deliver to row 1 in the open office",
+    "category": "missing_seat",
+    "destination": "seat:open_office_r1c1",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r1c1"
+    }
+  },
+  {
+    "id": "t178",
+    "text": "deliver to row 1 seat 2 in the open office",
+    "category": "clean_seat",
+    "destination": "seat:open_office_r1c2",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r1c2"
+    }
+  },
+  {
+    "id": "t179",
+    "text": "go to the open office, give to row 1 person 2",
+    "category": "clean_seat",
+    "destination": "seat:open_office_r1c2",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r1c2"
+    }
+  },
+  {
+    "id": "t180",
+    "text": "deliver to row 1 in the open office",
+    "category": "missing_seat",
+    "destination": "seat:open_office_r1c2",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r1c2"
+    }
+  },
+  {
+    "id": "t181",
+    "text": "deliver to row 1 seat 3 in the open office",
+    "category": "clean_seat",
+    "destination": "seat:open_office_r1c3",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r1c3"
+    }
+  },
+  {
+    "id": "t182",
+    "text": "go to the open office, give to row 1 person 3",
+    "category": "clean_seat",
+    "destination": "seat:open_office_r1c3",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r1c3"
+    }
+  },
+  {
+    "id": "t183",
+    "text": "deliver to row 1 in the open office",
+    "category": "missing_seat",
+    "destination": "seat:open_office_r1c3",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r1c3"
+    }
+  },
+  {
+    "id": "t184",
+    "text": "deliver to row 1 seat 4 in the open office",
+    "category": "clean_seat",
+    "destination": "seat:open_office_r1c4",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r1c4"
+    }
+  },
+  {
+    "id": "t185",
+    "text": "go to the open office, give to row 1 person 4",
+    "category": "clean_seat",
+    "destination": "seat:open_office_r1c4",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r1c4"
+    }
+  },
+  {
+    "id": "t186",
+    "text": "deliver to row 1 in the open office",
+    "category": "missing_seat",
+    "destination": "seat:open_office_r1c4",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r1c4"
+    }
+  },
+  {
+    "id": "t187",
+    "text": "deliver to row 2 seat 1 in the open office",
+    "category": "clean_seat",
+    "destination": "seat:open_office_r2c1",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r2c1"
+    }
+  },
+  {
+    "id": "t188",
+    "text": "go to the open office, give to row 2 person 1",
+    "category": "clean_seat",
+    "destination": "seat:open_office_r2c1",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r2c1"
+    }
+  },
+  {
+    "id": "t189",
+    "text": "deliver to row 2 in the open office",
+    "category": "missing_seat",
+    "destination": "seat:open_office_r2c1",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r2c1"
+    }
+  },
+  {
+    "id": "t190",
+    "text": "deliver to row 2 seat 2 in the open office",
+    "category": "clean_seat",
+    "destination": "seat:open_office_r2c2",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r2c2"
+    }
+  },
+  {
+    "id": "t191",
+    "text": "go to the open office, give to row 2 person 2",
+    "category": "clean_seat",
+    "destination": "seat:open_office_r2c2",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r2c2"
+    }
+  },
+  {
+    "id": "t192",
+    "text": "deliver to row 2 in the open office",
+    "category": "missing_seat",
+    "destination": "seat:open_office_r2c2",
+    "truth": {
+      "room": "open_office",
+      "seat": "open_office_r2c2"
+    }
+  },
+  {
+    "id": "t193",
+    "text": "deliver to row 1 seat 1 in the team office",
+    "category": "clean_seat",
+    "destination": "seat:team_office_r1c1",
+    "truth": {
+      "room": "team_office",
+      "seat": "team_office_r1c1"
+    }
+  },
+  {
+    "id": "t194",
+    "text": "go to the team office, give to row 1 person 1",
+    "category": "clean_seat",
+    "destination": "seat:team_office_r1c1",
+    "truth": {
+      "room": "team_office",
+      "seat": "team_office_r1c1"
+    }
+  },
+  {
+    "id": "t195",
+    "text": "deliver to row 1 in the team office",
+    "category": "missing_seat",
+    "destination": "seat:team_office_r1c1",
+    "truth": {
+      "room": "team_office",
+      "seat": "team_office_r1c1"
+    }
+  },
+  {
+    "id": "t196",
+    "text": "deliver to row 1 seat 2 in the team office",
+    "category": "clean_seat",
+    "destination": "seat:team_office_r1c2",
+    "truth": {
+      "room": "team_office",
+      "seat": "team_office_r1c2"
+    }
+  },
+  {
+    "id": "t197",
+    "text": "go to the team office, give to row 1 person 2",
+    "category": "clean_seat",
+    "destination": "seat:team_office_r1c2",
+    "truth": {
+      "room": "team_office",
+      "seat": "team_office_r1c2"
+    }
+  },
+  {
+    "id": "t198",
+    "text": "deliver to row 1 in the team office",
+    "category": "missing_seat",
+    "destination": "seat:team_office_r1c2",
+    "truth": {
+      "room": "team_office",
+      "seat": "team_office_r1c2"
+    }
+  },
+  {
+    "id": "t199",
+    "text": "deliver to row 1 seat 1 in the manager cabin",
+    "category": "clean_seat",
+    "destination": "seat:manager_cabin_r1c1",
+    "truth": {
+      "room": "manager_cabin",
+      "seat": "manager_cabin_r1c1"
+    }
+  },
+  {
+    "id": "t200",
+    "text": "go to the manager cabin, give to row 1 person 1",
+    "category": "clean_seat",
+    "destination": "seat:manager_cabin_r1c1",
+    "truth": {
+      "room": "manager_cabin",
+      "seat": "manager_cabin_r1c1"
+    }
+  },
+  {
+    "id": "t201",
+    "text": "deliver to row 1 in the manager cabin",
+    "category": "missing_seat",
+    "destination": "seat:manager_cabin_r1c1",
+    "truth": {
+      "room": "manager_cabin",
+      "seat": "manager_cabin_r1c1"
+    }
+  },
+  {
+    "id": "t202",
+    "text": "deliver this to the printer",
+    "category": "object",
+    "destination": "object:printer",
+    "truth": {
+      "object": "printer"
+    }
+  },
+  {
+    "id": "t203",
+    "text": "take this to the printer",
+    "category": "object",
+    "destination": "object:printer",
+    "truth": {
+      "object": "printer"
+    }
+  },
+  {
+    "id": "t204",
+    "text": "bring it to the printer",
+    "category": "object",
+    "destination": "object:printer",
+    "truth": {
+      "object": "printer"
+    }
+  },
+  {
+    "id": "t205",
+    "text": "deliver this to the fridge",
+    "category": "object",
+    "destination": "object:fridge",
+    "truth": {
+      "object": "fridge"
+    }
+  },
+  {
+    "id": "t206",
+    "text": "take this to the fridge",
+    "category": "object",
+    "destination": "object:fridge",
+    "truth": {
+      "object": "fridge"
+    }
+  },
+  {
+    "id": "t207",
+    "text": "bring it to the fridge",
+    "category": "object",
+    "destination": "object:fridge",
+    "truth": {
+      "object": "fridge"
+    }
+  },
+  {
+    "id": "t208",
+    "text": "deliver this to the reception desk",
+    "category": "object",
+    "destination": "object:reception_desk",
+    "truth": {
+      "object": "reception_desk"
+    }
+  },
+  {
+    "id": "t209",
+    "text": "take this to the reception desk",
+    "category": "object",
+    "destination": "object:reception_desk",
+    "truth": {
+      "object": "reception_desk"
+    }
+  },
+  {
+    "id": "t210",
+    "text": "bring it to the reception desk",
+    "category": "object",
+    "destination": "object:reception_desk",
+    "truth": {
+      "object": "reception_desk"
+    }
+  },
+  {
+    "id": "t211",
+    "text": "take this to the manager",
+    "category": "role",
+    "destination": "seat:manager_cabin_r1c1",
+    "truth": {
+      "person": "Divya"
+    }
+  },
+  {
+    "id": "t212",
+    "text": "please take this to the manager",
+    "category": "role",
+    "destination": "seat:manager_cabin_r1c1",
+    "truth": {
+      "person": "Divya"
+    }
+  },
+  {
+    "id": "t213",
+    "text": "kindly take this to the manager",
+    "category": "role",
+    "destination": "seat:manager_cabin_r1c1",
+    "truth": {
+      "person": "Divya"
+    }
+  },
+  {
+    "id": "t214",
+    "text": "can you take this to the manager",
+    "category": "role",
+    "destination": "seat:manager_cabin_r1c1",
+    "truth": {
+      "person": "Divya"
+    }
+  },
+  {
+    "id": "t215",
+    "text": "take this to Karthik",
+    "category": "out_of_roster",
+    "destination": null,
+    "truth": {
+      "person": "<none>"
+    }
+  },
+  {
+    "id": "t216",
+    "text": "bring it to Karthik",
+    "category": "out_of_roster",
+    "destination": null,
+    "truth": {
+      "person": "<none>"
+    }
+  },
+  {
+    "id": "t217",
+    "text": "take this to Nikhil",
+    "category": "out_of_roster",
+    "destination": null,
+    "truth": {
+      "person": "<none>"
+    }
+  },
+  {
+    "id": "t218",
+    "text": "bring it to Nikhil",
+    "category": "out_of_roster",
+    "destination": null,
+    "truth": {
+      "person": "<none>"
+    }
+  },
+  {
+    "id": "t219",
+    "text": "take this to Zoe",
+    "category": "out_of_roster",
+    "destination": null,
+    "truth": {
+      "person": "<none>"
+    }
+  },
+  {
+    "id": "t220",
+    "text": "bring it to Zoe",
+    "category": "out_of_roster",
+    "destination": null,
+    "truth": {
+      "person": "<none>"
+    }
+  },
+  {
+    "id": "t221",
+    "text": "take this to Farhan",
+    "category": "out_of_roster",
+    "destination": null,
+    "truth": {
+      "person": "<none>"
+    }
+  },
+  {
+    "id": "t222",
+    "text": "bring it to Farhan",
+    "category": "out_of_roster",
+    "destination": null,
+    "truth": {
+      "person": "<none>"
+    }
+  },
+  {
+    "id": "t223",
+    "text": "take this to Lena",
+    "category": "out_of_roster",
+    "destination": null,
+    "truth": {
+      "person": "<none>"
+    }
+  },
+  {
+    "id": "t224",
+    "text": "bring it to Lena",
+    "category": "out_of_roster",
+    "destination": null,
+    "truth": {
+      "person": "<none>"
+    }
+  },
+  {
+    "id": "t225",
+    "text": "take this to Suresh",
+    "category": "out_of_roster",
+    "destination": null,
+    "truth": {
+      "person": "<none>"
+    }
+  },
+  {
+    "id": "t226",
+    "text": "bring it to Suresh",
+    "category": "out_of_roster",
+    "destination": null,
+    "truth": {
+      "person": "<none>"
+    }
+  },
+  {
+    "id": "t227",
+    "text": "take this to Tara",
+    "category": "out_of_roster",
+    "destination": null,
+    "truth": {
+      "person": "<none>"
+    }
+  },
+  {
+    "id": "t228",
+    "text": "bring it to Tara",
+    "category": "out_of_roster",
+    "destination": null,
+    "truth": {
+      "person": "<none>"
+    }
+  },
+  {
+    "id": "t229",
+    "text": "take this to Vikram",
+    "category": "out_of_roster",
+    "destination": null,
+    "truth": {
+      "person": "<none>"
+    }
+  },
+  {
+    "id": "t230",
+    "text": "bring it to Vikram",
+    "category": "out_of_roster",
+    "destination": null,
+    "truth": {
+      "person": "<none>"
+    }
+  },
+  {
+    "id": "t231",
+    "text": "go to the library",
+    "category": "unknown_room",
+    "destination": null,
+    "truth": {
+      "room": "<none>"
+    }
+  },
+  {
+    "id": "t232",
+    "text": "go to the garage",
+    "category": "unknown_room",
+    "destination": null,
+    "truth": {
+      "room": "<none>"
+    }
+  },
+  {
+    "id": "t233",
+    "text": "go to the lab",
+    "category": "unknown_room",
+    "destination": null,
+    "truth": {
+      "room": "<none>"
+    }
+  },
+  {
+    "id": "t234",
+    "text": "go to the airport",
+    "category": "unknown_room",
+    "destination": null,
+    "truth": {
+      "room": "<none>"
+    }
+  },
+  {
+    "id": "t235",
+    "text": "go to the gym",
+    "category": "unknown_room",
+    "destination": null,
+    "truth": {
+      "room": "<none>"
+    }
+  },
+  {
+    "id": "t236",
+    "text": "go to the garden",
+    "category": "unknown_room",
+    "destination": null,
+    "truth": {
+      "room": "<none>"
+    }
+  },
+  {
+    "id": "t237",
+    "text": "give this to the person near the printer",
+    "category": "unsupported",
+    "destination": null,
+    "truth": {
+      "validity": "<none>"
+    }
+  },
+  {
+    "id": "t238",
+    "text": "go to the office then home",
+    "category": "unsupported",
+    "destination": null,
+    "truth": {
+      "validity": "<none>"
+    }
+  },
+  {
+    "id": "t239",
+    "text": "do not go to reception",
+    "category": "unsupported",
+    "destination": null,
+    "truth": {
+      "validity": "<none>"
+    }
+  },
+  {
+    "id": "t240",
+    "text": "if ready deliver to Priya",
+    "category": "unsupported",
+    "destination": null,
+    "truth": {
+      "validity": "<none>"
+    }
+  },
+  {
+    "id": "t241",
+    "text": "go to Priya and Ravi",
+    "category": "unsupported",
+    "destination": null,
+    "truth": {
+      "validity": "<none>"
+    }
+  },
+  {
+    "id": "t242",
+    "text": "tell me where the manager is",
+    "category": "unsupported",
+    "destination": null,
+    "truth": {
+      "validity": "<none>"
+    }
+  }
+]

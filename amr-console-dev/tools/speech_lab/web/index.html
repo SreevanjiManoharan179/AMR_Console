@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMR Speech Lab</title>
+<style>
+:root{--bg:#f4f7f8;--card:#fff;--ink:#12262b;--soft:#5b6f75;--line:#d9e2e5;--accent:#0f6b6b;--accent-ink:#fff;--good:#1c8a4d;--warn:#b7791f;--bad:#c53030;--tail:#8aa0a6;--chip:#e7f1f1}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e1719;--card:#152225;--ink:#e6eff1;--soft:#9db0b5;--line:#27383c;--accent:#3bb3a9;--accent-ink:#06201e;--good:#4cc27e;--warn:#e0a84a;--bad:#f07070;--tail:#6f858b;--chip:#1d3033}}
+:root[data-theme=dark]{--bg:#0e1719;--card:#152225;--ink:#e6eff1;--soft:#9db0b5;--line:#27383c;--accent:#3bb3a9;--accent-ink:#06201e;--good:#4cc27e;--warn:#e0a84a;--bad:#f07070;--tail:#6f858b;--chip:#1d3033}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,"Noto Sans","Noto Sans Tamil",sans-serif}
+header{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--card)}
+header h1{font-size:18px;margin:0 auto 0 0}
+header small{color:var(--soft);font-weight:400;margin-left:8px}
+.pill{font-size:12px;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--soft);white-space:nowrap}
+.pill.ok{color:var(--good);border-color:var(--good)}.pill.bad{color:var(--bad);border-color:var(--bad)}.pill.wait{color:var(--warn);border-color:var(--warn)}
+main{max-width:1180px;margin:0 auto;padding:16px;display:grid;gap:16px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media (max-width:900px){main{grid-template-columns:minmax(0,1fr)}}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;min-width:0}
+section.wide{grid-column:1/-1}
+h2{font-size:15px;margin:0 0 10px}
+label{font-size:12px;color:var(--soft);display:block;margin-bottom:4px}
+select,textarea,button{font:inherit;color:inherit}
+select,textarea{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:end}
+.row>div{flex:1 1 160px;min-width:0}
+.seg{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{flex:1;padding:8px 6px;border:0;background:transparent;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);font-weight:600}
+button.main{padding:10px 18px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);font-weight:600;cursor:pointer}
+button.plain{padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:transparent;cursor:pointer}
+button:disabled{opacity:.45;cursor:not-allowed}
+button.main.rec{background:var(--bad);border-color:var(--bad);color:#fff}
+.say{margin:12px 0 0;padding:10px 12px;border-radius:8px;background:var(--chip);font-size:17px}
+.say small{display:block;color:var(--soft);font-size:13px}
+.meter{position:relative;height:22px;border-radius:6px;border:1px solid var(--line);overflow:hidden;background:linear-gradient(90deg,transparent 0 50%,color-mix(in srgb,var(--good) 18%,transparent) 50% 90%,color-mix(in srgb,var(--warn) 25%,transparent) 90% 97%,color-mix(in srgb,var(--bad) 30%,transparent) 97%)}
+.meter i{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);opacity:.75;transition:width .06s linear}
+.meter b{position:absolute;top:0;bottom:0;width:2px;background:var(--ink);left:0}
+.scale{display:flex;justify-content:space-between;font-size:11px;color:var(--soft);margin-top:2px}
+canvas{width:100%;height:70px;display:block;margin-top:10px;border-radius:6px;background:var(--chip)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:8px;margin-top:10px}
+.fact{border:1px solid var(--line);border-radius:8px;padding:7px 9px}
+.fact span{display:block;font-size:11px;color:var(--soft)}
+.fact strong{font-size:17px;font-variant-numeric:tabular-nums}
+.fact.good strong{color:var(--good)}.fact.warn strong{color:var(--warn)}.fact.bad strong{color:var(--bad)}
+.advice{margin-top:8px;font-size:13px;min-height:20px}
+.words{min-height:64px;font-size:20px;line-height:1.6;padding:10px 12px;border:1px dashed var(--line);border-radius:8px;overflow-wrap:anywhere}
+.words span{margin-right:.35em}.words .tail{color:var(--tail)}.words .new{background:color-mix(in srgb,var(--accent) 25%,transparent);border-radius:4px}
+.words em{color:var(--soft);font-size:14px;font-style:normal}
+.diff span{display:inline-block;margin:0 .3em .3em 0;padding:1px 6px;border-radius:5px;font-size:17px}
+.diff .ok{background:color-mix(in srgb,var(--good) 16%,transparent)}
+.diff .sub{background:color-mix(in srgb,var(--warn) 25%,transparent)}
+.diff .del{background:color-mix(in srgb,var(--bad) 20%,transparent);text-decoration:line-through}
+.diff .ins{background:color-mix(in srgb,var(--bad) 20%,transparent)}
+.diff small{color:var(--soft);font-size:12px}
+.keys span{display:inline-block;margin:6px 6px 0 0;font-size:13px;padding:2px 9px;border-radius:99px;border:1px solid var(--line)}
+.keys .yes{color:var(--good);border-color:var(--good)}.keys .no{color:var(--bad);border-color:var(--bad)}
+.steps{margin:8px 0 0;padding-left:20px}.muted{color:var(--soft)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+td.text{white-space:normal;min-width:180px}
+th{color:var(--soft);font-weight:500;font-size:12px}
+#notice{grid-column:1/-1;padding:10px 14px;border-radius:8px;border:1px solid var(--warn);color:var(--warn);display:none}
+.check{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--soft);margin-top:10px}
+.check input{width:auto}
+</style>
+</head>
+<body>
+<header>
+  <h1>AMR Speech Lab<small>speech and language test bench · no robot</small></h1>
+  <span class="pill wait" id="pillService">language model: starting</span>
+  <span class="pill" id="pillSpeech">speech: …</span>
+  <button class="plain" id="theme">Dark</button>
+</header>
+<main>
+  <div id="notice"></div>
+
+  <section>
+    <h2>1 · Speak</h2>
+    <div class="row">
+      <div><label>Language</label>
+        <div class="seg" id="groups">
+          <button data-group="en" aria-pressed="true">English</button>
+          <button data-group="ta" aria-pressed="false">Tamil</button>
+          <button data-group="tanglish" aria-pressed="false">Tanglish</button>
+        </div></div>
+      <div><label for="sentence">Sentence to read (for scoring)</label><select id="sentence"></select></div>
+    </div>
+    <div class="say" id="say"></div>
+    <div class="row" style="margin-top:12px">
+      <button class="main" id="record" disabled>Record</button>
+      <span class="muted" id="clock">0.0 s · 15 s at most</span>
+    </div>
+    <label class="check"><input type="checkbox" id="keep" checked> Keep the recording with the log (for comparing models later)</label>
+    <label class="check"><input type="checkbox" id="filters" checked> Browser echo and noise filters (as the console uses)</label>
+  </section>
+
+  <section>
+    <h2>2 · Signal</h2>
+    <div class="meter"><i id="bar"></i><b id="peakMark"></b></div>
+    <div class="scale"><span>−60 dB</span><span>−30</span><span>−6</span><span>0</span></div>
+    <canvas id="wave" width="1000" height="140"></canvas>
+    <div class="facts">
+      <div class="fact" id="fLevel"><span>Level now</span><strong>–</strong></div>
+      <div class="fact" id="fPeak"><span>Loudest</span><strong>–</strong></div>
+      <div class="fact" id="fNoise"><span>Room noise</span><strong>–</strong></div>
+      <div class="fact" id="fSnr"><span>Voice over noise</span><strong>–</strong></div>
+      <div class="fact" id="fClip"><span>Overloaded</span><strong>–</strong></div>
+    </div>
+    <div class="advice" id="advice">Press Record and speak. The green band is the right loudness.</div>
+  </section>
+
+  <section class="wide">
+    <h2>3 · Words as they are heard</h2>
+    <div class="words" id="live"><em>The words appear here while you speak, about once a second. Grey words may still change.</em></div>
+    <div class="facts" id="result" hidden>
+      <div class="fact" id="kWer"><span>Word errors</span><strong>–</strong></div>
+      <div class="fact" id="kCer"><span>Character errors</span><strong>–</strong></div>
+      <div class="fact" id="kKeys"><span>Key words found</span><strong>–</strong></div>
+      <div class="fact" id="kFirst"><span>First words after</span><strong>–</strong></div>
+      <div class="fact" id="kLat"><span>Model time</span><strong>–</strong></div>
+      <div class="fact" id="kRtf"><span>Speed (× real time)</span><strong>–</strong></div>
+    </div>
+    <div class="diff" id="diff" style="margin-top:10px"></div>
+    <div class="keys" id="keys"></div>
+  </section>
+
+  <section class="wide">
+    <h2>4 · What the robot understands</h2>
+    <div class="row">
+      <div style="flex:3 1 320px"><label for="text">Words sent to the language model (edit or type your own)</label><textarea id="text" rows="2"></textarea></div>
+      <div style="flex:0 0 auto"><button class="main" id="understand" disabled>Understand</button></div>
+    </div>
+    <div id="meaning" class="muted" style="margin-top:10px">Nothing is carried out here: the read-back is answered “no” automatically.</div>
+  </section>
+
+  <section class="wide">
+    <h2>5 · This session</h2>
+    <div class="scroll"><table id="summary"></table></div>
+    <div class="scroll" style="margin-top:12px"><table id="takes"></table></div>
+    <div class="row" style="margin-top:10px"><button class="plain" id="export">Download takes (CSV)</button><span class="muted" id="where"></span></div>
+  </section>
+</main>
+<script>
+// The tab shows the app's icon (setup/icons/amr_speech_lab.svg), built here so the page loads nothing from outside.
+(()=>{const icon=document.createElement('link');icon.rel='icon';icon.type='image/svg+xml';icon.href='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs><linearGradient id="amrLabBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b52e8"/><stop offset="1" stop-color="#2b2780"/></linearGradient></defs><rect x="8" y="8" width="240" height="240" rx="56" fill="url(#amrLabBg)"/><g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="9"><path d="M70 52a68 68 0 0 0 0 64" stroke-opacity=".9"/><path d="M186 52a68 68 0 0 1 0 64" stroke-opacity=".9"/><path d="M50 38a92 92 0 0 0 0 92" stroke-opacity=".5"/><path d="M206 38a92 92 0 0 1 0 92" stroke-opacity=".5"/></g><rect x="104" y="34" width="48" height="88" rx="24" fill="#ffffff"/><path d="M112 62h32M112 76h32M112 90h32" stroke="#c7cbfb" stroke-width="5" stroke-linecap="round"/><path d="M86 92v8a42 42 0 0 0 84 0v-8" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/><path d="M128 142v18M106 162h44" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/><g fill="#f6b73c"><rect x="62" y="200" width="12" height="14" rx="5"/><rect x="82" y="190" width="12" height="24" rx="5"/><rect x="102" y="180" width="12" height="34" rx="5"/><rect x="122" y="186" width="12" height="28" rx="5"/><rect x="142" y="178" width="12" height="36" rx="5"/><rect x="162" y="192" width="12" height="22" rx="5"/><rect x="182" y="202" width="12" height="12" rx="5"/></g></svg>');document.head.append(icon);})();
+const $=id=>document.getElementById(id), token=location.hash.slice(1);
+const S={group:'en',sentences:[],rec:null,ready:false,lastTake:null,noise:null};
+const api=async(path,options={})=>{
+  const response=await fetch(path,{...options,headers:{'X-Lab-Token':token,...(options.headers||{})}});
+  const kind=response.headers.get('Content-Type')||'';
+  const data=kind.includes('json')?await response.json():await response.text();
+  if(!response.ok)throw new Error(data.error||response.statusText);
+  return data;
+};
+const notice=text=>{const n=$('notice');n.textContent=text||'';n.style.display=text?'block':'none';};
+const db=value=>value>1e-6?20*Math.log10(value):-120;
+const fact=(id,text,tone)=>{const f=$(id);f.querySelector('strong').textContent=text;f.className='fact'+(tone?' '+tone:'');};
+const pct=value=>value==null?'–':(value*100).toFixed(0)+' %';
+
+$('theme').onclick=()=>{const dark=document.documentElement.dataset.theme!=='dark'&&!(matchMedia('(prefers-color-scheme:dark)').matches&&!document.documentElement.dataset.theme);
+  document.documentElement.dataset.theme=dark?'dark':'light';$('theme').textContent=dark?'Light':'Dark';};
+
+function fillSentences(){
+  const list=S.sentences.filter(s=>s.group===S.group);
+  $('sentence').replaceChildren(new Option('Free speech (no scoring)',''),...list.map(s=>new Option(s.text,s.key)));
+  if(list.length)$('sentence').value=list[0].key;
+  showSentence();
+}
+function showSentence(){
+  const s=S.sentences.find(x=>x.key===$('sentence').value), box=$('say');
+  box.replaceChildren();
+  if(!s){box.textContent='Say any request, for example “Give the file to Divya”.';return;}
+  box.append(s.text);
+  if(s.say&&s.say!==s.text){const small=document.createElement('small');small.textContent='say: '+s.say;box.append(small);}
+}
+$('groups').onclick=event=>{const b=event.target.closest('button');if(!b||S.rec)return;
+  S.group=b.dataset.group;[...$('groups').children].forEach(x=>x.setAttribute('aria-pressed',x===b));fillSentences();};
+$('sentence').onchange=showSentence;
+
+async function refresh(){
+  try{
+    const state=await api('/api/state');
+    if(!S.sentences.length){S.sentences=state.sentences;fillSentences();}
+    const service=state.service.state, speech=state.speech||{};
+    $('pillService').textContent='language model: '+service;
+    $('pillService').className='pill '+(service==='ready'?'ok':service==='error'?'bad':'wait');
+    const langs=Object.entries(speech.languages||{}).map(([k,v])=>k+' '+v).join(' · ');
+    $('pillSpeech').textContent='speech: '+(langs||speech.state||'…');
+    const need={en:'en',ta:'ta',tanglish:'ta'}[S.group], ok=(speech.languages||{})[need]==='ready';
+    $('pillSpeech').className='pill '+(ok?'ok':'wait');
+    S.ready=service==='ready';
+    $('record').disabled=!(S.ready&&ok)&&!S.rec;
+    $('understand').disabled=!S.ready;
+    if(service==='error')notice('The language service did not start: '+(state.service.detail||'')+' Close the AMR Console if it is open, then start the lab again.');
+    $('where').textContent='Log: '+state.session;
+    table(state);
+  }catch(error){$('pillService').textContent='lab not reachable';$('pillService').className='pill bad';}
+}
+function table(state){
+  const head=cells=>{const tr=document.createElement('tr');cells.forEach(c=>{const th=document.createElement('th');th.textContent=c;tr.append(th);});return tr;};
+  const row=(cells,textAt=[])=>{const tr=document.createElement('tr');cells.forEach((c,i)=>{const td=document.createElement('td');td.textContent=c??'–';if(textAt.includes(i))td.className='text';tr.append(td);});return tr;};
+  $('summary').replaceChildren(head(['Language','Takes','Word errors','Character errors','Key words found','Model time (median)','Voice over noise']),
+    ...state.summary.map(s=>row([{en:'English',ta:'Tamil',tanglish:'Tanglish'}[s.group]||s.group,s.takes,pct(s.wer),pct(s.cer),pct(s.keywords),s.latency_ms==null?'–':s.latency_ms+' ms',s.snr_db==null?'–':s.snr_db+' dB'])));
+  $('takes').replaceChildren(head(['#','Language','Heard','Word err.','Key words','Model','Loudest','Noise','Overloaded']),
+    ...state.takes.slice().reverse().map(t=>row([t.take,t.group,t.heard||'(nothing)',pct(t.wer),t.keywords_total?t.keywords_found+'/'+t.keywords_total:'–',
+      t.latency_ms==null?'–':Math.round(t.latency_ms)+' ms',t.peak_db+' dB',t.noise_db+' dB',t.clipped_pct+' %'],[2])));
+}
+
+// -- recording --------------------------------------------------------------------------------
+function wav(chunks,rate){
+  let length=0;chunks.forEach(c=>length+=c.length);
+  const all=new Float32Array(length);let at=0;chunks.forEach(c=>{all.set(c,at);at+=c.length;});
+  const ratio=rate/16000,count=Math.min(Math.floor(length/ratio),16000*15),view=new DataView(new ArrayBuffer(44+count*2));
+  const text=(o,s)=>{for(let i=0;i<s.length;i++)view.setUint8(o+i,s.charCodeAt(i));};
+  text(0,'RIFF');view.setUint32(4,36+count*2,true);text(8,'WAVEfmt ');view.setUint32(16,16,true);view.setUint16(20,1,true);view.setUint16(22,1,true);
+  view.setUint32(24,16000,true);view.setUint32(28,32000,true);view.setUint16(32,2,true);view.setUint16(34,16,true);text(36,'data');view.setUint32(40,count*2,true);
+  for(let i=0;i<count;i++){                       // average the source samples that fall in each 16 kHz sample
+    const a=Math.floor(i*ratio),b=Math.max(a+1,Math.floor((i+1)*ratio));let sum=0;for(let j=a;j<b;j++)sum+=all[j]||0;
+    const v=Math.max(-1,Math.min(1,sum/(b-a)));view.setInt16(44+i*2,v<0?v*32768:v*32767,true);}
+  return {blob:new Blob([view],{type:'audio/wav'}),seconds:count/16000};
+}
+function drawWave(){
+  const canvas=$('wave'),g=canvas.getContext('2d'),r=S.rec;g.clearRect(0,0,canvas.width,canvas.height);
+  if(!r)return;
+  const style=getComputedStyle(document.documentElement);g.fillStyle=style.getPropertyValue('--accent');
+  const bars=r.envelope,w=canvas.width/300;
+  bars.slice(-300).forEach((v,i)=>{const h=Math.max(1,Math.min(1,v)*canvas.height);g.fillStyle=v>=.99?style.getPropertyValue('--bad'):style.getPropertyValue('--accent');g.fillRect(i*w,(canvas.height-h)/2,Math.max(1,w-1),h);});
+}
+function onAudio(event){
+  const r=S.rec;if(!r)return;
+  const data=new Float32Array(event.inputBuffer.getChannelData(0));r.chunks.push(data);r.samples+=data.length;
+  let peak=0,sum=0,clipped=0;for(const v of data){const a=Math.abs(v);if(a>peak)peak=a;sum+=v*v;if(a>=.99)clipped++;}
+  const rms=Math.sqrt(sum/data.length);
+  r.peak=Math.max(r.peak,peak);r.clipped+=clipped;r.envelope.push(peak);
+  r.levels.push(rms);const sorted=r.levels.slice().sort((a,b)=>a-b);
+  const noise=sorted[Math.floor(sorted.length*.1)],voice=sorted[Math.floor(sorted.length*.9)];
+  const scale=x=>Math.max(0,Math.min(100,(db(x)+60)/60*100));
+  $('bar').style.width=scale(rms)+'%';$('peakMark').style.left=scale(r.peak)+'%';
+  const share=r.clipped/r.samples*100,snr=db(voice)-db(noise);
+  fact('fLevel',db(rms).toFixed(0)+' dB');
+  fact('fPeak',db(r.peak).toFixed(0)+' dB',r.peak>=.99?'bad':r.peak>.9?'warn':r.peak<.03?'warn':'good');
+  fact('fNoise',db(noise).toFixed(0)+' dB',db(noise)>-35?'bad':db(noise)>-45?'warn':'good');
+  fact('fSnr',r.levels.length>8?snr.toFixed(0)+' dB':'–',snr>=20?'good':snr>=12?'warn':'bad');
+  fact('fClip',share.toFixed(1)+' %',share>.5?'bad':share>0?'warn':'good');
+  $('advice').textContent=share>.5?'Too loud: the microphone is overloading. Move back or lower the input volume in Settings → Sound.':
+    r.peak<.03&&r.levels.length>20?'Very quiet: move closer or raise the input volume.':db(noise)>-35?'The room noise is high for this microphone; a closer microphone helps.':'Good level.';
+  $('clock').textContent=(r.samples/r.rate).toFixed(1)+' s · 15 s at most';
+  drawWave();
+}
+async function start(){
+  notice('');
+  if(!navigator.mediaDevices?.getUserMedia){notice('This browser cannot use the microphone here. Open the lab on this computer (127.0.0.1).');return;}
+  let stream;
+  try{const f=$('filters').checked;stream=await navigator.mediaDevices.getUserMedia({audio:{channelCount:1,echoCancellation:f,noiseSuppression:f,autoGainControl:false}});}
+  catch(error){notice('The microphone could not be opened: '+error.message);return;}
+  const context=new (window.AudioContext||window.webkitAudioContext)(),source=context.createMediaStreamSource(stream),node=context.createScriptProcessor(2048,1,1);
+  S.rec={stream,context,source,node,chunks:[],samples:0,rate:context.sampleRate,peak:0,clipped:0,levels:[],envelope:[],began:performance.now(),
+         busy:false,partials:0,firstWords:null,stable:[],previous:[],group:S.group,ref:$('sentence').value};
+  node.onaudioprocess=onAudio;source.connect(node);node.connect(context.destination);
+  $('record').textContent='Stop';$('record').classList.add('rec');$('record').disabled=false;
+  $('live').replaceChildren();$('result').hidden=true;$('diff').replaceChildren();$('keys').replaceChildren();
+  S.rec.timer=setInterval(partial,1100);S.rec.limit=setTimeout(stop,15000);
+}
+function showWords(words,stableCount,fresh){
+  $('live').replaceChildren(...words.map((w,i)=>{const s=document.createElement('span');s.textContent=w;
+    if(i>=stableCount)s.className='tail';else if(i>=fresh)s.className='new';return s;}));
+}
+async function partial(){
+  const r=S.rec;if(!r||r.busy||r.samples/r.rate<.9)return;
+  r.busy=true;
+  try{
+    const result=await api('/api/partial?group='+r.group,{method:'POST',body:wav(r.chunks,r.rate).blob});
+    if(S.rec!==r)return;
+    r.partials++;
+    const words=(result.text||'').split(/\s+/).filter(Boolean);
+    if(words.length&&r.firstWords==null)r.firstWords=Math.round(performance.now()-r.began);
+    let same=0;while(same<words.length&&same<r.previous.length&&words[same]===r.previous[same])same++;
+    const before=r.stable.length;r.stable=words.slice(0,same);r.previous=words;
+    showWords(words,same,before);
+  }catch(error){/* a busy speech model skips this update */}
+  finally{r.busy=false;}
+}
+async function stop(){
+  const r=S.rec;if(!r)return;
+  clearInterval(r.timer);clearTimeout(r.limit);S.rec=null;
+  r.node.disconnect();r.source.disconnect();r.stream.getTracks().forEach(t=>t.stop());r.context.close();
+  $('record').textContent='Record';$('record').classList.remove('rec');$('record').disabled=true;
+  const audio=wav(r.chunks,r.rate);
+  if(audio.seconds<.4){notice('That was too short. Hold Record for at least a second.');$('record').disabled=false;return;}
+  for(let i=0;i<40&&r.busy;i++)await new Promise(done=>setTimeout(done,100));
+  try{
+    const query=new URLSearchParams({group:r.group,ref:r.ref,keep:$('keep').checked?'1':'0',first:r.firstWords??'',partials:r.partials,filters:$('filters').checked?'1':'0'});
+    const take=await api('/api/final?'+query,{method:'POST',body:audio.blob});
+    S.lastTake=take;showTake(take);
+  }catch(error){notice(error.message);}
+  $('record').disabled=false;refresh();
+}
+function showTake(t){
+  const words=(t.heard||'').split(/\s+/).filter(Boolean);
+  if(words.length)showWords(words,words.length,words.length);else $('live').innerHTML='<em>'+(t.silent?'Only silence was recorded. Is the microphone muted?':'No words were recognised.')+'</em>';
+  if(t.distorted)notice('This recording is overloaded ('+t.clipped_pct+' % clipped). The words may be guesses: lower the input volume and try again.');
+  $('result').hidden=false;
+  const tone=v=>v==null?'':v<=.1?'good':v<=.3?'warn':'bad';
+  fact('kWer',pct(t.wer),tone(t.wer));fact('kCer',pct(t.cer),tone(t.cer));
+  fact('kKeys',t.keywords_total?t.keywords_found+' of '+t.keywords_total:'–',t.keywords_total?(t.keywords_found===t.keywords_total?'good':'bad'):'');
+  fact('kFirst',t.first_words_ms==null?'–':(t.first_words_ms/1000).toFixed(1)+' s');
+  fact('kLat',t.latency_ms==null?'–':Math.round(t.latency_ms)+' ms');
+  fact('kRtf',t.realtime_factor==null?'–':t.realtime_factor.toFixed(2),t.realtime_factor!=null&&t.realtime_factor<.5?'good':'warn');
+  $('diff').replaceChildren(...(t.diff||[]).map(([kind,ref,heard])=>{const s=document.createElement('span');s.className=kind;
+    s.textContent=kind==='ins'?heard:ref;if(kind==='sub'){const small=document.createElement('small');small.textContent=' → '+heard;s.append(small);}return s;}));
+  $('keys').replaceChildren(...(t.keywords||[]).map(k=>{const s=document.createElement('span');s.className=k.found?'yes':'no';s.textContent=(k.found?'✓ ':'✗ ')+k.word;return s;}));
+  $('text').value=t.heard||'';
+}
+$('record').onclick=()=>S.rec?stop():start();
+
+$('understand').onclick=async()=>{
+  const text=$('text').value.trim();if(!text)return;
+  $('understand').disabled=true;$('meaning').className='muted';$('meaning').textContent='Thinking…';
+  try{
+    const r=await api('/api/understand',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text,language:null,take:S.lastTake&&S.lastTake.heard===text?S.lastTake.take:null})});
+    const box=$('meaning');box.className='';box.replaceChildren();
+    const facts=document.createElement('div');facts.className='facts';
+    const add=(label,value,tone)=>{const f=document.createElement('div');f.className='fact'+(tone?' '+tone:'');const s=document.createElement('span');s.textContent=label;const b=document.createElement('strong');b.textContent=value??'–';f.append(s,b);facts.append(f);};
+    add('Decision',{act:'will do it',ask:'asks a question',refuse:'refuses'}[r.decision]||r.decision,r.decision==='act'?'good':r.decision==='ask'?'warn':'bad');
+    add('Planned by',r.planner);add('Language',r.language_detected);add('Model time',r.model_ms==null?'–':r.model_ms+' ms');add('Decided after',r.decided_ms==null?'–':(r.decided_ms/1000).toFixed(1)+' s');
+    box.append(facts);
+    const line=(label,value)=>{if(!value)return;const p=document.createElement('p');const b=document.createElement('b');b.textContent=label+': ';p.append(b,value);p.style.margin='8px 0 0';box.append(p);};
+    line('In English',r.english);
+    if(r.steps.length){const list=document.createElement('ol');list.className='steps';r.steps.forEach(s=>{const li=document.createElement('li');
+      li.textContent=[s.action,s.item&&'“'+s.item+'”',s.to&&'→ '+s.to,s.from&&'from '+s.from,s.at&&'at '+s.at,s.question&&'ask: '+s.question,s.message&&'say: '+s.message,s.if_not_there&&s.if_not_there!=='bring_back'&&'(if away: '+s.if_not_there+')'].filter(Boolean).join(' ');list.append(li);});box.append(list);}
+    line('Read-back',r.readback);
+    if(r.ask)line('Question',r.ask.event+(r.ask.options&&r.ask.options.length?' — options: '+r.ask.options.join(', '):''));
+    if(r.refuse)line('Refusal',[r.refuse.event,r.refuse.reason].filter(Boolean).join(' / '));
+  }catch(error){$('meaning').textContent=error.message;}
+  $('understand').disabled=!S.ready;
+};
+$('export').onclick=async()=>{const text=await api('/api/export.csv');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/csv'}));a.download='speech_lab_takes.csv';a.click();};
+if(!token)notice('Open the Speech Lab with the full address printed in its terminal.');
+refresh();setInterval(refresh,2000);
+</script>
+</body>
+</html>

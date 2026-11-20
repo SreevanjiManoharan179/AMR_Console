@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "comment": "What release/sync.py copies from the development repositories into this public repository. Only files committed in a development repository can be copied; these patterns then leave some of them out. Everything is checked by the privacy and size checks below before anything is written.",
+  "projects": {
+    "amr-console-dev": {
+      "exclude": [
+        ".github/**",
+        "docs/records/**"
+      ],
+      "why_excluded": {
+        ".github/**": "the workflows of this repository are in its own .github/ at the top",
+        "docs/records/**": "dated notes of the development, such as a page-redesign delivery note: kept by the owner"
+      }
+    },
+    "amr-language": {
+      "exclude": [
+        "records/**",
+        "docs/history/**",
+        "scripts/write_task3_handoff.py",
+        "scripts/report_task4b.py"
+      ],
+      "why_excluded": {
+        "records/**": "measurement records, hand-offs and the task briefs of the development: kept by the owner, available on request",
+        "docs/history/**": "dated reports of earlier versions: kept by the owner, available on request",
+        "scripts/write_task3_handoff.py": "wrote an internal hand-off note",
+        "scripts/report_task4b.py": "wrote a dated report now in docs/history/"
+      }
+    }
+  },
+  "checks": {
+    "max_file_bytes": 3000000,
+    "allowed_email_patterns": [
+      "^[A-Za-z0-9._+-]+@users\\.noreply\\.github\\.com$",
+      "^[A-Za-z0-9._+-]+@example\\.(com|org)$"
+    ],
+    "forbidden_patterns": {
+      "a personal home folder": "/home/(?!user/|runner/)[A-Za-z_][A-Za-z0-9._-]*/|/Users/(?!Shared/)[A-Za-z][A-Za-z0-9._-]*/|[A-Za-z]:\\\\Users\\\\|/media/[A-Za-z_][A-Za-z0-9._-]*/",
+      "a private key": "-----BEGIN [A-Z ]*PRIVATE KEY-----",
+      "a GitHub token": "\\b(ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9]{30,}|\\bgithub_pat_[A-Za-z0-9_]{30,}",
+      "a GitLab token": "\\bglpat-[A-Za-z0-9_-]{20,}",
+      "a Slack token": "\\bxox[abprs]-[A-Za-z0-9-]{10,}",
+      "a Google API key": "\\bAIza[0-9A-Za-z_-]{35}",
+      "an AWS access key": "\\bAKIA[0-9A-Z]{16}\\b",
+      "a Hugging Face token": "\\bhf_[A-Za-z0-9]{30,}",
+      "an OpenAI or Anthropic key": "\\bsk-(ant-)?[A-Za-z0-9_-]{20,}",
+      "a phone number (India)": "(?<![\\w.+-])(?:\\+91[ -]?)?[6-9][0-9]{9}(?![\\w.])",
+      "an SRM register number": "\\bRA[0-9]{13}\\b"
+    }
+  }
+}

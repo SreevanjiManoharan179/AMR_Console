@@ -1,0 +1,19 @@
+AMR Console
+Copyright (c) 2026 Bharathwaj Manoharan. All rights reserved (see LICENSE).
+
+This repository contains material derived from third-party work:
+
+  src/amr_physical_ai/config/nav2_dwb.yaml
+  src/amr_physical_ai/config/nav2_mppi.yaml
+  src/amr_physical_ai/config/nav2_rpp.yaml
+
+    Derived from nav2_bringup/params/nav2_params.yaml of Nav2 (navigation2, ROS 2 Jazzy),
+    https://github.com/ros-navigation/navigation2, licensed under the Apache License,
+    Version 2.0 (LICENSES/Apache-2.0.txt). Changed from that file: use_sim_time is set for
+    every server, AMCL is given the initial pose, and the controller_server FollowPath block
+    and controller_frequency are set for one controller per file (DWB, MPPI or RPP), as each
+    file's header states.
+
+Everything else that this software uses at run time (ROS 2, Nav2, SLAM Toolbox, Gazebo,
+ros_gz, the TurtleBot3 simulation models, the language-model runner, models and speech
+packages) is installed separately and is not distributed with it.
