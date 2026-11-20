@@ -5,6 +5,10 @@
 - README: an animated demo of one office task from request to return (4.5× speed), four
   screenshots of the system at work (office tasks, navigation, a clarifying question, the demo
   office) and the office map with its people and places, in `docs/images/`.
+- README: what the system does, how it works (a diagram of its processes and the steps of an
+  office task), what the other top-level folders hold, and badges for CI and the platform. The
+  status line now says where each language can be tried: Tamil and Tanglish on the Speech Lab
+  page, Malayalam and Telugu in its speech checks.
 - CI runs for pushes to `main` and for pull requests, not twice for every pull-request branch.
 - Dependabot proposes new versions of the GitHub Actions only. The Python test requirements are
   broad ranges on purpose; its first pull requests raised their lower bounds (pytest to 9.2, for
