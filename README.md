@@ -10,6 +10,17 @@ and records every run against the simulator's ground truth.
 > Telugu and Tanglish only in the Speech Lab test bench. A real-robot connection is planned, not
 > built.
 
+## In action
+
+Screenshots from 10 Nov 2026, in simulation. The people in the office list are fictional.
+
+| | |
+|---|---|
+| [![Office tasks: the robot reads back a request and waits for a yes](docs/images/office-tasks-readback.png)](docs/images/office-tasks-readback.png) | [![A typed command driving the robot to the conference hall](docs/images/navigation-to-conference-hall.png)](docs/images/navigation-to-conference-hall.png) |
+| **Office tasks.** Priya asks for a file to go to Divya, or to come back to her if Divya is away. The robot reads the request back and waits for a yes before it moves. | **Navigation.** "Go to the conference hall": Gazebo (top left), RViz with the saved map, LiDAR and the planned path (bottom left), and the console (right). |
+| [![The Commands tab asking which room is meant](docs/images/commands-clarifying-question.png)](docs/images/commands-clarifying-question.png) | [![The demo office in Gazebo with the TurtleBot3 Waffle](docs/images/gazebo-demo-office.png)](docs/images/gazebo-demo-office.png) |
+| **Asking instead of guessing.** "Go to the room" is ambiguous, so the console asks "Did you mean the conference hall?" and does not move. | **The demo office.** The 18 × 12 m office world in Gazebo Harmonic, with the TurtleBot3 Waffle. |
+
 ## Two projects, one product
 
 | Folder | What it is | Start here |
