@@ -1,4 +1,4 @@
 # Pure-Python tests, used in CI. Supported major-version bounds, not a lockfile.
-pytest>=7,<9
+pytest>=9.2.0,<10
 PyYAML>=6,<7
 packaging>=23
