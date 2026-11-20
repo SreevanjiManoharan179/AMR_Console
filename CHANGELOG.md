@@ -9,6 +9,10 @@
   office task), what the other top-level folders hold, and badges for CI and the platform. The
   status line now says where each language can be tried: Tamil and Tanglish on the Speech Lab
   page, Malayalam and Telugu in its speech checks.
+- README rewritten in a friendlier voice: the app icon and a one-line pitch at the top, headline
+  numbers, why the project exists, the three rules the code enforces, the typed-command grounding
+  result with its limits, an honest-limits list, a colour-coded process diagram, a note that a
+  paper is under review (citation to follow), and thanks to the open-source projects it builds on.
 - CI runs for pushes to `main` and for pull requests, not twice for every pull-request branch.
 - Dependabot proposes new versions of the GitHub Actions only. The Python test requirements are
   broad ranges on purpose; its first pull requests raised their lower bounds (pytest to 9.2, for
