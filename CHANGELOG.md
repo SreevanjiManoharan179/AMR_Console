@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.1 (20 Nov 2026)
+
+- CI runs for pushes to `main` and for pull requests, not twice for every pull-request branch.
+- Dependabot proposes new versions of the GitHub Actions only. The Python test requirements are
+  broad ranges on purpose; its first pull requests raised their lower bounds (pytest to 9.2, for
+  example, which would exclude the pytest 7 that Ubuntu 24.04 ships), which only narrows them. CI
+  already tests the newest allowed versions on every run.
+
 ## 1.0.0 (prepared 20 Nov 2026)
 
 First public version: the system as it stood at the end of the case study (development tag
